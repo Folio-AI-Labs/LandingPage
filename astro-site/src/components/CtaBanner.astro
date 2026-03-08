@@ -1,13 +1,17 @@
 ---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="py-20 px-[30px] nav:py-[100px] nav:px-[60px] relative overflow-hidden bg-gradient-to-br from-[rgba(230,235,240,0.5)] to-[rgba(240,230,235,0.5)]">
   <div class="absolute inset-0 bg-cover bg-center opacity-50 z-0" style="background-image: url('/waterlilies.jpg')"></div>
   <div class="max-w-narrow mx-auto text-center relative z-10">
-    <h2 class="font-display text-[32px] nav:text-[29px] font-normal leading-[1.3] text-brand mb-10">Start working on your presentations in seconds.<br />No credit cards needed.</h2>
+    <h2 class="font-display text-[32px] nav:text-[29px] font-normal leading-[1.3] text-brand mb-10">{t('cta.title')}<br />{t('cta.subtitle')}</h2>
     <div class="flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center">
-      <a href="https://verso.fly.dev/playground/" class="w-full nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">Get started</a>
-      <a href="/demo/" class="w-full nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">Book a demo</a>
+      <a href="https://verso.fly.dev/playground/" class="w-full nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
+      <a href={getLocalizedPath('/demo/', lang)} class="w-full nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
     </div>
   </div>
 </section>

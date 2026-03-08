@@ -1,22 +1,27 @@
 ---
+import LanguageSelector from './LanguageSelector.astro';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
 interface Props {
   activePage?: string;
 }
 
 const { activePage = '' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/#intelligence', label: 'Features' },
-  { href: '/#models', label: 'Models' },
-  { href: '/pricing/', label: 'Pricing' },
-  { href: '/demo/', label: 'Contact Us' },
+  { href: getLocalizedPath('/', lang), label: t('nav.home') },
+  { href: getLocalizedPath('/#intelligence', lang), label: t('nav.features') },
+  { href: getLocalizedPath('/#models', lang), label: t('nav.models') },
+  { href: getLocalizedPath('/pricing/', lang), label: t('nav.pricing') },
+  { href: getLocalizedPath('/demo/', lang), label: t('nav.contact') },
 ];
 ---
 
 <nav class="relative z-[1002] grid grid-cols-[auto_1fr] nav:grid-cols-[1fr_auto_1fr] items-center py-5 px-[30px] nav:px-[60px] bg-brand-bg font-heading overflow-hidden">
   <a href="/" class="flex items-center gap-2.5 text-base font-semibold text-brand no-underline transition-colors duration-300 hover:text-black">
-    <img src="/origami.png" alt="Verso AI Logo" class="w-[29px] h-[29px]" style="filter: brightness(0) saturate(100%) invert(6%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(99%) contrast(99%)" />
+    <img src="/origami_windmill_vectorized.svg" alt="Verso AI Logo" class="w-[29px] h-[29px]" style="filter: brightness(0) saturate(100%) invert(6%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(99%) contrast(99%)" />
     <span class="font-heading">Verso AI</span>
   </a>
   <ul class="hidden nav:flex gap-10 list-none justify-center m-0 p-0">
@@ -35,8 +40,9 @@ const navLinks = [
     ))}
   </ul>
   <div class="hidden nav:flex items-center gap-3 justify-end">
-    <a href="https://verso.fly.dev/playground/" class="bg-brand text-white border-none py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:-translate-y-px hover:shadow-md">Get started</a>
-    <a href="/demo/" class="bg-brand-bg text-brand border-2 border-brand py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-px hover:shadow-md">Book a demo</a>
+    <a href="https://verso.fly.dev/playground/" class="bg-brand text-white border-none py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:-translate-y-px hover:shadow-md">{t('nav.getStarted')}</a>
+    <a href={getLocalizedPath('/demo/', lang)} class="bg-brand-bg text-brand border-2 border-brand py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-px hover:shadow-md">{t('nav.bookDemo')}</a>
+    <LanguageSelector />
   </div>
   <button class="burger-menu group flex nav:hidden flex-col justify-center items-center bg-transparent border-none cursor-pointer p-2.5 z-[1001] w-10 h-10 relative justify-self-end" aria-label="Toggle menu">
     <span class="block w-[25px] h-[3px] bg-brand rounded-[3px] transition-all duration-300 ease-in-out absolute top-[10px] group-[.active]:top-[18.5px] group-[.active]:rotate-45"></span>
@@ -63,6 +69,9 @@ const navLinks = [
     ))}
     <li><a href="https://verso.fly.dev/playground/" class="bg-brand text-white border-none py-3 px-5 text-sm font-medium rounded-pill text-center transition duration-300 block no-underline hover:-translate-y-px hover:shadow-md">Get started</a></li>
     <li><a href="/demo/" class="bg-brand-bg text-brand border-2 border-brand py-3 px-5 text-sm font-medium rounded-pill text-center transition duration-300 block no-underline hover:bg-brand hover:text-white hover:-translate-y-px hover:shadow-md">Book a demo</a></li>
+    <li class="flex justify-center pt-2">
+      <LanguageSelector />
+    </li>
   </ul>
 </div>
 
