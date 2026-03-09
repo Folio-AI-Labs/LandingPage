@@ -32,7 +32,7 @@ const currentLanguage = languages.find(l => l.code === lang)?.display || 'EN';
       return (
         <a
           href={href}
-          class="language-option font-heading text-sm font-medium text-brand-muted hover:text-brand hover:bg-brand-bg w-full text-left pl-1.5 pr-0 py-1.5 transition-colors duration-200 cursor-pointer bg-transparent border-none block no-underline"
+          class="language-option font-heading text-sm font-medium text-brand-muted hover:text-brand hover:bg-brand-bg w-full text-left pl-3 pr-6 py-1.5 transition-colors duration-200 cursor-pointer bg-transparent border-none block no-underline"
           data-lang={l.display}
           aria-label={`Switch to ${l.label}`}
         >

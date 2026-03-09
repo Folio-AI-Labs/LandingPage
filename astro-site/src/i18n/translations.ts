@@ -135,9 +135,9 @@ export const translations = {
     'nav.bookDemo': 'Réserver une démo',
 
     // Hero Section
-    'hero.title': 'Des présentations professionnelles qui fonctionnent nativement.',
-    'hero.subtitle1': 'Les agents IA ne peuvent pas éditer PowerPoint. Verso le peut.',
-    'hero.subtitle2': 'Nous avons construit la génération et l\'édition native de diapositives, là où vous en avez besoin.',
+    'hero.title': 'Des présentations de qualité, nativement',
+    'hero.subtitle1': 'Les agents IA ne peuvent pas éditer de fichiers PowerPoint. Verso le fait.',
+    'hero.subtitle2': 'Nous construisons l\'édition intelligente de diapositives, là où vous en avez besoin.',
     'hero.trustedBy': 'Ils nous font confiance',
 
     // Intelligence Section
@@ -219,7 +219,7 @@ export const translations = {
     'pricing.pro.feature5': 'Support prioritaire',
 
     'pricing.ultimate.name': 'Ultimate',
-    'pricing.ultimate.description': 'Pour les équipes en croissance et les entreprises qui ont besoin de performances optimales',
+    'pricing.ultimate.description': 'Pour les équipes en croissance et les entreprises qui cherchent la performance',
     'pricing.ultimate.credits': '5 000 crédits',
     'pricing.ultimate.creditsDesc': 'par mois',
     'pricing.ultimate.creditPrice': '1,50$',
