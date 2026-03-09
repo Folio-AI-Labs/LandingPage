@@ -16,7 +16,10 @@ const t = useTranslations(lang);
   <section class="min-h-screen pt-[100px] px-[30px] pb-[60px] nav:py-20 nav:px-[60px]">
     <div class="text-center mb-[60px]">
       <h1 class="font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-6">{t('pricing.title')}</h1>
-      <p class="font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark max-w-[600px] mx-auto">{t('pricing.subtitle')}<br />{t('pricing.subtitle2')}</p>
+      <div class="font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mx-auto text-center">
+        <div class="whitespace-nowrap">{t('pricing.subtitle')}</div>
+        <div>{t('pricing.subtitle2')}</div>
+      </div>
     </div>
 
     <!-- Billing Toggle -->
