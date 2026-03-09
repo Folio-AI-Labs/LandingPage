@@ -1,31 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Privacy Policy — Verso AI" description="How Verso AI collects, uses, and protects your personal information.">
+  <Nav />
 
-  <!-- Nav -->
-  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold tracking-tight">Verso<span class="text-[#3BDB8D]">AI</span></a>
-      <div class="flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="/" class="hover:text-slate-900 transition">Home</a>
+  <main class="px-[30px] nav:px-[60px] py-20">
+    <div class="max-w-[800px] mx-auto">
+
+      <div class="text-center mb-12">
+        <h1 class="font-display text-[42px] nav:text-[54px] font-normal leading-tight text-brand mb-4">Privacy Policy</h1>
+        <p class="text-base text-brand-muted">Effective as of March 9, 2026</p>
       </div>
-    </div>
-  </nav>
 
-  <main>
-    <section class="pt-16 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#3BDB8D]/5 rounded-full blur-3xl -z-10"></div>
-      <div class="max-w-3xl mx-auto px-6 py-20 w-full">
-
-        <div class="text-center mb-12">
-          <span class="inline-block bg-[#3BDB8D]/10 text-[#3BDB8D] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">Legal</span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">Privacy Policy</h1>
-          <p class="text-lg text-slate-600">Effective as of March 9, 2026</p>
-        </div>
-
-        <div class="prose prose-slate max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h3:text-lg prose-h3:mt-8 prose-a:text-[#3BDB8D] prose-a:no-underline hover:prose-a:underline prose-table:text-sm">
+      <div class="text-brand-dark text-[15px] leading-relaxed [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-brand [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:font-heading [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-brand [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_li]:mb-2 [&_a]:text-brand [&_a]:underline [&_a]:hover:text-black [&_table]:w-full [&_table]:text-sm [&_table]:my-6 [&_table]:border-collapse [&_th]:text-left [&_th]:font-semibold [&_th]:text-brand [&_th]:py-2 [&_th]:px-3 [&_th]:border-b [&_th]:border-brand-border [&_td]:py-2 [&_td]:px-3 [&_td]:border-b [&_td]:border-brand-border [&_hr]:my-8 [&_hr]:border-brand-border">
 
           <p>This Privacy Policy describes how Verso AI ("Verso," "we," "us," or "our") processes personal information that we collect through our website, PowerPoint add-in, and web application (collectively, the "Service").</p>
           <p>Verso provides an AI-powered platform that generates and edits PowerPoint presentations.</p>
@@ -189,22 +179,9 @@ import Layout from '../layouts/Layout.astro';
           <hr />
           <p class="text-sm text-slate-500 italic">Verso AI is not affiliated with or endorsed by Microsoft.</p>
 
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-slate-950 text-slate-400 py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-        <span>&copy; 2026 Verso AI. All rights reserved.</span>
-        <div class="flex gap-6">
-          <a href="/privacy" class="hover:text-white transition">Privacy</a>
-          <a href="/support" class="hover:text-white transition">Support</a>
-        </div>
       </div>
     </div>
-  </footer>
+  </main>
 
+  <Footer />
 </Layout>
