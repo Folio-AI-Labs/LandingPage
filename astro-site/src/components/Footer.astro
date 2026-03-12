@@ -5,12 +5,12 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="bg-black py-[30px] px-[30px] nav:py-10 nav:px-[60px] flex flex-col nav:flex-row gap-5 nav:gap-0 items-center nav:justify-between text-center nav:text-left">
+<footer class="bg-black py-[30px] px-[30px] nav:py-10 nav:px-[60px] relative flex flex-col nav:flex-row gap-5 nav:gap-0 items-center nav:justify-between text-center nav:text-left">
   <div class="flex items-center gap-3">
     <img src="/origami_pentagon_white.svg" alt="Verso AI Logo" class="w-8 h-8" />
     <span class="font-heading text-lg font-semibold text-white">Verso AI</span>
   </div>
-  <div class="flex items-center gap-2 text-sm text-brand-light">
+  <div class="flex items-center gap-2 text-sm text-brand-light nav:absolute nav:left-1/2 nav:-translate-x-1/2">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       <path d="M9 12l2 2 4-4"/>
