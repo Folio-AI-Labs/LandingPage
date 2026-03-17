@@ -1,40 +1,43 @@
 <div class="w-full max-w-[600px] mx-auto">
-  <div class="flex items-end gap-2">
-    <!-- Y axis -->
-    <div class="flex flex-col items-center shrink-0 mr-1">
-      <!-- Arrow -->
-      <svg width="12" height="12" viewBox="0 0 12 12" class="text-brand-muted mb-1">
-        <path d="M6 0L10 5H2L6 0Z" fill="currentColor"/>
-      </svg>
-      <div class="w-px bg-brand-muted" style="height: 260px"></div>
-    </div>
+  <svg viewBox="0 0 500 340" class="w-full" xmlns="http://www.w3.org/2000/svg">
+    <!-- Y axis with arrow -->
+    <line x1="40" y1="280" x2="40" y2="20" stroke="#666666" stroke-width="1.5"/>
+    <polygon points="40,12 36,22 44,22" fill="#666666"/>
 
-    <!-- Bars -->
-    <div class="flex-1 flex items-end justify-around" style="height: 280px">
-      <!-- Verso AI Pro -->
-      <div class="flex flex-col items-center gap-2">
-        <span class="text-sm font-semibold text-brand">65%</span>
-        <div class="w-14 nav:w-20 bg-brand rounded-t-lg" style="height: calc(260px * 0.65)"></div>
-        <span class="text-xs nav:text-sm font-body text-brand text-center leading-tight mt-1">Verso AI<br/>Pro</span>
-      </div>
-      <!-- Verso AI Free -->
-      <div class="flex flex-col items-center gap-2">
-        <span class="text-sm font-semibold text-brand">53%</span>
-        <div class="w-14 nav:w-20 bg-brand rounded-t-lg" style="height: calc(260px * 0.53)"></div>
-        <span class="text-xs nav:text-sm font-body text-brand text-center leading-tight mt-1">Verso AI<br/>Free</span>
-      </div>
-      <!-- Claude for PowerPoint -->
-      <div class="flex flex-col items-center gap-2">
-        <span class="text-sm font-semibold text-brand-muted">41%</span>
-        <div class="w-14 nav:w-20 bg-[#c8c8c8] rounded-t-lg" style="height: calc(260px * 0.41)"></div>
-        <span class="text-xs nav:text-sm font-body text-brand-muted text-center leading-tight mt-1">Claude for<br/>PowerPoint</span>
-      </div>
-      <!-- GenSpark -->
-      <div class="flex flex-col items-center gap-2">
-        <span class="text-sm font-semibold text-brand-muted">16%</span>
-        <div class="w-14 nav:w-20 bg-[#c8c8c8] rounded-t-lg" style="height: calc(260px * 0.16)"></div>
-        <span class="text-xs nav:text-sm font-body text-brand-muted text-center leading-tight mt-1">GenSpark</span>
-      </div>
-    </div>
-  </div>
+    <!-- X axis (no arrowhead) -->
+    <line x1="40" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
+
+    <!-- Bar width=70, gap between bars ~30, starting at x=65 -->
+    <!-- Verso AI Pro: 65% => height = 240 * 0.65 = 156 -->
+    <rect x="65" y="124" width="70" height="156" rx="6" ry="6" fill="#1a1a1a"/>
+    <text x="100" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">65%</text>
+    <text x="100" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
+      <tspan x="100" dy="0">Verso AI</tspan>
+      <tspan x="100" dy="15">Pro</tspan>
+    </text>
+
+    <!-- Verso AI Free: 53% => height = 240 * 0.53 = 127.2 -->
+    <rect x="165" y="152.8" width="70" height="127.2" rx="6" ry="6" fill="#1a1a1a"/>
+    <text x="200" y="142.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">53%</text>
+    <text x="200" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
+      <tspan x="200" dy="0">Verso AI</tspan>
+      <tspan x="200" dy="15">Free</tspan>
+    </text>
+
+    <!-- Claude for PowerPoint: 41% => height = 240 * 0.41 = 98.4 -->
+    <rect x="265" y="181.6" width="70" height="98.4" rx="6" ry="6" fill="#c8c8c8"/>
+    <text x="300" y="171.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#999999">41%</text>
+    <text x="300" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#999999">
+      <tspan x="300" dy="0">Claude for</tspan>
+      <tspan x="300" dy="15">PowerPoint</tspan>
+    </text>
+
+    <!-- GenSpark: 16% => height = 240 * 0.16 = 38.4 -->
+    <rect x="365" y="241.6" width="70" height="38.4" rx="6" ry="6" fill="#c8c8c8"/>
+    <text x="400" y="231.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#999999">16%</text>
+    <text x="400" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#999999">
+      <tspan x="400" dy="0">GenSpark</tspan>
+      <tspan x="400" dy="15">&nbsp;</tspan>
+    </text>
+  </svg>
 </div>
