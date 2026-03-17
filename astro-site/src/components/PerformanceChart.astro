@@ -1,14 +1,14 @@
 <div class="w-full max-w-[600px] mx-auto">
   <svg viewBox="-10 0 510 340" class="w-full" xmlns="http://www.w3.org/2000/svg">
-    <!-- Y axis -->
-    <line x1="40" y1="280" x2="40" y2="40" stroke="#666666" stroke-width="1.5"/>
+    <!-- Y axis (extended ±0.75 at ends to align stroke edges with perpendicular lines) -->
+    <line x1="40" y1="280.75" x2="40" y2="39.25" stroke="#666666" stroke-width="1.5"/>
 
-    <!-- 100% tick and label -->
-    <line x1="30" y1="40" x2="40" y2="40" stroke="#666666" stroke-width="1.5"/>
+    <!-- 100% tick and label (extended right by 0.75 to align with Y axis right edge) -->
+    <line x1="30" y1="40" x2="40.75" y2="40" stroke="#666666" stroke-width="1.5"/>
     <text x="26" y="44" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#999999">100%</text>
 
-    <!-- X axis (no arrowhead) -->
-    <line x1="40" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
+    <!-- X axis (extended left by 0.75 to align with Y axis left edge) -->
+    <line x1="39.25" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
 
     <!-- Bars: baseline=280, chart height=240 (100% = y:40) -->
     <!-- Flat bottom via clipPath, rounded top via rect with rx/ry -->
