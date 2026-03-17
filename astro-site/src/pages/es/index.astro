@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
 import Footer from '../../components/Footer.astro';
+import PerformanceChart from '../../components/PerformanceChart.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -130,7 +131,7 @@ const t = useTranslations(lang);
     <div class="max-w-[1200px] mx-auto text-center">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-10">{t('models.title')}</h2>
       <p class="text-lg leading-[1.8] text-brand-muted max-w-[900px] mx-auto mb-10">{t('models.desc')}</p>
-      <div class="w-full max-w-[900px] mx-auto aspect-video bg-[#f0f0f0] rounded-2xl border-2 border-brand-border flex items-center justify-center text-brand-light text-sm"></div>
+      <PerformanceChart />
     </div>
   </section>
 
