@@ -41,7 +41,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Model performance at the core',
-    'models.desc': 'Our harnesses outperform competition on internal benchmarks.',
+    'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity.',
 
     // CTA Banner
     'cta.title': 'Start working on your presentations in seconds.',
@@ -166,7 +166,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'La performance des modèles au cœur',
-    'models.desc': 'Nos systèmes surpassent la concurrence sur des benchmarks internes.',
+    'models.desc': 'Nos systèmes surpassent la concurrence sur des benchmarks internes, tout en étant beaucoup plus rapides à exécuter.',
 
     // CTA Banner
     'cta.title': 'Commencez à travailler sur vos présentations en quelques secondes.',
@@ -291,7 +291,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Rendimiento del modelo en el núcleo',
-    'models.desc': 'Nuestros sistemas superan a la competencia en benchmarks internos.',
+    'models.desc': 'Nuestros sistemas superan a la competencia en benchmarks internos, siendo mucho más rápidos de ejecutar.',
 
     // CTA Banner
     'cta.title': 'Comienza a trabajar en tus presentaciones en segundos.',
@@ -416,7 +416,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Modellleistung im Kern',
-    'models.desc': 'Unsere Systeme übertreffen die Konkurrenz bei internen Benchmarks.',
+    'models.desc': 'Unsere Systeme übertreffen die Konkurrenz bei internen Benchmarks und sind dabei deutlich schneller in der Ausführung.',
 
     // CTA Banner
     'cta.title': 'Beginnen Sie in Sekunden mit Ihren Präsentationen.',
