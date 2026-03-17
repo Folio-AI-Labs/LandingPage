@@ -41,7 +41,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Model performance at the core',
-    'models.desc': 'Our harnesses outperform competition on all tested benchmarks. We take pride in building AI tools that deliver value and efficiency gains. See for yourself, test our product for free.',
+    'models.desc': 'Our harnesses outperform competition on internal benchmarks.',
 
     // CTA Banner
     'cta.title': 'Start working on your presentations in seconds.',
@@ -166,7 +166,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'La performance des modèles au cœur',
-    'models.desc': 'Nos systèmes surpassent la concurrence sur tous les benchmarks testés. Nous sommes fiers de créer des outils IA qui apportent valeur et gains d\'efficacité. Voyez par vous-même, testez notre produit gratuitement.',
+    'models.desc': 'Nos systèmes surpassent la concurrence sur des benchmarks internes.',
 
     // CTA Banner
     'cta.title': 'Commencez à travailler sur vos présentations en quelques secondes.',
@@ -291,7 +291,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Rendimiento del modelo en el núcleo',
-    'models.desc': 'Nuestros sistemas superan a la competencia en todos los benchmarks probados. Nos enorgullecemos de construir herramientas de IA que aportan valor y ganancias de eficiencia. Compruébalo tú mismo, prueba nuestro producto gratis.',
+    'models.desc': 'Nuestros sistemas superan a la competencia en benchmarks internos.',
 
     // CTA Banner
     'cta.title': 'Comienza a trabajar en tus presentaciones en segundos.',
@@ -416,7 +416,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Modellleistung im Kern',
-    'models.desc': 'Unsere Systeme übertreffen die Konkurrenz bei allen getesteten Benchmarks. Wir sind stolz darauf, KI-Tools zu entwickeln, die Wert und Effizienzgewinne liefern. Überzeugen Sie sich selbst, testen Sie unser Produkt kostenlos.',
+    'models.desc': 'Unsere Systeme übertreffen die Konkurrenz bei internen Benchmarks.',
 
     // CTA Banner
     'cta.title': 'Beginnen Sie in Sekunden mit Ihren Präsentationen.',

@@ -1,39 +1,39 @@
-<div class="w-full max-w-[700px] mx-auto bg-white rounded-2xl border-2 border-brand-border p-8 nav:p-12">
-  <div class="space-y-6">
-    <!-- Verso AI Pro -->
-    <div class="flex items-center gap-4">
-      <span class="text-sm font-body text-brand w-[160px] text-right shrink-0">Verso AI Pro</span>
-      <div class="flex-1 bg-[#f0f0f0] rounded-full h-10 overflow-hidden">
-        <div class="h-full bg-brand rounded-full flex items-center justify-end pr-3" style="width: 65%">
-          <span class="text-white text-sm font-semibold">65%</span>
-        </div>
-      </div>
+<div class="w-full max-w-[600px] mx-auto">
+  <div class="flex items-end gap-2">
+    <!-- Y axis -->
+    <div class="flex flex-col items-center shrink-0 mr-1">
+      <!-- Arrow -->
+      <svg width="12" height="12" viewBox="0 0 12 12" class="text-brand-muted mb-1">
+        <path d="M6 0L10 5H2L6 0Z" fill="currentColor"/>
+      </svg>
+      <div class="w-px bg-brand-muted" style="height: 260px"></div>
     </div>
-    <!-- Verso AI Free -->
-    <div class="flex items-center gap-4">
-      <span class="text-sm font-body text-brand w-[160px] text-right shrink-0">Verso AI Free</span>
-      <div class="flex-1 bg-[#f0f0f0] rounded-full h-10 overflow-hidden">
-        <div class="h-full bg-brand rounded-full flex items-center justify-end pr-3" style="width: 53%">
-          <span class="text-white text-sm font-semibold">53%</span>
-        </div>
+
+    <!-- Bars -->
+    <div class="flex-1 flex items-end justify-around" style="height: 280px">
+      <!-- Verso AI Pro -->
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-sm font-semibold text-brand">65%</span>
+        <div class="w-14 nav:w-20 bg-brand rounded-t-lg" style="height: calc(260px * 0.65)"></div>
+        <span class="text-xs nav:text-sm font-body text-brand text-center leading-tight mt-1">Verso AI<br/>Pro</span>
       </div>
-    </div>
-    <!-- Claude for PowerPoint -->
-    <div class="flex items-center gap-4">
-      <span class="text-sm font-body text-brand-muted w-[160px] text-right shrink-0">Claude for PowerPoint</span>
-      <div class="flex-1 bg-[#f0f0f0] rounded-full h-10 overflow-hidden">
-        <div class="h-full bg-[#c8c8c8] rounded-full flex items-center justify-end pr-3" style="width: 41%">
-          <span class="text-white text-sm font-semibold">41%</span>
-        </div>
+      <!-- Verso AI Free -->
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-sm font-semibold text-brand">53%</span>
+        <div class="w-14 nav:w-20 bg-brand rounded-t-lg" style="height: calc(260px * 0.53)"></div>
+        <span class="text-xs nav:text-sm font-body text-brand text-center leading-tight mt-1">Verso AI<br/>Free</span>
       </div>
-    </div>
-    <!-- GenSpark -->
-    <div class="flex items-center gap-4">
-      <span class="text-sm font-body text-brand-muted w-[160px] text-right shrink-0">GenSpark</span>
-      <div class="flex-1 bg-[#f0f0f0] rounded-full h-10 overflow-hidden">
-        <div class="h-full bg-[#c8c8c8] rounded-full flex items-center justify-end pr-3" style="width: 16%">
-          <span class="text-white text-sm font-semibold">16%</span>
-        </div>
+      <!-- Claude for PowerPoint -->
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-sm font-semibold text-brand-muted">41%</span>
+        <div class="w-14 nav:w-20 bg-[#c8c8c8] rounded-t-lg" style="height: calc(260px * 0.41)"></div>
+        <span class="text-xs nav:text-sm font-body text-brand-muted text-center leading-tight mt-1">Claude for<br/>PowerPoint</span>
+      </div>
+      <!-- GenSpark -->
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-sm font-semibold text-brand-muted">16%</span>
+        <div class="w-14 nav:w-20 bg-[#c8c8c8] rounded-t-lg" style="height: calc(260px * 0.16)"></div>
+        <span class="text-xs nav:text-sm font-body text-brand-muted text-center leading-tight mt-1">GenSpark</span>
       </div>
     </div>
   </div>
