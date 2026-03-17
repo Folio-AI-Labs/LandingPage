@@ -41,7 +41,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Model performance at the core',
-    'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity.',
+    'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
 
     // CTA Banner
     'cta.title': 'Start working on your presentations in seconds.',
