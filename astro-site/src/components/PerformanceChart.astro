@@ -7,9 +7,6 @@
     <line x1="30" y1="40" x2="40.75" y2="40" stroke="#666666" stroke-width="1.5"/>
     <text x="26" y="44" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#999999">100%</text>
 
-    <!-- X axis (extended left by 0.75 to align with Y axis left edge) -->
-    <line x1="39.25" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
-
     <!-- Bars: baseline=280, chart height=240 (100% = y:40) -->
     <!-- Flat bottom via clipPath, rounded top via rect with rx/ry -->
     <defs>
@@ -49,5 +46,8 @@
       <tspan x="400" dy="0">GenSpark</tspan>
       <tspan x="400" dy="15">&nbsp;</tspan>
     </text>
+
+    <!-- X axis (drawn after bars so it renders on top; extended left by 0.75 to align with Y axis left edge) -->
+    <line x1="39.25" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
   </svg>
 </div>
