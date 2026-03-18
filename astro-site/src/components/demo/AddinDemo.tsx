@@ -250,38 +250,44 @@ export default function AddinDemo() {
   return (
     <div>
       {/* Tabs + Replay — centered, never cropped */}
-      <div className="flex items-center justify-center gap-3 mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+      <div className="flex flex-col items-center mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
         <div className="flex gap-1">
           <button
             onClick={() => handleTabSwitch('create')}
-            className="px-4 py-1.5 text-[13px] font-medium rounded-md transition-colors"
+            className="px-5 py-2 rounded-pill transition-colors text-left text-sm font-medium"
             style={{
               background: activeWorkflow === 'create' ? '#1a1a1a' : 'transparent',
               color: activeWorkflow === 'create' ? '#fff' : '#888',
+              border: activeWorkflow === 'create' ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
             }}
           >
-            Create from scratch
+            <span>Create from scratch</span>
+            <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>On your own theme and layouts</span>
           </button>
           <button
             onClick={() => handleTabSwitch('edit')}
-            className="px-4 py-1.5 text-[13px] font-medium rounded-md transition-colors"
+            className="px-5 py-2 rounded-pill transition-colors text-left text-sm font-medium"
             style={{
               background: activeWorkflow === 'edit' ? '#1a1a1a' : 'transparent',
               color: activeWorkflow === 'edit' ? '#fff' : '#888',
+              border: activeWorkflow === 'edit' ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
             }}
           >
-            Edit your presentation
+            <span>Edit your presentation</span>
+            <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>Works within your existing deck</span>
           </button>
         </div>
-        {phase === 'done' && (
+        {/* Fixed height so appearance of replay doesn't shift layout */}
+        <div className="h-6 mt-1 flex items-center">
           <button
             onClick={handleReplay}
             className="flex items-center gap-1.5 text-[12px] text-[#888] hover:text-[#444] transition-colors"
+            style={{ visibility: phase === 'done' ? 'visible' : 'hidden' }}
           >
             <RotateCcw className="w-3.5 h-3.5" />
             Replay
           </button>
-        )}
+        </div>
       </div>
 
       {/* Viewer — right-aligned, overflows left when narrow */}
