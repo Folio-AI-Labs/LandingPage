@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { RotateCcw } from 'lucide-react'
 import ChatPanel from './ChatPanel'
-import PresentationViewer, { defaultSlides, type SlideContent } from './PresentationViewer'
+import PresentationViewer from './PresentationViewer'
+import { defaultSlides, frenchSlide2 } from './slides'
+import type { SlideContent } from './slides'
 import './demo-styles.css'
 import type { Message, ToolCall, Phase } from './types'
 
@@ -17,73 +19,6 @@ const W1_TOOL_LABELS = [
 // --- Workflow 2: Edit existing ---
 const W2_PROMPT = 'Translate this slide to French'
 const W2_AI_TEXT = "I'll translate the current slide to French for you."
-
-const NAVY = '#0C1F3F'
-const GOLD = '#C5A55A'
-
-const frenchSlide3: SlideContent = {
-  title: 'Tendances des Prix',
-  render: () => (
-    <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-      <div className="px-6 py-2.5" style={{ background: NAVY }}>
-        <h3 className="text-[12px] font-semibold text-white">Tendances des Prix & Prévisions</h3>
-      </div>
-      <div style={{ height: '2px', background: GOLD }} />
-      <div className="flex items-center gap-5 px-6 pt-2.5 pb-1.5">
-        <div>
-          <div className="text-[5.5px] font-medium uppercase tracking-wider" style={{ color: '#595959' }}>Brent Brut</div>
-          <div className="flex items-baseline gap-1">
-            <span className="text-[16px] font-bold" style={{ color: NAVY }}>84,30 $</span>
-            <span className="text-[6px] font-semibold" style={{ color: '#16A34A' }}>+12,4 % cum. an.</span>
-          </div>
-        </div>
-        <div style={{ width: '1px', height: '22px', background: '#D9D9D9' }} />
-        <div>
-          <div className="text-[5.5px] font-medium uppercase tracking-wider" style={{ color: '#595959' }}>WTI Brut</div>
-          <div className="flex items-baseline gap-1">
-            <span className="text-[16px] font-bold" style={{ color: NAVY }}>79,85 $</span>
-            <span className="text-[6px] font-semibold" style={{ color: '#16A34A' }}>+9,7 % cum. an.</span>
-          </div>
-        </div>
-      </div>
-      <div className="flex-1 flex items-center justify-center px-6 pb-3">
-        <svg viewBox="0 0 250 95" className="w-full">
-          <rect x="30" y="5" width="205" height="60" fill="#F2F2F2" />
-          {[5, 20, 35, 50, 65].map(y => (
-            <line key={y} x1="30" y1={y} x2="235" y2={y} stroke="#D9D9D9" strokeWidth="0.5" />
-          ))}
-          <text x="27" y="8" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">95 $</text>
-          <text x="27" y="23" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">85 $</text>
-          <text x="27" y="38" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">75 $</text>
-          <text x="27" y="53" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">65 $</text>
-          <text x="27" y="68" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">55 $</text>
-          <line x1="30" y1="5" x2="30" y2="65" stroke="#808080" strokeWidth="0.6" />
-          <line x1="30" y1="65" x2="235" y2="65" stroke="#808080" strokeWidth="0.6" />
-          {[5, 20, 35, 50, 65].map(y => (
-            <line key={y} x1="27" y1={y} x2="30" y2={y} stroke="#808080" strokeWidth="0.6" />
-          ))}
-          <polyline points="47,42 81,45 115,35 149,30 183,22 217,18" fill="none" stroke="#4472C4" strokeWidth="1.5" />
-          {[[47,42],[81,45],[115,35],[149,30],[183,22],[217,18]].map(([cx,cy], i) => (
-            <rect key={i} x={cx-2} y={cy-2} width="4" height="4" fill="#4472C4" />
-          ))}
-          <polyline points="47,48 81,50 115,42 149,37 183,30 217,26" fill="none" stroke="#ED7D31" strokeWidth="1.5" />
-          {[[47,48],[81,50],[115,42],[149,37],[183,30],[217,26]].map(([cx,cy], i) => (
-            <rect key={i} x={cx-2} y={cy-2} width="4" height="4" fill="#ED7D31" />
-          ))}
-          {['Janv', 'Mars', 'Mai', 'Juil', 'Sept', 'Nov'].map((m, i) => (
-            <text key={m} x={47 + i * 34} y="73" textAnchor="middle" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">{m}</text>
-          ))}
-          <line x1="70" y1="83" x2="80" y2="83" stroke="#4472C4" strokeWidth="1.5" />
-          <rect x="74" y="81" width="4" height="4" fill="#4472C4" />
-          <text x="83" y="85" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">Brent Brut</text>
-          <line x1="120" y1="83" x2="130" y2="83" stroke="#ED7D31" strokeWidth="1.5" />
-          <rect x="124" y="81" width="4" height="4" fill="#ED7D31" />
-          <text x="133" y="85" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">WTI Brut</text>
-        </svg>
-      </div>
-    </div>
-  ),
-}
 
 // --- Shared constants ---
 const CHAR_DELAY = 28
