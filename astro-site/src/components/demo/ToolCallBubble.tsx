@@ -1,13 +1,20 @@
-import { PlusSquare, Check } from 'lucide-react'
+import { PlusSquare, Search, Check } from 'lucide-react'
+
+const TOOL_ICONS: Record<string, typeof PlusSquare> = {
+  insert_slide: PlusSquare,
+  google_search: Search,
+}
 
 interface ToolCallBubbleProps {
+  toolName: string
   label: string
   status: 'running' | 'complete'
 }
 
-export default function ToolCallBubble({ label, status }: ToolCallBubbleProps) {
+export default function ToolCallBubble({ toolName, label, status }: ToolCallBubbleProps) {
   const isRunning = status === 'running'
   const isComplete = status === 'complete'
+  const Icon = TOOL_ICONS[toolName] || PlusSquare
 
   const bgColor = isComplete
     ? 'bg-[hsl(217,91%,53%,0.12)]'
@@ -22,7 +29,7 @@ export default function ToolCallBubble({ label, status }: ToolCallBubbleProps) {
   return (
     <div className={`rounded-lg border text-[0.85em] my-1.5 ${bgColor} ${textColor} ${borderColor}`}>
       <div className="flex items-center gap-1.5 px-2.5 py-1.5">
-        <PlusSquare className="w-[1em] h-[1em] shrink-0" />
+        <Icon className="w-[1em] h-[1em] shrink-0" />
         <span className={`truncate ${isRunning ? 'demo-shimmer' : ''}`}>{label}</span>
         <span className="flex-1" />
         {isRunning && (

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { RotateCcw } from 'lucide-react'
 import ChatPanel from './ChatPanel'
 import PresentationViewer from './PresentationViewer'
 import './demo-styles.css'
@@ -17,7 +18,6 @@ const CHAR_DELAY = 28
 const AI_CHAR_DELAY = 18
 const TOOL_RUNNING_TIME = 900
 const PAUSE_SHORT = 250
-const PAUSE_BEFORE_RESTART = 4000
 
 export default function AddinDemo() {
   const [phase, setPhase] = useState<Phase>('idle')
@@ -27,7 +27,7 @@ export default function AddinDemo() {
   const [visibleSlides, setVisibleSlides] = useState<number[]>([])
   const [activeSlide, setActiveSlide] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
-  const [chatScale, setChatScale] = useState(1.12)
+  const [chatScale, setChatScale] = useState(1.25)
 
   const timeoutsRef = useRef<number[]>([])
 
@@ -98,10 +98,28 @@ export default function AddinDemo() {
     }
     elapsed += AI_TEXT.length * AI_CHAR_DELAY
 
-    // Phase 4: Tool calls
+    // Phase 4a: Google search tool call (no slide appears)
+    elapsed += PAUSE_SHORT * 2
+    schedule(() => {
+      setPhase('tools')
+      setToolCalls((prev) => [
+        ...prev,
+        { toolName: 'google_search', label: 'Searching "current oil market 2026"', status: 'running' },
+      ])
+    }, elapsed)
+    elapsed += TOOL_RUNNING_TIME / 2
+    schedule(() => {
+      setToolCalls((prev) =>
+        prev.map((tc, i) => (i === 0 ? { ...tc, status: 'complete' as const } : tc))
+      )
+    }, elapsed)
+    elapsed += PAUSE_SHORT
+
+    // Phase 4b: Insert slide tool calls
     for (let toolIdx = 0; toolIdx < 3; toolIdx++) {
       elapsed += PAUSE_SHORT * 2
       const tIdx = toolIdx
+      const tcIndex = tIdx + 1 // offset by 1 because search is index 0
       schedule(() => {
         setPhase('tools')
         setToolCalls((prev) => [
@@ -113,7 +131,7 @@ export default function AddinDemo() {
       elapsed += TOOL_RUNNING_TIME
       schedule(() => {
         setToolCalls((prev) =>
-          prev.map((tc, i) => (i === tIdx ? { ...tc, status: 'complete' as const } : tc))
+          prev.map((tc, i) => (i === tcIndex ? { ...tc, status: 'complete' as const } : tc))
         )
         setVisibleSlides((prev) => [...prev, tIdx])
         setActiveSlide(tIdx)
@@ -122,17 +140,11 @@ export default function AddinDemo() {
       elapsed += PAUSE_SHORT
     }
 
-    // Phase 5: Done
+    // Phase 5: Done — stays as-is, no restart
     elapsed += PAUSE_SHORT
     schedule(() => {
       setPhase('done')
       setIsRunning(false)
-    }, elapsed)
-
-    // Restart
-    elapsed += PAUSE_BEFORE_RESTART
-    schedule(() => {
-      runAnimation()
     }, elapsed)
   }, [resetState, schedule])
 
@@ -140,6 +152,12 @@ export default function AddinDemo() {
     runAnimation()
     return () => clearAllTimeouts()
   }, [runAnimation, clearAllTimeouts])
+
+  const handleSlideClick = useCallback((index: number) => {
+    if (phase === 'done') {
+      setActiveSlide(index)
+    }
+  }, [phase])
 
   const chatPanel = (
     <div
@@ -183,11 +201,23 @@ export default function AddinDemo() {
   )
 
   return (
-    <div style={{ width: '920px', margin: '0 auto' }}>
+    <div className="relative" style={{ width: '920px', margin: '0 auto' }}>
+      {/* Replay button — top left */}
+      {phase === 'done' && (
+        <button
+          onClick={runAnimation}
+          className="absolute flex items-center gap-1.5 text-[12px] text-[#888] hover:text-[#444] transition-colors"
+          style={{ top: '-28px', left: '0', zIndex: 30 }}
+        >
+          <RotateCcw className="w-3.5 h-3.5" />
+          Replay
+        </button>
+      )}
       <PresentationViewer
         visibleSlides={visibleSlides}
         activeSlide={activeSlide}
         sidePanel={chatPanel}
+        onSlideClick={phase === 'done' ? handleSlideClick : undefined}
       />
     </div>
   )

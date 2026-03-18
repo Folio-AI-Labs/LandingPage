@@ -48,7 +48,7 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
           {/* Tool calls — rendered inside the last assistant message area */}
           {toolCalls.map((tc, i) => (
             <div key={i} className="px-3 py-0.5">
-              <ToolCallBubble label={tc.label} status={tc.status} />
+              <ToolCallBubble toolName={tc.toolName} label={tc.label} status={tc.status} />
             </div>
           ))}
 
