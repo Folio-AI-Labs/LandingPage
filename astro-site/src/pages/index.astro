@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 import PerformanceChart from '../components/PerformanceChart.astro';
+import AddinDemo from '../components/demo/AddinDemo';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -41,6 +42,17 @@ const t = useTranslations(lang);
       </div>
     </div>
     <div></div>
+  </section>
+
+  <!-- Demo Animation -->
+  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-white" id="demo-animation">
+    <div class="max-w-[1200px] mx-auto text-center">
+      <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-5">Prompt to presentation in seconds</h2>
+      <p class="text-lg leading-relaxed text-brand-muted mb-10 max-w-narrow mx-auto">Directly in PowerPoint</p>
+      <div class="text-left">
+        <AddinDemo client:visible />
+      </div>
+    </div>
   </section>
 
   <!-- Intelligence Section -->

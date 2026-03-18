@@ -1,0 +1,64 @@
+.demo-chat {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 4%;
+  --primary: 217 91% 53%;
+  --muted: 0 0% 95%;
+  --muted-foreground: 0 0% 46%;
+  --border: 0 0% 90%;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-size: 14px;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+/* Thinking dot — opacity + scale */
+@keyframes demo-dot-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0; transform: scale(0.6); }
+}
+
+/* Text cursor — just opacity */
+@keyframes demo-caret-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes demo-shimmer {
+  0% { background-position: 100% 0; }
+  65%, 100% { background-position: 0 0; }
+}
+
+@keyframes demo-slideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes demo-scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.demo-dot-blink {
+  animation: demo-dot-blink 1.2s ease-in-out infinite;
+}
+
+.demo-caret {
+  animation: demo-caret-blink 0.8s step-end infinite;
+}
+
+.demo-shimmer {
+  background: linear-gradient(90deg, currentColor 40%, transparent 50%, currentColor 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: demo-shimmer 1.5s ease-in-out infinite;
+}
+
+.demo-slide-in {
+  animation: demo-slideIn 500ms ease-out both;
+}
+
+.demo-scale-in {
+  animation: demo-scaleIn 400ms ease-out both;
+}
