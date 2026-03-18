@@ -1,8 +1,9 @@
-import { PlusSquare, Search, Check } from 'lucide-react'
+import { PlusSquare, Search, Sparkles, Check } from 'lucide-react'
 
 const TOOL_ICONS: Record<string, typeof PlusSquare> = {
   insert_slide: PlusSquare,
   google_search: Search,
+  edit_slide: Sparkles,
 }
 
 interface ToolCallBubbleProps {
