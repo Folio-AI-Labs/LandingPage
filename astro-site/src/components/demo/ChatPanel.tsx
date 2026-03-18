@@ -63,26 +63,21 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
 
       {/* Composer — matches ComposerPrimitive.Root: flex items-center rounded-lg border */}
       <div className="p-2 border-t shrink-0">
-        <div className="flex items-center rounded-lg border border-[hsl(0,0%,90%)] bg-white">
-          {/* Paperclip: ml-1.5 p-1.5 text-muted-foreground */}
-          <button className="ml-1.5 p-1.5 text-[hsl(0,0%,46%)]" tabIndex={-1}>
+        <div className="flex items-center rounded-lg border border-[hsl(217,91%,53%)] shadow-sm bg-white transition-all">
+          <button className="ml-1.5 p-1.5 text-[hsl(0,0%,46%)] rounded" tabIndex={-1}>
             <Paperclip className="w-4 h-4" />
           </button>
-          {/* Input area: min-h-[38px] flex-grow px-2 py-2 */}
-          <div className="flex-grow min-h-[38px] px-2 py-2 text-[13px] text-[hsl(0,0%,4%)] flex items-center">
+          <div className="flex-grow min-h-[38px] max-h-48 px-2 py-2 text-[13px] text-[hsl(0,0%,4%)]">
             {composerText || (
-              <span className="text-[hsl(0,0%,46%)] italic text-[13px]">Ask Verso to edit your slides</span>
+              <span className="text-[hsl(0,0%,46%)] italic">Ask Verso to edit your slides</span>
             )}
           </div>
-          {/* Send/Stop button: h-7 w-7 */}
           {isRunning ? (
-            /* Stop: mr-0.5 rounded bg-primary text-primary-foreground, Square w-3.5 h-3.5 fill-current */
-            <button className="mr-0.5 flex h-7 w-7 items-center justify-center rounded bg-[hsl(217,91%,53%)] text-white" tabIndex={-1}>
+            <button className="mr-1.5 flex h-7 w-7 items-center justify-center rounded bg-[hsl(217,91%,53%)] text-white" tabIndex={-1}>
               <Square className="w-3.5 h-3.5 fill-current" />
             </button>
           ) : (
-            /* Send: mr-1.5 text-primary, Send w-5 h-5 */
-            <button className="mr-1.5 flex h-7 w-7 items-center justify-center text-[hsl(217,91%,53%)]" tabIndex={-1}>
+            <button className="mr-1.5 flex h-7 w-7 items-center justify-center text-[hsl(217,91%,53%)] transition-all" tabIndex={-1}>
               <Send className="w-5 h-5" />
             </button>
           )}
