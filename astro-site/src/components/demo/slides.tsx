@@ -5,6 +5,8 @@ export interface SlideContent {
 
 const NAVY = '#0C1F3F'
 const GOLD = '#C5A55A'
+const MID = '#2D5F8A'
+const PALE = '#D4C4A0'
 
 export const defaultSlides: SlideContent[] = [
   {
@@ -17,7 +19,7 @@ export const defaultSlides: SlideContent[] = [
             Market Analysis
           </div>
           <h3 className="text-[18px] font-bold text-white mb-1.5 leading-tight" style={{ letterSpacing: '-0.01em' }}>
-            The Current<br />Oil Market
+            Outlook on the<br />Current Oil Market
           </h3>
           <div className="w-8 mt-2 mb-3" style={{ height: '1.5px', background: GOLD }} />
           <p className="text-[8px] font-normal" style={{ color: '#8CA3C4' }}>
@@ -34,7 +36,6 @@ export const defaultSlides: SlideContent[] = [
   {
     title: 'Supply & Demand',
     render: () => {
-      const kpiStyle = { background: '#F2F2F2', border: '1px solid #D9D9D9' }
       return (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: NAVY }}>
@@ -44,18 +45,18 @@ export const defaultSlides: SlideContent[] = [
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
           <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
             {[
-              { color: '#4472C4', label: 'Global Demand', value: '104.5M', unit: 'bbl/day', sub: '+0.9M YoY', subColor: '#16A34A' },
-              { color: '#ED7D31', label: 'Global Supply', value: '106.1M', unit: 'bbl/day', sub: '+3.0M YoY', subColor: '#16A34A' },
-              { color: '#A5A5A5', label: 'US Production', value: '13.6M', unit: 'bbl/day', sub: 'Plateau', subColor: '#595959' },
+              { color: GOLD, label: 'Global Demand', value: '104.5M', unit: 'bbl/day', sub: '+0.9M YoY', subColor: '#6BCB77' },
+              { color: MID, label: 'Global Supply', value: '106.1M', unit: 'bbl/day', sub: '+3.0M YoY', subColor: '#6BCB77' },
+              { color: PALE, label: 'US Production', value: '13.6M', unit: 'bbl/day', sub: 'Plateau', subColor: '#8CA3C4' },
             ].map((kpi, i) => (
-              <div key={i} className="px-1.5 py-1.5" style={kpiStyle}>
+              <div key={i} className="px-1.5 py-1.5" style={{ background: NAVY }}>
                 <div className="flex items-center gap-1 mb-0.5">
                   <div style={{ width: '4px', height: '4px', background: kpi.color }} />
-                  <span className="text-[4.5px] font-semibold" style={{ color: NAVY }}>{kpi.label}</span>
+                  <span className="text-[4.5px] font-semibold" style={{ color: '#8CA3C4' }}>{kpi.label}</span>
                 </div>
                 <div>
-                  <span className="text-[9px] font-bold" style={{ color: NAVY }}>{kpi.value}</span>
-                  <span className="text-[3.5px] ml-0.5" style={{ color: '#595959' }}>{kpi.unit}</span>
+                  <span className="text-[9px] font-bold text-white">{kpi.value}</span>
+                  <span className="text-[3.5px] ml-0.5" style={{ color: '#8CA3C4' }}>{kpi.unit}</span>
                 </div>
                 <div className="text-[3.5px]" style={{ color: kpi.subColor }}>{kpi.sub}</div>
               </div>
@@ -77,12 +78,12 @@ export const defaultSlides: SlideContent[] = [
                 {[5, 25, 45, 65, 85].map(y => (
                   <line key={`t${y}`} x1="22" y1={y} x2="25" y2={y} stroke="#808080" strokeWidth="0.5" />
                 ))}
-                <rect x="35" y="51" width="12" height="34" fill="#4472C4" />
-                <rect x="49" y="50" width="12" height="35" fill="#ED7D31" />
-                <rect x="70" y="34.5" width="12" height="50.5" fill="#4472C4" />
-                <rect x="84" y="42.5" width="12" height="42.5" fill="#ED7D31" />
-                <rect x="105" y="19" width="12" height="66" fill="#4472C4" />
-                <rect x="119" y="34.5" width="12" height="50.5" fill="#ED7D31" />
+                <rect x="35" y="51" width="12" height="34" fill={NAVY} />
+                <rect x="49" y="50" width="12" height="35" fill={GOLD} />
+                <rect x="70" y="34.5" width="12" height="50.5" fill={NAVY} />
+                <rect x="84" y="42.5" width="12" height="42.5" fill={GOLD} />
+                <rect x="105" y="19" width="12" height="66" fill={NAVY} />
+                <rect x="119" y="34.5" width="12" height="50.5" fill={GOLD} />
                 <text x="41" y="48" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">102.8</text>
                 <text x="55" y="47" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">103.0</text>
                 <text x="76" y="31.5" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">104.5</text>
@@ -99,9 +100,9 @@ export const defaultSlides: SlideContent[] = [
                 <text x="48" y="93" textAnchor="middle" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">2024</text>
                 <text x="83" y="93" textAnchor="middle" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">2025</text>
                 <text x="118" y="93" textAnchor="middle" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">2026E</text>
-                <rect x="40" y="100" width="5" height="5" fill="#4472C4" />
+                <rect x="40" y="100" width="5" height="5" fill={NAVY} />
                 <text x="48" y="104" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">Supply</text>
-                <rect x="78" y="100" width="5" height="5" fill="#ED7D31" />
+                <rect x="78" y="100" width="5" height="5" fill={GOLD} />
                 <text x="86" y="104" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">Demand</text>
                 <text x="77" y="114" textAnchor="middle" fontSize="4" fill="#808080" fontFamily="Calibri, sans-serif">Global Liquids (M bbl/day)</text>
               </svg>
@@ -136,61 +137,140 @@ export const defaultSlides: SlideContent[] = [
     title: 'Price Trends',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-6 py-2.5" style={{ background: NAVY }}>
-          <h3 className="text-[12px] font-semibold text-white">Price Trends & Forecast</h3>
+        <div className="px-5 py-2" style={{ background: NAVY }}>
+          <h3 className="text-[11px] font-semibold text-white">Price Trends & Forecast</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
-        <div className="flex items-center gap-5 px-6 pt-2.5 pb-1.5">
-          <div>
-            <div className="text-[5.5px] font-medium uppercase tracking-wider" style={{ color: '#595959' }}>Brent Crude</div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-[16px] font-bold" style={{ color: NAVY }}>$84.30</span>
-              <span className="text-[6px] font-semibold" style={{ color: '#16A34A' }}>+12.4% YTD</span>
+        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 min-h-0">
+          {/* Left: compact line chart */}
+          <div className="flex flex-col" style={{ width: '220px', flexShrink: 0 }}>
+            {/* Price callouts */}
+            <div className="flex items-center gap-4 pb-1.5">
+              <div>
+                <div className="text-[4.5px] font-medium uppercase tracking-wider" style={{ color: '#595959' }}>Brent Crude</div>
+                <div className="flex items-baseline gap-0.5">
+                  <span className="text-[12px] font-bold" style={{ color: NAVY }}>$84.30</span>
+                  <span className="text-[5px] font-semibold" style={{ color: '#16A34A' }}>+12.4%</span>
+                </div>
+              </div>
+              <div style={{ width: '1px', height: '18px', background: '#D9D9D9' }} />
+              <div>
+                <div className="text-[4.5px] font-medium uppercase tracking-wider" style={{ color: '#595959' }}>WTI Crude</div>
+                <div className="flex items-baseline gap-0.5">
+                  <span className="text-[12px] font-bold" style={{ color: NAVY }}>$79.85</span>
+                  <span className="text-[5px] font-semibold" style={{ color: '#16A34A' }}>+9.7%</span>
+                </div>
+              </div>
+            </div>
+            {/* Line chart */}
+            <div className="flex-1">
+              <svg viewBox="0 0 200 80" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                <rect x="25" y="3" width="165" height="50" fill="#F2F2F2" />
+                {[3, 15.5, 28, 40.5, 53].map(y => (
+                  <line key={y} x1="25" y1={y} x2="190" y2={y} stroke="#D9D9D9" strokeWidth="0.4" />
+                ))}
+                <text x="22" y="6" textAnchor="end" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">$95</text>
+                <text x="22" y="18" textAnchor="end" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">$85</text>
+                <text x="22" y="31" textAnchor="end" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">$75</text>
+                <text x="22" y="43" textAnchor="end" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">$65</text>
+                <text x="22" y="56" textAnchor="end" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">$55</text>
+                <line x1="25" y1="3" x2="25" y2="53" stroke="#808080" strokeWidth="0.5" />
+                <line x1="25" y1="53" x2="190" y2="53" stroke="#808080" strokeWidth="0.5" />
+                {[3, 15.5, 28, 40.5, 53].map(y => (
+                  <line key={`t${y}`} x1="22" y1={y} x2="25" y2={y} stroke="#808080" strokeWidth="0.5" />
+                ))}
+                {/* Brent */}
+                <polyline points="38,34 65,36 92,28 119,24 146,17 173,14" fill="none" stroke={NAVY} strokeWidth="1.2" />
+                {[[38,34],[65,36],[92,28],[119,24],[146,17],[173,14]].map(([cx,cy], i) => (
+                  <rect key={i} x={cx-1.5} y={cy-1.5} width="3" height="3" fill={NAVY} />
+                ))}
+                {/* WTI */}
+                <polyline points="38,38 65,40 92,34 119,30 146,24 173,21" fill="none" stroke={GOLD} strokeWidth="1.2" />
+                {[[38,38],[65,40],[92,34],[119,30],[146,24],[173,21]].map(([cx,cy], i) => (
+                  <rect key={i} x={cx-1.5} y={cy-1.5} width="3" height="3" fill={GOLD} />
+                ))}
+                {['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov'].map((m, i) => (
+                  <text key={m} x={38 + i * 27} y="60" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">{m}</text>
+                ))}
+                {/* Legend */}
+                <line x1="55" y1="68" x2="65" y2="68" stroke={NAVY} strokeWidth="1.2" />
+                <rect x="59" y="66.5" width="3" height="3" fill={NAVY} />
+                <text x="68" y="70" fontSize="3.5" fill="#595959" fontFamily="Calibri, sans-serif">Brent Crude</text>
+                <line x1="105" y1="68" x2="115" y2="68" stroke={GOLD} strokeWidth="1.2" />
+                <rect x="109" y="66.5" width="3" height="3" fill={GOLD} />
+                <text x="118" y="70" fontSize="3.5" fill="#595959" fontFamily="Calibri, sans-serif">WTI Crude</text>
+              </svg>
             </div>
           </div>
-          <div style={{ width: '1px', height: '22px', background: '#D9D9D9' }} />
-          <div>
-            <div className="text-[5.5px] font-medium uppercase tracking-wider" style={{ color: '#595959' }}>WTI Crude</div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-[16px] font-bold" style={{ color: NAVY }}>$79.85</span>
-              <span className="text-[6px] font-semibold" style={{ color: '#16A34A' }}>+9.7% YTD</span>
+          {/* Right: title + donut + text — fills full height */}
+          <div className="flex-1 flex flex-col justify-between min-h-0">
+            {/* Emphasized message */}
+            <div>
+              <div className="text-[8px] font-bold leading-tight" style={{ color: NAVY }}>
+                Supply surplus set to cap upside beyond Q2 2026
+              </div>
+              <div className="mt-1" style={{ height: '1.5px', width: '30px', background: GOLD }} />
+            </div>
+            {/* Donut chart — demand by sector */}
+            <div className="flex items-center gap-2.5">
+              <svg viewBox="0 0 80 80" width="65" height="65" className="shrink-0">
+                <circle cx="40" cy="40" r="28" fill="none" stroke={NAVY} strokeWidth="12"
+                  strokeDasharray={`${0.57 * 175.9} ${175.9}`} strokeDashoffset="0" transform="rotate(-90 40 40)" />
+                <circle cx="40" cy="40" r="28" fill="none" stroke={GOLD} strokeWidth="12"
+                  strokeDasharray={`${0.16 * 175.9} ${175.9}`} strokeDashoffset={`${-0.57 * 175.9}`} transform="rotate(-90 40 40)" />
+                <circle cx="40" cy="40" r="28" fill="none" stroke={MID} strokeWidth="12"
+                  strokeDasharray={`${0.14 * 175.9} ${175.9}`} strokeDashoffset={`${-0.73 * 175.9}`} transform="rotate(-90 40 40)" />
+                <circle cx="40" cy="40" r="28" fill="none" stroke={PALE} strokeWidth="12"
+                  strokeDasharray={`${0.13 * 175.9} ${175.9}`} strokeDashoffset={`${-0.87 * 175.9}`} transform="rotate(-90 40 40)" />
+                <text x="40" y="38" textAnchor="middle" fontSize="6" fontWeight="700" fill={NAVY} fontFamily="Calibri, sans-serif">104.5M</text>
+                <text x="40" y="45" textAnchor="middle" fontSize="3.5" fill="#595959" fontFamily="Calibri, sans-serif">bbl/day</text>
+              </svg>
+              <div className="flex flex-col gap-1">
+                <div className="text-[5px] font-bold" style={{ color: NAVY }}>Demand by Sector</div>
+                {[
+                  { color: NAVY, label: 'Transport', pct: '57%' },
+                  { color: GOLD, label: 'Industry', pct: '16%' },
+                  { color: MID, label: 'Petrochemicals', pct: '14%' },
+                  { color: PALE, label: 'Other', pct: '13%' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-1">
+                    <div style={{ width: '4px', height: '4px', background: item.color }} />
+                    <span className="text-[4px]" style={{ color: '#595959' }}>{item.label}</span>
+                    <span className="text-[4px] font-semibold" style={{ color: NAVY }}>{item.pct}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Two text blocks with titled icons */}
+            <div className="flex flex-col gap-2">
+              <div>
+                <div className="flex items-center gap-1 mb-0.5">
+                  <svg viewBox="0 0 12 12" width="7" height="7" className="shrink-0">
+                    <polyline points="1,9 4,4 7,6 11,1" fill="none" stroke={NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="text-[5px] font-bold" style={{ color: NAVY }}>Price Forecast</span>
+                </div>
+                <div className="text-[4.5px] leading-[1.5]" style={{ color: '#404040' }}>
+                  {"EIA forecasts Brent above $95/bbl through Q2 as Middle East risk premia persist and OPEC+ delays full unwind. Prices expected to ease toward $70/bbl by Q4 as 1.9M bbl/day inventory build materializes. Goldman Sachs base case sees Brent at $71/bbl by Q4 2026 and WTI at $67/bbl, reflecting expectations of a well-supplied market. J.P. Morgan estimates a floor at $65/bbl driven by marginal cost support from US shale producers, while upside scenarios tied to further Middle East escalation could push Brent toward $110/bbl. The forward curve remains in backwardation, signaling near-term tightness despite medium-term surplus expectations."}
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center gap-1 mb-0.5">
+                  <svg viewBox="0 0 12 12" width="7" height="7" className="shrink-0">
+                    <circle cx="6" cy="6" r="5" fill="none" stroke={NAVY} strokeWidth="1.2" />
+                    <path d="M6,3 L6,6.5 L8.5,8" fill="none" stroke={NAVY} strokeWidth="1.2" strokeLinecap="round" />
+                  </svg>
+                  <span className="text-[5px] font-bold" style={{ color: NAVY }}>Key Risks & Catalysts</span>
+                </div>
+                <div className="text-[4.5px] leading-[1.5]" style={{ color: '#404040' }}>
+                  {"Transport electrification eroding gasoline demand growth, but petrochemical feedstock and aviation fuel remain structurally resilient through 2030. Downside: faster-than-expected OPEC+ supply return could add 2M+ bbl/day and collapse spreads. Upside: escalation of Red Sea disruptions or broader Middle East conflict. Asian refining margins supportive with crack spreads $8\u201310/bbl above 5-year norms, underpinning crude demand from Indian and Chinese processors. US SPR at multi-decade lows limits government capacity to intervene in future supply shocks."}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex-1 flex items-center justify-center px-6 pb-3">
-          <svg viewBox="0 0 250 95" className="w-full">
-            <rect x="30" y="5" width="205" height="60" fill="#F2F2F2" />
-            {[5, 20, 35, 50, 65].map(y => (
-              <line key={y} x1="30" y1={y} x2="235" y2={y} stroke="#D9D9D9" strokeWidth="0.5" />
-            ))}
-            <text x="27" y="8" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">$95</text>
-            <text x="27" y="23" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">$85</text>
-            <text x="27" y="38" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">$75</text>
-            <text x="27" y="53" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">$65</text>
-            <text x="27" y="68" textAnchor="end" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">$55</text>
-            <line x1="30" y1="5" x2="30" y2="65" stroke="#808080" strokeWidth="0.6" />
-            <line x1="30" y1="65" x2="235" y2="65" stroke="#808080" strokeWidth="0.6" />
-            {[5, 20, 35, 50, 65].map(y => (
-              <line key={y} x1="27" y1={y} x2="30" y2={y} stroke="#808080" strokeWidth="0.6" />
-            ))}
-            <polyline points="47,42 81,45 115,35 149,30 183,22 217,18" fill="none" stroke="#4472C4" strokeWidth="1.5" />
-            {[[47,42],[81,45],[115,35],[149,30],[183,22],[217,18]].map(([cx,cy], i) => (
-              <rect key={i} x={cx-2} y={cy-2} width="4" height="4" fill="#4472C4" />
-            ))}
-            <polyline points="47,48 81,50 115,42 149,37 183,30 217,26" fill="none" stroke="#ED7D31" strokeWidth="1.5" />
-            {[[47,48],[81,50],[115,42],[149,37],[183,30],[217,26]].map(([cx,cy], i) => (
-              <rect key={i} x={cx-2} y={cy-2} width="4" height="4" fill="#ED7D31" />
-            ))}
-            {['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov'].map((m, i) => (
-              <text key={m} x={47 + i * 34} y="73" textAnchor="middle" fontSize="5" fill="#595959" fontFamily="Calibri, sans-serif">{m}</text>
-            ))}
-            <line x1="70" y1="83" x2="80" y2="83" stroke="#4472C4" strokeWidth="1.5" />
-            <rect x="74" y="81" width="4" height="4" fill="#4472C4" />
-            <text x="83" y="85" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">Brent Crude</text>
-            <line x1="120" y1="83" x2="130" y2="83" stroke="#ED7D31" strokeWidth="1.5" />
-            <rect x="124" y="81" width="4" height="4" fill="#ED7D31" />
-            <text x="133" y="85" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">WTI Crude</text>
-          </svg>
+        <div className="px-4 pb-0.5">
+          <span className="text-[3.5px]" style={{ color: '#A0A0A0' }}>Source: IEA Oil Market Report, EIA STEO, J.P. Morgan Global Research — March 2026</span>
         </div>
       </div>
     ),
@@ -210,9 +290,9 @@ export const frenchSlide2: SlideContent = {
       <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
         <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
           {[
-            { color: '#4472C4', label: 'Demande mondiale', value: '104,5M', unit: 'bbl/j', sub: '+0,9M sur un an', subColor: '#16A34A' },
-            { color: '#ED7D31', label: 'Offre mondiale', value: '106,1M', unit: 'bbl/j', sub: '+3,0M sur un an', subColor: '#16A34A' },
-            { color: '#A5A5A5', label: 'Prod. US', value: '13,6M', unit: 'bbl/j', sub: 'Plateau', subColor: '#595959' },
+            { color: NAVY, label: 'Demande mondiale', value: '104,5M', unit: 'bbl/j', sub: '+0,9M sur un an', subColor: '#16A34A' },
+            { color: GOLD, label: 'Offre mondiale', value: '106,1M', unit: 'bbl/j', sub: '+3,0M sur un an', subColor: '#16A34A' },
+            { color: MID, label: 'Prod. US', value: '13,6M', unit: 'bbl/j', sub: 'Plateau', subColor: '#595959' },
           ].map((kpi, i) => (
             <div key={i} className="px-1.5 py-1.5" style={kpiStyle}>
               <div className="flex items-center gap-1 mb-0.5">
@@ -239,12 +319,12 @@ export const frenchSlide2: SlideContent = {
               <line x1="25" y1="5" x2="25" y2="85" stroke="#808080" strokeWidth="0.5" />
               <line x1="25" y1="85" x2="130" y2="85" stroke="#808080" strokeWidth="0.5" />
               {[5, 25, 45, 65, 85].map(y => (<line key={`t${y}`} x1="22" y1={y} x2="25" y2={y} stroke="#808080" strokeWidth="0.5" />))}
-              <rect x="35" y="51" width="12" height="34" fill="#4472C4" />
-              <rect x="49" y="50" width="12" height="35" fill="#ED7D31" />
-              <rect x="70" y="34.5" width="12" height="50.5" fill="#4472C4" />
-              <rect x="84" y="42.5" width="12" height="42.5" fill="#ED7D31" />
-              <rect x="105" y="19" width="12" height="66" fill="#4472C4" />
-              <rect x="119" y="34.5" width="12" height="50.5" fill="#ED7D31" />
+              <rect x="35" y="51" width="12" height="34" fill={NAVY} />
+              <rect x="49" y="50" width="12" height="35" fill={GOLD} />
+              <rect x="70" y="34.5" width="12" height="50.5" fill={NAVY} />
+              <rect x="84" y="42.5" width="12" height="42.5" fill={GOLD} />
+              <rect x="105" y="19" width="12" height="66" fill={NAVY} />
+              <rect x="119" y="34.5" width="12" height="50.5" fill={GOLD} />
               <text x="41" y="48" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">102,8</text>
               <text x="55" y="47" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">103,0</text>
               <text x="76" y="31.5" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">104,5</text>
@@ -261,9 +341,9 @@ export const frenchSlide2: SlideContent = {
               <text x="48" y="93" textAnchor="middle" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">2024</text>
               <text x="83" y="93" textAnchor="middle" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">2025</text>
               <text x="118" y="93" textAnchor="middle" fontSize="4.5" fill="#595959" fontFamily="Calibri, sans-serif">2026E</text>
-              <rect x="40" y="100" width="5" height="5" fill="#4472C4" />
+              <rect x="40" y="100" width="5" height="5" fill={NAVY} />
               <text x="48" y="104" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">Offre</text>
-              <rect x="78" y="100" width="5" height="5" fill="#ED7D31" />
+              <rect x="78" y="100" width="5" height="5" fill={GOLD} />
               <text x="86" y="104" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">Demande</text>
               <text x="77" y="114" textAnchor="middle" fontSize="4" fill="#808080" fontFamily="Calibri, sans-serif">Liquides mondiaux (M bbl/j)</text>
             </svg>

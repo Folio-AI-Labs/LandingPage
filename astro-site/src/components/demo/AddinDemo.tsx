@@ -11,7 +11,7 @@ import type { Message, ToolCall, Phase } from './types'
 const W1_PROMPT = 'Can you make me a 3 slides presentation on the current oil market?'
 const W1_AI_TEXT = "I'll create a 3-slide presentation on the current oil market for you."
 const W1_TOOL_LABELS = [
-  'Inserting title slide — "The Current Oil Market"',
+  'Inserting title slide — "Outlook on the Current Oil Market"',
   'Inserting slide — "Supply & Demand Overview"',
   'Inserting slide — "Price Trends & Forecast"',
 ]
