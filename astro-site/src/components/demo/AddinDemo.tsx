@@ -9,7 +9,7 @@ import type { Message, ToolCall, Phase } from './types'
 
 // --- Workflow 1: Create from scratch ---
 const W1_PROMPT = 'Can you make me a 3 slides presentation on the current oil market?'
-const W1_AI_TEXT = "I'll create a 3-slide presentation on the current oil market for you."
+const W1_AI_TEXT = "I'll create a 3-slide presentation on the current oil market."
 const W1_TOOL_LABELS = [
   'Inserting title slide — "Outlook on the Current Oil Market"',
   'Inserting slide — "Supply & Demand Overview"',
@@ -18,7 +18,7 @@ const W1_TOOL_LABELS = [
 
 // --- Workflow 2: Edit existing ---
 const W2_PROMPT = 'Translate this slide to French'
-const W2_AI_TEXT = "I'll translate the current slide to French for you."
+const W2_AI_TEXT = "Translating to French: c'est parti!"
 
 // --- Shared constants ---
 const CHAR_DELAY = 28

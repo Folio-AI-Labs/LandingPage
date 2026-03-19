@@ -280,7 +280,6 @@ export const defaultSlides: SlideContent[] = [
 export const frenchSlide2: SlideContent = {
   title: 'Offre & Demande',
   render: () => {
-    const kpiStyle = { background: '#F2F2F2', border: '1px solid #D9D9D9' }
     return (
     <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
       <div className="px-5 py-2" style={{ background: NAVY }}>
@@ -290,18 +289,18 @@ export const frenchSlide2: SlideContent = {
       <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
         <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
           {[
-            { color: NAVY, label: 'Demande mondiale', value: '104,5M', unit: 'bbl/j', sub: '+0,9M sur un an', subColor: '#16A34A' },
-            { color: GOLD, label: 'Offre mondiale', value: '106,1M', unit: 'bbl/j', sub: '+3,0M sur un an', subColor: '#16A34A' },
-            { color: MID, label: 'Prod. US', value: '13,6M', unit: 'bbl/j', sub: 'Plateau', subColor: '#595959' },
+            { color: GOLD, label: 'Demande mondiale', value: '104,5M', unit: 'bbl/j', sub: '+0,9M sur un an', subColor: '#6BCB77' },
+            { color: MID, label: 'Offre mondiale', value: '106,1M', unit: 'bbl/j', sub: '+3,0M sur un an', subColor: '#6BCB77' },
+            { color: PALE, label: 'Prod. US', value: '13,6M', unit: 'bbl/j', sub: 'Plateau', subColor: '#8CA3C4' },
           ].map((kpi, i) => (
-            <div key={i} className="px-1.5 py-1.5" style={kpiStyle}>
+            <div key={i} className="px-1.5 py-1.5" style={{ background: NAVY }}>
               <div className="flex items-center gap-1 mb-0.5">
                 <div style={{ width: '4px', height: '4px', background: kpi.color }} />
-                <span className="text-[4.5px] font-semibold" style={{ color: NAVY }}>{kpi.label}</span>
+                <span className="text-[4.5px] font-semibold" style={{ color: '#8CA3C4' }}>{kpi.label}</span>
               </div>
               <div>
-                <span className="text-[9px] font-bold" style={{ color: NAVY }}>{kpi.value}</span>
-                <span className="text-[3.5px] ml-0.5" style={{ color: '#595959' }}>{kpi.unit}</span>
+                <span className="text-[9px] font-bold text-white">{kpi.value}</span>
+                <span className="text-[3.5px] ml-0.5" style={{ color: '#8CA3C4' }}>{kpi.unit}</span>
               </div>
               <div className="text-[3.5px]" style={{ color: kpi.subColor }}>{kpi.sub}</div>
             </div>
