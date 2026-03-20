@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { RotateCcw } from 'lucide-react'
 import ChatPanel from './ChatPanel'
 import PresentationViewer from './PresentationViewer'
 import { defaultSlides, frenchSlide2, blankSlide } from './slides'
@@ -54,6 +53,8 @@ export default function AddinDemo() {
     return id
   }, [])
 
+  const autoplayRef = useRef(false)
+
   // --- Workflow 1: Create from scratch ---
   const runCreateWorkflow = useCallback(() => {
     clearAllTimeouts()
@@ -67,17 +68,15 @@ export default function AddinDemo() {
     setIsRunning(false)
     setChatScale(1.25)
 
-    let elapsed = 0
-    const startAt = Math.floor(W1_PROMPT.length / 2)
+    let elapsed = autoplayRef.current ? 100 : 0
 
     elapsed += 100
-    schedule(() => { setPhase('typing'); setComposerText(W1_PROMPT.slice(0, startAt)) }, elapsed)
-    elapsed += 200
-    for (let i = startAt; i <= W1_PROMPT.length; i++) {
+    schedule(() => setPhase('typing'), elapsed)
+    for (let i = 1; i <= W1_PROMPT.length; i++) {
       const ci = i
-      schedule(() => setComposerText(W1_PROMPT.slice(0, ci)), elapsed + (i - startAt) * CHAR_DELAY)
+      schedule(() => setComposerText(W1_PROMPT.slice(0, ci)), elapsed + i * CHAR_DELAY)
     }
-    elapsed += (W1_PROMPT.length - startAt) * CHAR_DELAY
+    elapsed += W1_PROMPT.length * CHAR_DELAY
 
     elapsed += PAUSE_SHORT
     schedule(() => {
@@ -131,6 +130,9 @@ export default function AddinDemo() {
 
     elapsed += PAUSE_SHORT
     schedule(() => { setPhase('done'); setIsRunning(false) }, elapsed)
+    // Auto-switch to edit workflow after a pause
+    elapsed += 1500
+    schedule(() => { autoplayRef.current = true; setActiveWorkflow('edit') }, elapsed)
   }, [clearAllTimeouts, schedule])
 
   // --- Workflow 2: Edit existing ---
@@ -146,17 +148,15 @@ export default function AddinDemo() {
     setIsRunning(false)
     setChatScale(1.25)
 
-    let elapsed = 0
-    const startAt = Math.floor(W2_PROMPT.length / 2)
+    let elapsed = autoplayRef.current ? 100 : 0
 
     elapsed += 100
-    schedule(() => { setPhase('typing'); setComposerText(W2_PROMPT.slice(0, startAt)) }, elapsed)
-    elapsed += 200
-    for (let i = startAt; i <= W2_PROMPT.length; i++) {
+    schedule(() => setPhase('typing'), elapsed)
+    for (let i = 1; i <= W2_PROMPT.length; i++) {
       const ci = i
-      schedule(() => setComposerText(W2_PROMPT.slice(0, ci)), elapsed + (i - startAt) * CHAR_DELAY)
+      schedule(() => setComposerText(W2_PROMPT.slice(0, ci)), elapsed + i * CHAR_DELAY)
     }
-    elapsed += (W2_PROMPT.length - startAt) * CHAR_DELAY
+    elapsed += W2_PROMPT.length * CHAR_DELAY
 
     elapsed += PAUSE_SHORT
     schedule(() => {
@@ -212,6 +212,9 @@ export default function AddinDemo() {
 
     elapsed += PAUSE_SHORT
     schedule(() => { setPhase('done') }, elapsed)
+    // Auto-switch to create workflow after a pause
+    elapsed += 1500
+    schedule(() => { autoplayRef.current = true; setActiveWorkflow('create') }, elapsed)
   }, [clearAllTimeouts, schedule])
 
   // Run animation when workflow changes
@@ -225,13 +228,9 @@ export default function AddinDemo() {
     setActiveSlide(index)
   }, [])
 
-  const handleReplay = useCallback(() => {
-    if (activeWorkflow === 'create') runCreateWorkflow()
-    else runEditWorkflow()
-  }, [activeWorkflow, runCreateWorkflow, runEditWorkflow])
-
   const handleTabSwitch = useCallback((workflow: Workflow) => {
     if (workflow !== activeWorkflow) {
+      autoplayRef.current = false
       setActiveWorkflow(workflow)
     }
   }, [activeWorkflow])
@@ -319,17 +318,6 @@ export default function AddinDemo() {
     </div>
   )
 
-  const replayButton = (
-    <button
-      onClick={handleReplay}
-      className="flex items-center gap-1.5 text-[12px] text-[#888] hover:text-[#444] transition-colors"
-      style={{ visibility: phase === 'done' ? 'visible' : 'hidden' }}
-    >
-      <RotateCcw className="w-3.5 h-3.5" />
-      Replay
-    </button>
-  )
-
   const viewer = (
     <PresentationViewer
       slides={slides}
@@ -351,9 +339,6 @@ export default function AddinDemo() {
         <div className="demo-viewer-inner">
           {viewer}
         </div>
-      </div>
-      <div className="flex justify-center mt-2">
-        {replayButton}
       </div>
     </div>
   )
