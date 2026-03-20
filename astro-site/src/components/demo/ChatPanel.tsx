@@ -21,20 +21,19 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
   }, [messages, toolCalls, isTyping])
 
   return (
-    <div className="demo-chat flex flex-col flex-1 min-h-0 overflow-hidden relative">
-
-      {/* V logo watermark — shown when chat is empty, centered over the whole panel */}
-      {messages.length === 0 && toolCalls.length === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="10.0000 4.1214 80.0000 69.8179" className="w-20 h-20" style={{ opacity: 0.08 }}>
-            <polygon points="12.0000,6.1214 34.0400,6.1214 61.0200,52.8521 50.0000,71.9393" fill="currentColor"/>
-            <polygon points="61.4000,6.1214 88.0000,6.1214 74.7000,29.1577" fill="currentColor"/>
-          </svg>
-        </div>
-      )}
+    <div className="demo-chat flex flex-col flex-1 min-h-0 overflow-hidden">
 
       {/* Thread — matches ThreadPrimitive.Viewport */}
-      <div ref={threadRef} className="flex-1 min-h-0 overflow-y-auto">
+      <div ref={threadRef} className="flex-1 min-h-0 overflow-y-auto relative">
+        {/* V logo watermark — centered in thread area above composer */}
+        {messages.length === 0 && toolCalls.length === 0 && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="10.0000 4.1214 80.0000 69.8179" className="w-20 h-20" style={{ opacity: 0.08 }}>
+              <polygon points="12.0000,6.1214 34.0400,6.1214 61.0200,52.8521 50.0000,71.9393" fill="currentColor"/>
+              <polygon points="61.4000,6.1214 88.0000,6.1214 74.7000,29.1577" fill="currentColor"/>
+            </svg>
+          </div>
+        )}
         {/* padding matches addin: pt-12 on viewport, px-3 py-2 on messages */}
         <div className="pt-8">
           {messages.map((msg, i) => (
