@@ -28,7 +28,14 @@ const PAUSE_SHORT = 250
 
 type Workflow = 'create' | 'edit'
 
-export default function AddinDemo() {
+const workflowLabels: Record<string, Record<Workflow, string>> = {
+  en: { create: 'Create from your template', edit: 'Edit your existing deck' },
+  fr: { create: 'Partez de votre template', edit: 'Éditez un deck existant' },
+  es: { create: 'Crea desde tu plantilla', edit: 'Edita tu deck existente' },
+  de: { create: 'Aus Vorlage erstellen', edit: 'Bestehendes Deck bearbeiten' },
+}
+
+export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   const [activeWorkflow, setActiveWorkflow] = useState<Workflow>('create')
   const [phase, setPhase] = useState<Phase>('idle')
   const [composerText, setComposerText] = useState('')
@@ -269,9 +276,10 @@ export default function AddinDemo() {
     </div>
   )
 
+  const labels = workflowLabels[lang] || workflowLabels.en
   const workflows: { key: Workflow; label: string }[] = [
-    { key: 'create', label: 'Create from your template' },
-    { key: 'edit', label: 'Edit your existing deck' },
+    { key: 'create', label: labels.create },
+    { key: 'edit', label: labels.edit },
   ]
 
   const BTN_W = 200
