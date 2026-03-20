@@ -40,7 +40,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
     <div className="flex flex-col border border-[#d5d5d5] shadow-lg bg-[#f5f5f5]"
       style={{ fontFamily: 'Inter, sans-serif', height: '420px' }}>
       {/* PowerPoint title bar */}
-      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide" style={{ background: '#B7472A' }}>
+      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A' }}>
         Oil Market Outlook Q1 2026.pptx
       </div>
       {/* Ribbon */}
