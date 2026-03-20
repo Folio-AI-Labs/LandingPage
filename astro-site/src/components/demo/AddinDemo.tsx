@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { RotateCcw } from 'lucide-react'
 import ChatPanel from './ChatPanel'
 import PresentationViewer from './PresentationViewer'
-import { defaultSlides, frenchSlide2 } from './slides'
+import { defaultSlides, frenchSlide2, blankSlide } from './slides'
 import type { SlideContent } from './slides'
 import './demo-styles.css'
 import type { Message, ToolCall, Phase } from './types'
@@ -10,10 +10,11 @@ import type { Message, ToolCall, Phase } from './types'
 // --- Workflow 1: Create from scratch ---
 const W1_PROMPT = 'Can you make me a 3 slides presentation on the current oil market?'
 const W1_AI_TEXT = "I'll create a 3-slide presentation on the current oil market."
+const W1_TOOL_NAMES = ['edit_slide', 'insert_slide', 'insert_slide'] as const
 const W1_TOOL_LABELS = [
-  'Inserting title slide — "Outlook on the Current Oil Market"',
-  'Inserting slide — "Supply & Demand Overview"',
-  'Inserting slide — "Price Trends & Forecast"',
+  'Adding title, subtitle, date and confidentiality notice',
+  'Creating supply vs demand chart with KPI cards and analysis',
+  'Building price trend visualization with sector breakdown',
 ]
 
 // --- Workflow 2: Edit existing ---
@@ -60,8 +61,8 @@ export default function AddinDemo() {
     setComposerText('')
     setMessages([])
     setToolCalls([])
-    setSlides(defaultSlides)
-    setVisibleSlides([])
+    setSlides([blankSlide, ...defaultSlides])
+    setVisibleSlides([0])
     setActiveSlide(0)
     setIsRunning(false)
     setChatScale(1.25)
@@ -104,20 +105,26 @@ export default function AddinDemo() {
     schedule(() => setToolCalls(prev => prev.map((tc, i) => i === 0 ? { ...tc, status: 'complete' as const } : tc)), elapsed)
     elapsed += PAUSE_SHORT
 
-    // 3 slide inserts
+    // 3 slide inserts (indices 1,2,3 in the slides array — 0 is the blank)
     for (let toolIdx = 0; toolIdx < 3; toolIdx++) {
       elapsed += PAUSE_SHORT * 2
       const tIdx = toolIdx
+      const slideIdx = tIdx + 1  // offset past blank slide
       const tcIdx = tIdx + 1
       schedule(() => {
         setPhase('tools')
-        setToolCalls(prev => [...prev, { toolName: 'insert_slide', label: W1_TOOL_LABELS[tIdx], status: 'running' }])
+        setToolCalls(prev => [...prev, { toolName: W1_TOOL_NAMES[tIdx], label: W1_TOOL_LABELS[tIdx], status: 'running' }])
       }, elapsed)
       elapsed += TOOL_RUNNING_TIME
       schedule(() => {
         setToolCalls(prev => prev.map((tc, i) => i === tcIdx ? { ...tc, status: 'complete' as const } : tc))
-        setVisibleSlides(prev => [...prev, tIdx])
-        setActiveSlide(tIdx)
+        // First insert replaces the blank slide; subsequent ones append
+        if (tIdx === 0) {
+          setVisibleSlides([slideIdx])
+        } else {
+          setVisibleSlides(prev => [...prev, slideIdx])
+        }
+        setActiveSlide(slideIdx)
       }, elapsed)
       elapsed += PAUSE_SHORT
     }
@@ -171,7 +178,7 @@ export default function AddinDemo() {
     elapsed += PAUSE_SHORT * 2
     schedule(() => {
       setPhase('tools')
-      setToolCalls([{ toolName: 'edit_slide', label: 'Translating slide 2 to French', status: 'running' }])
+      setToolCalls([{ toolName: 'edit_slide', label: 'Translating all text elements to French', status: 'running' }])
     }, elapsed)
 
     elapsed += TOOL_RUNNING_TIME
@@ -215,8 +222,8 @@ export default function AddinDemo() {
 
   const chatPanel = (
     <div
+      className="demo-chat-panel"
       style={{
-        width: '280px',
         transform: `scale(${chatScale})`,
         transformOrigin: 'center',
         transition: 'transform 0.6s ease-out, border-radius 0.6s ease-out, box-shadow 0.6s ease-out',
@@ -252,8 +259,9 @@ export default function AddinDemo() {
     return (
       <button
         onClick={() => handleTabSwitch(workflow)}
-        className="px-4 py-2.5 rounded-lg transition-colors text-left text-sm font-medium w-full"
+        className="px-4 py-2.5 rounded-lg transition-colors text-left text-sm font-medium"
         style={{
+          height: '68px',
           background: isActive ? '#1a1a1a' : 'transparent',
           color: isActive ? '#fff' : '#888',
           border: isActive ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
@@ -288,30 +296,19 @@ export default function AddinDemo() {
 
   return (
     <div style={{ fontFamily: 'Inter, sans-serif' }}>
-      {/* Mobile: controls row above viewer */}
-      <div className="flex flex-col gap-3 nav:hidden">
-        <div className="flex gap-1 items-center">
-          {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
-          {workflowButton('edit', 'Edit your existing deck', '')}
-          <div className="shrink-0 ml-1">{replayButton}</div>
-        </div>
-        <div style={{ overflow: 'hidden' }}>
-          <div style={{ width: '820px', float: 'right' }}>
-            {viewer}
-          </div>
-        </div>
+      {/* Controls — row centered, wraps naturally */}
+      <div className="flex gap-1.5 justify-center items-center flex-wrap mb-3">
+        {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
+        {workflowButton('edit', 'Edit your existing deck', '')}
       </div>
-
-      {/* Desktop: controls column left + viewer right */}
-      <div className="hidden nav:flex gap-4 items-start">
-        <div className="flex flex-col gap-1.5 shrink-0" style={{ width: '220px', paddingTop: '8px' }}>
-          {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
-          {workflowButton('edit', 'Edit your existing deck', '')}
-          <div className="mt-1 flex justify-center">{replayButton}</div>
-        </div>
-        <div style={{ width: '820px', flexShrink: 0 }}>
+      {/* Viewer — centered when fits, right-aligned + scrollable left when narrow */}
+      <div style={{ overflowX: 'auto', direction: 'rtl' }}>
+        <div style={{ width: '820px', direction: 'ltr', marginLeft: 'auto', marginRight: 'auto' }}>
           {viewer}
         </div>
+      </div>
+      <div className="flex justify-center mt-2">
+        {replayButton}
       </div>
     </div>
   )

@@ -55,7 +55,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
       {/* Main area */}
       <div className="flex flex-1 min-h-0">
         {/* Thumbnail panel */}
-        <div className="w-[90px] shrink-0 bg-[#f0f0f0] border-r border-[#d5d5d5] py-2 pl-2 pr-1 space-y-2 overflow-y-auto">
+        <div className="w-[75px] shrink-0 bg-[#f0f0f0] border-r border-[#d5d5d5] py-2 pl-0.5 pr-1 space-y-2 overflow-y-auto">
           {visibleSlides.map((idx, pos) => (
             <div
               key={pos}
@@ -63,7 +63,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
               style={{ cursor: onSlideClick ? 'pointer' : 'default' }}
               onClick={() => onSlideClick?.(idx)}
             >
-              <span className="text-[8px] text-[#aaa] mt-1.5 w-2.5 text-right shrink-0">{pos + 1}</span>
+              <span className="text-[8px] text-[#aaa] mt-1.5 w-1.5 text-right shrink-0">{pos + 1}</span>
               <div className="flex-1">
                 <SlideThumbnail slide={slideData[idx]} isActive={idx === activeSlide} />
               </div>
@@ -72,9 +72,9 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
         </div>
 
         {/* Slide canvas */}
-        <div className="flex-1 py-3 px-4 flex items-center justify-center bg-[#e8e8e8]">
+        <div className="flex-1 py-2 px-2 flex items-center justify-center bg-[#e8e8e8]">
           {visibleSlides.length > 0 && slideData[activeSlide] ? (
-            <div className="w-full max-w-[440px]">
+            <div className="w-full">
               <MainSlide key={activeSlide} slide={slideData[activeSlide]} />
             </div>
           ) : (
@@ -92,7 +92,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
 
       {/* Status bar */}
       <div className="px-3 py-1 bg-[#f0f0f0] border-t border-[#d5d5d5] text-[10px] text-[#aaa]">
-        {visibleSlides.length > 0 ? `Slide ${activeSlide + 1} of ${visibleSlides.length}` : 'Ready'}
+        {visibleSlides.length > 0 ? `Slide ${visibleSlides.indexOf(activeSlide) + 1} of ${visibleSlides.length}` : 'Ready'}
       </div>
     </div>
   )

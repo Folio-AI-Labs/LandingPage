@@ -24,7 +24,7 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
     <div className="demo-chat flex flex-col flex-1 min-h-0 overflow-hidden">
 
       {/* Thread — matches ThreadPrimitive.Viewport */}
-      <div ref={threadRef} className="flex-1 min-h-0 overflow-y-auto relative">
+      <div ref={threadRef} className="flex-1 min-h-0 overflow-y-hidden relative">
         {/* V logo watermark — centered in thread area above composer */}
         {messages.length === 0 && toolCalls.length === 0 && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -73,20 +73,20 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
       {/* Composer — matches ComposerPrimitive.Root: flex items-center rounded-lg border */}
       <div className="p-2 border-t shrink-0">
         <div className="flex items-center rounded-lg border border-[hsl(217,91%,53%)] shadow-sm bg-white transition-all">
-          <button className="ml-1.5 p-1.5 text-[hsl(0,0%,46%)] rounded" tabIndex={-1}>
+          <button className="ml-1 p-1 text-[hsl(0,0%,46%)] rounded" tabIndex={-1}>
             <Paperclip className="w-4 h-4" />
           </button>
-          <div className="flex-grow min-h-[38px] max-h-48 px-2 py-2 text-[13px] text-[hsl(0,0%,4%)]">
+          <div className="flex-grow min-h-[38px] max-h-48 px-1 py-2 text-[13px] text-[hsl(0,0%,4%)]">
             {composerText || (
               <span className="text-[hsl(0,0%,46%)] italic">Ask Verso to edit your slides</span>
             )}
           </div>
           {isRunning ? (
-            <button className="mr-1.5 flex h-7 w-7 items-center justify-center rounded bg-[hsl(217,91%,53%)] text-white" tabIndex={-1}>
+            <button className="mr-1 flex h-7 w-7 items-center justify-center rounded bg-[hsl(217,91%,53%)] text-white" tabIndex={-1}>
               <Square className="w-3.5 h-3.5 fill-current" />
             </button>
           ) : (
-            <button className="mr-1.5 flex h-7 w-7 items-center justify-center text-[hsl(217,91%,53%)] transition-all" tabIndex={-1}>
+            <button className="mr-1 flex h-7 w-7 items-center justify-center text-[hsl(217,91%,53%)] transition-all" tabIndex={-1}>
               <Send className="w-5 h-5" />
             </button>
           )}

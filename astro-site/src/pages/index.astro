@@ -15,9 +15,9 @@ const t = useTranslations(lang);
   <Nav activePage={t('nav.home')} />
 
   <!-- Hero Section -->
-  <section class="min-h-[calc(100vh-50px)] grid grid-rows-[0.5fr_auto_3fr] px-[30px] nav:px-[60px] relative">
+  <section class="min-h-[calc(100vh-50px)] grid grid-rows-[0.5fr_auto_3fr] px-[12px] nav:px-[60px] relative">
     <div></div>
-    <div class="max-w-[1080px] w-[90%] bg-gradient-to-br from-[rgba(230,235,240,0.4)] to-[rgba(240,230,235,0.4)] rounded-3xl py-10 px-[30px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto self-center">
+    <div class="max-w-[960px] w-[90%] bg-gradient-to-br from-[rgba(230,235,240,0.4)] to-[rgba(240,230,235,0.4)] rounded-3xl py-10 px-[30px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto self-center">
       <div class="absolute inset-0 bg-cover bg-center opacity-[0.35] z-0" style="background-image: url('/monet.webp')"></div>
       <h1 class="relative z-10 font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-8">{t('hero.title')}</h1>
       <p class="relative z-10 font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mb-6 max-w-[600px] mx-auto">
@@ -25,8 +25,8 @@ const t = useTranslations(lang);
         {t('hero.subtitle2')}
       </p>
       <div class="relative z-10 flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center">
-        <a href="https://verso.fly.dev/playground/" class="w-full nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
-        <a href={getLocalizedPath('/demo/', lang)} class="w-full nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
+        <a href="https://verso.fly.dev/playground/" class="w-full max-w-[240px] nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
+        <a href={getLocalizedPath('/demo/', lang)} class="w-full max-w-[240px] nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
       </div>
 
       <div class="relative z-10 mt-[60px] text-center">
@@ -45,14 +45,14 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Demo Animation -->
-  <section class="py-10 overflow-hidden" id="demo-animation">
-    <div class="text-left" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
+  <section class="py-10" id="demo-animation">
+    <div class="text-left" style="max-width: 1200px; margin: 0 auto;">
       <AddinDemo client:visible />
     </div>
   </section>
 
   <!-- Intelligence Section -->
-  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-white" id="intelligence" style="clear: both;">
+  <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-white" id="intelligence" style="clear: both;">
     <div class="max-w-[1200px] mx-auto text-center">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-5">{t('intelligence.title')}</h2>
       <p class="text-lg leading-relaxed text-brand-muted mb-10 max-w-narrow mx-auto">{t('intelligence.subtitle')}<br />{t('intelligence.subtitleCta')}</p>
@@ -78,7 +78,7 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Capabilities Section -->
-  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-gradient-to-br from-[rgba(230,235,240,0.3)] to-[rgba(240,230,235,0.3)]">
+  <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-gradient-to-br from-[rgba(230,235,240,0.3)] to-[rgba(240,230,235,0.3)]">
     <div class="max-w-[1200px] mx-auto">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-[60px] text-center">{t('capabilities.title')}</h2>
 
@@ -135,7 +135,7 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Models Section -->
-  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-white" id="models">
+  <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-white" id="models">
     <div class="max-w-[1200px] mx-auto text-center">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-10">{t('models.title')}</h2>
       <p class="text-lg leading-[1.8] text-brand-muted max-w-[900px] mx-auto mb-5">{t('models.desc')}</p>

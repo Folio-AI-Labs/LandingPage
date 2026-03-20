@@ -62,3 +62,13 @@
 .demo-scale-in {
   animation: demo-scaleIn 400ms ease-out both;
 }
+
+.demo-chat-panel {
+  width: 200px;
+}
+
+@media (min-width: 900px) {
+  .demo-chat-panel {
+    width: 240px;
+  }
+}
