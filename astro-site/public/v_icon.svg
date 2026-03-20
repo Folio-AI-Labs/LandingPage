@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10.0000 4.1214 80.0000 69.8179">
+  <!-- Left bar of V (quad: A-D-E-C) -->
+  <polygon points="12.0000,6.1214 34.0400,6.1214 61.0200,52.8521 50.0000,71.9393" fill="#111111"/>
+  <!-- Right spike of V (tri: F-B-G) -->
+  <polygon points="61.4000,6.1214 88.0000,6.1214 74.7000,29.1577" fill="#111111"/>
+</svg>
