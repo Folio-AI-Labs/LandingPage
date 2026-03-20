@@ -15,7 +15,7 @@ const t = useTranslations(lang);
   <Nav activePage={t('nav.home')} />
 
   <!-- Hero Section -->
-  <section class="min-h-[calc(100vh-50px)] grid grid-rows-[0.5fr_auto_3fr] px-[12px] nav:px-[60px] relative">
+  <section class="grid grid-rows-[1fr_auto_1fr] px-[12px] nav:px-[60px] relative" style="min-height: min(100vh - 50px, 700px);">
     <div></div>
     <div class="max-w-[960px] w-[90%] bg-gradient-to-br from-[rgba(230,235,240,0.4)] to-[rgba(240,230,235,0.4)] rounded-3xl py-10 px-[30px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto self-center">
       <div class="absolute inset-0 bg-cover bg-center opacity-[0.35] z-0" style="background-image: url('/monet.webp')"></div>
@@ -45,7 +45,7 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Demo Animation -->
-  <section class="py-10" id="demo-animation">
+  <section class="pt-3 pb-10" id="demo-animation">
     <div class="text-left" style="max-width: 1200px; margin: 0 auto;">
       <AddinDemo client:visible />
     </div>

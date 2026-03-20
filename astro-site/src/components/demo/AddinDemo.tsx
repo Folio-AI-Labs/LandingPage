@@ -298,7 +298,7 @@ export default function AddinDemo() {
     <div style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Controls — row centered, wraps naturally */}
       <div className="flex gap-1.5 justify-center items-center flex-wrap mb-3">
-        {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
+        {workflowButton('create', 'Create from scratch', 'On your own pptx template')}
         {workflowButton('edit', 'Edit your existing deck', '')}
       </div>
       {/* Viewer — centered when fits, right-aligned + scrollable left when narrow */}
