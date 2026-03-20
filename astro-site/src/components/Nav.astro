@@ -1,6 +1,7 @@
 ---
 import LanguageSelector from './LanguageSelector.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+import { PLAYGROUND_URL } from '../consts';
 
 interface Props {
   activePage?: string;
@@ -40,7 +41,7 @@ const navLinks = [
     ))}
   </ul>
   <div class="hidden nav:flex items-center gap-3 justify-end">
-    <a href="https://verso.fly.dev/playground/" class="bg-brand text-white border-none py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:-translate-y-px hover:shadow-md">{t('nav.getStarted')}</a>
+    <a href={PLAYGROUND_URL} class="bg-brand text-white border-none py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:-translate-y-px hover:shadow-md">{t('nav.getStarted')}</a>
     <a href={getLocalizedPath('/demo/', lang)} class="bg-brand-bg text-brand border-2 border-brand py-2.5 px-5 text-sm font-medium cursor-pointer no-underline rounded-pill transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-px hover:shadow-md">{t('nav.bookDemo')}</a>
     <LanguageSelector />
   </div>
@@ -67,7 +68,7 @@ const navLinks = [
         </a>
       </li>
     ))}
-    <li><a href="https://verso.fly.dev/playground/" class="bg-brand text-white border-none py-3 px-5 text-sm font-medium rounded-pill text-center transition duration-300 block no-underline hover:-translate-y-px hover:shadow-md">Get started</a></li>
+    <li><a href={PLAYGROUND_URL} class="bg-brand text-white border-none py-3 px-5 text-sm font-medium rounded-pill text-center transition duration-300 block no-underline hover:-translate-y-px hover:shadow-md">Get started</a></li>
     <li><a href="/demo/" class="bg-brand-bg text-brand border-2 border-brand py-3 px-5 text-sm font-medium rounded-pill text-center transition duration-300 block no-underline hover:bg-brand hover:text-white hover:-translate-y-px hover:shadow-md">Book a demo</a></li>
     <li class="flex justify-center pt-2">
       <LanguageSelector />

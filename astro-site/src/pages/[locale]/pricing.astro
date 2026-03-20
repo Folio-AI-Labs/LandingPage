@@ -4,6 +4,14 @@ import Nav from '../../components/Nav.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages, defaultLang } from '../../i18n/languages';
+import { PLAYGROUND_URL } from '../../consts';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { locale: lang } }));
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,10 +24,7 @@ const t = useTranslations(lang);
   <section class="min-h-screen pt-[100px] px-[30px] pb-[60px] nav:py-20 nav:px-[60px]">
     <div class="text-center mb-[60px]">
       <h1 class="font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-6">{t('pricing.title')}</h1>
-      <div class="font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mx-auto text-center">
-        <div class="whitespace-nowrap">{t('pricing.subtitle')}</div>
-        <div>{t('pricing.subtitle2')}</div>
-      </div>
+      <p class="font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark max-w-[600px] mx-auto">{t('pricing.subtitle')}<br />{t('pricing.subtitle2')}</p>
     </div>
 
     <!-- Billing Toggle -->
@@ -63,7 +68,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature4')}</li>
         </ul>
 
-        <a href="https://verso.fly.dev/playground/" class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Plus Plan -->
@@ -99,7 +104,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.plus.feature3')}</li>
         </ul>
 
-        <a href="https://verso.fly.dev/playground/" class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Pro Plan -->
@@ -136,7 +141,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature3')}</li>
         </ul>
 
-        <a href="https://verso.fly.dev/playground/" class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-brand text-white hover:bg-black hover:-translate-y-0.5 hover:shadow-lg">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-brand text-white hover:bg-black hover:-translate-y-0.5 hover:shadow-lg">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Ultimate Plan -->
@@ -174,7 +179,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.ultimate.feature5')}</li>
         </ul>
 
-        <a href="https://verso.fly.dev/playground/" class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
       </div>
 
     </div>

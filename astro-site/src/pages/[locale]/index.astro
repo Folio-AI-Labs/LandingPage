@@ -4,7 +4,16 @@ import Nav from '../../components/Nav.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
 import Footer from '../../components/Footer.astro';
 import PerformanceChart from '../../components/PerformanceChart.astro';
+import AddinDemo from '../../components/demo/AddinDemo';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
+import { languages, defaultLang } from '../../i18n/languages';
+import { PLAYGROUND_URL } from '../../consts';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { locale: lang } }));
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,38 +22,51 @@ const t = useTranslations(lang);
 <Layout title={t('meta.title')} description={t('meta.description')}>
   <Nav activePage={t('nav.home')} />
 
-  <!-- Hero Section -->
-  <section class="min-h-[calc(100vh-50px)] grid grid-rows-[0.5fr_auto_3fr] px-[30px] nav:px-[60px] relative">
-    <div></div>
-    <div class="max-w-[1080px] w-[90%] bg-gradient-to-br from-[rgba(230,235,240,0.4)] to-[rgba(240,230,235,0.4)] rounded-3xl py-10 px-[30px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto self-center">
-      <div class="absolute inset-0 bg-cover bg-center opacity-[0.35] z-0" style="background-image: url('/monet.webp')"></div>
-      <h1 class="relative z-10 font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-8">{t('hero.title')}</h1>
-      <div class="relative z-10 font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mb-6 mx-auto text-center">
-        <div class="whitespace-nowrap">{t('hero.subtitle1')}</div>
-        <div class="whitespace-nowrap">{t('hero.subtitle2')}</div>
-      </div>
-      <div class="relative z-10 flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center">
-        <a href="https://verso.fly.dev/playground/" class="w-full nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
-        <a href={getLocalizedPath('/demo/', lang)} class="w-full nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
-      </div>
+  <!-- Hero Section + Demo overlapping -->
+  <section class="relative px-0">
+    <!-- Impressionist painting card -->
+    <div class="max-w-[960px] w-[90%] bg-gradient-to-br from-[rgba(240,242,245,0.6)] to-[rgba(245,240,242,0.6)] rounded-3xl py-6 px-[16px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto mt-0 nav:mt-10" style="margin-bottom: -280px;">
+      <div class="absolute inset-0 bg-cover bg-center opacity-[0.3] z-0" style="background-image: url('/monet.webp')"></div>
+      <h1 class="relative z-10 font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-4">{t('hero.title')}</h1>
+      <p class="relative z-10 font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mb-0 max-w-[600px] mx-auto">
+        {t('hero.subtitle1')}<br />
+        {t('hero.subtitle2')}
+      </p>
+      <!-- Spacer for the overlap -->
+      <div class="relative z-10" style="height: 300px;"></div>
+    </div>
 
-      <div class="relative z-10 mt-[60px] text-center">
-        <h3 class="text-[11px] font-semibold tracking-[2px] uppercase text-brand-muted mb-6">{t('hero.trustedBy')}</h3>
-        <div class="flex justify-center items-center gap-[42px] flex-wrap">
-          <img src="/mckinsey.png" alt="McKinsey" class="h-8 opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/bcg.png" alt="BCG" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/kearney.png" alt="Kearney" class="h-[20px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/bain.webp" alt="Bain" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/ey.png" alt="EY" class="h-[38px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/bnp.png" alt="BNP Paribas" class="h-[58px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-        </div>
+    <!-- Demo Animation — overlaps bottom half of hero card -->
+    <div class="relative z-10" id="demo-animation" style="max-width: 1200px; margin: -312px auto 0;">
+      <AddinDemo client:visible />
+    </div>
+  </section>
+
+  <!-- CTA buttons -->
+  <section class="py-6 px-[12px] nav:px-[60px]">
+    <div class="flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center">
+      <a href={PLAYGROUND_URL} class="w-full max-w-[240px] nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
+      <a href={getLocalizedPath('/demo/', lang)} class="w-full max-w-[240px] nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
+    </div>
+  </section>
+
+  <!-- Trusted by -->
+  <section class="py-8 px-[12px] nav:px-[60px]">
+    <div class="max-w-[960px] mx-auto text-center">
+      <h3 class="text-[11px] font-semibold tracking-[2px] uppercase text-brand-muted mb-6">{t('hero.trustedBy')}</h3>
+      <div class="flex justify-center items-center gap-[42px] flex-wrap">
+        <img src="/mckinsey.png" alt="McKinsey" class="h-8 opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/bcg.png" alt="BCG" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/kearney.png" alt="Kearney" class="h-[20px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/bain.webp" alt="Bain" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/ey.png" alt="EY" class="h-[38px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/bnp.png" alt="BNP Paribas" class="h-[58px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
       </div>
     </div>
-    <div></div>
   </section>
 
   <!-- Intelligence Section -->
-  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-white" id="intelligence">
+  <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-white" id="intelligence" style="clear: both;">
     <div class="max-w-[1200px] mx-auto text-center">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-5">{t('intelligence.title')}</h2>
       <p class="text-lg leading-relaxed text-brand-muted mb-10 max-w-narrow mx-auto">{t('intelligence.subtitle')}<br />{t('intelligence.subtitleCta')}</p>
@@ -70,7 +92,7 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Capabilities Section -->
-  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-gradient-to-br from-[rgba(230,235,240,0.3)] to-[rgba(240,230,235,0.3)]">
+  <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-gradient-to-br from-[rgba(230,235,240,0.3)] to-[rgba(240,230,235,0.3)]">
     <div class="max-w-[1200px] mx-auto">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-[60px] text-center">{t('capabilities.title')}</h2>
 
@@ -127,7 +149,7 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Models Section -->
-  <section class="py-[60px] px-[30px] nav:py-20 nav:px-[60px] bg-white" id="models">
+  <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-white" id="models">
     <div class="max-w-[1200px] mx-auto text-center">
       <h2 class="font-display text-[36px] nav:text-[48px] font-normal leading-tight text-brand mb-10">{t('models.title')}</h2>
       <p class="text-lg leading-[1.8] text-brand-muted max-w-[900px] mx-auto mb-5">{t('models.desc')}</p>

@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
+import { languages, defaultLang } from '../../i18n/languages';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { locale: lang } }));
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -53,19 +60,6 @@ const t = useTranslations(lang);
       confirmationMessage.classList.remove('hidden');
     }
 
-    // Send email notification (you can implement backend API call here later)
-    // For now, we'll just log it
     console.log(`Demo request from: ${email}`);
-
-    // Optional: Send to a backend API or email service
-    // try {
-    //   await fetch('/api/demo-request', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ email })
-    //   });
-    // } catch (error) {
-    //   console.error('Error submitting demo request:', error);
-    // }
   });
 </script>
