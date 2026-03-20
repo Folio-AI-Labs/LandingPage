@@ -247,58 +247,68 @@ export default function AddinDemo() {
     </div>
   )
 
-  return (
-    <div>
-      {/* Tabs + Replay — centered, never cropped */}
-      <div className="flex flex-col items-center mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-        <div className="flex gap-1">
-          <button
-            onClick={() => handleTabSwitch('create')}
-            className="px-5 py-2 rounded-pill transition-colors text-left text-sm font-medium"
-            style={{
-              background: activeWorkflow === 'create' ? '#1a1a1a' : 'transparent',
-              color: activeWorkflow === 'create' ? '#fff' : '#888',
-              border: activeWorkflow === 'create' ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
-            }}
-          >
-            <span>Create from scratch</span>
-            <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>On your own theme and layouts</span>
-          </button>
-          <button
-            onClick={() => handleTabSwitch('edit')}
-            className="px-5 py-2 rounded-pill transition-colors text-left text-sm font-medium"
-            style={{
-              background: activeWorkflow === 'edit' ? '#1a1a1a' : 'transparent',
-              color: activeWorkflow === 'edit' ? '#fff' : '#888',
-              border: activeWorkflow === 'edit' ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
-            }}
-          >
-            <span>Edit your presentation</span>
-            <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>Works within your existing deck</span>
-          </button>
+  const workflowButton = (workflow: Workflow, label: string, subtitle: string) => {
+    const isActive = activeWorkflow === workflow
+    const showReplay = isActive && phase === 'done'
+    return (
+      <button
+        onClick={() => showReplay ? handleReplay() : handleTabSwitch(workflow)}
+        className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg transition-colors text-left text-sm font-medium w-full"
+        style={{
+          background: isActive ? '#1a1a1a' : 'transparent',
+          color: isActive ? '#fff' : '#888',
+          border: isActive ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
+        }}
+      >
+        <div>
+          <span>{label}</span>
+          <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>{subtitle}</span>
         </div>
-        {/* Fixed height so appearance of replay doesn't shift layout */}
-        <div className="h-6 mt-1 flex items-center">
-          <button
-            onClick={handleReplay}
-            className="flex items-center gap-1.5 text-[12px] text-[#888] hover:text-[#444] transition-colors"
-            style={{ visibility: phase === 'done' ? 'visible' : 'hidden' }}
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            Replay
-          </button>
+        <div className="w-5 h-5 flex items-center justify-center shrink-0" style={{ opacity: showReplay ? 1 : 0 }}>
+          <RotateCcw className="w-4 h-4" style={{ color: isActive ? 'rgba(255,255,255,0.6)' : '#888' }} />
+        </div>
+      </button>
+    )
+  }
+
+  return (
+    <div style={{ fontFamily: 'Inter, sans-serif' }}>
+      {/* Mobile: controls row above viewer */}
+      <div className="flex flex-col gap-3 nav:hidden">
+        <div className="flex gap-1">
+          {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
+          {workflowButton('edit', 'Edit your presentation', 'Works within your existing deck')}
+        </div>
+        <div style={{ width: '100%', overflow: 'hidden' }}>
+          <div style={{ width: '920px', float: 'right' }}>
+            <PresentationViewer
+              slides={slides}
+              visibleSlides={visibleSlides}
+              activeSlide={activeSlide}
+              sidePanel={chatPanel}
+              onSlideClick={handleSlideClick}
+            />
+          </div>
         </div>
       </div>
 
-      {/* Viewer — right-aligned, overflows left when narrow */}
-      <div style={{ width: '920px', float: 'right', clear: 'both' }}>
-          <PresentationViewer
-            slides={slides}
-            visibleSlides={visibleSlides}
-            activeSlide={activeSlide}
-            sidePanel={chatPanel}
-            onSlideClick={handleSlideClick}
-          />
+      {/* Desktop: controls column left + viewer right */}
+      <div className="hidden nav:flex gap-4 items-start">
+        <div className="flex flex-col gap-1.5 shrink-0" style={{ width: '220px', paddingTop: '8px' }}>
+          {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
+          {workflowButton('edit', 'Edit your presentation', 'Works within your existing deck')}
+        </div>
+        <div style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
+          <div style={{ width: '920px' }}>
+            <PresentationViewer
+              slides={slides}
+              visibleSlides={visibleSlides}
+              activeSlide={activeSlide}
+              sidePanel={chatPanel}
+              onSlideClick={handleSlideClick}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )
