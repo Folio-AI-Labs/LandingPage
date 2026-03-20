@@ -14,40 +14,42 @@ const t = useTranslations(lang);
 <Layout title={t('meta.title')} description={t('meta.description')}>
   <Nav activePage={t('nav.home')} />
 
-  <!-- Hero Section -->
-  <section class="grid grid-rows-[1fr_auto_1fr] px-[12px] nav:px-[60px] relative" style="min-height: min(100vh - 50px, 700px);">
-    <div></div>
-    <div class="max-w-[960px] w-[90%] bg-gradient-to-br from-[rgba(230,235,240,0.4)] to-[rgba(240,230,235,0.4)] rounded-3xl py-10 px-[30px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto self-center">
+  <!-- Hero Section + Demo overlapping -->
+  <section class="relative px-0">
+    <!-- Impressionist painting card -->
+    <div class="max-w-[960px] w-[90%] bg-gradient-to-br from-[rgba(230,235,240,0.4)] to-[rgba(240,230,235,0.4)] rounded-3xl py-6 px-[16px] nav:py-[39px] nav:px-[72px] text-center relative overflow-hidden mx-auto mt-0 nav:mt-10" style="margin-bottom: -280px;">
       <div class="absolute inset-0 bg-cover bg-center opacity-[0.35] z-0" style="background-image: url('/monet.webp')"></div>
-      <h1 class="relative z-10 font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-8">{t('hero.title')}</h1>
+      <h1 class="relative z-10 font-display text-[42px] nav:text-[64px] font-normal leading-tight text-brand mb-4">{t('hero.title')}</h1>
       <p class="relative z-10 font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mb-6 max-w-[600px] mx-auto">
         {t('hero.subtitle1')}<br />
         {t('hero.subtitle2')}
       </p>
-      <div class="relative z-10 flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center">
+      <div class="relative z-10 flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center mb-0">
         <a href="https://verso.fly.dev/playground/" class="w-full max-w-[240px] nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
         <a href={getLocalizedPath('/demo/', lang)} class="w-full max-w-[240px] nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
       </div>
-
-      <div class="relative z-10 mt-[60px] text-center">
-        <h3 class="text-[11px] font-semibold tracking-[2px] uppercase text-brand-muted mb-6">{t('hero.trustedBy')}</h3>
-        <div class="flex justify-center items-center gap-[42px] flex-wrap">
-          <img src="/mckinsey.png" alt="McKinsey" class="h-8 opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/bcg.png" alt="BCG" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/kearney.png" alt="Kearney" class="h-[20px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/bain.webp" alt="Bain" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/ey.png" alt="EY" class="h-[38px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-          <img src="/bnp.png" alt="BNP Paribas" class="h-[58px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
-        </div>
-      </div>
+      <!-- Spacer for the overlap -->
+      <div class="relative z-10" style="height: 300px;"></div>
     </div>
-    <div></div>
+
+    <!-- Demo Animation — overlaps bottom half of hero card -->
+    <div class="relative z-10" id="demo-animation" style="max-width: 1200px; margin: -320px auto 0;">
+      <AddinDemo client:visible />
+    </div>
   </section>
 
-  <!-- Demo Animation -->
-  <section class="pt-3 pb-10" id="demo-animation">
-    <div class="text-left" style="max-width: 1200px; margin: 0 auto;">
-      <AddinDemo client:visible />
+  <!-- Trusted by — outside hero, below demo -->
+  <section class="py-8 px-[12px] nav:px-[60px]">
+    <div class="max-w-[960px] mx-auto text-center">
+      <h3 class="text-[11px] font-semibold tracking-[2px] uppercase text-brand-muted mb-6">{t('hero.trustedBy')}</h3>
+      <div class="flex justify-center items-center gap-[42px] flex-wrap">
+        <img src="/mckinsey.png" alt="McKinsey" class="h-8 opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/bcg.png" alt="BCG" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/kearney.png" alt="Kearney" class="h-[20px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/bain.webp" alt="Bain" class="h-[28px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/ey.png" alt="EY" class="h-[38px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+        <img src="/bnp.png" alt="BNP Paribas" class="h-[58px] opacity-80 transition-opacity duration-300 hover:opacity-100" style="filter: brightness(0);" />
+      </div>
     </div>
   </section>
 

@@ -67,6 +67,37 @@
   width: 200px;
 }
 
+/* Wide: viewer centered at full size */
+.demo-viewer-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.demo-viewer-inner {
+  width: 820px;
+  flex-shrink: 0;
+}
+
+/* Threshold 1: viewport < 820px — scale down to 0.833, still centered */
+@media (max-width: 819px) {
+  .demo-viewer-inner {
+    transform: scale(0.833);
+    transform-origin: top center;
+    margin-bottom: -70px; /* 420 * (1 - 0.833) */
+  }
+}
+
+/* Threshold 2: viewport < scaled width (820 * 0.833 ≈ 683px) — align right with padding */
+@media (max-width: 683px) {
+  .demo-viewer-outer {
+    justify-content: flex-end;
+    padding-right: 10%;
+  }
+  .demo-viewer-inner {
+    transform-origin: top right;
+  }
+}
+
 @media (min-width: 900px) {
   .demo-chat-panel {
     width: 240px;

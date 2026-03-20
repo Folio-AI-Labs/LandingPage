@@ -194,8 +194,23 @@ export default function AddinDemo() {
       setActiveSlide(1)
     }, elapsed)
 
+    // Follow-up text
+    const W2_FOLLOWUP = "Done! Do you need me to translate the other slides as well?"
+    elapsed += PAUSE_SHORT * 2
+    schedule(() => setIsRunning(false), elapsed)
+    for (let i = 0; i <= W2_FOLLOWUP.length; i++) {
+      const ci = i
+      schedule(() => {
+        setMessages([
+          { role: 'user', text: W2_PROMPT },
+          { role: 'assistant', text: W2_FOLLOWUP, visibleChars: ci },
+        ])
+      }, elapsed + i * AI_CHAR_DELAY)
+    }
+    elapsed += W2_FOLLOWUP.length * AI_CHAR_DELAY
+
     elapsed += PAUSE_SHORT
-    schedule(() => { setPhase('done'); setIsRunning(false) }, elapsed)
+    schedule(() => { setPhase('done') }, elapsed)
   }, [clearAllTimeouts, schedule])
 
   // Run animation when workflow changes
@@ -259,12 +274,18 @@ export default function AddinDemo() {
     return (
       <button
         onClick={() => handleTabSwitch(workflow)}
-        className="px-4 py-2.5 rounded-lg transition-colors text-left text-sm font-medium"
+        className="px-3 py-2.5 rounded-lg transition-colors text-center text-sm font-medium whitespace-nowrap"
         style={{
-          height: '68px',
-          background: isActive ? '#1a1a1a' : 'transparent',
-          color: isActive ? '#fff' : '#888',
-          border: isActive ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
+          height: '44px',
+          minWidth: '220px',
+          background: isActive ? 'rgba(10,10,10,0.85)' : 'rgba(180,180,180,0.35)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          color: '#fff',
+          border: isActive ? '1px solid rgba(255,255,255,0.2)' : '1px solid rgba(255,255,255,0.35)',
+          boxShadow: isActive
+            ? 'inset 0 1px 1px rgba(255,255,255,0.1), 0 4px 16px rgba(0,0,0,0.2)'
+            : 'inset 0 1px 1px rgba(255,255,255,0.3), 0 4px 16px rgba(0,0,0,0.1)',
         }}
       >
         <span>{label}</span>
@@ -298,12 +319,12 @@ export default function AddinDemo() {
     <div style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Controls — row centered, wraps naturally */}
       <div className="flex gap-1.5 justify-center items-center flex-wrap mb-3">
-        {workflowButton('create', 'Create from scratch', 'On your own pptx template')}
+        {workflowButton('create', 'Create from your template', '')}
         {workflowButton('edit', 'Edit your existing deck', '')}
       </div>
-      {/* Viewer — centered when fits, right-aligned + scrollable left when narrow */}
-      <div style={{ overflowX: 'auto', direction: 'rtl' }}>
-        <div style={{ width: '820px', direction: 'ltr', marginLeft: 'auto', marginRight: 'auto' }}>
+      {/* Viewer — scaled down on narrow screens, centered when wide */}
+      <div className="demo-viewer-outer" style={{ marginTop: '8px', position: 'relative', zIndex: 0 }}>
+        <div className="demo-viewer-inner">
           {viewer}
         </div>
       </div>

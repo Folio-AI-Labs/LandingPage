@@ -37,8 +37,8 @@ interface PresentationViewerProps {
 
 export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick }: PresentationViewerProps) {
   return (
-    <div className="flex flex-col border border-[#d5d5d5] shadow-lg bg-[#f5f5f5]"
-      style={{ fontFamily: 'Inter, sans-serif', height: '420px' }}>
+    <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
+      style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)' }}>
       {/* PowerPoint title bar */}
       <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A' }}>
         Oil Market Outlook Q1 2026.pptx
