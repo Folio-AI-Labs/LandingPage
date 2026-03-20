@@ -270,29 +270,54 @@ export default function AddinDemo() {
     </div>
   )
 
-  const workflowButton = (workflow: Workflow, label: string, subtitle: string) => {
-    const isActive = activeWorkflow === workflow
-    return (
-      <button
-        onClick={() => handleTabSwitch(workflow)}
-        className="px-3 py-2.5 rounded-lg transition-colors text-center text-sm font-medium whitespace-nowrap"
+  const workflows: { key: Workflow; label: string }[] = [
+    { key: 'create', label: 'Create from your template' },
+    { key: 'edit', label: 'Edit your existing deck' },
+  ]
+
+  const BTN_W = 200
+  const segmentedControl = (
+    <div
+      className="rounded-full relative flex"
+      style={{
+        background: 'rgba(160,160,160,0.35)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        border: '1px solid rgba(255,255,255,0.25)',
+        padding: '3px',
+        width: BTN_W * 2 + 6,
+      }}
+    >
+      {/* Sliding highlight */}
+      <div
+        className="absolute rounded-full transition-all duration-300 ease-in-out"
         style={{
-          height: '44px',
-          background: isActive ? 'rgba(10,10,10,0.85)' : 'rgba(180,180,180,0.35)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          color: '#fff',
-          border: isActive ? '1px solid rgba(255,255,255,0.2)' : '1px solid rgba(255,255,255,0.35)',
-          boxShadow: isActive
-            ? 'inset 0 1px 1px rgba(255,255,255,0.1), 0 4px 16px rgba(0,0,0,0.2)'
-            : 'inset 0 1px 1px rgba(255,255,255,0.3), 0 4px 16px rgba(0,0,0,0.1)',
+          height: 'calc(100% - 6px)',
+          width: BTN_W,
+          top: '3px',
+          left: activeWorkflow === 'create' ? '3px' : BTN_W + 3,
+          background: 'rgba(10,10,10,0.85)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
         }}
-      >
-        <span>{label}</span>
-        {subtitle && <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>{subtitle}</span>}
-      </button>
-    )
-  }
+      />
+      {workflows.map(({ key, label }) => (
+        <button
+          key={key}
+          onClick={() => handleTabSwitch(key)}
+          className="relative z-10 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-300"
+          style={{
+            color: activeWorkflow === key ? '#fff' : 'rgba(255,255,255,0.85)',
+            background: 'transparent',
+            border: 'none',
+            width: BTN_W,
+            textAlign: 'center',
+          }}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  )
 
   const replayButton = (
     <button
@@ -317,13 +342,12 @@ export default function AddinDemo() {
 
   return (
     <div style={{ fontFamily: 'Inter, sans-serif' }}>
-      {/* Controls — row centered, wraps naturally */}
-      <div className="flex gap-1.5 justify-center items-center flex-wrap mb-3">
-        {workflowButton('create', 'Create from your template', '')}
-        {workflowButton('edit', 'Edit your existing deck', '')}
+      {/* Segmented control */}
+      <div className="flex justify-center mb-3">
+        {segmentedControl}
       </div>
       {/* Viewer — scaled down on narrow screens, centered when wide */}
-      <div className="demo-viewer-outer" style={{ marginTop: '8px', position: 'relative', zIndex: 0 }}>
+      <div className="demo-viewer-outer" style={{ marginTop: '0', position: 'relative', zIndex: 0 }}>
         <div className="demo-viewer-inner">
           {viewer}
         </div>
