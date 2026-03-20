@@ -194,7 +194,7 @@ export default function AddinDemo() {
       setActiveSlide(1)
     }, elapsed)
 
-    // Follow-up text
+    // Follow-up text — appended as a new assistant message
     const W2_FOLLOWUP = "Done! Do you need me to translate the other slides as well?"
     elapsed += PAUSE_SHORT * 2
     schedule(() => setIsRunning(false), elapsed)
@@ -203,6 +203,7 @@ export default function AddinDemo() {
       schedule(() => {
         setMessages([
           { role: 'user', text: W2_PROMPT },
+          { role: 'assistant', text: W2_AI_TEXT },
           { role: 'assistant', text: W2_FOLLOWUP, visibleChars: ci },
         ])
       }, elapsed + i * AI_CHAR_DELAY)
@@ -277,7 +278,6 @@ export default function AddinDemo() {
         className="px-3 py-2.5 rounded-lg transition-colors text-center text-sm font-medium whitespace-nowrap"
         style={{
           height: '44px',
-          minWidth: '220px',
           background: isActive ? 'rgba(10,10,10,0.85)' : 'rgba(180,180,180,0.35)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',

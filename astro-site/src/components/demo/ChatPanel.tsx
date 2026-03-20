@@ -35,35 +35,40 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
           </div>
         )}
         {/* padding matches addin: pt-12 on viewport, px-3 py-2 on messages */}
-        <div className="pt-8">
-          {messages.map((msg, i) => (
-            msg.role === 'user' ? (
-              /* UserMessage: flex justify-end py-2 px-3 → max-w-[85%] rounded-2xl bg-muted px-3 py-2 */
-              <div key={i} className="flex justify-end py-2 px-3">
-                <div className="max-w-[85%] break-words rounded-2xl bg-[hsl(0,0%,95%)] px-3 py-2 text-[13px] leading-relaxed">
-                  {msg.text}
-                </div>
+        <div className="pt-4">
+          {(() => {
+            // Find where to insert tool calls: after the first assistant message
+            const toolInsertIdx = toolCalls.length > 0
+              ? messages.findIndex(m => m.role === 'assistant') + 1
+              : -1
+            return messages.map((msg, i) => (
+              <div key={i}>
+                {msg.role === 'user' ? (
+                  <div className="flex justify-end py-1 px-2">
+                    <div className="max-w-[85%] break-words rounded-2xl bg-[hsl(0,0%,95%)] px-2.5 py-1.5 text-[13px] leading-relaxed">
+                      {msg.text}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col py-1 px-2">
+                    <div className="max-w-full break-words text-[13px] leading-relaxed">
+                      {msg.visibleChars !== undefined ? msg.text.slice(0, msg.visibleChars) : msg.text}
+                    </div>
+                  </div>
+                )}
+                {/* Insert tool calls after the first assistant message */}
+                {i + 1 === toolInsertIdx && toolCalls.map((tc, j) => (
+                  <div key={`tc-${j}`} className="px-3 py-px">
+                    <ToolCallBubble toolName={tc.toolName} label={tc.label} status={tc.status} />
+                  </div>
+                ))}
               </div>
-            ) : (
-              /* AssistantMessage: flex flex-col py-2 px-3 → max-w-full break-words */
-              <div key={i} className="flex flex-col py-2 px-3">
-                <div className="max-w-full break-words text-[13px] leading-relaxed">
-                  {msg.visibleChars !== undefined ? msg.text.slice(0, msg.visibleChars) : msg.text}
-                </div>
-              </div>
-            )
-          ))}
-
-          {/* Tool calls — rendered inside the last assistant message area */}
-          {toolCalls.map((tc, i) => (
-            <div key={i} className="px-3 py-px">
-              <ToolCallBubble toolName={tc.toolName} label={tc.label} status={tc.status} />
-            </div>
-          ))}
+            ))
+          })()}
 
           {/* RunningIndicator: inline-block w-2 h-2 bg-foreground rounded-full animate-blink */}
           {isRunning && (
-            <div className="px-3 py-2">
+            <div className="px-2 py-1">
               <span className="inline-block w-2 h-2 bg-[hsl(0,0%,4%)] rounded-full demo-dot-blink" />
             </div>
           )}
