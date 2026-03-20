@@ -38,7 +38,11 @@ interface PresentationViewerProps {
 export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick }: PresentationViewerProps) {
   return (
     <div className="flex flex-col border border-[#d5d5d5] shadow-lg bg-[#f5f5f5]"
-      style={{ fontFamily: 'Inter, sans-serif', height: '480px' }}>
+      style={{ fontFamily: 'Inter, sans-serif', height: '420px' }}>
+      {/* PowerPoint title bar */}
+      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide" style={{ background: '#B7472A' }}>
+        PowerPoint
+      </div>
       {/* Ribbon */}
       <div className="flex items-center gap-4 px-4 py-1.5 bg-[#f0f0f0] border-b border-[#d5d5d5] text-[11px] text-[#888]">
         <span className="font-medium text-[#444]">Home</span>
@@ -68,9 +72,9 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
         </div>
 
         {/* Slide canvas */}
-        <div className="flex-1 py-6 px-6 flex items-center justify-center bg-[#e8e8e8]">
+        <div className="flex-1 py-3 px-4 flex items-center justify-center bg-[#e8e8e8]">
           {visibleSlides.length > 0 && slideData[activeSlide] ? (
-            <div className="w-full max-w-[520px]">
+            <div className="w-full max-w-[440px]">
               <MainSlide key={activeSlide} slide={slideData[activeSlide]} />
             </div>
           ) : (

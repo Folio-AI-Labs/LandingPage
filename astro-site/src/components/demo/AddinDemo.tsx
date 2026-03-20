@@ -249,45 +249,55 @@ export default function AddinDemo() {
 
   const workflowButton = (workflow: Workflow, label: string, subtitle: string) => {
     const isActive = activeWorkflow === workflow
-    const showReplay = isActive && phase === 'done'
     return (
       <button
-        onClick={() => showReplay ? handleReplay() : handleTabSwitch(workflow)}
-        className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg transition-colors text-left text-sm font-medium w-full"
+        onClick={() => handleTabSwitch(workflow)}
+        className="px-4 py-2.5 rounded-lg transition-colors text-left text-sm font-medium w-full"
         style={{
           background: isActive ? '#1a1a1a' : 'transparent',
           color: isActive ? '#fff' : '#888',
           border: isActive ? '2px solid #1a1a1a' : '2px solid #e0e0e0',
         }}
       >
-        <div>
-          <span>{label}</span>
-          <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>{subtitle}</span>
-        </div>
-        <div className="w-5 h-5 flex items-center justify-center shrink-0" style={{ opacity: showReplay ? 1 : 0 }}>
-          <RotateCcw className="w-4 h-4" style={{ color: isActive ? 'rgba(255,255,255,0.6)' : '#888' }} />
-        </div>
+        <span>{label}</span>
+        {subtitle && <span className="block text-[10px] -mt-0.5" style={{ opacity: 0.6 }}>{subtitle}</span>}
       </button>
     )
   }
+
+  const replayButton = (
+    <button
+      onClick={handleReplay}
+      className="flex items-center gap-1.5 text-[12px] text-[#888] hover:text-[#444] transition-colors"
+      style={{ visibility: phase === 'done' ? 'visible' : 'hidden' }}
+    >
+      <RotateCcw className="w-3.5 h-3.5" />
+      Replay
+    </button>
+  )
+
+  const viewer = (
+    <PresentationViewer
+      slides={slides}
+      visibleSlides={visibleSlides}
+      activeSlide={activeSlide}
+      sidePanel={chatPanel}
+      onSlideClick={handleSlideClick}
+    />
+  )
 
   return (
     <div style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Mobile: controls row above viewer */}
       <div className="flex flex-col gap-3 nav:hidden">
-        <div className="flex gap-1">
+        <div className="flex gap-1 items-center">
           {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
-          {workflowButton('edit', 'Edit your presentation', 'Works within your existing deck')}
+          {workflowButton('edit', 'Edit your existing deck', '')}
+          <div className="shrink-0 ml-1">{replayButton}</div>
         </div>
-        <div style={{ width: '100%', overflow: 'hidden' }}>
-          <div style={{ width: '920px', float: 'right' }}>
-            <PresentationViewer
-              slides={slides}
-              visibleSlides={visibleSlides}
-              activeSlide={activeSlide}
-              sidePanel={chatPanel}
-              onSlideClick={handleSlideClick}
-            />
+        <div style={{ overflow: 'hidden' }}>
+          <div style={{ width: '820px', float: 'right' }}>
+            {viewer}
           </div>
         </div>
       </div>
@@ -296,18 +306,11 @@ export default function AddinDemo() {
       <div className="hidden nav:flex gap-4 items-start">
         <div className="flex flex-col gap-1.5 shrink-0" style={{ width: '220px', paddingTop: '8px' }}>
           {workflowButton('create', 'Create from scratch', 'On your own theme and layouts')}
-          {workflowButton('edit', 'Edit your presentation', 'Works within your existing deck')}
+          {workflowButton('edit', 'Edit your existing deck', '')}
+          <div className="mt-1 flex justify-center">{replayButton}</div>
         </div>
-        <div style={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
-          <div style={{ width: '920px' }}>
-            <PresentationViewer
-              slides={slides}
-              visibleSlides={visibleSlides}
-              activeSlide={activeSlide}
-              sidePanel={chatPanel}
-              onSlideClick={handleSlideClick}
-            />
-          </div>
+        <div style={{ width: '820px', flexShrink: 0 }}>
+          {viewer}
         </div>
       </div>
     </div>
