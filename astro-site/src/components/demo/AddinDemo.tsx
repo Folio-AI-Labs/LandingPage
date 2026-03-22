@@ -35,6 +35,13 @@ const workflowLabels: Record<string, Record<Workflow, string>> = {
   de: { create: 'Aus Vorlage erstellen', edit: 'Bestehendes Deck bearbeiten' },
 }
 
+const workflowLabelsShort: Record<string, Record<Workflow, string>> = {
+  en: { create: 'Start from scratch', edit: 'Edit your deck' },
+  fr: { create: 'Partez de zéro', edit: 'Éditez votre deck' },
+  es: { create: 'Desde cero', edit: 'Edita tu deck' },
+  de: { create: 'Neu erstellen', edit: 'Deck bearbeiten' },
+}
+
 export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   const [activeWorkflow, setActiveWorkflow] = useState<Workflow>('create')
   const [phase, setPhase] = useState<Phase>('idle')
@@ -277,50 +284,48 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   )
 
   const labels = workflowLabels[lang] || workflowLabels.en
-  const workflows: { key: Workflow; label: string }[] = [
-    { key: 'create', label: labels.create },
-    { key: 'edit', label: labels.edit },
+  const shortLabels = workflowLabelsShort[lang] || workflowLabelsShort.en
+  const workflows: { key: Workflow; label: string; shortLabel: string }[] = [
+    { key: 'create', label: labels.create, shortLabel: shortLabels.create },
+    { key: 'edit', label: labels.edit, shortLabel: shortLabels.edit },
   ]
 
-  const BTN_W = 200
   const segmentedControl = (
     <div
-      className="rounded-full relative flex"
+      className="demo-segmented-control rounded-full relative flex"
       style={{
         background: 'rgba(160,160,160,0.35)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
         border: '1px solid rgba(255,255,255,0.25)',
         padding: '3px',
-        width: BTN_W * 2 + 6,
       }}
     >
       {/* Sliding highlight */}
       <div
-        className="absolute rounded-full transition-all duration-300 ease-in-out"
+        className="demo-segmented-highlight absolute rounded-full transition-all duration-300 ease-in-out"
         style={{
           height: 'calc(100% - 6px)',
-          width: BTN_W,
           top: '3px',
-          left: activeWorkflow === 'create' ? '3px' : BTN_W + 3,
+          left: activeWorkflow === 'create' ? '3px' : '50%',
           background: 'rgba(10,10,10,0.85)',
           boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
         }}
       />
-      {workflows.map(({ key, label }) => (
+      {workflows.map(({ key, label, shortLabel }) => (
         <button
           key={key}
           onClick={() => handleTabSwitch(key)}
-          className="relative z-10 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-300"
+          className="demo-segmented-btn relative z-10 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-300"
           style={{
             color: activeWorkflow === key ? '#fff' : 'rgba(255,255,255,0.85)',
             background: 'transparent',
             border: 'none',
-            width: BTN_W,
             textAlign: 'center',
           }}
         >
-          {label}
+          <span className="demo-label-full">{label}</span>
+          <span className="demo-label-short">{shortLabel}</span>
         </button>
       ))}
     </div>

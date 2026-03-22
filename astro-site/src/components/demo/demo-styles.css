@@ -103,3 +103,35 @@
     width: 240px;
   }
 }
+
+/* Segmented control sizing */
+.demo-segmented-control {
+  width: 406px; /* 200 * 2 + 6 */
+}
+.demo-segmented-highlight {
+  width: 200px;
+}
+.demo-segmented-btn {
+  width: 200px;
+}
+.demo-label-short {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .demo-segmented-control {
+    width: 326px; /* 160 * 2 + 6 */
+  }
+  .demo-segmented-highlight {
+    width: 160px;
+  }
+  .demo-segmented-btn {
+    width: 160px;
+  }
+  .demo-label-full {
+    display: none;
+  }
+  .demo-label-short {
+    display: inline;
+  }
+}
