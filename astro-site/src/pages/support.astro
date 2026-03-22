@@ -201,4 +201,18 @@ import Footer from '../components/Footer.astro';
   if (new URLSearchParams(window.location.search).has('sent')) {
     document.getElementById('success-msg')?.classList.remove('hidden');
   }
+
+  // FAQ accordion — close other items when one is opened
+  const faqItems = document.querySelectorAll('details');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        faqItems.forEach(other => {
+          if (other !== item && other.open) {
+            other.open = false;
+          }
+        });
+      }
+    });
+  });
 </script>

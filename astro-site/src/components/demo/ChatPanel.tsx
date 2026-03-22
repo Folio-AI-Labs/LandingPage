@@ -44,13 +44,13 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
             return messages.map((msg, i) => (
               <div key={i}>
                 {msg.role === 'user' ? (
-                  <div className="flex justify-end py-1 px-2">
+                  <div className="flex justify-end py-0.5 px-2">
                     <div className="max-w-[85%] break-words rounded-2xl bg-[hsl(0,0%,95%)] px-2.5 py-1.5 text-[13px] leading-relaxed">
                       {msg.text}
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-col py-1 px-2">
+                  <div className="flex flex-col py-0.5 px-2">
                     <div className="max-w-full break-words text-[13px] leading-relaxed">
                       {msg.visibleChars !== undefined ? msg.text.slice(0, msg.visibleChars) : msg.text}
                     </div>

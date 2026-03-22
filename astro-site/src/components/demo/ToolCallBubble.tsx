@@ -28,7 +28,7 @@ export default function ToolCallBubble({ toolName, label, status }: ToolCallBubb
     : 'border-[hsl(0,0%,90%)]'
 
   return (
-    <div className={`rounded-lg border text-[0.85em] my-1.5 ${bgColor} ${textColor} ${borderColor}`}>
+    <div className={`rounded-lg border text-[0.85em] my-0.5 ${bgColor} ${textColor} ${borderColor}`}>
       <div className="flex items-center gap-1.5 px-2.5 py-1.5">
         <Icon className="w-[1em] h-[1em] shrink-0" />
         <span className={`truncate ${isRunning ? 'demo-shimmer' : ''}`}>{label}</span>
