@@ -12,7 +12,7 @@ export const translations = {
     // Hero Section
     'hero.title': 'Professional slides that work natively.',
     'hero.subtitle1': 'AI agents can\'t edit PowerPoint. Verso can.',
-    'hero.subtitle2': 'We built native slide generation & edition, where you need it.',
+    'hero.subtitle2': 'We built native slide generation & editing, right where you need it.',
     'hero.trustedBy': 'Trusted by',
 
     // Intelligence Section
@@ -63,7 +63,7 @@ export const translations = {
     'pricing.metaDescription': 'Choose the perfect plan for your presentation needs. Flexible credit-based pricing for everyone.',
     'pricing.title': 'Pricing',
     'pricing.subtitle': 'Start with 200 free credits. Pay for what you use on top.',
-    'pricing.subtitle2': 'Upgrade for plans to get the best deal.',
+    'pricing.subtitle2': 'Subscribe to a plan for the best rates.',
     'pricing.annual': 'Annual (Save 25%)',
     'pricing.monthly': 'Monthly',
     'pricing.perMonth': '/month',
@@ -71,7 +71,7 @@ export const translations = {
     'pricing.mostPopular': 'Most Popular',
 
     'pricing.starter.name': 'Starter',
-    'pricing.starter.description': 'Perfect for individuals that want to try out the solution',
+    'pricing.starter.description': 'Perfect to try Verso',
     'pricing.starter.credits': '200 credits',
     'pricing.starter.creditsDesc': 'to get started',
     'pricing.starter.creditPrice': '$4',
@@ -82,7 +82,7 @@ export const translations = {
     'pricing.starter.feature4': 'Multi-format exports',
 
     'pricing.plus.name': 'Plus',
-    'pricing.plus.description': 'For regular users that need more of the product',
+    'pricing.plus.description': 'For regular users who need more',
     'pricing.plus.credits': '1,000 credits',
     'pricing.plus.creditsDesc': 'per month',
     'pricing.plus.creditPrice': '$3',
@@ -92,7 +92,7 @@ export const translations = {
     'pricing.plus.feature3': 'Custom templates',
 
     'pricing.pro.name': 'Pro',
-    'pricing.pro.description': 'For professionals that need speed and efficiency',
+    'pricing.pro.description': 'For professionals who need speed and efficiency',
     'pricing.pro.credits': '3,000 credits',
     'pricing.pro.creditsDesc': 'per month',
     'pricing.pro.creditPrice': '$2',
@@ -102,7 +102,7 @@ export const translations = {
     'pricing.pro.feature3': 'Priority support',
 
     'pricing.ultimate.name': 'Ultimate',
-    'pricing.ultimate.description': 'For teams that need peak performance',
+    'pricing.ultimate.description': 'For teams who need peak performance',
     'pricing.ultimate.credits': '8,000 credits',
     'pricing.ultimate.creditsDesc': 'per month',
     'pricing.ultimate.creditPrice': '$1.50',
@@ -144,7 +144,7 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'Des présentations de qualité, nativement',
-    'hero.subtitle1': 'Aucun agent ne travaille directement dans PowerPoint - sauf Verso.',
+    'hero.subtitle1': 'Aucun agent ne travaille directement dans PowerPoint - Verso, si.',
     'hero.subtitle2': 'Génération et édition de slides, directement dans PowerPoint.',
     'hero.trustedBy': 'Ils nous font confiance',
 
@@ -412,7 +412,7 @@ export const translations = {
     'hero.title': 'Professionelle Folien, nativ in PowerPoint.',
     'hero.subtitle1': 'KI-Agenten können kein PowerPoint bearbeiten. Verso schon.',
     'hero.subtitle2': 'Native Slide-Erstellung und -Bearbeitung, direkt in PowerPoint.',
-    'hero.trustedBy': 'Vertrauen uns',
+    'hero.trustedBy': 'Sie vertrauen auf uns',
 
     // Intelligence Section
     'intelligence.title': 'Intelligenz, wo Sie sie brauchen',
