@@ -6,19 +6,70 @@ import type { SlideContent } from './slides'
 import './demo-styles.css'
 import type { Message, ToolCall, Phase } from './types'
 
-// --- Workflow 1: Create from scratch ---
-const W1_PROMPT = 'Can you make me a 3 slides presentation on the current oil market?'
-const W1_AI_TEXT = "I'll create a 3-slide presentation on the current oil market."
+// --- Workflow content per locale ---
 const W1_TOOL_NAMES = ['edit_slide', 'insert_slide', 'insert_slide'] as const
-const W1_TOOL_LABELS = [
-  'Adding title, subtitle, date and confidentiality notice',
-  'Creating supply vs demand chart with KPI cards and analysis',
-  'Building price trend visualization with sector breakdown',
-]
 
-// --- Workflow 2: Edit existing ---
-const W2_PROMPT = 'Translate this slide to French'
-const W2_AI_TEXT = "Translating to French: c'est parti!"
+const demoText: Record<string, {
+  w1Prompt: string; w1Ai: string; w1Search: string; w1Tools: string[]
+  w2Prompt: string; w2Ai: string; w2Tool: string; w2Followup: string
+}> = {
+  en: {
+    w1Prompt: 'Can you make me a 3 slides presentation on the current oil market?',
+    w1Ai: "I'll create a 3-slide presentation on the current oil market.",
+    w1Search: 'Searching "current oil market 2026"',
+    w1Tools: [
+      'Adding title, subtitle, date and confidentiality notice',
+      'Creating supply vs demand chart with KPI cards and analysis',
+      'Building price trend visualization with sector breakdown',
+    ],
+    w2Prompt: 'Translate this slide to French',
+    w2Ai: "Translating to French: c'est parti!",
+    w2Tool: 'Translating all text elements to French',
+    w2Followup: 'Done! Do you need me to translate the other slides as well?',
+  },
+  fr: {
+    w1Prompt: 'Crée-moi une présentation de 3 slides sur le marché pétrolier actuel',
+    w1Ai: 'Je vais créer une présentation de 3 slides sur le marché pétrolier actuel.',
+    w1Search: 'Recherche "marché pétrolier actuel 2026"',
+    w1Tools: [
+      'Ajout du titre, sous-titre, date et mention de confidentialité',
+      'Création du graphique offre/demande avec KPIs et analyse',
+      'Construction de la visualisation des tendances de prix par secteur',
+    ],
+    w2Prompt: 'Traduis ce slide en français',
+    w2Ai: "Traduction en français : c'est parti !",
+    w2Tool: 'Traduction de tous les éléments textuels en français',
+    w2Followup: 'C\'est fait ! Voulez-vous que je traduise les autres slides aussi ?',
+  },
+  es: {
+    w1Prompt: '¿Puedes crearme una presentación de 3 slides sobre el mercado petrolero actual?',
+    w1Ai: 'Voy a crear una presentación de 3 slides sobre el mercado petrolero actual.',
+    w1Search: 'Buscando "mercado petrolero actual 2026"',
+    w1Tools: [
+      'Añadiendo título, subtítulo, fecha y aviso de confidencialidad',
+      'Creando gráfico de oferta y demanda con KPIs y análisis',
+      'Construyendo visualización de tendencias de precios por sector',
+    ],
+    w2Prompt: 'Traduce esta diapositiva al francés',
+    w2Ai: "Traduciendo al francés: c'est parti!",
+    w2Tool: 'Traduciendo todos los elementos de texto al francés',
+    w2Followup: '¡Listo! ¿Necesitas que traduzca las demás diapositivas también?',
+  },
+  de: {
+    w1Prompt: 'Kannst du mir eine 3-Folien-Präsentation zum aktuellen Ölmarkt erstellen?',
+    w1Ai: 'Ich erstelle eine 3-Folien-Präsentation zum aktuellen Ölmarkt.',
+    w1Search: 'Suche "aktueller Ölmarkt 2026"',
+    w1Tools: [
+      'Titel, Untertitel, Datum und Vertraulichkeitshinweis hinzufügen',
+      'Angebots-/Nachfragediagramm mit KPIs und Analyse erstellen',
+      'Preistrend-Visualisierung mit Sektoraufschlüsselung erstellen',
+    ],
+    w2Prompt: 'Übersetze diese Folie ins Französische',
+    w2Ai: "Übersetze ins Französische: c'est parti!",
+    w2Tool: 'Alle Textelemente ins Französische übersetzen',
+    w2Followup: 'Fertig! Soll ich die anderen Folien auch übersetzen?',
+  },
+}
 
 // --- Shared constants ---
 const CHAR_DELAY = 28
@@ -69,6 +120,8 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
 
   const autoplayRef = useRef(false)
 
+  const t = demoText[lang] || demoText.en
+
   // --- Workflow 1: Create from scratch ---
   const runCreateWorkflow = useCallback(() => {
     clearAllTimeouts()
@@ -86,33 +139,33 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
 
     elapsed += 100
     schedule(() => setPhase('typing'), elapsed)
-    for (let i = 1; i <= W1_PROMPT.length; i++) {
+    for (let i = 1; i <= t.w1Prompt.length; i++) {
       const ci = i
-      schedule(() => setComposerText(W1_PROMPT.slice(0, ci)), elapsed + i * CHAR_DELAY)
+      schedule(() => setComposerText(t.w1Prompt.slice(0, ci)), elapsed + i * CHAR_DELAY)
     }
-    elapsed += W1_PROMPT.length * CHAR_DELAY
+    elapsed += t.w1Prompt.length * CHAR_DELAY
 
     elapsed += PAUSE_SHORT
     schedule(() => {
-      setPhase('sent'); setComposerText(''); setMessages([{ role: 'user', text: W1_PROMPT }])
+      setPhase('sent'); setComposerText(''); setMessages([{ role: 'user', text: t.w1Prompt }])
       setIsRunning(true); setChatScale(1)
     }, elapsed)
 
     elapsed += PAUSE_SHORT * 2
-    for (let i = 0; i <= W1_AI_TEXT.length; i++) {
+    for (let i = 0; i <= t.w1Ai.length; i++) {
       const ci = i
       schedule(() => {
         setPhase('responding')
-        setMessages([{ role: 'user', text: W1_PROMPT }, { role: 'assistant', text: W1_AI_TEXT, visibleChars: ci }])
+        setMessages([{ role: 'user', text: t.w1Prompt }, { role: 'assistant', text: t.w1Ai, visibleChars: ci }])
       }, elapsed + i * AI_CHAR_DELAY)
     }
-    elapsed += W1_AI_TEXT.length * AI_CHAR_DELAY
+    elapsed += t.w1Ai.length * AI_CHAR_DELAY
 
     // Google search
     elapsed += PAUSE_SHORT * 2
     schedule(() => {
       setPhase('tools')
-      setToolCalls(prev => [...prev, { toolName: 'google_search', label: 'Searching "current oil market 2026"', status: 'running' }])
+      setToolCalls(prev => [...prev, { toolName: 'google_search', label: t.w1Search, status: 'running' }])
     }, elapsed)
     elapsed += TOOL_RUNNING_TIME / 2
     schedule(() => setToolCalls(prev => prev.map((tc, i) => i === 0 ? { ...tc, status: 'complete' as const } : tc)), elapsed)
@@ -126,7 +179,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
       const tcIdx = tIdx + 1
       schedule(() => {
         setPhase('tools')
-        setToolCalls(prev => [...prev, { toolName: W1_TOOL_NAMES[tIdx], label: W1_TOOL_LABELS[tIdx], status: 'running' }])
+        setToolCalls(prev => [...prev, { toolName: W1_TOOL_NAMES[tIdx], label: t.w1Tools[tIdx], status: 'running' }])
       }, elapsed)
       elapsed += TOOL_RUNNING_TIME
       schedule(() => {
@@ -147,7 +200,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
     // Auto-switch to edit workflow after a pause
     elapsed += 1500
     schedule(() => { autoplayRef.current = true; setActiveWorkflow('edit') }, elapsed)
-  }, [clearAllTimeouts, schedule])
+  }, [clearAllTimeouts, schedule, t])
 
   // --- Workflow 2: Edit existing ---
   const runEditWorkflow = useCallback(() => {
@@ -166,33 +219,33 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
 
     elapsed += 100
     schedule(() => setPhase('typing'), elapsed)
-    for (let i = 1; i <= W2_PROMPT.length; i++) {
+    for (let i = 1; i <= t.w2Prompt.length; i++) {
       const ci = i
-      schedule(() => setComposerText(W2_PROMPT.slice(0, ci)), elapsed + i * CHAR_DELAY)
+      schedule(() => setComposerText(t.w2Prompt.slice(0, ci)), elapsed + i * CHAR_DELAY)
     }
-    elapsed += W2_PROMPT.length * CHAR_DELAY
+    elapsed += t.w2Prompt.length * CHAR_DELAY
 
     elapsed += PAUSE_SHORT
     schedule(() => {
-      setPhase('sent'); setComposerText(''); setMessages([{ role: 'user', text: W2_PROMPT }])
+      setPhase('sent'); setComposerText(''); setMessages([{ role: 'user', text: t.w2Prompt }])
       setIsRunning(true); setChatScale(1)
     }, elapsed)
 
     elapsed += PAUSE_SHORT * 2
-    for (let i = 0; i <= W2_AI_TEXT.length; i++) {
+    for (let i = 0; i <= t.w2Ai.length; i++) {
       const ci = i
       schedule(() => {
         setPhase('responding')
-        setMessages([{ role: 'user', text: W2_PROMPT }, { role: 'assistant', text: W2_AI_TEXT, visibleChars: ci }])
+        setMessages([{ role: 'user', text: t.w2Prompt }, { role: 'assistant', text: t.w2Ai, visibleChars: ci }])
       }, elapsed + i * AI_CHAR_DELAY)
     }
-    elapsed += W2_AI_TEXT.length * AI_CHAR_DELAY
+    elapsed += t.w2Ai.length * AI_CHAR_DELAY
 
     // Edit slide tool call
     elapsed += PAUSE_SHORT * 2
     schedule(() => {
       setPhase('tools')
-      setToolCalls([{ toolName: 'edit_slide', label: 'Translating all text elements to French', status: 'running' }])
+      setToolCalls([{ toolName: 'edit_slide', label: t.w2Tool, status: 'running' }])
     }, elapsed)
 
     elapsed += TOOL_RUNNING_TIME
@@ -209,27 +262,26 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
     }, elapsed)
 
     // Follow-up text — appended as a new assistant message
-    const W2_FOLLOWUP = "Done! Do you need me to translate the other slides as well?"
     elapsed += PAUSE_SHORT * 2
     schedule(() => setIsRunning(false), elapsed)
-    for (let i = 0; i <= W2_FOLLOWUP.length; i++) {
+    for (let i = 0; i <= t.w2Followup.length; i++) {
       const ci = i
       schedule(() => {
         setMessages([
-          { role: 'user', text: W2_PROMPT },
-          { role: 'assistant', text: W2_AI_TEXT },
-          { role: 'assistant', text: W2_FOLLOWUP, visibleChars: ci },
+          { role: 'user', text: t.w2Prompt },
+          { role: 'assistant', text: t.w2Ai },
+          { role: 'assistant', text: t.w2Followup, visibleChars: ci },
         ])
       }, elapsed + i * AI_CHAR_DELAY)
     }
-    elapsed += W2_FOLLOWUP.length * AI_CHAR_DELAY
+    elapsed += t.w2Followup.length * AI_CHAR_DELAY
 
     elapsed += PAUSE_SHORT
     schedule(() => { setPhase('done') }, elapsed)
     // Auto-switch to create workflow after a pause
     elapsed += 1500
     schedule(() => { autoplayRef.current = true; setActiveWorkflow('create') }, elapsed)
-  }, [clearAllTimeouts, schedule])
+  }, [clearAllTimeouts, schedule, t])
 
   // Run animation when workflow changes
   useEffect(() => {
