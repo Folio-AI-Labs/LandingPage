@@ -15,7 +15,7 @@ const languages = [
 const currentLanguage = languages.find(l => l.code === lang)?.display || 'EN';
 ---
 
-<div class="language-selector relative static">
+<div class="language-selector relative">
   <button
     class="language-button font-heading text-sm font-medium text-brand-muted hover:text-brand transition-colors duration-300 cursor-pointer bg-transparent border-none flex items-center gap-1.5"
     aria-label="Select language"
@@ -26,7 +26,7 @@ const currentLanguage = languages.find(l => l.code === lang)?.display || 'EN';
     </svg>
   </button>
 
-  <div class="language-dropdown fixed mt-2 bg-white border border-brand-border rounded-lg shadow-lg py-1 w-auto opacity-0 invisible pointer-events-none transition-all duration-200 z-[1003]">
+  <div class="language-dropdown absolute right-0 top-full mt-2 bg-white border border-brand-border rounded-lg shadow-lg py-1 w-auto opacity-0 invisible pointer-events-none transition-all duration-200 z-[1003]">
     {languages.map(l => {
       const href = l.code === 'en' ? currentPath : `/${l.code}${currentPath}`;
       return (
@@ -45,18 +45,14 @@ const currentLanguage = languages.find(l => l.code === lang)?.display || 'EN';
 
 <style>
   .language-selector:hover .language-dropdown,
-  .language-selector:focus-within .language-dropdown,
-  .language-dropdown:hover,
-  .language-dropdown.show {
+  .language-selector:focus-within .language-dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
 
   .language-selector:hover .chevron,
-  .language-selector:focus-within .chevron,
-  .language-dropdown:hover ~ .language-button .chevron,
-  .language-dropdown.show ~ .language-button .chevron {
+  .language-selector:focus-within .chevron {
     transform: rotate(180deg);
   }
 
@@ -67,61 +63,8 @@ const currentLanguage = languages.find(l => l.code === lang)?.display || 'EN';
 </style>
 
 <script>
-  const languageSelector = document.querySelector('.language-selector');
-  const languageButton = document.querySelector('.language-button');
-  const languageDropdown = document.querySelector('.language-dropdown');
   const languageOptions = document.querySelectorAll('.language-option');
   const currentLanguageDisplay = document.querySelector('.language-current');
-
-  let hideTimeout: number | null = null;
-
-  // Position dropdown function
-  function positionDropdown() {
-    if (languageButton && languageDropdown) {
-      const rect = languageButton.getBoundingClientRect();
-      const minRightMargin = 1.25; // Narrow space from right edge (50% of 2.5px)
-      const windowWidth = window.innerWidth;
-
-      // Position dropdown aligned to the right with margin
-      const rightPosition = windowWidth - rect.right;
-
-      (languageDropdown as HTMLElement).style.top = `${rect.bottom + 8}px`;
-      (languageDropdown as HTMLElement).style.right = `${rightPosition + minRightMargin}px`;
-      (languageDropdown as HTMLElement).style.left = 'auto';
-    }
-  }
-
-  // Show dropdown
-  function showDropdown() {
-    if (hideTimeout) {
-      clearTimeout(hideTimeout);
-      hideTimeout = null;
-    }
-    positionDropdown();
-    languageDropdown?.classList.add('show');
-  }
-
-  // Hide dropdown with delay
-  function hideDropdown() {
-    hideTimeout = window.setTimeout(() => {
-      languageDropdown?.classList.remove('show');
-    }, 150);
-  }
-
-  // Position on hover/focus
-  languageSelector?.addEventListener('mouseenter', showDropdown);
-  languageSelector?.addEventListener('mouseleave', hideDropdown);
-  languageSelector?.addEventListener('focusin', showDropdown);
-
-  // Keep dropdown visible when hovering over it
-  languageDropdown?.addEventListener('mouseenter', showDropdown);
-  languageDropdown?.addEventListener('mouseleave', hideDropdown);
-
-  // Reposition on scroll and resize
-  window.addEventListener('scroll', positionDropdown);
-  window.addEventListener('resize', positionDropdown);
-
-  // Language links will handle navigation automatically, no click handler needed
 
   // Set initial active state
   const currentLang = currentLanguageDisplay?.textContent?.trim();
