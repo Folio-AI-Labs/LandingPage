@@ -24,13 +24,13 @@ const navLinks = [
     <img src="/v_icon.svg" alt="Verso AI Logo" class="w-[29px] h-[29px]" />
     <span class="font-heading">Verso AI</span>
   </a>
-  <ul class="hidden nav:flex gap-8 list-none justify-center m-0 p-0">
+  <ul class="hidden nav:flex gap-[42px] list-none justify-center m-0 p-0">
     {navLinks.map(link => (
       <li>
         <a
           href={link.href}
           class:list={[
-            'no-underline text-sm font-medium transition-colors duration-300 hover:text-brand',
+            'no-underline text-[15px] font-medium transition-colors duration-300 hover:text-brand',
             activePage === link.label ? 'text-brand' : 'text-brand-muted',
           ]}
         >

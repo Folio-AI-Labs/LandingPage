@@ -449,10 +449,10 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
 
   return (
     <div style={{ fontFamily: 'Inter, sans-serif' }}>
-      {/* Segmented control */}
-      <div className="flex justify-center mb-3">
+      {/* Segmented control - hidden for auto-loop */}
+      {/* <div className="flex justify-center mb-3">
         {segmentedControl}
-      </div>
+      </div> */}
       {/* Viewer — scaled down on narrow screens, centered when wide */}
       <div className="demo-viewer-outer" style={{ marginTop: '0', position: 'relative', zIndex: 0 }}>
         <div className="demo-viewer-inner">

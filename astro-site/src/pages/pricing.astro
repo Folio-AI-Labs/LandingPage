@@ -68,7 +68,6 @@ const t = useTranslations(lang);
         <div class="mb-6">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.plus.name')}</h3>
-            <img src="/hawk.svg" alt="Plus" class="w-[50px] h-[50px]" />
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.plus.description')}</p>
         </div>
@@ -105,7 +104,6 @@ const t = useTranslations(lang);
         <div class="mb-6">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.pro.name')}</h3>
-            <img src="/eagle.svg" alt="Pro" class="w-[50px] h-[50px]" />
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.pro.description')}</p>
         </div>
@@ -133,7 +131,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature3')}</li>
         </ul>
 
-        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer bg-brand text-white hover:bg-opacity-90">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Ultimate Plan -->
@@ -141,7 +139,6 @@ const t = useTranslations(lang);
         <div class="mb-6">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.ultimate.name')}</h3>
-            <img src="/raptor.svg" alt="Ultimate" class="w-[50px] h-[50px]" />
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.ultimate.description')}</p>
         </div>

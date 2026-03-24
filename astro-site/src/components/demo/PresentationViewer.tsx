@@ -42,9 +42,9 @@ interface PresentationViewerProps {
 export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready' }: PresentationViewerProps) {
   return (
     <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
-      style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)' }}>
+      style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)', borderRadius: '8px', overflow: 'visible' }}>
       {/* PowerPoint title bar */}
-      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A' }}>
+      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
         {fileTitle}
       </div>
       {/* Ribbon */}
@@ -93,7 +93,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
       </div>
 
       {/* Status bar */}
-      <div className="px-3 py-1 bg-[#f0f0f0] border-t border-[#d5d5d5] text-[10px] text-[#aaa]">
+      <div className="px-3 py-1 bg-[#f0f0f0] border-t border-[#d5d5d5] text-[10px] text-[#aaa]" style={{ borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}>
         {visibleSlides.length > 0 ? statusSlideOf(visibleSlides.indexOf(activeSlide) + 1, visibleSlides.length) : statusReady}
       </div>
     </div>

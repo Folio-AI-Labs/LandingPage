@@ -19,11 +19,13 @@ export const translations = {
     // Features Section
     'features.title': 'How it works',
     'features.prompt.title': 'Prompt to deck',
-    'features.prompt.desc': 'Generate a full slide deck from scratch. Describe what you need. For example: "Make me a 10-slide presentation on building industry prospects." Then refine: "Detail the intro with 3 columns, the left one illustrated by a chart." Verso uses your existing PowerPoint template, applying your on-brand fonts, colors, and pre-set layouts automatically.',
+    'features.prompt.desc': 'Generate a full slide deck from scratch: describe what you need, and how you want it done. Start with "Create a 10-slide presentation on the evolution of the EV market in Japan.", then refine: "Detail the intro with 3 columns, the left one illustrated by a chart. Focus on financial considerations." Verso uses your existing PowerPoint template, applying your on-brand fonts, colors, and pre-set layouts automatically.',
     'features.edit.title': 'Edit an existing deck',
-    'features.edit.desc': 'Open any deck and prompt Verso to modify it at will. Native integration means you can make manual adjustments, then prompt again, seamlessly blending AI-powered edits with your own touch.',
+    'features.edit.desc': 'Open any deck and prompt Verso to modify it at will. Native integration means you can make manual adjustments, then prompt again, seamlessly blending AI-powered heavy lifting with your own final touch.',
     'features.control.title': 'Full control',
     'features.control.desc': 'Verso works directly with real PowerPoint shapes and objects\u2009—\u2009not images masquerading as slides. Every element remains fully editable, and the engine handles any modification you could make in PowerPoint yourself.',
+    'features.upload.title': 'Upload files',
+    'features.upload.desc': 'Verso lets you upload anything relevant for your prompt: logo, image, inspiration, etc. Upload your file, reference it in your prompt, and let Verso use this added context to achieve your goal.',
     'features.enterprise.title': 'Enterprise-ready',
     'features.enterprise.desc': 'Bring your own API keys with enterprise plans. GDPR compliant, SSO and MFA login. Your data stays yours.',
 
@@ -60,7 +62,7 @@ export const translations = {
     'pricing.mostPopular': 'Most Popular',
 
     'pricing.starter.name': 'Starter',
-    'pricing.starter.description': 'Perfect to try Verso',
+    'pricing.starter.description': 'For first time and occasional Verso AI users',
     'pricing.starter.credits': '200 credits',
     'pricing.starter.creditsDesc': 'to get started',
     'pricing.starter.creditPrice': '$4',
@@ -71,7 +73,7 @@ export const translations = {
     'pricing.starter.feature4': 'Multi-format exports',
 
     'pricing.plus.name': 'Plus',
-    'pricing.plus.description': 'For regular users who need more',
+    'pricing.plus.description': 'For regular users who need a better deal',
     'pricing.plus.credits': '1,000 credits',
     'pricing.plus.creditsDesc': 'per month',
     'pricing.plus.creditPrice': '$3',
@@ -81,7 +83,7 @@ export const translations = {
     'pricing.plus.feature3': 'Custom templates',
 
     'pricing.pro.name': 'Pro',
-    'pricing.pro.description': 'For professionals who need speed and efficiency',
+    'pricing.pro.description': 'For professionals who need scalable speed and efficiency',
     'pricing.pro.credits': '3,000 credits',
     'pricing.pro.creditsDesc': 'per month',
     'pricing.pro.creditPrice': '$2',
@@ -91,7 +93,7 @@ export const translations = {
     'pricing.pro.feature3': 'Priority support',
 
     'pricing.ultimate.name': 'Ultimate',
-    'pricing.ultimate.description': 'For teams who need peak performance',
+    'pricing.ultimate.description': 'For ambitious teams who need peak performance',
     'pricing.ultimate.credits': '8,000 credits',
     'pricing.ultimate.creditsDesc': 'per month',
     'pricing.ultimate.creditPrice': '$1.50',
@@ -141,11 +143,13 @@ export const translations = {
     // Features Section
     'features.title': 'Comment ça marche',
     'features.prompt.title': 'Du prompt au deck',
-    'features.prompt.desc': 'Générez un deck complet de zéro. Décrivez ce que vous voulez. Par exemple : « Crée-moi une présentation de 10 slides sur les perspectives du BTP ». Puis affinez : « Détaille l\'intro en 3 colonnes, la première illustrée par un graphique. » Verso utilise votre template PowerPoint existant, en appliquant automatiquement vos polices, couleurs et mises en page.',
+    'features.prompt.desc': 'Générez un deck complet de zéro : décrivez ce que vous voulez et comment vous le voulez. Commencez par « Crée une présentation de 10 slides sur l\'évolution du marché des véhicules électriques au Japon », puis affinez : « Détaille l\'intro en 3 colonnes, la première illustrée par un graphique. Concentre-toi sur les considérations financières. » Verso utilise votre template PowerPoint existant, en appliquant automatiquement vos polices, couleurs et mises en page.',
     'features.edit.title': 'Éditez un deck existant',
-    'features.edit.desc': 'Ouvrez n\'importe quel deck et demandez à Verso de le modifier. L\'intégration native vous permet de faire des ajustements manuels, puis de relancer un prompt, mêlant naturellement vos modifications et celles de l\'IA.',
+    'features.edit.desc': 'Ouvrez n\'importe quel deck et demandez à Verso de le modifier. L\'intégration native vous permet de faire des ajustements manuels, puis de relancer un prompt, mêlant naturellement le gros du travail fait par l\'IA avec votre touche finale.',
     'features.control.title': 'Contrôle total',
     'features.control.desc': 'Verso travaille directement avec de vrais objets PowerPoint\u2009—\u2009pas des images qui imitent des slides. Chaque élément reste entièrement modifiable, et le moteur gère toute modification que vous pourriez faire dans PowerPoint.',
+    'features.upload.title': 'Téléchargez des fichiers',
+    'features.upload.desc': 'Verso vous permet de télécharger tout ce qui est pertinent pour votre prompt : logo, image, inspiration, etc. Téléchargez votre fichier, référencez-le dans votre prompt, et laissez Verso utiliser ce contexte supplémentaire pour atteindre votre objectif.',
     'features.enterprise.title': 'Prêt pour l\'entreprise',
     'features.enterprise.desc': 'Utilisez vos propres clés API avec les plans Enterprise. Conforme au RGPD, SSO et MFA. Vos données restent les vôtres.',
 
@@ -182,7 +186,7 @@ export const translations = {
     'pricing.mostPopular': 'Le plus populaire',
 
     'pricing.starter.name': 'Starter',
-    'pricing.starter.description': 'Idéal pour découvrir la solution',
+    'pricing.starter.description': 'Pour les nouveaux utilisateurs et utilisateurs occasionnels de Verso AI',
     'pricing.starter.credits': '200 crédits',
     'pricing.starter.creditsDesc': 'offerts',
     'pricing.starter.creditPrice': '4 $',
@@ -193,7 +197,7 @@ export const translations = {
     'pricing.starter.feature4': 'Export multi-formats',
 
     'pricing.plus.name': 'Plus',
-    'pricing.plus.description': 'Pour un usage régulier',
+    'pricing.plus.description': 'Pour ceux qui cherchent une meilleure offre',
     'pricing.plus.credits': '1 000 crédits',
     'pricing.plus.creditsDesc': 'par mois',
     'pricing.plus.creditPrice': '3 $',
@@ -203,7 +207,7 @@ export const translations = {
     'pricing.plus.feature3': 'Templates personnalisés',
 
     'pricing.pro.name': 'Pro',
-    'pricing.pro.description': 'Pour les professionnels exigeants',
+    'pricing.pro.description': 'Pour les professionnels qui ont besoin de rapidité et d\'efficacité évolutives',
     'pricing.pro.credits': '3 000 crédits',
     'pricing.pro.creditsDesc': 'par mois',
     'pricing.pro.creditPrice': '2 $',
@@ -213,7 +217,7 @@ export const translations = {
     'pricing.pro.feature3': 'Support prioritaire',
 
     'pricing.ultimate.name': 'Ultimate',
-    'pricing.ultimate.description': 'Pour les équipes qui veulent le maximum',
+    'pricing.ultimate.description': 'Pour les équipes ambitieuses qui veulent le maximum',
     'pricing.ultimate.credits': '8 000 crédits',
     'pricing.ultimate.creditsDesc': 'par mois',
     'pricing.ultimate.creditPrice': '1,50 $',
@@ -263,11 +267,13 @@ export const translations = {
     // Features Section
     'features.title': 'Cómo funciona',
     'features.prompt.title': 'Del prompt al deck',
-    'features.prompt.desc': 'Genera un deck completo desde cero. Describe lo que necesitas. Por ejemplo: «Hazme una presentación de 10 diapositivas sobre las perspectivas del sector de la construcción». Luego refina: «Detalla la intro en 3 columnas, la de la izquierda con un gráfico.» Verso utiliza tu plantilla de PowerPoint existente, aplicando automáticamente tus fuentes, colores y diseños corporativos.',
+    'features.prompt.desc': 'Genera un deck completo desde cero: describe lo que necesitas y cómo lo quieres. Comienza con «Crea una presentación de 10 diapositivas sobre la evolución del mercado de vehículos eléctricos en Japón», luego refina: «Detalla la intro en 3 columnas, la de la izquierda con un gráfico. Enfócate en consideraciones financieras.» Verso utiliza tu plantilla de PowerPoint existente, aplicando automáticamente tus fuentes, colores y diseños corporativos.',
     'features.edit.title': 'Edita un deck existente',
-    'features.edit.desc': 'Abre cualquier deck y pide a Verso que lo modifique. La integración nativa te permite hacer ajustes manuales y luego volver a dar instrucciones, combinando sin esfuerzo las ediciones de la IA con las tuyas.',
+    'features.edit.desc': 'Abre cualquier deck y pide a Verso que lo modifique. La integración nativa te permite hacer ajustes manuales y luego volver a dar instrucciones, combinando sin esfuerzo el trabajo pesado de la IA con tu toque final.',
     'features.control.title': 'Control total',
     'features.control.desc': 'Verso trabaja directamente con objetos reales de PowerPoint, no con imágenes que simulan diapositivas. Cada elemento es completamente editable, y el motor maneja cualquier modificación que puedas hacer en PowerPoint.',
+    'features.upload.title': 'Sube archivos',
+    'features.upload.desc': 'Verso te permite subir cualquier cosa relevante para tu prompt: logo, imagen, inspiración, etc. Sube tu archivo, referéncialo en tu prompt, y deja que Verso use este contexto adicional para lograr tu objetivo.',
     'features.enterprise.title': 'Listo para empresas',
     'features.enterprise.desc': 'Usa tus propias claves API con los planes Enterprise. Cumplimiento GDPR, SSO y MFA. Tus datos son tuyos.',
 
@@ -304,7 +310,7 @@ export const translations = {
     'pricing.mostPopular': 'Más popular',
 
     'pricing.starter.name': 'Starter',
-    'pricing.starter.description': 'Ideal para probar la solución',
+    'pricing.starter.description': 'Para nuevos usuarios y usuarios ocasionales de Verso AI',
     'pricing.starter.credits': '200 créditos',
     'pricing.starter.creditsDesc': 'gratis',
     'pricing.starter.creditPrice': '$4',
@@ -315,7 +321,7 @@ export const translations = {
     'pricing.starter.feature4': 'Exportación multiformato',
 
     'pricing.plus.name': 'Plus',
-    'pricing.plus.description': 'Para uso regular',
+    'pricing.plus.description': 'Para quienes buscan una mejor oferta',
     'pricing.plus.credits': '1.000 créditos',
     'pricing.plus.creditsDesc': 'por mes',
     'pricing.plus.creditPrice': '$3',
@@ -325,7 +331,7 @@ export const translations = {
     'pricing.plus.feature3': 'Plantillas personalizadas',
 
     'pricing.pro.name': 'Pro',
-    'pricing.pro.description': 'Para profesionales exigentes',
+    'pricing.pro.description': 'Para profesionales que necesitan rapidez y eficiencia escalables',
     'pricing.pro.credits': '3.000 créditos',
     'pricing.pro.creditsDesc': 'por mes',
     'pricing.pro.creditPrice': '$2',
@@ -335,7 +341,7 @@ export const translations = {
     'pricing.pro.feature3': 'Soporte prioritario',
 
     'pricing.ultimate.name': 'Ultimate',
-    'pricing.ultimate.description': 'Para equipos que buscan el máximo rendimiento',
+    'pricing.ultimate.description': 'Para equipos ambiciosos que buscan el máximo rendimiento',
     'pricing.ultimate.credits': '8.000 créditos',
     'pricing.ultimate.creditsDesc': 'por mes',
     'pricing.ultimate.creditPrice': '$1,50',
@@ -385,11 +391,13 @@ export const translations = {
     // Features Section
     'features.title': 'So funktioniert\u2019s',
     'features.prompt.title': 'Vom Prompt zum Deck',
-    'features.prompt.desc': 'Erstellen Sie ein komplettes Slide-Deck von Grund auf. Beschreiben Sie, was Sie brauchen. Zum Beispiel: „Erstelle eine 10-Folien-Präsentation zu den Perspektiven der Baubranche". Dann verfeinern Sie: „Gestalte die Einleitung dreispaltig, links mit einem Diagramm." Verso nutzt Ihre bestehende PowerPoint-Vorlage und übernimmt automatisch Ihre Schriften, Farben und Layouts.',
+    'features.prompt.desc': 'Erstellen Sie ein komplettes Slide-Deck von Grund auf: beschreiben Sie, was Sie brauchen und wie Sie es wollen. Beginnen Sie mit „Erstelle eine 10-Folien-Präsentation über die Entwicklung des Elektrofahrzeugmarktes in Japan", dann verfeinern Sie: „Gestalte die Einleitung dreispaltig, links mit einem Diagramm. Fokussiere auf finanzielle Überlegungen." Verso nutzt Ihre bestehende PowerPoint-Vorlage und übernimmt automatisch Ihre Schriften, Farben und Layouts.',
     'features.edit.title': 'Bestehendes Deck bearbeiten',
-    'features.edit.desc': 'Öffnen Sie ein beliebiges Deck und lassen Sie Verso es nach Ihren Wünschen anpassen. Dank nativer Integration können Sie manuelle Änderungen vornehmen und dann erneut prompten. KI-Bearbeitungen und eigene Anpassungen gehen nahtlos ineinander über.',
+    'features.edit.desc': 'Öffnen Sie ein beliebiges Deck und lassen Sie Verso es nach Ihren Wünschen anpassen. Dank nativer Integration können Sie manuelle Änderungen vornehmen und dann erneut prompten. Die schwere Arbeit der KI und Ihre eigene finale Note verschmelzen nahtlos.',
     'features.control.title': 'Volle Kontrolle',
     'features.control.desc': 'Verso arbeitet direkt mit echten PowerPoint-Objekten und -Formen\u2009—\u2009nicht mit Bildern, die Folien imitieren. Jedes Element bleibt vollständig editierbar, und die Engine verarbeitet jede Änderung, die Sie in PowerPoint selbst vornehmen könnten.',
+    'features.upload.title': 'Dateien hochladen',
+    'features.upload.desc': 'Verso ermöglicht es Ihnen, alles Relevante für Ihren Prompt hochzuladen: Logo, Bild, Inspiration, etc. Laden Sie Ihre Datei hoch, referenzieren Sie sie in Ihrem Prompt, und lassen Sie Verso diesen zusätzlichen Kontext nutzen, um Ihr Ziel zu erreichen.',
     'features.enterprise.title': 'Enterprise-ready',
     'features.enterprise.desc': 'Nutzen Sie Ihre eigenen API-Schlüssel mit Enterprise-Plänen. DSGVO-konform, SSO und MFA. Ihre Daten bleiben Ihre.',
 
@@ -426,7 +434,7 @@ export const translations = {
     'pricing.mostPopular': 'Am beliebtesten',
 
     'pricing.starter.name': 'Starter',
-    'pricing.starter.description': 'Ideal zum Ausprobieren',
+    'pricing.starter.description': 'Für neue und gelegentliche Verso AI-Nutzer',
     'pricing.starter.credits': '200 Credits',
     'pricing.starter.creditsDesc': 'gratis',
     'pricing.starter.creditPrice': '$4',
@@ -437,7 +445,7 @@ export const translations = {
     'pricing.starter.feature4': 'Multiformat-Export',
 
     'pricing.plus.name': 'Plus',
-    'pricing.plus.description': 'Für regelmäßige Nutzung',
+    'pricing.plus.description': 'Für alle, die ein besseres Angebot suchen',
     'pricing.plus.credits': '1.000 Credits',
     'pricing.plus.creditsDesc': 'pro Monat',
     'pricing.plus.creditPrice': '$3',
@@ -447,7 +455,7 @@ export const translations = {
     'pricing.plus.feature3': 'Eigene Vorlagen',
 
     'pricing.pro.name': 'Pro',
-    'pricing.pro.description': 'Für anspruchsvolle Profis',
+    'pricing.pro.description': 'Für Profis, die skalierbare Geschwindigkeit und Effizienz benötigen',
     'pricing.pro.credits': '3.000 Credits',
     'pricing.pro.creditsDesc': 'pro Monat',
     'pricing.pro.creditPrice': '$2',
@@ -457,7 +465,7 @@ export const translations = {
     'pricing.pro.feature3': 'Prioritäts-Support',
 
     'pricing.ultimate.name': 'Ultimate',
-    'pricing.ultimate.description': 'Für Teams mit höchsten Ansprüchen',
+    'pricing.ultimate.description': 'Für ambitionierte Teams mit höchsten Ansprüchen',
     'pricing.ultimate.credits': '8.000 Credits',
     'pricing.ultimate.creditsDesc': 'pro Monat',
     'pricing.ultimate.creditPrice': '$1,50',
