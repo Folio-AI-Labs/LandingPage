@@ -16,6 +16,9 @@ export default {
         'heading': ['"Spectral"', 'serif'],
         'body': ['"Inter"', 'sans-serif'],
       },
+      fontSize: {
+        'sm': '13px',
+      },
       borderRadius: {
         'pill': '50px',
       },

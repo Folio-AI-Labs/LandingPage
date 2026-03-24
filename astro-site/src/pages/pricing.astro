@@ -30,7 +30,7 @@ const t = useTranslations(lang);
     </div>
 
     <!-- Pricing Cards -->
-    <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
       <!-- Starter Plan -->
       <div class="bg-white rounded-2xl px-6 py-7 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
@@ -60,7 +60,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature4')}</li>
         </ul>
 
-        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Plus Plan -->
@@ -95,7 +95,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.plus.feature3')}</li>
         </ul>
 
-        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Pro Plan -->
@@ -131,7 +131,7 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature3')}</li>
         </ul>
 
-        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer bg-brand text-white hover:bg-opacity-90">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-brand text-white hover:bg-opacity-90">{t('pricing.getStarted')}</a>
       </div>
 
       <!-- Ultimate Plan -->
@@ -168,7 +168,31 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.ultimate.feature5')}</li>
         </ul>
 
-        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-sm font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+        <a href={PLAYGROUND_URL} class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</a>
+      </div>
+
+      <!-- Unlimited Plan -->
+      <div class="bg-black rounded-2xl px-6 py-7 border-2 border-black transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl">
+        <div class="mb-6">
+          <div class="flex items-center gap-3 mb-2">
+            <h3 class="font-display text-[32px] font-semibold text-white">{t('pricing.unlimited.name')}</h3>
+          </div>
+          <p class="text-sm text-gray-400 leading-normal">{t('pricing.unlimited.description')}</p>
+        </div>
+
+        <div class="mb-6 min-h-[80px] flex items-center">
+          <a href="/contact" class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-white text-black hover:bg-gray-200">{t('pricing.unlimited.getQuote')}</a>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-4 mb-6">
+          <p class="text-sm leading-relaxed text-white"><span class="font-semibold text-white">{t('pricing.unlimited.credits')}</span> {t('pricing.unlimited.creditsDesc')}</p>
+          <p class="text-sm leading-relaxed text-white">&nbsp;</p>
+        </div>
+
+        <ul class="list-none mb-8 flex-grow">
+          <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-white"><span class="text-white font-bold text-base shrink-0">✓</span><strong>{t('pricing.unlimited.feature1')}</strong></li>
+          <li class="flex items-start gap-3 mb-3 text-sm leading-relaxed text-white"><span class="text-white font-bold text-base shrink-0">✓</span>{t('pricing.unlimited.feature2')}</li>
+        </ul>
       </div>
 
     </div>
