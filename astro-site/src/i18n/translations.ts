@@ -16,34 +16,21 @@ export const translations = {
     'hero.subtitle2': 'We built native slide generation & editing, right where you need it.',
     'hero.trustedBy': 'Trusted by',
 
-    // Intelligence Section
-    'intelligence.title': 'Intelligence where you need it',
-    'intelligence.subtitle': 'Natively integrated in PowerPoint. Verso works on shapes, texts, charts, tables.',
-    'intelligence.subtitleCta': 'Just point, and ask.',
-    'intelligence.feature1.title': 'Natively integrated',
-    'intelligence.feature1.desc': 'Intelligence where you need it: natively integrated in PowerPoint.',
-    'intelligence.feature2.title': 'No compromise on quality',
-    'intelligence.feature2.desc': 'Let AI do the heavy lifting, apply your final touch.',
-    'intelligence.feature3.title': 'Generate ideas to work from',
-    'intelligence.feature3.desc': 'Get AI-powered suggestions and content to kickstart your presentations.',
-
-    // Capabilities Section
-    'capabilities.title': 'Everything you need to build better decks, faster',
-    'capabilities.prompt.title': 'Prompt to slides',
-    'capabilities.prompt.desc': 'Describe what you need. Verso generates a full deck in seconds.',
-    'capabilities.design.title': 'Brand-perfect design',
-    'capabilities.design.desc': 'Matches your existing themes, slidemasters, and colors.',
-    'capabilities.iterate.title': 'Iterate instantly',
-    'capabilities.iterate.desc': 'Refine any slide with follow-up prompts. Change tone, layout, content.',
-    'capabilities.integration.title': 'PowerPoint integration',
-    'capabilities.integration.desc': 'Works directly inside PowerPoint. No switching between tools.',
-    'capabilities.enterprise.title': 'Enterprise ready',
-    'capabilities.enterprise.desc': 'SOC 2 and GDPR compliant, SSO & MFA login. Your data stays yours.',
+    // Features Section
+    'features.title': 'How it works',
+    'features.prompt.title': 'Prompt to deck',
+    'features.prompt.desc': 'Generate a full slide deck from scratch. Describe what you need. For example: "Make me a 10-slide presentation on building industry prospects." Then refine: "Detail the intro with 3 columns, the left one illustrated by a chart." Verso uses your existing PowerPoint template, applying your on-brand fonts, colors, and pre-set layouts automatically.',
+    'features.edit.title': 'Edit an existing deck',
+    'features.edit.desc': 'Open any deck and prompt Verso to modify it at will. Native integration means you can make manual adjustments, then prompt again, seamlessly blending AI-powered edits with your own touch.',
+    'features.control.title': 'Full control',
+    'features.control.desc': 'Verso works directly with real PowerPoint shapes and objects\u2009—\u2009not images masquerading as slides. Every element remains fully editable, and the engine handles any modification you could make in PowerPoint yourself.',
+    'features.enterprise.title': 'Enterprise-ready',
+    'features.enterprise.desc': 'Bring your own API keys with enterprise plans. GDPR compliant, SSO and MFA login. Your data stays yours.',
 
     // Models Section
     'models.title': 'Performance at the core',
     'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
-    'models.evaluation': 'Full evaluation on Prezeval',
+    'models.evaluation': 'PrezEval benchmark',
 
     // CTA Banner
     'cta.title': 'Start working on your presentations in seconds.',
@@ -151,34 +138,21 @@ export const translations = {
     'hero.subtitle2': 'Génération et édition de slides, directement dans PowerPoint.',
     'hero.trustedBy': 'Ils nous font confiance',
 
-    // Intelligence Section
-    'intelligence.title': 'L\'intelligence au bon endroit',
-    'intelligence.subtitle': 'Intégré nativement dans PowerPoint. Verso agit sur les formes, textes, graphiques et tableaux.',
-    'intelligence.subtitleCta': 'Pointez, promptez, c\'est fait.',
-    'intelligence.feature1.title': 'Intégration native',
-    'intelligence.feature1.desc': 'L\'IA directement dans PowerPoint, là où vous travaillez.',
-    'intelligence.feature2.title': 'Qualité sans compromis',
-    'intelligence.feature2.desc': 'L\'IA fait le gros du travail, vous apportez la touche finale.',
-    'intelligence.feature3.title': 'Des idées pour démarrer',
-    'intelligence.feature3.desc': 'Suggestions et contenu IA pour lancer vos présentations.',
-
-    // Capabilities Section
-    'capabilities.title': 'Tout pour créer de meilleures présentations, plus vite',
-    'capabilities.prompt.title': 'Du prompt aux slides',
-    'capabilities.prompt.desc': 'Décrivez ce que vous voulez. Verso génère un deck complet en quelques secondes.',
-    'capabilities.design.title': 'Suit votre template d\'entreprise',
-    'capabilities.design.desc': 'Respecte vos thèmes, masques et couleurs existants.',
-    'capabilities.iterate.title': 'Itérez en un instant',
-    'capabilities.iterate.desc': 'Affinez chaque slide par des prompts de suivi. Ton, mise en page, contenu : tout est modifiable.',
-    'capabilities.integration.title': 'Intégration PowerPoint',
-    'capabilities.integration.desc': 'Fonctionne directement dans PowerPoint. Aucun outil supplémentaire.',
-    'capabilities.enterprise.title': 'Prêt pour l\'entreprise',
-    'capabilities.enterprise.desc': 'Conforme SOC 2 et RGPD, SSO et MFA. Vos données restent les vôtres.',
+    // Features Section
+    'features.title': 'Comment ça marche',
+    'features.prompt.title': 'Du prompt au deck',
+    'features.prompt.desc': 'Générez un deck complet de zéro. Décrivez ce que vous voulez. Par exemple : « Crée-moi une présentation de 10 slides sur les perspectives du BTP ». Puis affinez : « Détaille l\'intro en 3 colonnes, la première illustrée par un graphique. » Verso utilise votre template PowerPoint existant, en appliquant automatiquement vos polices, couleurs et mises en page.',
+    'features.edit.title': 'Éditez un deck existant',
+    'features.edit.desc': 'Ouvrez n\'importe quel deck et demandez à Verso de le modifier. L\'intégration native vous permet de faire des ajustements manuels, puis de relancer un prompt, mêlant naturellement vos modifications et celles de l\'IA.',
+    'features.control.title': 'Contrôle total',
+    'features.control.desc': 'Verso travaille directement avec de vrais objets PowerPoint\u2009—\u2009pas des images qui imitent des slides. Chaque élément reste entièrement modifiable, et le moteur gère toute modification que vous pourriez faire dans PowerPoint.',
+    'features.enterprise.title': 'Prêt pour l\'entreprise',
+    'features.enterprise.desc': 'Utilisez vos propres clés API avec les plans Enterprise. Conforme au RGPD, SSO et MFA. Vos données restent les vôtres.',
 
     // Models Section
     'models.title': 'La performance au cœur',
     'models.desc': 'Nos systèmes surpassent la concurrence sur nos benchmarks internes, tout en étant nettement plus rapides.',
-    'models.evaluation': 'Évaluation complète sur Prezeval',
+    'models.evaluation': 'PrezEval benchmark',
 
     // CTA Banner
     'cta.title': 'Créez vos présentations en quelques secondes.',
@@ -286,34 +260,21 @@ export const translations = {
     'hero.subtitle2': 'Generación y edición nativa de slides, directamente en PowerPoint.',
     'hero.trustedBy': 'Confían en nosotros',
 
-    // Intelligence Section
-    'intelligence.title': 'Inteligencia donde la necesitas',
-    'intelligence.subtitle': 'Integrado nativamente en PowerPoint. Verso trabaja con formas, textos, gráficos y tablas.',
-    'intelligence.subtitleCta': 'Señala, pide, listo.',
-    'intelligence.feature1.title': 'Integración nativa',
-    'intelligence.feature1.desc': 'La IA directamente en PowerPoint, donde trabajas.',
-    'intelligence.feature2.title': 'Calidad sin compromisos',
-    'intelligence.feature2.desc': 'La IA hace el trabajo pesado, tú das el toque final.',
-    'intelligence.feature3.title': 'Ideas para empezar',
-    'intelligence.feature3.desc': 'Sugerencias y contenido IA para lanzar tus presentaciones.',
-
-    // Capabilities Section
-    'capabilities.title': 'Todo para crear mejores presentaciones, más rápido',
-    'capabilities.prompt.title': 'Del prompt a los slides',
-    'capabilities.prompt.desc': 'Describe lo que necesitas. Verso genera un deck completo en segundos.',
-    'capabilities.design.title': 'Fiel a tu marca',
-    'capabilities.design.desc': 'Respeta tus temas, plantillas y colores existentes.',
-    'capabilities.iterate.title': 'Itera al instante',
-    'capabilities.iterate.desc': 'Refina cualquier slide con prompts de seguimiento. Tono, diseño, contenido: todo es editable.',
-    'capabilities.integration.title': 'Integración PowerPoint',
-    'capabilities.integration.desc': 'Funciona directamente en PowerPoint. Sin cambiar de herramienta.',
-    'capabilities.enterprise.title': 'Listo para empresas',
-    'capabilities.enterprise.desc': 'SOC 2 y GDPR, SSO y MFA. Tus datos son tuyos.',
+    // Features Section
+    'features.title': 'Cómo funciona',
+    'features.prompt.title': 'Del prompt al deck',
+    'features.prompt.desc': 'Genera un deck completo desde cero. Describe lo que necesitas. Por ejemplo: «Hazme una presentación de 10 diapositivas sobre las perspectivas del sector de la construcción». Luego refina: «Detalla la intro en 3 columnas, la de la izquierda con un gráfico.» Verso utiliza tu plantilla de PowerPoint existente, aplicando automáticamente tus fuentes, colores y diseños corporativos.',
+    'features.edit.title': 'Edita un deck existente',
+    'features.edit.desc': 'Abre cualquier deck y pide a Verso que lo modifique. La integración nativa te permite hacer ajustes manuales y luego volver a dar instrucciones, combinando sin esfuerzo las ediciones de la IA con las tuyas.',
+    'features.control.title': 'Control total',
+    'features.control.desc': 'Verso trabaja directamente con objetos reales de PowerPoint, no con imágenes que simulan diapositivas. Cada elemento es completamente editable, y el motor maneja cualquier modificación que puedas hacer en PowerPoint.',
+    'features.enterprise.title': 'Listo para empresas',
+    'features.enterprise.desc': 'Usa tus propias claves API con los planes Enterprise. Cumplimiento GDPR, SSO y MFA. Tus datos son tuyos.',
 
     // Models Section
     'models.title': 'Rendimiento en el centro',
     'models.desc': 'Nuestros sistemas superan a la competencia en benchmarks internos, con tiempos de ejecución mucho menores.',
-    'models.evaluation': 'Evaluación completa en Prezeval',
+    'models.evaluation': 'PrezEval benchmark',
 
     // CTA Banner
     'cta.title': 'Crea tus presentaciones en segundos.',
@@ -421,34 +382,21 @@ export const translations = {
     'hero.subtitle2': 'Native Slide-Erstellung und -Bearbeitung, direkt in PowerPoint.',
     'hero.trustedBy': 'Sie vertrauen auf uns',
 
-    // Intelligence Section
-    'intelligence.title': 'Intelligenz, wo Sie sie brauchen',
-    'intelligence.subtitle': 'Nativ in PowerPoint integriert. Verso arbeitet mit Formen, Texten, Diagrammen und Tabellen.',
-    'intelligence.subtitleCta': 'Zeigen, fragen, fertig.',
-    'intelligence.feature1.title': 'Native Integration',
-    'intelligence.feature1.desc': 'KI direkt in PowerPoint, dort wo Sie arbeiten.',
-    'intelligence.feature2.title': 'Qualität ohne Kompromisse',
-    'intelligence.feature2.desc': 'Die KI erledigt die Arbeit, Sie geben den letzten Schliff.',
-    'intelligence.feature3.title': 'Ideen zum Loslegen',
-    'intelligence.feature3.desc': 'KI-gestützte Vorschläge und Inhalte für Ihre Präsentationen.',
-
-    // Capabilities Section
-    'capabilities.title': 'Alles für bessere Präsentationen, schneller',
-    'capabilities.prompt.title': 'Vom Prompt zum Slide',
-    'capabilities.prompt.desc': 'Beschreiben Sie, was Sie brauchen. Verso erstellt ein komplettes Deck in Sekunden.',
-    'capabilities.design.title': 'Markentreu',
-    'capabilities.design.desc': 'Übernimmt Ihre Themes, Folienmaster und Farben.',
-    'capabilities.iterate.title': 'Sofort iterieren',
-    'capabilities.iterate.desc': 'Verfeinern Sie jedes Slide mit Follow-up-Prompts. Ton, Layout, Inhalt — alles anpassbar.',
-    'capabilities.integration.title': 'PowerPoint-Integration',
-    'capabilities.integration.desc': 'Arbeitet direkt in PowerPoint. Kein Tool-Wechsel nötig.',
-    'capabilities.enterprise.title': 'Enterprise-ready',
-    'capabilities.enterprise.desc': 'SOC 2 und DSGVO, SSO und MFA. Ihre Daten bleiben Ihre.',
+    // Features Section
+    'features.title': 'So funktioniert\u2019s',
+    'features.prompt.title': 'Vom Prompt zum Deck',
+    'features.prompt.desc': 'Erstellen Sie ein komplettes Slide-Deck von Grund auf. Beschreiben Sie, was Sie brauchen. Zum Beispiel: „Erstelle eine 10-Folien-Präsentation zu den Perspektiven der Baubranche". Dann verfeinern Sie: „Gestalte die Einleitung dreispaltig, links mit einem Diagramm." Verso nutzt Ihre bestehende PowerPoint-Vorlage und übernimmt automatisch Ihre Schriften, Farben und Layouts.',
+    'features.edit.title': 'Bestehendes Deck bearbeiten',
+    'features.edit.desc': 'Öffnen Sie ein beliebiges Deck und lassen Sie Verso es nach Ihren Wünschen anpassen. Dank nativer Integration können Sie manuelle Änderungen vornehmen und dann erneut prompten. KI-Bearbeitungen und eigene Anpassungen gehen nahtlos ineinander über.',
+    'features.control.title': 'Volle Kontrolle',
+    'features.control.desc': 'Verso arbeitet direkt mit echten PowerPoint-Objekten und -Formen\u2009—\u2009nicht mit Bildern, die Folien imitieren. Jedes Element bleibt vollständig editierbar, und die Engine verarbeitet jede Änderung, die Sie in PowerPoint selbst vornehmen könnten.',
+    'features.enterprise.title': 'Enterprise-ready',
+    'features.enterprise.desc': 'Nutzen Sie Ihre eigenen API-Schlüssel mit Enterprise-Plänen. DSGVO-konform, SSO und MFA. Ihre Daten bleiben Ihre.',
 
     // Models Section
     'models.title': 'Leistung im Kern',
     'models.desc': 'Unsere Systeme übertreffen die Konkurrenz in internen Benchmarks — bei deutlich kürzerer Ausführungszeit.',
-    'models.evaluation': 'Vollständige Auswertung auf Prezeval',
+    'models.evaluation': 'PrezEval benchmark',
 
     // CTA Banner
     'cta.title': 'Erstellen Sie Ihre Präsentationen in Sekunden.',
