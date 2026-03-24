@@ -3,7 +3,7 @@ export const translations = {
     // Navigation
     'nav.home': 'Home',
     'nav.features': 'Features',
-    'nav.models': 'Models',
+    'nav.models': 'Performance',
     'nav.pricing': 'Pricing',
     'nav.contact': 'Contact Us',
     'nav.getStarted': 'Get started',
@@ -40,7 +40,7 @@ export const translations = {
     'capabilities.enterprise.desc': 'SOC 2 and GDPR compliant, SSO & MFA login. Your data stays yours.',
 
     // Models Section
-    'models.title': 'Model performance at the core',
+    'models.title': 'Performance at the core',
     'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
 
     // CTA Banner
@@ -136,7 +136,7 @@ export const translations = {
     // Navigation
     'nav.home': 'Accueil',
     'nav.features': 'Fonctionnalités',
-    'nav.models': 'Modèles',
+    'nav.models': 'Performance',
     'nav.pricing': 'Tarifs',
     'nav.contact': 'Nous contacter',
     'nav.getStarted': 'Commencer',
@@ -173,7 +173,7 @@ export const translations = {
     'capabilities.enterprise.desc': 'Conforme SOC 2 et RGPD, SSO et MFA. Vos données restent les vôtres.',
 
     // Models Section
-    'models.title': 'La performance au cœur du moteur',
+    'models.title': 'La performance au cœur',
     'models.desc': 'Nos systèmes surpassent la concurrence sur nos benchmarks internes, tout en étant nettement plus rapides.',
 
     // CTA Banner
@@ -269,7 +269,7 @@ export const translations = {
     // Navigation
     'nav.home': 'Inicio',
     'nav.features': 'Características',
-    'nav.models': 'Modelos',
+    'nav.models': 'Performance',
     'nav.pricing': 'Precios',
     'nav.contact': 'Contáctenos',
     'nav.getStarted': 'Comenzar',
@@ -306,7 +306,7 @@ export const translations = {
     'capabilities.enterprise.desc': 'SOC 2 y GDPR, SSO y MFA. Tus datos son tuyos.',
 
     // Models Section
-    'models.title': 'Rendimiento en el centro del motor',
+    'models.title': 'Rendimiento en el centro',
     'models.desc': 'Nuestros sistemas superan a la competencia en benchmarks internos, con tiempos de ejecución mucho menores.',
 
     // CTA Banner
@@ -402,7 +402,7 @@ export const translations = {
     // Navigation
     'nav.home': 'Startseite',
     'nav.features': 'Funktionen',
-    'nav.models': 'Modelle',
+    'nav.models': 'Performance',
     'nav.pricing': 'Preise',
     'nav.contact': 'Kontakt',
     'nav.getStarted': 'Loslegen',
@@ -439,7 +439,7 @@ export const translations = {
     'capabilities.enterprise.desc': 'SOC 2 und DSGVO, SSO und MFA. Ihre Daten bleiben Ihre.',
 
     // Models Section
-    'models.title': 'Leistung im Kern des Motors',
+    'models.title': 'Leistung im Kern',
     'models.desc': 'Unsere Systeme übertreffen die Konkurrenz in internen Benchmarks — bei deutlich kürzerer Ausführungszeit.',
 
     // CTA Banner
