@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import ChatPanel from './ChatPanel'
 import PresentationViewer from './PresentationViewer'
-import { defaultSlides, frenchSlide2, blankSlide } from './slides'
+import { defaultSlides, frenchSlide2, makeBlankSlide } from './slides'
 import type { SlideContent } from './slides'
 import './demo-styles.css'
 import type { Message, ToolCall, Phase } from './types'
@@ -93,6 +93,54 @@ const workflowLabelsShort: Record<string, Record<Workflow, string>> = {
   de: { create: 'Neu erstellen', edit: 'Deck bearbeiten' },
 }
 
+// PowerPoint UI chrome translations (real PowerPoint localizations)
+const pptUI: Record<string, {
+  fileTitle: string
+  tabs: string[]
+  slideOf: (current: number, total: number) => string
+  ready: string
+  clickTitle: string
+  clickSubtitle: string
+  composerPlaceholder: string
+}> = {
+  en: {
+    fileTitle: 'Oil Market Outlook Q1 2026.pptx',
+    tabs: ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'],
+    slideOf: (c, t) => `Slide ${c} of ${t}`,
+    ready: 'Ready',
+    clickTitle: 'Click to add title',
+    clickSubtitle: 'Click to add subtitle',
+    composerPlaceholder: 'Ask Verso to edit your slides',
+  },
+  fr: {
+    fileTitle: 'Perspectives Marché Pétrolier T1 2026.pptx',
+    tabs: ['Accueil', 'Insertion', 'Création', 'Transitions', 'Diaporama'],
+    slideOf: (c, t) => `Diapositive ${c} sur ${t}`,
+    ready: 'Prêt',
+    clickTitle: 'Cliquez pour ajouter un titre',
+    clickSubtitle: 'Cliquez pour ajouter un sous-titre',
+    composerPlaceholder: 'Demandez à Verso de modifier vos slides',
+  },
+  es: {
+    fileTitle: 'Perspectivas Mercado Petrolero T1 2026.pptx',
+    tabs: ['Inicio', 'Insertar', 'Diseño', 'Transiciones', 'Presentación con diapositivas'],
+    slideOf: (c, t) => `Diapositiva ${c} de ${t}`,
+    ready: 'Listo',
+    clickTitle: 'Haga clic para agregar título',
+    clickSubtitle: 'Haga clic para agregar subtítulo',
+    composerPlaceholder: 'Pide a Verso que edite tus diapositivas',
+  },
+  de: {
+    fileTitle: 'Ölmarkt-Ausblick Q1 2026.pptx',
+    tabs: ['Start', 'Einfügen', 'Entwurf', 'Übergänge', 'Bildschirmpräsentation'],
+    slideOf: (c, t) => `Folie ${c} von ${t}`,
+    ready: 'Bereit',
+    clickTitle: 'Titel durch Klicken hinzufügen',
+    clickSubtitle: 'Untertitel durch Klicken hinzufügen',
+    composerPlaceholder: 'Bitten Sie Verso, Ihre Folien zu bearbeiten',
+  },
+}
+
 export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   const [activeWorkflow, setActiveWorkflow] = useState<Workflow>('create')
   const [phase, setPhase] = useState<Phase>('idle')
@@ -121,6 +169,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   const autoplayRef = useRef(false)
 
   const t = demoText[lang] || demoText.en
+  const ui = pptUI[lang] || pptUI.en
 
   // --- Workflow 1: Create from scratch ---
   const runCreateWorkflow = useCallback(() => {
@@ -129,7 +178,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
     setComposerText('')
     setMessages([])
     setToolCalls([])
-    setSlides([blankSlide, ...defaultSlides])
+    setSlides([makeBlankSlide(ui.clickTitle, ui.clickSubtitle), ...defaultSlides])
     setVisibleSlides([0])
     setActiveSlide(0)
     setIsRunning(false)
@@ -200,7 +249,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
     // Auto-switch to edit workflow after a pause
     elapsed += 1500
     schedule(() => { autoplayRef.current = true; setActiveWorkflow('edit') }, elapsed)
-  }, [clearAllTimeouts, schedule, t])
+  }, [clearAllTimeouts, schedule, t, ui])
 
   // --- Workflow 2: Edit existing ---
   const runEditWorkflow = useCallback(() => {
@@ -331,6 +380,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
         isTyping={phase === 'typing'}
         composerText={composerText}
         isRunning={isRunning}
+        composerPlaceholder={ui.composerPlaceholder}
       />
     </div>
   )
@@ -390,6 +440,10 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
       activeSlide={activeSlide}
       sidePanel={chatPanel}
       onSlideClick={handleSlideClick}
+      fileTitle={ui.fileTitle}
+      ribbonTabs={ui.tabs}
+      statusSlideOf={ui.slideOf}
+      statusReady={ui.ready}
     />
   )
 

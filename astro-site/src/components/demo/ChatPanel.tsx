@@ -9,9 +9,10 @@ interface ChatPanelProps {
   isTyping: boolean
   composerText: string
   isRunning: boolean
+  composerPlaceholder?: string
 }
 
-export default function ChatPanel({ messages, toolCalls, isTyping, composerText, isRunning }: ChatPanelProps) {
+export default function ChatPanel({ messages, toolCalls, isTyping, composerText, isRunning, composerPlaceholder = 'Ask Verso to edit your slides' }: ChatPanelProps) {
   const threadRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -83,7 +84,7 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
           </button>
           <div className="flex-grow min-h-[38px] max-h-48 px-1 py-2 text-[13px] text-[hsl(0,0%,4%)]">
             {composerText || (
-              <span className="text-[hsl(0,0%,46%)] italic">Ask Verso to edit your slides</span>
+              <span className="text-[hsl(0,0%,46%)] italic">{composerPlaceholder}</span>
             )}
           </div>
           {isRunning ? (

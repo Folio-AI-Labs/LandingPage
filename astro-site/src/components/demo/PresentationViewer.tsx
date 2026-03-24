@@ -33,23 +33,25 @@ interface PresentationViewerProps {
   activeSlide: number
   sidePanel?: React.ReactNode
   onSlideClick?: (index: number) => void
+  fileTitle?: string
+  ribbonTabs?: string[]
+  statusSlideOf?: (current: number, total: number) => string
+  statusReady?: string
 }
 
-export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick }: PresentationViewerProps) {
+export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready' }: PresentationViewerProps) {
   return (
     <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
       style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)' }}>
       {/* PowerPoint title bar */}
       <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A' }}>
-        Oil Market Outlook Q1 2026.pptx
+        {fileTitle}
       </div>
       {/* Ribbon */}
       <div className="flex items-center gap-4 px-4 py-1.5 bg-[#f0f0f0] border-b border-[#d5d5d5] text-[11px] text-[#888]">
-        <span className="font-medium text-[#444]">Home</span>
-        <span>Insert</span>
-        <span>Design</span>
-        <span>Transitions</span>
-        <span>Slide Show</span>
+        {ribbonTabs.map((tab, i) => (
+          <span key={tab} className={i === 0 ? 'font-medium text-[#444]' : undefined}>{tab}</span>
+        ))}
       </div>
 
       {/* Main area */}
@@ -92,7 +94,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
 
       {/* Status bar */}
       <div className="px-3 py-1 bg-[#f0f0f0] border-t border-[#d5d5d5] text-[10px] text-[#aaa]">
-        {visibleSlides.length > 0 ? `Slide ${visibleSlides.indexOf(activeSlide) + 1} of ${visibleSlides.length}` : 'Ready'}
+        {visibleSlides.length > 0 ? statusSlideOf(visibleSlides.indexOf(activeSlide) + 1, visibleSlides.length) : statusReady}
       </div>
     </div>
   )

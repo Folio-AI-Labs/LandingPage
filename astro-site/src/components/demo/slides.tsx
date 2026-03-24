@@ -8,32 +8,36 @@ const GOLD = '#C5A55A'
 const MID = '#2D5F8A'
 const PALE = '#D4C4A0'
 
-export const blankSlide: SlideContent = {
-  title: 'Blank',
-  render: () => (
-    <div className="flex flex-col justify-center items-center h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-      {/* Title placeholder */}
-      <div className="flex items-end justify-center" style={{
-        width: '70%',
-        height: '28%',
-        border: '1px dashed #c0c0c0',
-        marginBottom: '4px',
-        paddingBottom: '6px',
-      }}>
-        <span className="text-[16px] font-normal" style={{ color: '#a0a0a0' }}>Click to add title</span>
+export function makeBlankSlide(titlePlaceholder = 'Click to add title', subtitlePlaceholder = 'Click to add subtitle'): SlideContent {
+  return {
+    title: 'Blank',
+    render: () => (
+      <div className="flex flex-col justify-center items-center h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
+        {/* Title placeholder */}
+        <div className="flex items-end justify-center" style={{
+          width: '70%',
+          height: '28%',
+          border: '1px dashed #c0c0c0',
+          marginBottom: '4px',
+          paddingBottom: '6px',
+        }}>
+          <span className="text-[16px] font-normal" style={{ color: '#a0a0a0' }}>{titlePlaceholder}</span>
+        </div>
+        {/* Subtitle placeholder */}
+        <div className="flex items-start justify-center" style={{
+          width: '70%',
+          height: '18%',
+          border: '1px dashed #c0c0c0',
+          paddingTop: '4px',
+        }}>
+          <span className="text-[10px] font-normal" style={{ color: '#a0a0a0' }}>{subtitlePlaceholder}</span>
+        </div>
       </div>
-      {/* Subtitle placeholder */}
-      <div className="flex items-start justify-center" style={{
-        width: '70%',
-        height: '18%',
-        border: '1px dashed #c0c0c0',
-        paddingTop: '4px',
-      }}>
-        <span className="text-[10px] font-normal" style={{ color: '#a0a0a0' }}>Click to add subtitle</span>
-      </div>
-    </div>
-  ),
+    ),
+  }
 }
+
+export const blankSlide: SlideContent = makeBlankSlide()
 
 export const defaultSlides: SlideContent[] = [
   {
