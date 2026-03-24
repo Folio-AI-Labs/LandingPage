@@ -1,3 +1,23 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const locales = {
+  en: 'en-US',
+  fr: 'fr-FR',
+  es: 'es-ES',
+  de: 'de-DE',
+} as const;
+const evaluationDateValue = new Date();
+const evaluationDate = new Intl.DateTimeFormat(locales[lang], {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+}).format(evaluationDateValue);
+const evaluationDateIso = evaluationDateValue.toISOString().slice(0, 10);
+---
+
 <div class="w-full max-w-[600px] mx-auto">
   <svg viewBox="-10 0 510 340" class="w-full" xmlns="http://www.w3.org/2000/svg">
     <!-- Y axis (extended ±0.75 at ends to align stroke edges with perpendicular lines) -->
@@ -50,4 +70,7 @@
     <!-- X axis (drawn after bars so it renders on top; extended left by 0.75 to align with Y axis left edge) -->
     <line x1="39.25" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
   </svg>
+  <p class="mt-5 text-center text-sm text-brand-light">
+    {t('models.evaluation')} · <time dateTime={evaluationDateIso}>{evaluationDate}</time>
+  </p>
 </div>

@@ -5,6 +5,7 @@ export const translations = {
     'nav.features': 'Features',
     'nav.models': 'Performance',
     'nav.pricing': 'Pricing',
+    'nav.support': 'Support',
     'nav.contact': 'Contact Us',
     'nav.getStarted': 'Get started',
     'nav.bookDemo': 'Book a demo',
@@ -42,6 +43,7 @@ export const translations = {
     // Models Section
     'models.title': 'Performance at the core',
     'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
+    'models.evaluation': 'Full evaluation on Prezeval',
 
     // CTA Banner
     'cta.title': 'Start working on your presentations in seconds.',
@@ -138,6 +140,7 @@ export const translations = {
     'nav.features': 'Fonctionnalités',
     'nav.models': 'Performance',
     'nav.pricing': 'Tarifs',
+    'nav.support': 'Support',
     'nav.contact': 'Nous contacter',
     'nav.getStarted': 'Commencer',
     'nav.bookDemo': 'Réserver une démo',
@@ -175,6 +178,7 @@ export const translations = {
     // Models Section
     'models.title': 'La performance au cœur',
     'models.desc': 'Nos systèmes surpassent la concurrence sur nos benchmarks internes, tout en étant nettement plus rapides.',
+    'models.evaluation': 'Évaluation complète sur Prezeval',
 
     // CTA Banner
     'cta.title': 'Créez vos présentations en quelques secondes.',
@@ -271,6 +275,7 @@ export const translations = {
     'nav.features': 'Características',
     'nav.models': 'Performance',
     'nav.pricing': 'Precios',
+    'nav.support': 'Soporte',
     'nav.contact': 'Contáctenos',
     'nav.getStarted': 'Comenzar',
     'nav.bookDemo': 'Reservar una demo',
@@ -308,6 +313,7 @@ export const translations = {
     // Models Section
     'models.title': 'Rendimiento en el centro',
     'models.desc': 'Nuestros sistemas superan a la competencia en benchmarks internos, con tiempos de ejecución mucho menores.',
+    'models.evaluation': 'Evaluación completa en Prezeval',
 
     // CTA Banner
     'cta.title': 'Crea tus presentaciones en segundos.',
@@ -404,6 +410,7 @@ export const translations = {
     'nav.features': 'Funktionen',
     'nav.models': 'Performance',
     'nav.pricing': 'Preise',
+    'nav.support': 'Support',
     'nav.contact': 'Kontakt',
     'nav.getStarted': 'Loslegen',
     'nav.bookDemo': 'Demo buchen',
@@ -441,6 +448,7 @@ export const translations = {
     // Models Section
     'models.title': 'Leistung im Kern',
     'models.desc': 'Unsere Systeme übertreffen die Konkurrenz in internen Benchmarks — bei deutlich kürzerer Ausführungszeit.',
+    'models.evaluation': 'Vollständige Auswertung auf Prezeval',
 
     // CTA Banner
     'cta.title': 'Erstellen Sie Ihre Präsentationen in Sekunden.',

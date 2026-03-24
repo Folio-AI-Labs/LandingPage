@@ -12,7 +12,7 @@ export default {
         'brand-dark': '#2a2a2a',
       },
       fontFamily: {
-        'display': ['"Playfair Display"', 'serif'],
+        'display': ['"Spectral"', 'serif'],
         'heading': ['"Spectral"', 'serif'],
         'body': ['"Inter"', 'sans-serif'],
       },
