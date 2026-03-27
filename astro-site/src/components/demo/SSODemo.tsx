@@ -247,6 +247,7 @@ export default function SSODemo({ lang = 'en' }: { lang?: string }) {
 
   return (
     <div
+      aria-hidden="true"
       style={{
         fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
         width: '820px',

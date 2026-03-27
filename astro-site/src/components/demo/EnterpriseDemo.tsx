@@ -551,7 +551,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
   )
 
   return (
-    <div style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div aria-hidden="true" style={{ fontFamily: 'Inter, sans-serif' }}>
       <div className="demo-viewer-outer" style={{ marginTop: '0', position: 'relative', zIndex: 0 }}>
         <div className="demo-viewer-inner">
           {viewer}
