@@ -70,7 +70,7 @@ const evaluationDateIso = evaluationDateValue.toISOString().slice(0, 10);
     <!-- X axis (drawn after bars so it renders on top; extended left by 0.75 to align with Y axis left edge) -->
     <line x1="39.25" y1="280" x2="480" y2="280" stroke="#666666" stroke-width="1.5"/>
   </svg>
-  <p class="mt-5 text-center text-sm text-brand-light">
+  <p class="mt-5 text-center text-sm text-brand-muted">
     {t('models.evaluation')} · <time dateTime={evaluationDateIso}>{evaluationDate}</time>
   </p>
 </div>

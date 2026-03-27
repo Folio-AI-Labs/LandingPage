@@ -448,7 +448,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   )
 
   return (
-    <div style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div aria-hidden="true" style={{ fontFamily: 'Inter, sans-serif' }}>
       {/* Segmented control - hidden for auto-loop */}
       {/* <div className="flex justify-center mb-3">
         {segmentedControl}

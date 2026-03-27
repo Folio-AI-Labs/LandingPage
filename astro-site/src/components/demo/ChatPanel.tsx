@@ -98,7 +98,7 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
           </div>
         )}
         <div className="flex items-center rounded-lg border border-[hsl(217,91%,53%)] shadow-sm bg-white transition-all">
-          <button className="ml-1 p-1 text-[hsl(0,0%,46%)] rounded" tabIndex={-1}>
+          <button className="ml-1 p-1 text-[hsl(0,0%,46%)] rounded" tabIndex={-1} aria-label="Attach file">
             <Paperclip className="w-4 h-4" />
           </button>
           <div className="flex-grow min-h-[38px] max-h-48 px-1 py-2 text-[13px] text-[hsl(0,0%,4%)]">
@@ -107,11 +107,11 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
             )}
           </div>
           {isRunning ? (
-            <button className="mr-1 flex h-7 w-7 items-center justify-center rounded bg-[hsl(217,91%,53%)] text-white" tabIndex={-1}>
+            <button className="mr-1 flex h-7 w-7 items-center justify-center rounded bg-[hsl(217,91%,53%)] text-white" tabIndex={-1} aria-label="Stop">
               <Square className="w-3.5 h-3.5 fill-current" />
             </button>
           ) : (
-            <button className="mr-1 flex h-7 w-7 items-center justify-center text-[hsl(217,91%,53%)] transition-all" tabIndex={-1}>
+            <button className="mr-1 flex h-7 w-7 items-center justify-center text-[hsl(217,91%,53%)] transition-all" tabIndex={-1} aria-label="Send message">
               <Send className="w-5 h-5" />
             </button>
           )}
