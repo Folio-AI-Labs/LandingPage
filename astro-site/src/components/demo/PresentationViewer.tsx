@@ -37,9 +37,10 @@ interface PresentationViewerProps {
   ribbonTabs?: string[]
   statusSlideOf?: (current: number, total: number) => string
   statusReady?: string
+  totalSlideCount?: number
 }
 
-export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready' }: PresentationViewerProps) {
+export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready', totalSlideCount }: PresentationViewerProps) {
   return (
     <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
       style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)', borderRadius: '8px', overflow: 'visible' }}>
@@ -57,20 +58,24 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
       {/* Main area */}
       <div className="flex flex-1 min-h-0">
         {/* Thumbnail panel */}
-        <div className="w-[75px] shrink-0 bg-[#f0f0f0] border-r border-[#d5d5d5] py-2 pl-0.5 pr-1 space-y-2 overflow-y-auto">
-          {visibleSlides.map((idx, pos) => (
-            <div
-              key={pos}
-              className="flex gap-1.5 items-start"
-              style={{ cursor: onSlideClick ? 'pointer' : 'default' }}
-              onClick={() => onSlideClick?.(idx)}
-            >
-              <span className="text-[8px] text-[#aaa] mt-1.5 w-1.5 text-right shrink-0">{pos + 1}</span>
-              <div className="flex-1">
-                <SlideThumbnail slide={slideData[idx]} isActive={idx === activeSlide} />
+        <div className="w-[75px] shrink-0 bg-[#f0f0f0] border-r border-[#d5d5d5] py-2 pl-0.5 pr-1 space-y-2 overflow-hidden">
+          {visibleSlides.map((idx, pos) => {
+            const slide = slideData[idx]
+            if (!slide) return null
+            return (
+              <div
+                key={pos}
+                className="flex gap-1.5 items-start"
+                style={{ cursor: onSlideClick ? 'pointer' : 'default' }}
+                onClick={() => onSlideClick?.(idx)}
+              >
+                <span className="text-[8px] text-[#aaa] mt-1.5 w-1.5 text-right shrink-0">{pos + 1}</span>
+                <div className="flex-1">
+                  <SlideThumbnail slide={slide} isActive={idx === activeSlide} />
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* Slide canvas */}
@@ -94,7 +99,7 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
 
       {/* Status bar */}
       <div className="px-3 py-1 bg-[#f0f0f0] border-t border-[#d5d5d5] text-[10px] text-[#aaa]" style={{ borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}>
-        {visibleSlides.length > 0 ? statusSlideOf(visibleSlides.indexOf(activeSlide) + 1, visibleSlides.length) : statusReady}
+        {visibleSlides.length > 0 ? statusSlideOf(visibleSlides.indexOf(activeSlide) + 1, totalSlideCount || visibleSlides.length) : statusReady}
       </div>
     </div>
   )

@@ -72,10 +72,10 @@ const demoText: Record<string, {
 }
 
 // --- Shared constants ---
-const CHAR_DELAY = 28
-const AI_CHAR_DELAY = 18
-const TOOL_RUNNING_TIME = 900
-const PAUSE_SHORT = 250
+const CHAR_DELAY = 36
+const AI_CHAR_DELAY = 23
+const TOOL_RUNNING_TIME = 1170
+const PAUSE_SHORT = 325
 
 type Workflow = 'create' | 'edit'
 

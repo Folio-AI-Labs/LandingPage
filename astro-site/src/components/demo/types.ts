@@ -2,6 +2,7 @@ export interface Message {
   role: 'user' | 'assistant'
   text: string
   visibleChars?: number
+  toolCalls?: ToolCall[]
 }
 
 export interface ToolCall {

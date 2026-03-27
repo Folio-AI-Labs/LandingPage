@@ -10,9 +10,10 @@ interface ChatPanelProps {
   composerText: string
   isRunning: boolean
   composerPlaceholder?: string
+  uploadedFile?: string | null
 }
 
-export default function ChatPanel({ messages, toolCalls, isTyping, composerText, isRunning, composerPlaceholder = 'Ask Verso to edit your slides' }: ChatPanelProps) {
+export default function ChatPanel({ messages, toolCalls, isTyping, composerText, isRunning, composerPlaceholder = 'Ask Verso to edit your slides', uploadedFile }: ChatPanelProps) {
   const threadRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -38,8 +39,8 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
         {/* padding matches addin: pt-12 on viewport, px-3 py-2 on messages */}
         <div className="pt-4">
           {(() => {
-            // Find where to insert tool calls: after the first assistant message
-            const toolInsertIdx = toolCalls.length > 0
+            // If there are legacy toolCalls prop, find where to insert them after first assistant message
+            const legacyToolInsertIdx = toolCalls.length > 0
               ? messages.findIndex(m => m.role === 'assistant') + 1
               : -1
             return messages.map((msg, i) => (
@@ -57,8 +58,14 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
                     </div>
                   </div>
                 )}
-                {/* Insert tool calls after the first assistant message */}
-                {i + 1 === toolInsertIdx && toolCalls.map((tc, j) => (
+                {/* Render tool calls attached to this message */}
+                {msg.toolCalls && msg.toolCalls.map((tc, j) => (
+                  <div key={`msg-tc-${i}-${j}`} className="px-3 py-px">
+                    <ToolCallBubble toolName={tc.toolName} label={tc.label} status={tc.status} />
+                  </div>
+                ))}
+                {/* Legacy: Insert all tool calls after the first assistant message (for backwards compatibility) */}
+                {i + 1 === legacyToolInsertIdx && toolCalls.map((tc, j) => (
                   <div key={`tc-${j}`} className="px-3 py-px">
                     <ToolCallBubble toolName={tc.toolName} label={tc.label} status={tc.status} />
                   </div>
@@ -76,8 +83,20 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
         </div>
       </div>
 
-      {/* Composer — matches ComposerPrimitive.Root: flex items-center rounded-lg border */}
+      {/* Composer — matches ComposerPrimitive.Root */}
       <div className="p-2 border-t shrink-0">
+        {uploadedFile && (
+          <div className="mb-2 px-1">
+            <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-[hsl(217,91%,97%)] border border-[hsl(217,91%,85%)]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[hsl(217,91%,53%)]">
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+              </svg>
+              <span className="text-[11px] font-medium text-[hsl(217,91%,40%)]">{uploadedFile}</span>
+            </div>
+          </div>
+        )}
         <div className="flex items-center rounded-lg border border-[hsl(217,91%,53%)] shadow-sm bg-white transition-all">
           <button className="ml-1 p-1 text-[hsl(0,0%,46%)] rounded" tabIndex={-1}>
             <Paperclip className="w-4 h-4" />

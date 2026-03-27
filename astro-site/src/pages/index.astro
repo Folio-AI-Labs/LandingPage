@@ -5,6 +5,12 @@ import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 import PerformanceChart from '../components/PerformanceChart.astro';
 import AddinDemo from '../components/demo/AddinDemo';
+import PromptToDeckDemo from '../components/demo/PromptToDeckDemo';
+import EditDeckDemo from '../components/demo/EditDeckDemo';
+import FullControlDemo from '../components/demo/FullControlDemo';
+import UploadFilesDemo from '../components/demo/UploadFilesDemo';
+import SSODemo from '../components/demo/SSODemo';
+import EnterpriseDemo from '../components/demo/EnterpriseDemo';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
 import { PLAYGROUND_URL } from '../consts';
 
@@ -63,8 +69,10 @@ const t = useTranslations(lang);
       <div class="flex flex-col gap-16 nav:gap-20">
         <!-- Prompt to deck - Screenshot LEFT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-8 items-center">
-          <div class="bg-white rounded-xl border-2 border-brand-border aspect-video flex items-center justify-center">
-            <span class="text-brand-muted text-sm">Screenshot</span>
+          <div class="aspect-video flex items-center justify-center relative">
+            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
+              <PromptToDeckDemo lang={lang} client:visible />
+            </div>
           </div>
           <div>
             <div class="flex items-center gap-3 mb-3">
@@ -79,8 +87,10 @@ const t = useTranslations(lang);
 
         <!-- Edit an existing deck - Screenshot RIGHT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-8 items-center">
-          <div class="nav:order-2 bg-white rounded-xl border-2 border-brand-border aspect-video flex items-center justify-center">
-            <span class="text-brand-muted text-sm">Screenshot</span>
+          <div class="nav:order-2 aspect-video flex items-center justify-center overflow-hidden relative">
+            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
+              <EditDeckDemo lang={lang} client:visible />
+            </div>
           </div>
           <div class="nav:order-1">
             <div class="flex items-center gap-3 mb-3">
@@ -95,8 +105,10 @@ const t = useTranslations(lang);
 
         <!-- Full control - Screenshot LEFT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-8 items-center">
-          <div class="bg-white rounded-xl border-2 border-brand-border aspect-video flex items-center justify-center">
-            <span class="text-brand-muted text-sm">Screenshot</span>
+          <div class="aspect-video flex items-center justify-center relative">
+            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
+              <FullControlDemo lang={lang} client:visible />
+            </div>
           </div>
           <div>
             <div class="flex items-center gap-3 mb-3">
@@ -111,8 +123,10 @@ const t = useTranslations(lang);
 
         <!-- Upload files - Screenshot RIGHT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-8 items-center">
-          <div class="nav:order-2 bg-white rounded-xl border-2 border-brand-border aspect-video flex items-center justify-center">
-            <span class="text-brand-muted text-sm">Screenshot</span>
+          <div class="nav:order-2 aspect-video flex items-center justify-center overflow-hidden relative">
+            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
+              <UploadFilesDemo lang={lang} client:visible />
+            </div>
           </div>
           <div class="nav:order-1">
             <div class="flex items-center gap-3 mb-3">
@@ -127,8 +141,10 @@ const t = useTranslations(lang);
 
         <!-- Enterprise-ready - Screenshot LEFT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-8 items-center">
-          <div class="bg-white rounded-xl border-2 border-brand-border aspect-video flex items-center justify-center">
-            <span class="text-brand-muted text-sm">Screenshot</span>
+          <div class="aspect-video flex items-center justify-center relative">
+            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
+              <EnterpriseDemo lang={lang} client:visible />
+            </div>
           </div>
           <div>
             <div class="flex items-center gap-3 mb-3">
