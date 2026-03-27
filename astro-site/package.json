@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/react": "^5.0.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/spectral": "^5.2.8",
     "@tailwindcss/typography": "^0.5.19",
     "astro": "^5.17.1",
     "lucide-react": "^0.577.0",

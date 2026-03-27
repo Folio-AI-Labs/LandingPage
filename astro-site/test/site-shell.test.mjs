@@ -15,9 +15,9 @@ test('layout and tailwind keep a reduced font stack centered on Spectral', async
   const layout = await read('src/layouts/Layout.astro');
   const tailwind = await read('tailwind.config.mjs');
 
-  assert.match(layout, /family=Inter/);
-  assert.match(layout, /family=Spectral/);
-  assert.doesNotMatch(layout, /Playfair\+Display/);
+  assert.match(layout, /@fontsource\/inter/);
+  assert.match(layout, /@fontsource\/spectral/);
+  assert.doesNotMatch(layout, /fonts\.googleapis\.com/);
   assert.match(tailwind, /'display': \['"Spectral"', 'serif'\]/);
   assert.match(tailwind, /'heading': \['"Spectral"', 'serif'\]/);
 });
