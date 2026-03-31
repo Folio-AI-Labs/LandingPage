@@ -17,6 +17,9 @@ export function getStaticPaths() {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// Toggle "Trusted by" section visibility - set to true to show, false to hide
+const showTrustedBy = false;
 ---
 
 <Layout title={t('meta.title')} description={t('meta.description')}>
@@ -52,6 +55,7 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Trusted by -->
+  {showTrustedBy ? (
   <section class="py-8 px-[12px] nav:px-[60px]">
     <div class="max-w-[960px] mx-auto text-center">
       <p class="text-[11px] font-semibold tracking-[2px] uppercase text-brand-muted mb-6">{t('hero.trustedBy')}</p>
@@ -65,6 +69,11 @@ const t = useTranslations(lang);
       </div>
     </div>
   </section>
+  ) : (
+  <section class="py-8 px-[12px] nav:px-[60px]" aria-hidden="true">
+    <!-- Spacer to maintain layout when Trusted by is hidden -->
+  </section>
+  )}
 
   <!-- Features Section -->
   <section class="py-[60px] px-[12px] nav:py-20 nav:px-[60px] bg-[#f5f5f5]" id="features" style="clear: both;">
