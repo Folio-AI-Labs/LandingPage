@@ -47,25 +47,21 @@ const t = useTranslations(lang);
     const form = document.getElementById('demoForm') as HTMLFormElement;
     const confirmationMessage = document.getElementById('confirmationMessage');
 
+    // Send email notification via API
+    try {
+      await fetch('/api/send-demo-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
+    }
+
     // Hide the form and show confirmation message
     if (form && confirmationMessage) {
       form.style.display = 'none';
       confirmationMessage.classList.remove('hidden');
     }
-
-    // Send email notification (you can implement backend API call here later)
-    // For now, we'll just log it
-    console.log(`Demo request from: ${email}`);
-
-    // Optional: Send to a backend API or email service
-    // try {
-    //   await fetch('/api/demo-request', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ email })
-    //   });
-    // } catch (error) {
-    //   console.error('Error submitting demo request:', error);
-    // }
   });
 </script>

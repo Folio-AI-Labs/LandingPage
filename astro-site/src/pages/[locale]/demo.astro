@@ -54,12 +54,21 @@ const t = useTranslations(lang);
     const form = document.getElementById('demoForm') as HTMLFormElement;
     const confirmationMessage = document.getElementById('confirmationMessage');
 
+    // Send email notification via API
+    try {
+      await fetch('/api/send-demo-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
+    }
+
     // Hide the form and show confirmation message
     if (form && confirmationMessage) {
       form.style.display = 'none';
       confirmationMessage.classList.remove('hidden');
     }
-
-    console.log(`Demo request from: ${email}`);
   });
 </script>

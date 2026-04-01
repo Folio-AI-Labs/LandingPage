@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
 import { PLAYGROUND_URL } from '../consts';
 
 const lang = getLangFromUrl(Astro.url);
@@ -34,7 +34,7 @@ const t = useTranslations(lang);
 
       <!-- Starter Plan -->
       <div class="bg-white rounded-2xl px-6 py-7 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-6 min-h-[88px]">
+        <div class="mb-6 min-h-[120px]">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.starter.name')}</h3>
           </div>
@@ -44,12 +44,12 @@ const t = useTranslations(lang);
         <div class="mb-6 min-h-[80px]">
           <div class="flex items-baseline gap-1 flex-wrap">
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$0</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl p-4 mb-6">
-          <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.starter.credits')}</span> {t('pricing.starter.creditsDesc')}</p>
+        <div class="bg-brand-bg rounded-xl px-3 py-4 mb-6">
+          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.starter.credits')}</span> {t('pricing.starter.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.starter.creditPrice')}</span> {t('pricing.starter.creditPriceDesc')}</p>
         </div>
 
@@ -65,8 +65,8 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Plus Plan -->
-      <div class="bg-white rounded-2xl px-6 py-7 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-6 min-h-[88px]">
+      <div class="bg-white rounded-2xl px-4 py-7 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
+        <div class="mb-6 min-h-[120px]">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.plus.name')}</h3>
           </div>
@@ -77,16 +77,16 @@ const t = useTranslations(lang);
           <div class="flex items-baseline gap-1 flex-wrap annual-price">
             <span class="text-[20px] sm:text-[26px] lg:text-[36px] font-bold text-brand-light line-through font-display">$19</span>
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$15</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
           <div class="items-baseline gap-1 flex-wrap monthly-price hidden">
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$19</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl p-4 mb-6">
-          <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.plus.credits')}</span> {t('pricing.plus.creditsDesc')}</p>
+        <div class="bg-brand-bg rounded-xl px-3 py-4 mb-6">
+          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.plus.credits')}</span> {t('pricing.plus.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.plus.creditPrice')}</span> {t('pricing.plus.creditPriceDesc')}</p>
         </div>
 
@@ -100,9 +100,9 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Pro Plan -->
-      <div class="bg-white rounded-2xl px-6 py-7 border-2 border-brand transition duration-300 flex flex-col relative hover:-translate-y-2 hover:shadow-xl">
+      <div class="bg-white rounded-2xl px-4 py-7 border-2 border-brand transition duration-300 flex flex-col relative hover:-translate-y-2 hover:shadow-xl">
         <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white py-1.5 px-4 rounded-[20px] text-[10px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">{t('pricing.mostPopular')}</span>
-        <div class="mb-6 min-h-[88px]">
+        <div class="mb-6 min-h-[120px]">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.pro.name')}</h3>
           </div>
@@ -113,16 +113,16 @@ const t = useTranslations(lang);
           <div class="flex items-baseline gap-1 flex-wrap annual-price">
             <span class="text-[20px] sm:text-[26px] lg:text-[36px] font-bold text-brand-light line-through font-display">$49</span>
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$37</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
           <div class="items-baseline gap-1 flex-wrap monthly-price hidden">
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$49</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl p-4 mb-6">
-          <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.pro.credits')}</span> {t('pricing.pro.creditsDesc')}</p>
+        <div class="bg-brand-bg rounded-xl px-3 py-4 mb-6">
+          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.pro.credits')}</span> {t('pricing.pro.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.pro.creditPrice')}</span> {t('pricing.pro.creditPriceDesc')}</p>
         </div>
 
@@ -136,8 +136,8 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Ultimate Plan -->
-      <div class="bg-white rounded-2xl px-6 py-7 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-6 min-h-[88px]">
+      <div class="bg-white rounded-2xl px-4 py-7 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
+        <div class="mb-6 min-h-[120px]">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-brand">{t('pricing.ultimate.name')}</h3>
           </div>
@@ -148,16 +148,16 @@ const t = useTranslations(lang);
           <div class="flex items-baseline gap-1 flex-wrap annual-price">
             <span class="text-[20px] sm:text-[26px] lg:text-[36px] font-bold text-brand-light line-through font-display">$99</span>
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$75</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
           <div class="items-baseline gap-1 flex-wrap monthly-price hidden">
             <span class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold text-brand font-display">$99</span>
-            <span class="text-xs sm:text-sm lg:text-base text-brand-muted">{t('pricing.perMonth')}</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl p-4 mb-6">
-          <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.ultimate.credits')}</span> {t('pricing.ultimate.creditsDesc')}</p>
+        <div class="bg-brand-bg rounded-xl px-3 py-4 mb-6">
+          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.ultimate.credits')}</span> {t('pricing.ultimate.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.ultimate.creditPrice')}</span> {t('pricing.ultimate.creditPriceDesc')}</p>
         </div>
 
@@ -173,7 +173,7 @@ const t = useTranslations(lang);
 
       <!-- Unlimited Plan -->
       <div class="bg-black rounded-2xl px-6 py-7 border-2 border-black transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl">
-        <div class="mb-6 min-h-[88px]">
+        <div class="mb-6 min-h-[120px]">
           <div class="flex items-center gap-3 mb-2">
             <h3 class="font-display text-[32px] font-semibold text-white">{t('pricing.unlimited.name')}</h3>
           </div>
@@ -181,7 +181,7 @@ const t = useTranslations(lang);
         </div>
 
         <div class="mb-6 min-h-[80px] flex items-center">
-          <a href="/contact" class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-white text-black hover:bg-gray-200">{t('pricing.unlimited.getQuote')}</a>
+          <a href={getLocalizedPath('/quote', lang)} class="block w-full py-4 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-white text-black hover:bg-gray-200">{t('pricing.unlimited.getQuote')}</a>
         </div>
 
         <div class="bg-gray-800 rounded-xl p-4 mb-6">

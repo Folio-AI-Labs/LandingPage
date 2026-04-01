@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,8 +18,8 @@ const t = useTranslations(lang);
     <span class="font-medium">GDPR Compliant</span>
   </div>
   <div class="flex flex-col nav:flex-row items-center gap-3 nav:gap-6 text-sm text-brand-light">
-    <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
-    <a href="/support" class="hover:text-white transition">Support</a>
+    <a href={getLocalizedPath('/privacy/', lang)} class="hover:text-white transition">{t('footer.privacyPolicy')}</a>
+    <a href={getLocalizedPath('/support/', lang)} class="hover:text-white transition">{t('footer.support')}</a>
     <span>{t('footer.copyright')}</span>
   </div>
 </footer>

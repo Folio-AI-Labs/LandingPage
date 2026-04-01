@@ -17,130 +17,130 @@ import Footer from '../components/Footer.astro';
       <div class="mb-16">
         <h2 class="font-display text-[28px] nav:text-[36px] font-normal text-brand mb-8 text-center">Frequently Asked Questions</h2>
 
-        <div class="grid grid-cols-1 nav:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 nav:grid-cols-2 gap-6 items-start">
           <!-- Getting Started -->
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>How do I get started with Verso AI?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              How do I get started with Verso AI?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Getting started is simple! Install Verso AI from the Microsoft Office Store, open PowerPoint, and look for the Verso AI add-in in your ribbon. Sign in with your account, and you're ready to start creating presentations with AI assistance.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Getting started is simple! Install Verso AI from the Microsoft Office Store, open PowerPoint, and look for the Verso AI add-in in your ribbon. Sign in with your account, and you're ready to start creating presentations with AI assistance.</p>
+              </div>
             </div>
           </details>
 
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>What can Verso AI do in PowerPoint?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              What can Verso AI do in PowerPoint?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Verso AI can create entire presentations from prompts, edit existing slides, apply professional designs, generate content, optimize layouts, maintain brand consistency, and help you iterate on your presentations. It works natively in PowerPoint, so all edits are made directly in your presentation.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Verso AI can create entire presentations from prompts, edit existing slides, apply professional designs, generate content, optimize layouts, maintain brand consistency, and help you iterate on your presentations. It works natively in PowerPoint, so all edits are made directly in your presentation.</p>
+              </div>
             </div>
           </details>
 
           <!-- Technical Questions -->
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>Which versions of PowerPoint are supported?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              Which versions of PowerPoint are supported?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Verso AI works with PowerPoint for Microsoft 365, PowerPoint 2021, PowerPoint 2019, and PowerPoint on the web. Both Windows and Mac versions are fully supported.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Verso AI works with PowerPoint for Microsoft 365, PowerPoint 2021, PowerPoint 2019, and PowerPoint on the web. Both Windows and Mac versions are fully supported.</p>
+              </div>
             </div>
           </details>
 
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>Does Verso AI work offline?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              Does Verso AI work offline?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Verso AI requires an internet connection to generate and process AI content. However, once slides are created, you can continue editing them in PowerPoint offline as usual.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Verso AI requires an internet connection to generate and process AI content. However, once slides are created, you can continue editing them in PowerPoint offline as usual.</p>
+              </div>
             </div>
           </details>
 
           <!-- Pricing & Plans -->
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>What pricing plans are available?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              What pricing plans are available?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>We offer flexible plans for individuals and teams. Start with our free trial to test all features. For pricing details and enterprise plans with custom features, advanced security, and dedicated support, please contact our sales team.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">We offer flexible plans for individuals and teams. Start with our free trial to test all features. For pricing details and enterprise plans with custom features, advanced security, and dedicated support, please contact our sales team.</p>
+              </div>
             </div>
           </details>
 
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>Can I cancel my subscription anytime?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              Can I cancel my subscription anytime?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period, and you won't be charged again.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period, and you won't be charged again.</p>
+              </div>
             </div>
           </details>
 
           <!-- Privacy & Security -->
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>Is my data secure and private?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              Is my data secure and private?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Absolutely. We take data security seriously. Your presentations and data are encrypted in transit and at rest. We never train our AI models on your content, and we're compliant with enterprise security standards including SOC 2 and GDPR.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Absolutely. We take data security seriously. Your presentations and data are encrypted in transit and at rest. We never train our AI models on your content, and we're compliant with enterprise security standards including SOC 2 and GDPR.</p>
+              </div>
             </div>
           </details>
 
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>Can I use Verso AI for commercial presentations?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              Can I use Verso AI for commercial presentations?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Yes! All content generated by Verso AI is yours to use commercially. You retain full ownership and rights to your presentations and any AI-generated content within them.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Yes! All content generated by Verso AI is yours to use commercially. You retain full ownership and rights to your presentations and any AI-generated content within them.</p>
+              </div>
             </div>
           </details>
 
           <!-- Enterprise & Team -->
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>Do you offer team or enterprise plans?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              Do you offer team or enterprise plans?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Yes! Our enterprise plan includes centralized billing, team management, brand template libraries, advanced security features, SSO integration, dedicated support, and custom AI model configurations. Contact us for a demo tailored to your organization's needs.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Yes! Our enterprise plan includes centralized billing, team management, brand template libraries, advanced security features, SSO integration, dedicated support, and custom AI model configurations. Contact us for a demo tailored to your organization's needs.</p>
+              </div>
             </div>
           </details>
 
           <!-- Troubleshooting -->
-          <details class="group bg-white rounded-xl border border-brand-border overflow-hidden transition hover:border-brand h-fit">
-            <summary class="cursor-pointer px-6 py-4 font-semibold text-brand flex items-center justify-between list-none">
-              <span>The add-in isn't showing up in PowerPoint. What should I do?</span>
-              <svg class="w-5 h-5 transition-transform group-open:rotate-180 flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center">
+              The add-in isn't showing up in PowerPoint. What should I do?
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
             </summary>
-            <div class="px-6 pb-4 text-brand-muted text-sm">
-              <p>Try these steps: 1) Restart PowerPoint completely, 2) Check that you're signed in to your Microsoft account, 3) Go to Insert > Get Add-ins and verify Verso AI is installed, 4) Check your IT department hasn't blocked add-ins. If issues persist, contact our support team.</p>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8]">Try these steps: 1) Restart PowerPoint completely, 2) Check that you're signed in to your Microsoft account, 3) Go to Insert > Get Add-ins and verify Verso AI is installed, 4) Check your IT department hasn't blocked add-ins. If issues persist, contact our support team.</p>
+              </div>
             </div>
           </details>
         </div>
@@ -201,15 +201,33 @@ import Footer from '../components/Footer.astro';
     document.getElementById('success-msg')?.classList.remove('hidden');
   }
 
-  // FAQ accordion — close other items when one is opened
+  // FAQ smooth open/close
   const faqItems = document.querySelectorAll('details');
+
+  function closeFaq(item: HTMLDetailsElement) {
+    item.classList.remove('expanded');
+    item.querySelector('.faq-content')?.addEventListener('transitionend', () => {
+      item.open = false;
+    }, { once: true });
+  }
+
   faqItems.forEach(item => {
-    item.addEventListener('toggle', () => {
-      if (item.open) {
+    item.querySelector('summary')?.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (item.classList.contains('expanded')) {
+        closeFaq(item as HTMLDetailsElement);
+      } else {
         faqItems.forEach(other => {
-          if (other !== item && other.open) {
-            other.open = false;
+          if (other !== item && other.classList.contains('expanded')) {
+            closeFaq(other as HTMLDetailsElement);
           }
+        });
+        (item as HTMLDetailsElement).open = true;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            item.classList.add('expanded');
+          });
         });
       }
     });
