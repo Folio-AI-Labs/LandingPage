@@ -84,16 +84,10 @@ const t = useTranslations(lang);
     const form = document.getElementById('quoteForm') as HTMLFormElement;
     const confirmationMessage = document.getElementById('confirmationMessage');
 
-    // Send quote request via API
-    try {
-      await fetch('/api/send-quote-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, email, phone, licenses })
-      });
-    } catch (error) {
-      console.error('Error submitting quote request:', error);
-    }
+    // Open mailto link to notify about quote request
+    const subject = encodeURIComponent('Quote request');
+    const body = encodeURIComponent(`User ${fullName} at address ${email} is requesting a quote for ${licenses} licenses, contact is ${phone}`);
+    window.open(`mailto:adrienurlacher@gmail.com?subject=${subject}&body=${body}`, '_blank');
 
     // Hide the form and show confirmation message
     if (form && confirmationMessage) {

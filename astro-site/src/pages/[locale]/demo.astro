@@ -54,16 +54,10 @@ const t = useTranslations(lang);
     const form = document.getElementById('demoForm') as HTMLFormElement;
     const confirmationMessage = document.getElementById('confirmationMessage');
 
-    // Send email notification via API
-    try {
-      await fetch('/api/send-demo-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-      });
-    } catch (error) {
-      console.error('Error submitting demo request:', error);
-    }
+    // Open mailto link to notify about demo request
+    const subject = encodeURIComponent('Demo request');
+    const body = encodeURIComponent(`User ${email} has requested a demo at ${new Date().toLocaleString()}`);
+    window.open(`mailto:adrienurlacher@gmail.com?subject=${subject}&body=${body}`, '_blank');
 
     // Hide the form and show confirmation message
     if (form && confirmationMessage) {
