@@ -13,8 +13,6 @@ import SSODemo from '../../components/demo/SSODemo';
 import EnterpriseDemo from '../../components/demo/EnterpriseDemo';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
 import { languages, defaultLang } from '../../i18n/languages';
-import { PLAYGROUND_URL } from '../../consts';
-
 export function getStaticPaths() {
   return Object.keys(languages)
     .filter((lang) => lang !== defaultLang)
@@ -44,7 +42,7 @@ const showTrustedBy = false;
       </p>
       <!-- CTA buttons on Monet background -->
       <div class="relative z-10 flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center mb-0">
-        <a href={PLAYGROUND_URL} class="w-full max-w-[240px] nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</a>
+        <button data-open-install-modal class="w-full max-w-[240px] nav:w-auto inline-block bg-brand text-white py-4 px-10 rounded-pill border-none text-sm font-medium cursor-pointer transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.getStarted')}</button>
         <a href={getLocalizedPath('/demo/', lang)} class="w-full max-w-[240px] nav:w-auto inline-block bg-brand-bg text-brand border-2 border-brand py-4 px-10 rounded-pill no-underline text-sm font-medium transition duration-300 hover:bg-brand hover:text-white hover:-translate-y-0.5 hover:shadow-lg text-center">{t('nav.bookDemo')}</a>
       </div>
       <!-- Spacer for the overlap -->
