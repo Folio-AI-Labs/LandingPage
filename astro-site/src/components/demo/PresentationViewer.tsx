@@ -27,6 +27,8 @@ function MainSlide({ slide }: { slide: SlideContent }) {
   )
 }
 
+export type PresentationVariant = 'full' | 'ribbon-only' | 'minimal' | 'half-bar'
+
 interface PresentationViewerProps {
   slides: SlideContent[]
   visibleSlides: number[]
@@ -38,22 +40,35 @@ interface PresentationViewerProps {
   statusSlideOf?: (current: number, total: number) => string
   statusReady?: string
   totalSlideCount?: number
+  variant?: PresentationVariant
 }
 
-export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready', totalSlideCount }: PresentationViewerProps) {
+export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready', totalSlideCount, variant = 'full' }: PresentationViewerProps) {
+  const showRibbon = variant !== 'minimal'
+  const showTabBar = variant === 'full' || variant === 'half-bar'
+
   return (
     <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
       style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)', borderRadius: '8px', overflow: 'visible' }}>
       {/* PowerPoint title bar */}
-      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
-        {fileTitle}
-      </div>
-      {/* Ribbon */}
-      <div className="flex items-center gap-4 px-4 py-1.5 bg-[#f0f0f0] border-b border-[#d5d5d5] text-[11px] text-[#888]">
-        {ribbonTabs.map((tab, i) => (
-          <span key={tab} className={i === 0 ? 'font-medium text-[#444]' : undefined}>{tab}</span>
-        ))}
-      </div>
+      {showRibbon ? (
+        <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
+          {fileTitle}
+        </div>
+      ) : (
+        <div className="px-4 py-1 text-[10px] font-medium tracking-wide text-center" style={{ color: '#B7472A', background: '#f5f5f5', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
+          {fileTitle}
+        </div>
+      )}
+      {/* Ribbon tab bar */}
+      {showTabBar && (
+        <div className="flex items-center gap-4 px-4 py-1.5 bg-[#f0f0f0] border-b border-[#d5d5d5] text-[11px] text-[#888]"
+          style={variant === 'half-bar' ? { width: '50%' } : undefined}>
+          {ribbonTabs.map((tab, i) => (
+            <span key={tab} className={i === 0 ? 'font-medium text-[#444]' : undefined}>{tab}</span>
+          ))}
+        </div>
+      )}
 
       {/* Main area */}
       <div className="flex flex-1 min-h-0">

@@ -86,6 +86,7 @@ export default function UploadFilesDemo({ lang = 'en' }: { lang?: string }) {
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
       totalSlideCount: 76,
       loopDelay: 2500,
+      variant: 'half-bar' as const,
     }
   }, [lang])
 
