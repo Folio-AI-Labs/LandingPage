@@ -11,9 +11,9 @@ export const translations = {
     'nav.bookDemo': 'Book a demo',
 
     // Hero Section
-    'hero.title': 'Professional slides that work natively.',
-    'hero.subtitle1': 'AI agents can\'t edit PowerPoint. Verso can.',
-    'hero.subtitle2': 'We built native slide generation & editing, right where you need it.',
+    'hero.title': 'Professional slides, directly in PowerPoint.',
+    'hero.subtitle1': 'AI agents don\'t work directly in PowerPoint. Verso does.',
+    'hero.subtitle2': 'Native slide generation & editing, right where you need it.',
     'hero.trustedBy': 'Trusted by',
 
     // Features Section
@@ -307,9 +307,9 @@ export const translations = {
     'nav.bookDemo': 'Réserver une démo',
 
     // Hero Section
-    'hero.title': 'Des présentations de qualité, nativement',
-    'hero.subtitle1': 'Aucun agent ne travaille directement dans PowerPoint - Verso, si.',
-    'hero.subtitle2': 'Génération et édition de slides, directement dans PowerPoint.',
+    'hero.title': 'Des présentations de qualité, directement dans PowerPoint.',
+    'hero.subtitle1': 'Aucun agent IA ne travaille directement dans PowerPoint. Verso, si.',
+    'hero.subtitle2': 'Génération et édition natives de slides, là où vous en avez besoin.',
     'hero.trustedBy': 'Ils nous font confiance',
 
     // Features Section
@@ -603,9 +603,9 @@ export const translations = {
     'nav.bookDemo': 'Reservar una demo',
 
     // Hero Section
-    'hero.title': 'Slides profesionales, de forma nativa.',
-    'hero.subtitle1': 'Los agentes de IA no pueden editar PowerPoint. Verso sí.',
-    'hero.subtitle2': 'Generación y edición nativa de slides, directamente en PowerPoint.',
+    'hero.title': 'Slides profesionales, directamente en PowerPoint.',
+    'hero.subtitle1': 'Los agentes de IA no trabajan directamente en PowerPoint. Verso sí.',
+    'hero.subtitle2': 'Generación y edición nativa de slides, justo donde lo necesitas.',
     'hero.trustedBy': 'Confían en nosotros',
 
     // Features Section
@@ -899,9 +899,9 @@ export const translations = {
     'nav.bookDemo': 'Demo buchen',
 
     // Hero Section
-    'hero.title': 'Professionelle Folien, nativ in PowerPoint.',
-    'hero.subtitle1': 'KI-Agenten können kein PowerPoint bearbeiten. Verso schon.',
-    'hero.subtitle2': 'Native Slide-Erstellung und -Bearbeitung, direkt in PowerPoint.',
+    'hero.title': 'Professionelle Folien, direkt in PowerPoint.',
+    'hero.subtitle1': 'KI-Agenten arbeiten nicht direkt in PowerPoint. Verso schon.',
+    'hero.subtitle2': 'Native Folienerstellung und -bearbeitung, genau da wo Sie sie brauchen.',
     'hero.trustedBy': 'Sie vertrauen auf uns',
 
     // Features Section
