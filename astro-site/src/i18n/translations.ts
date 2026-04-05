@@ -30,8 +30,8 @@ export const translations = {
     'features.enterprise.desc': 'Bring your own API keys with enterprise plans. We are GDPR compliant, and provide SSO and MFA login. Your data stays yours.',
 
     // Models Section
-    'models.title': 'Performance at the core',
-    'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that LLMs can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
+    'models.title': 'Unmatched performance.',
+    'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that AI can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
     'models.evaluation': 'PrezEval© benchmark',
 
     // CTA Banner
@@ -326,8 +326,8 @@ export const translations = {
     'features.enterprise.desc': 'Utilisez vos propres clés API avec les plans Enterprise. Nous sommes conformes au RGPD, et fournissons SSO et MFA. Vos données restent les vôtres.',
 
     // Models Section
-    'models.title': 'Pensé pour la performance.',
-    'models.desc': 'Notre système utilise une simplification propriétaire qui convertit la complexité des slides PowerPoint en un langage plus clair que les LLMs peuvent éditer naturellement, tout en conservant une expressivité complète. Cela permet d\'obtenir de bien meilleures performances et une exécution plus rapide.',
+    'models.title': 'Vous ne trouverez pas mieux.',
+    'models.desc': 'Notre système utilise une simplification propriétaire qui convertit la complexité des slides PowerPoint en un langage plus clair que l'IA peut éditer naturellement, tout en conservant une expressivité complète. Cela permet d\'obtenir de bien meilleures performances et une exécution plus rapide.',
     'models.evaluation': 'PrezEval© benchmark',
 
     // CTA Banner
@@ -622,7 +622,7 @@ export const translations = {
     'features.enterprise.desc': 'Usa tus propias claves API con los planes Enterprise. Cumplimos con el RGPD, con SSO y MFA incluidos. Tus datos son tuyos.',
 
     // Models Section
-    'models.title': 'Diseñado para rendir.',
+    'models.title': 'A otro nivel.',
     'models.desc': 'Nuestro sistema utiliza una simplificación propietaria que convierte la complejidad de las slides de PowerPoint en un lenguaje más claro que los modelos de IA pueden editar naturalmente, manteniendo total expresividad. Esto se traduce en un rendimiento muy superior y una ejecución más rápida.',
     'models.evaluation': 'PrezEval© benchmark',
 
@@ -918,7 +918,7 @@ export const translations = {
     'features.enterprise.desc': 'Nutzen Sie Ihre eigenen API-Schlüssel mit Enterprise-Plänen. DSGVO-konform, mit SSO und MFA. Ihre Daten bleiben Ihre.',
 
     // Models Section
-    'models.title': 'Leistung im Kern',
+    'models.title': 'Besser geht\'s nicht.',
     'models.desc': 'Unser System nutzt eine proprietäre Vereinfachung, die die Komplexität von PowerPoint-Folien in eine klarere Sprache übersetzt, die KI-Modelle natürlich bearbeiten können, ohne Einbußen bei der Gestaltungsfreiheit. Das Ergebnis: deutlich bessere Leistung und schnellere Ausführung.',
     'models.evaluation': 'PrezEval© benchmark',
 
