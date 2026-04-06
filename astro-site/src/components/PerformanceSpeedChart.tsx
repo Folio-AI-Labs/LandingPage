@@ -73,31 +73,28 @@ export default function PerformanceSpeedChart() {
         font: { family: 'Inter, sans-serif' },
         showlegend: false,
         shapes: [
-          // Gradient-like shaded corner: top-left = best region
           {
             type: 'path',
-            path: 'M 140,55 L 175,55 L 140,42 Z',
-            fillcolor: 'rgba(34, 197, 94, 0.06)',
+            path: 'M 140,55 L 200,55 L 140,38 Z',
+            fillcolor: 'rgba(34, 197, 94, 0.07)',
             line: { width: 0 },
           },
         ],
         annotations: [
-          // "Faster" with left arrow along x-axis
           {
             x: 143,
-            y: 31.5,
-            text: '<b>\u2190 Faster</b>',
-            showarrow: false,
-            font: { size: 11, color: '#bbb', family: 'Inter, sans-serif' },
-            xanchor: 'left',
-          },
-          // "Better" with up arrow along y-axis
-          {
-            x: 141.5,
-            y: 53.5,
+            y: 53,
             text: '<b>\u2191 Better</b>',
             showarrow: false,
-            font: { size: 11, color: '#bbb', family: 'Inter, sans-serif' },
+            font: { size: 22, color: '#ccc', family: 'Inter, sans-serif' },
+            xanchor: 'left',
+          },
+          {
+            x: 143,
+            y: 51,
+            text: '<b>\u2190 Faster</b>',
+            showarrow: false,
+            font: { size: 22, color: '#ccc', family: 'Inter, sans-serif' },
             xanchor: 'left',
           },
         ],

@@ -29,7 +29,6 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
     </a>
 
     <h1 class="font-heading text-3xl nav:text-4xl font-semibold text-brand mb-4">{post.data.title}</h1>
-    <p class="text-lg text-brand-muted/70 italic mb-6">{post.data.description}</p>
     <p class="text-sm text-brand-muted/50 mb-10">
       {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
       <span class="mx-2">&middot;</span>
