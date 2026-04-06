@@ -6,6 +6,7 @@ export const translations = {
     'nav.models': 'Performance',
     'nav.pricing': 'Pricing',
     'nav.support': 'Support',
+    'nav.articles': 'Articles',
     'nav.contact': 'Contact Us',
     'nav.getStarted': 'Get started',
     'nav.bookDemo': 'Book a demo',
@@ -302,6 +303,7 @@ export const translations = {
     'nav.models': 'Performance',
     'nav.pricing': 'Tarifs',
     'nav.support': 'Support',
+    'nav.articles': 'Articles',
     'nav.contact': 'Nous contacter',
     'nav.getStarted': 'Commencer',
     'nav.bookDemo': 'Réserver une démo',
@@ -327,7 +329,7 @@ export const translations = {
 
     // Models Section
     'models.title': 'Vous ne trouverez pas mieux.',
-    'models.desc': 'Notre système utilise une simplification propriétaire qui convertit la complexité des slides PowerPoint en un langage plus clair que l'IA peut éditer naturellement, tout en conservant une expressivité complète. Cela permet d\'obtenir de bien meilleures performances et une exécution plus rapide.',
+    'models.desc': 'Notre système utilise une simplification propriétaire qui convertit la complexité des slides PowerPoint en un langage plus clair que l\'IA peut éditer naturellement, tout en conservant une expressivité complète. Cela permet d\'obtenir de bien meilleures performances et une exécution plus rapide.',
     'models.evaluation': 'PrezEval© benchmark',
 
     // CTA Banner
@@ -598,6 +600,7 @@ export const translations = {
     'nav.models': 'Rendimiento',
     'nav.pricing': 'Precios',
     'nav.support': 'Soporte',
+    'nav.articles': 'Artículos',
     'nav.contact': 'Contáctanos',
     'nav.getStarted': 'Comenzar',
     'nav.bookDemo': 'Reservar una demo',
@@ -894,6 +897,7 @@ export const translations = {
     'nav.models': 'Performance',
     'nav.pricing': 'Preise',
     'nav.support': 'Support',
+    'nav.articles': 'Artikel',
     'nav.contact': 'Kontakt',
     'nav.getStarted': 'Loslegen',
     'nav.bookDemo': 'Demo buchen',
