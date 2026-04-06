@@ -51,12 +51,22 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
     </article>
 
     {showChart && (
-      <div class="mt-10 mb-10">
-        <h3 class="font-heading text-xl font-semibold text-brand mb-4">Score vs. Speed</h3>
-        <div class="flex justify-center">
-          <PerformanceSpeedChart client:only="react" />
-        </div>
+      <div id="chart-source" class="hidden">
+        <PerformanceSpeedChart client:only="react" />
       </div>
+      <script>
+        function moveChart() {
+          const target = document.getElementById('prezeval-chart');
+          const source = document.getElementById('chart-source');
+          if (target && source) {
+            source.classList.remove('hidden');
+            target.appendChild(source);
+          }
+        }
+        // Run after React hydration
+        if (document.readyState === 'complete') moveChart();
+        else window.addEventListener('load', moveChart);
+      </script>
     )}
   </section>
 

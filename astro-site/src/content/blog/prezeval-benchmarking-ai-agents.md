@@ -69,6 +69,8 @@ We compared three configurations:
 
 **Claude for Powerpoint** (a baseline using Claude Opus) scores 36.5% despite using the most steps (11.6) and significantly more compute.
 
+<div id="prezeval-chart"></div>
+
 ### Score breakdown by content type
 
 Breaking down scores by what the slide contains reveals clear patterns:
