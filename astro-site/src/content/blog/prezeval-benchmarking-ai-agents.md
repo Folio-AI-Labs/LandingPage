@@ -6,11 +6,15 @@ description: "How well can an AI agent reproduce a professional consulting slide
 
 ## Goal
 
-How well can an AI agent reproduce a professional consulting slide from just a screenshot?
+How well can an AI agent reproduce professional consulting slides from visual guidance?
 
-PrezEval is a benchmark that measures exactly this. Given a target slide image and the original source presentation (with the correct layout pre-selected), an agent must edit the slide to match the target as closely as possible. A vision-language model then scores the result on a 1 to 5 scale by comparing structure, content, hierarchy, and styling.
+After building Verso, we've come to the belief that our aproach produces far superior results to others.
 
-This task is deceptively hard. Real consulting slides are dense, precise artifacts: a misaligned chart legend, a missing axis label, or a wrong color in a heatmap cell all count as failures. The benchmark tests not just whether an agent can write text to a slide, but whether it can handle charts, tables, custom shapes, multi-column layouts, and brand-specific styling: all at once.
+But let's put numbers on that.
+
+PrezEval is a benchmark that measures exactly this. Given a target slide image and the original source presentation (with the correct layout pre-selected), an agent must edit the slide to match the target as closely as possible. A vision-language model then scores the result by comparing structure, content, hierarchy, and styling.
+
+This task is deceptively hard. Real consulting slides are dense, precise artifacts: a misaligned chart legend, a missing axis label, or a wrong color in a heatmap cell all count as failures. The benchmark tests not just whether an agent can write text to a slide, but whether it can handle charts, tables, custom shapes, multi-column layouts, and brand-specific styling, all at once.
 
 ## Benchmark Building
 
@@ -35,20 +39,15 @@ The slides were selected to maximize visual complexity and diversity of elements
 
 ### What makes it hard
 
-**Charts dominate.** Over half the slides contain at least one chart: stacked bars, combo charts with dual axes, heatmap matrices, area charts. Reproducing a chart means getting the data values, axis labels, legends, colors, and positioning all correct.
-
-**Layouts are intricate.** 39% of slides use multi-column layouts where content must be precisely placed. A McKinsey slide might have a bar chart on the left, a bullet list on the right, and a footnote bar at the bottom: all within a branded template.
-
-**Custom shapes push the limits.** A few slides contain shapes built from geometric primitives: a funnel narrowing from 43K to 13K candidates, a cone-shaped process flow, a seesaw/lever comparing price points. These require the agent to compose multiple base shapes into a coherent visual.
-
-**Dense legal text tests precision.** 13 slides from law firm decks contain long regulatory text with specific formatting: colored highlight boxes, hierarchical numbering, inline citations. Getting the structure right without losing content is a real challenge.
-
-**Diversity of styles.** Each source firm has its own visual identity: color palettes, font choices, layout conventions. The agent can't rely on a single template: it must adapt to 10 different design systems across 21 different slide layouts.
+- **Diversity of styles.** Each source firm has its own visual identity: color palettes, font choices, layout conventions. The agent can't rely on a single template: it must adapt to 10 different design systems across 21 different slide layouts.
+- **Charts dominate.** Over half the slides contain at least one chart: stacked bars, combo charts with dual axes, heatmap matrices, area charts. Reproducing a chart means getting the data values, axis labels, legends, colors, and positioning all correct.
+- **Layouts are intricate.** 39% of slides use multi-column layouts where content must be precisely placed. A McKinsey slide might have a bar chart on the left, a bullet list on the right, and a footnote bar at the bottom: all within a branded template.
+- **Custom shapes push the limits.** A few slides contain shapes built from geometric primitives: a funnel narrowing from 43K to 13K candidates, a cone-shaped process flow, a seesaw/lever comparing price points. These require the agent to compose multiple base shapes into a coherent visual.
 
 ### Task setup
 
 For each of the 61 tasks, the agent receives:
-- The source `.pptx` file with the correct slide layout pre-selected
+- The source `.pptx` file with the correct slide layout pre-selected (this reproduces the real setting where the user starts by loading their company's pptx template)
 - A screenshot of the target slide to reproduce
 - The instruction: *"Recreate the slide shown in the attached image: reproduce it exactly."*
 
@@ -90,7 +89,7 @@ Text-heavy slides are the easiest category, while maps are the hardest (equally 
 
 Verso consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, both Verso Medium and Verso Fast achieve near-perfect scores (75-100%), while Claude for Powerpoint typically lags significantly behind.
 
-### What remains hard for everyone
+### What remains hard
 
 About 20% of the benchmark is essentially unsolved: all three agents score 25% or below. The common failure modes:
 
@@ -100,6 +99,6 @@ About 20% of the benchmark is essentially unsolved: all three agents score 25% o
 
 ### Where Verso still has room to grow
 
-On about 15 tasks, both Verso variants struggle (scoring 25% or below) while Claude for Powerpoint sometimes does better. These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
+On about 15 tasks, Verso variants still struggle (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
 
 All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/VersoLabs/PrezEvalPublic).
