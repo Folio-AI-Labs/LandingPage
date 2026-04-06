@@ -52,7 +52,7 @@ For each of the 61 tasks, the agent receives:
 - A screenshot of the target slide to reproduce
 - The instruction: *"Recreate the slide shown in the attached image: reproduce it exactly."*
 
-The agent then edits the slide through tool calls, and the final result is rendered as a PNG and scored by a vision-language model evaluator.
+The agent then edits the slide through tool calls, and the final result is rendered as a PNG and scored by a vision-language model evaluator. The evaluator rates each result on an integer scale of 1 to 5, since [research shows](https://arxiv.org/abs/2601.03444) that a compact integer scale maximizes human-LLM alignment for LLM-as-a-judge setups. We then convert ratings to a 0-100% score for readability.
 
 ## Results
 
@@ -64,7 +64,7 @@ We compared three configurations:
 | **Verso Fast**        | 38.9% | 157.5s | 9.5   | 61/61 |
 | Claude for Powerpoint | 36.5% | 176.5s | 11.6  | 61/61 |
 
-**Verso Medium** achieves the highest score at 49.6%, corresponding to an average rating of ~3/5: meaning most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
+**Verso Medium** achieves the highest score at 49.6%: most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
 
 **Verso Fast** trades accuracy for speed, completing tasks 24% faster while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
 
@@ -72,27 +72,27 @@ We compared three configurations:
 
 ### Score breakdown by content type
 
-Breaking down average ratings by what the slide contains reveals clear patterns:
+Breaking down scores by what the slide contains reveals clear patterns:
 
 | Content type       | Verso Medium | Claude for PPT |
 |--------------------|--------------|----------------|
-| Dense text         | 3.67         | 2.93           |
-| Non-chart slides   | 3.54         | 2.79           |
-| Tables             | 2.93         | 2.53           |
-| Diagrams           | 2.89         | 2.00           |
-| Charts             | 2.52         | 2.18           |
-| Maps               | 1.50         | 1.50           |
-| **Overall**        | **2.98**     | **2.46**       |
+| Dense text         | 66.8%        | 48.3%          |
+| Non-chart slides   | 63.5%        | 44.8%          |
+| Tables             | 48.3%        | 38.3%          |
+| Diagrams           | 47.3%        | 25.0%          |
+| Charts             | 38.0%        | 29.5%          |
+| Maps               | 12.5%        | 12.5%          |
+| **Overall**        | **49.5%**    | **36.5%**      |
 
 Text-heavy slides are the easiest category, while maps are the hardest (equally bad for both agents). Charts, which make up 54% of the benchmark, pull the overall score down significantly.
 
 ### Where Verso excels
 
-Verso consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, both Verso Medium and Verso Fast achieve near-perfect scores (4-5/5), while Claude for Powerpoint typically lags a full point behind.
+Verso consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, both Verso Medium and Verso Fast achieve near-perfect scores (75-100%), while Claude for Powerpoint typically lags significantly behind.
 
 ### What remains hard for everyone
 
-About 20% of the benchmark is essentially unsolved: all three agents score 2 or below. The common failure modes:
+About 20% of the benchmark is essentially unsolved: all three agents score 25% or below. The common failure modes:
 
 - **Geographic maps.** Agents struggle to produce accurate map visualizations. They may substitute the map with an unrelated shape, render it at the wrong scale, or lose state-level color coding. Verso does attempt maps but the results are consistently poor: a US map might appear shrunken with missing detail, or a world map might be replaced by a circular diagram.
 - **Complex charts with dense data.** Combo charts (bars + lines on dual axes), multi-panel dashboards, and heatmap matrices consistently break all agents. Common failures include entire charts missing, axis labels dropped, and data values absent.
@@ -100,6 +100,6 @@ About 20% of the benchmark is essentially unsolved: all three agents score 2 or 
 
 ### Where Verso still has room to grow
 
-On about 15 tasks, both Verso variants struggle (scoring 2 or below) while Claude for Powerpoint sometimes does better. These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
+On about 15 tasks, both Verso variants struggle (scoring 25% or below) while Claude for Powerpoint sometimes does better. These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
 
 All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/VersoLabs/PrezEvalPublic).
