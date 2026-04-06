@@ -67,7 +67,7 @@ We compared three configurations:
 
 **Verso Fast** trades accuracy for speed, completing tasks 24% faster while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
 
-**Claude for Powerpoint** (a baseline using Claude Opus) scores 36.5% despite using the most steps (11.6) and significantly more compute.
+**Claude for Powerpoint** scores 36.5% despite using the most steps (11.6) and significantly more compute.
 
 <div id="prezeval-chart"></div>
 
