@@ -8,15 +8,15 @@ const t = useTranslations(lang);
 <footer class="mt-auto bg-brand text-white">
   <!-- Main footer content -->
   <div class="max-w-6xl mx-auto px-6 nav:px-12 pt-14 pb-10">
-    <div class="grid grid-cols-1 nav:grid-cols-12 gap-10 nav:gap-8">
+    <div class="flex flex-col nav:flex-row gap-10 nav:gap-8 nav:justify-between">
 
       <!-- Brand column -->
-      <div class="nav:col-span-5">
+      <div class="nav:max-w-xs">
         <div class="flex items-center gap-3 mb-4">
           <img src="/v_icon_white.svg" alt="Verso AI Logo" class="w-8 h-8" />
           <span class="font-heading text-xl font-semibold text-white">Verso AI</span>
         </div>
-        <p class="text-sm text-white/60 leading-relaxed max-w-xs mb-6">
+        <p class="text-sm text-white/60 leading-relaxed mb-6">
           {t('footer.tagline')}
         </p>
         <div class="flex items-center gap-2 text-sm text-white/50">
@@ -28,31 +28,34 @@ const t = useTranslations(lang);
         </div>
       </div>
 
-      <!-- Product column -->
-      <div class="nav:col-span-2 nav:col-start-7">
-        <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.product')}</h4>
-        <ul class="space-y-3 list-none p-0 m-0">
-          <li><a href={getLocalizedPath('/pricing/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.pricing')}</a></li>
-          <li><a href={getLocalizedPath('/demo/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.demo')}</a></li>
-        </ul>
-      </div>
+      <!-- Link columns -->
+      <div class="flex flex-col nav:flex-row gap-10 nav:gap-16">
+        <!-- Product column -->
+        <div>
+          <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.product')}</h4>
+          <ul class="space-y-3 list-none p-0 m-0">
+            <li><a href={getLocalizedPath('/pricing/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.pricing')}</a></li>
+            <li><a href={getLocalizedPath('/demo/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.demo')}</a></li>
+          </ul>
+        </div>
 
-      <!-- Resources column -->
-      <div class="nav:col-span-2">
-        <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.resources')}</h4>
-        <ul class="space-y-3 list-none p-0 m-0">
-          <li><a href={getLocalizedPath('/blog/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.articles')}</a></li>
-          <li><a href={getLocalizedPath('/support/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.support')}</a></li>
-        </ul>
-      </div>
+        <!-- Resources column -->
+        <div>
+          <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.resources')}</h4>
+          <ul class="space-y-3 list-none p-0 m-0">
+            <li><a href={getLocalizedPath('/blog/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.articles')}</a></li>
+            <li><a href={getLocalizedPath('/support/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.support')}</a></li>
+          </ul>
+        </div>
 
-      <!-- Company column -->
-      <div class="nav:col-span-3">
-        <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.company')}</h4>
-        <ul class="space-y-3 list-none p-0 m-0">
-          <li><a href={getLocalizedPath('/privacy/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.privacyPolicy')}</a></li>
-          <li><a href={getLocalizedPath('/terms/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.terms')}</a></li>
-        </ul>
+        <!-- Company column -->
+        <div>
+          <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.company')}</h4>
+          <ul class="space-y-3 list-none p-0 m-0">
+            <li><a href={getLocalizedPath('/privacy/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.privacyPolicy')}</a></li>
+            <li><a href={getLocalizedPath('/terms/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.terms')}</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
