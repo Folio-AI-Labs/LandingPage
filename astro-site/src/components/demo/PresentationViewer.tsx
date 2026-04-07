@@ -47,40 +47,16 @@ export default function PresentationViewer({ slides: slideData, visibleSlides, a
   return (
     <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
       style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)', borderRadius: '8px', overflow: 'visible' }}>
-      {/* Title bar — hidden for minimal variant */}
-      {variant !== 'minimal' && (
-        <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
-          {fileTitle}
-        </div>
-      )}
-      {/* Full: ribbon tab bar + toolbar with formatting icons */}
-      {variant === 'full' && (
-        <>
-          <div className="flex items-center gap-4 px-4 py-1.5 bg-[#f0f0f0] border-b border-[#d5d5d5] text-[11px] text-[#888]">
-            {ribbonTabs.map((tab, i) => (
-              <span key={tab} className={i === 0 ? 'font-medium text-[#444]' : undefined}>{tab}</span>
-            ))}
-          </div>
-          <div className="flex items-center gap-3 px-4 py-1.5 bg-white border-b border-[#e0e0e0] text-[10px] text-[#999]">
-            <span>Calibri</span>
-            <span>11</span>
-            <span style={{ fontWeight: 700 }}>B</span>
-            <span style={{ fontStyle: 'italic' }}>I</span>
-            <span style={{ textDecoration: 'underline' }}>U</span>
-            <span>|</span>
-            <span>Aa</span>
-            <span>|</span>
-            <span style={{ fontSize: '8px' }}>Layout</span>
-            <span style={{ fontSize: '8px' }}>New Slide</span>
-          </div>
-        </>
-      )}
-      {/* Half-bar: short centered separator line */}
-      {variant === 'half-bar' && (
-        <div style={{ background: '#f0f0f0', padding: '5px 0', display: 'flex', justifyContent: 'center', borderBottom: '1px solid #e0e0e0' }}>
-          <div style={{ width: '80px', height: '2px', background: '#c0c0c0', borderRadius: '1px' }} />
-        </div>
-      )}
+      {/* PowerPoint title bar */}
+      <div className="px-4 py-1 text-[10px] text-white font-medium tracking-wide text-center" style={{ background: '#B7472A', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}>
+        {fileTitle}
+      </div>
+      {/* Ribbon tab bar */}
+      <div className="flex items-center gap-4 px-4 py-1.5 bg-[#f0f0f0] border-b border-[#d5d5d5] text-[11px] text-[#888]">
+        {ribbonTabs.map((tab, i) => (
+          <span key={tab} className={i === 0 ? 'font-medium text-[#444]' : undefined}>{tab}</span>
+        ))}
+      </div>
 
       {/* Main area */}
       <div className="flex flex-1 min-h-0">

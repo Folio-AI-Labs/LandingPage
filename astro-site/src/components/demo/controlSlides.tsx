@@ -48,10 +48,10 @@ export const controlSlides: SlideContent[] = [
     title: 'Performance Dashboard',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">Q1 Performance Dashboard</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Q1 Performance Dashboard</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
           {/* LEFT: Revenue Chart */}
           <div className="flex flex-col" style={{ width: '60%' }}>
@@ -111,10 +111,10 @@ export const controlSlides: SlideContent[] = [
     title: 'Performance Dashboard',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">Q1 Performance Dashboard</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Q1 Performance Dashboard</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
           {/* LEFT: KPI Cards (NOW ORANGE) */}
           <div className="flex flex-col gap-2" style={{ width: '40%' }}>
@@ -174,10 +174,10 @@ export const controlSlides: SlideContent[] = [
     title: 'Market Share',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">Market Share Distribution</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Market Share Distribution</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 gap-4 items-center justify-center">
           <svg viewBox="0 0 100 100" width="90" height="90">
             <circle cx="50" cy="50" r="35" fill="none" stroke={TEAL} strokeWidth="16"
@@ -213,10 +213,10 @@ export const controlSlides: SlideContent[] = [
     title: 'Team Overview',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">Team Performance Q1</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Team Performance Q1</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-3 gap-3 flex-1">
             {[
@@ -243,10 +243,10 @@ export const controlSlides: SlideContent[] = [
     title: 'Project Timeline',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">Q1 Project Timeline</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Q1 Project Timeline</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 flex-col gap-2">
           {[
             { month: 'January', projects: ['Launch new website', 'Q4 reporting complete'] },
@@ -276,10 +276,10 @@ export const controlSlides: SlideContent[] = [
     title: 'Summary',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">Q1 Summary & Next Steps</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Q1 Summary & Next Steps</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 flex-col gap-3">
           <div>
             <div className="text-[6px] font-bold mb-1.5" style={{ color: TEAL }}>Key Achievements</div>
@@ -320,10 +320,10 @@ export const controlSlides: SlideContent[] = [
     title: `Slide ${i + 8}`,
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="px-5 py-2" style={{ background: TEAL }}>
-          <h3 className="text-[11px] font-semibold text-white">{['Budget Overview', 'Risk Assessment', 'Stakeholder Map', 'Action Items', 'Next Quarter Goals', 'Resource Planning', 'Final Recommendations'][i]}</h3>
+        <div className="px-5 py-2">
+          <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>{['Budget Overview', 'Risk Assessment', 'Stakeholder Map', 'Action Items', 'Next Quarter Goals', 'Resource Planning', 'Final Recommendations'][i]}</h3>
         </div>
-        <div style={{ height: '2px', background: CYAN }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
           <div className="grid grid-cols-2 gap-3" style={{ width: '100%' }}>
             {Array.from({ length: 4 }, (_, j) => (

@@ -74,7 +74,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Global AI Infrastructure Market</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
           <div className="flex-1">
             <div className="text-[7px] font-bold mb-2" style={{ color: PURPLE }}>Market Highlights</div>
@@ -104,7 +104,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Key Technology Trends</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-3">
           <div className="flex-1 space-y-2">
             <div>
@@ -138,7 +138,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Key Technology Trends</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2.5">
           <div className="flex-1 space-y-1.5">
             <div>
@@ -183,7 +183,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Technology Trends & Competitive Dynamics</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2.5">
           <div className="flex-1 space-y-1.5">
             <div>
@@ -231,7 +231,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">AI Infrastructure Investment Landscape</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
           <div style={{ width: '180px', flexShrink: 0 }}>
             <svg viewBox="0 0 160 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -281,7 +281,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Market Segmentation & Revenue Distribution</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 items-center">
           <svg viewBox="0 0 90 90" width="75" height="75" className="shrink-0">
             <circle cx="45" cy="45" r="32" fill="none" stroke={PURPLE} strokeWidth="14"
@@ -326,7 +326,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">5-Year Market Growth Projection</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
           <div className="flex-1">
             <svg viewBox="0 0 220 90" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -375,7 +375,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Customer Satisfaction Metrics</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
@@ -403,7 +403,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">2026 Product Roadmap</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 flex-col gap-2">
           {[
             { quarter: 'Q2 2026', items: ['API v3 launch', 'Mobile SDK beta'] },
@@ -434,7 +434,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Resource Allocation Overview</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
           <div className="flex-1">
             <svg viewBox="0 0 120 80" className="w-full h-full">
@@ -464,7 +464,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Key Partnerships & Integrations</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5">
           <div className="grid grid-cols-3 gap-2 flex-1 content-start">
             {['Partner A', 'Partner B', 'Partner C', 'Partner D', 'Partner E', 'Partner F'].map((partner, i) => (
@@ -485,7 +485,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Security & Compliance Status</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 flex-col gap-2">
           {[
             { title: 'Certifications', items: ['SOC 2 Type II', 'ISO 27001', 'GDPR Compliant'] },
@@ -514,7 +514,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">System Performance Metrics</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
@@ -541,7 +541,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Organization Structure</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 flex-col gap-2">
           {[
             { dept: 'Engineering', count: '45 people' },
@@ -568,7 +568,7 @@ export const editSlides: SlideContent[] = [
         <div className="px-5 py-2" style={{ background: PURPLE }}>
           <h3 className="text-[11px] font-semibold text-white">Executive Summary</h3>
         </div>
-        <div style={{ height: '2px', background: ORCHID }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
           <div className="text-center">
             <div className="text-[8px] font-bold mb-2" style={{ color: PURPLE }}>

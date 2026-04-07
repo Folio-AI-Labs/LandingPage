@@ -72,11 +72,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Our Mission',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Our Mission</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Our Mission</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-col flex-1 px-6 pt-4 pb-2 justify-center">
           <div className="text-center mb-4">
             <div className="text-[9px] font-bold leading-tight mb-2" style={{ color: RED }}>
@@ -108,11 +111,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Leadership Team',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Leadership Team</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Leadership Team</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
           {[
             { name: 'Sarah Chen', role: 'CEO & Founder', bg: RED },
@@ -134,11 +140,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Revenue Analysis',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Revenue Analysis 2025</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Revenue Analysis 2025</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
           <div className="flex-1">
             <svg viewBox="0 0 180 90" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -170,11 +179,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Product Portfolio',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Product Portfolio</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Product Portfolio</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
@@ -199,11 +211,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Innovation Lab',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Innovation Lab Projects</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Innovation Lab Projects</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="flex flex-col gap-2 flex-1">
             {[
@@ -229,11 +244,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Employee Statistics',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Employee Statistics</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Employee Statistics</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
           <div className="grid grid-cols-2 gap-4 w-full">
             <div className="text-center">
@@ -254,11 +272,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Global Offices',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Global Office Locations</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Global Office Locations</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-2 gap-2 flex-1">
             {['San Francisco 🇺🇸', 'London 🇬🇧', 'Tokyo 🇯🇵', 'Sydney 🇦🇺', 'Berlin 🇩🇪', 'Toronto 🇨🇦'].map((office, i) => (
@@ -276,11 +297,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Awards & Recognition',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Awards & Recognition</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Awards & Recognition</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
           <div className="flex flex-col gap-2 flex-1">
             {[
@@ -306,11 +330,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Community Impact',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Community Impact</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Community Impact</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
@@ -334,11 +361,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Customer Satisfaction',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Customer Satisfaction Scores</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Customer Satisfaction Scores</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
           <div className="text-center">
             <div className="text-[28px] font-bold mb-1" style={{ color: RED }}>4.8/5</div>
@@ -358,11 +388,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Roadmap',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">2026 Product Roadmap</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>2026 Product Roadmap</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="flex flex-col gap-2 flex-1">
             {[
@@ -386,11 +419,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Market Share',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Market Share Analysis</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Market Share Analysis</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
           <div className="text-center">
             <div className="text-[32px] font-bold mb-1" style={{ color: RED }}>23%</div>
@@ -406,11 +442,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Strategic Partnerships',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Key Partnerships</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Key Partnerships</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-3 gap-2 flex-1">
             {['Partner A', 'Partner B', 'Partner C', 'Partner D', 'Partner E', 'Partner F'].map((partner, i) => (
@@ -428,11 +467,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Sustainability',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Sustainability Initiatives</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Sustainability Initiatives</h3>
+          </div>
           <OldLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
@@ -456,11 +498,14 @@ export const uploadSlides: SlideContent[] = [
     title: ['Goals', 'Market', 'Growth', 'Strategy', 'Vision'][i],
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">{['2026 Goals', 'Market Position', 'Growth Metrics', 'Strategy', 'Vision 2027'][i]}</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>{['2026 Goals', 'Market Position', 'Growth Metrics', 'Strategy', 'Vision 2027'][i]}</h3>
+          </div>
           <NewLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2">
           <div className="grid grid-cols-2 gap-2 flex-1">
             {Array.from({ length: 4 }, (_, j) => (
@@ -508,11 +553,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Our Mission',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Our Mission</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Our Mission</h3>
+          </div>
           <NewLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-col flex-1 px-6 pt-4 pb-2 justify-center">
           <div className="text-center mb-4">
             <div className="text-[9px] font-bold leading-tight mb-2" style={{ color: RED }}>
@@ -544,11 +592,14 @@ export const uploadSlides: SlideContent[] = [
     title: 'Leadership Team',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2" style={{ background: RED }}>
-          <h3 className="text-[11px] font-semibold text-white">Leadership Team</h3>
+        <div className="flex items-center justify-between px-5 py-2">
+          <div className="flex items-center gap-2">
+            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Leadership Team</h3>
+          </div>
           <NewLogo />
         </div>
-        <div style={{ height: '2px', background: ROSE }} />
+
         <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
           {[
             { name: 'Sarah Chen', role: 'CEO & Founder', bg: RED },
