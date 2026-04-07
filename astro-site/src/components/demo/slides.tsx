@@ -73,7 +73,7 @@ export const defaultSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Supply Surplus Reached 1.6M bbl/day in 2026</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
-        <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2 min-h-0">
           <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
             {[
               { color: GOLD, label: 'Global Demand', value: '104.5M', unit: 'bbl/day', sub: '+0.9M YoY', subColor: '#6BCB77' },
@@ -172,7 +172,7 @@ export const defaultSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Brent Crude Forecast to Decline to $70 by Year-End</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 min-h-0">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3 min-h-0">
           {/* Left: compact line chart */}
           <div className="flex flex-col" style={{ width: '220px', flexShrink: 0 }}>
             {/* Price callouts */}
@@ -317,7 +317,7 @@ export const frenchSlide2: SlideContent = {
         <h3 className="text-[11px] font-semibold text-white">{"Vue d'ensemble Offre & Demande"}</h3>
       </div>
       <div style={{ height: '2px', background: GOLD }} />
-      <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
+      <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2 min-h-0">
         <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
           {[
             { color: GOLD, label: 'Demande mondiale', value: '104,5M', unit: 'bbl/j', sub: '+0,9M sur un an', subColor: '#6BCB77' },

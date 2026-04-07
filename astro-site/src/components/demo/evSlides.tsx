@@ -74,7 +74,7 @@ export const evSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">EV Sales Nearly Tripled From 2021 to 2025</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
-        <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2 min-h-0">
           <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
             {[
               { color: LIME, label: 'EV Sales', value: '1.2M', unit: 'units', sub: '+42% YoY', subColor: '#66BB6A' },
@@ -166,7 +166,7 @@ export const evSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Market Value Reached ¥4.2T With 38% Annual Growth</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 min-h-0">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3 min-h-0">
           {/* Left: compact line chart */}
           <div className="flex flex-col" style={{ width: '220px', flexShrink: 0 }}>
             {/* Market value callouts */}
@@ -308,7 +308,7 @@ export const evSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Urban Millennials Drive 42% of EV Purchases</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1 flex flex-col gap-2">
             <div>
               <div className="text-[6px] font-bold mb-1" style={{ color: FOREST }}>Demographic Insights</div>
@@ -344,7 +344,7 @@ export const evSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Solid-State Batteries Enter Production by 2027</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1 grid grid-cols-2 gap-3">
             {[
               { title: 'Battery Innovation', text: 'Solid-state batteries entering production in 2027. Energy density reaching 500Wh/kg. Cost per kWh declining to $80 by 2028. 10-minute fast charging becoming standard.' },
@@ -373,7 +373,7 @@ export const evSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Japan Poised to Lead Asia-Pacific EV Transition by 2028</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1 flex flex-col justify-between">
             <div>
               <div className="text-[8px] font-bold leading-tight mb-2" style={{ color: FOREST }}>

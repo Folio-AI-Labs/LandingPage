@@ -75,7 +75,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">AI Infrastructure Spending Surged 42% YoY</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1">
             <div className="text-[7px] font-bold mb-2" style={{ color: PURPLE }}>Market Highlights</div>
             <div className="space-y-1.5">
@@ -105,7 +105,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Next-Gen GPUs Deliver 5x Performance Gains</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2 pb-1 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1 space-y-2">
             <div>
               <div className="text-[6px] font-bold mb-1" style={{ color: PURPLE }}>Hardware Evolution</div>
@@ -139,7 +139,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">NVIDIA Commands 80% GPU Market Share</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2 pb-1 gap-2.5">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2.5">
           <div className="flex-1 space-y-1.5">
             <div>
               <div className="text-[5.5px] font-bold mb-0.5" style={{ color: PURPLE }}>Hardware Evolution</div>
@@ -184,7 +184,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">NVIDIA Leads at 80% Share With 127% YoY Growth</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2 pb-1 gap-2.5">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2.5">
           <div className="flex-1 space-y-1.5">
             <div>
               <div className="text-[5.5px] font-bold mb-0.5" style={{ color: PURPLE }}>Hardware Evolution</div>
@@ -232,7 +232,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">VC Funding Tripled to $35B Since 2023</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="p-2" style={{ width: '180px', flexShrink: 0 }}>
             <svg viewBox="0 0 160 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <text x="80" y="8" textAnchor="middle" fontSize="5" fontWeight="700" fill={PURPLE} fontFamily="Calibri, sans-serif">Venture Capital Investment ($B)</text>
@@ -282,7 +282,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Cloud Infrastructure Captured Largest Share at 40%</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 items-center">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3 items-center">
           <div className="p-2 shrink-0">
             <svg viewBox="0 0 90 90" width="75" height="75">
             <circle cx="45" cy="45" r="32" fill="none" stroke={PURPLE} strokeWidth="14"
@@ -329,7 +329,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Market on Track to Reach $600B by 2028</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1 p-2">
             <svg viewBox="0 0 220 90" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <rect x="30" y="8" width="180" height="55" fill="#F8F8F8" />
@@ -378,7 +378,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">NPS Jumped 8 Points to Best-in-Class 72</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
               { metric: 'NPS Score', value: '72', change: '+8 pts' },
@@ -406,7 +406,7 @@ export const editSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold text-white">Three Launches Set to Unlock Multi-Region Scale</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 flex-col gap-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 flex-col gap-2">
           {[
             { quarter: 'Q2 2026', items: ['API v3 launch', 'Mobile SDK beta'] },
             { quarter: 'Q3 2026', items: ['Enterprise features', 'Advanced analytics'] },

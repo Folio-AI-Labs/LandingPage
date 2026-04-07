@@ -80,7 +80,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-col flex-1 px-6 pt-4 pb-2 justify-center">
+        <div className="flex flex-col flex-1 px-5 pt-2.5 pb-3 justify-center">
           <div className="text-center mb-4">
             <div className="text-[9px] font-bold leading-tight mb-2" style={{ color: RED }}>
               "Empowering businesses through innovative technology solutions"
@@ -119,7 +119,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           {[
             { name: 'Sarah Chen', role: 'CEO & Founder', bg: RED },
             { name: 'Michael Ross', role: 'CTO', bg: CRIMSON },
@@ -148,7 +148,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           <div className="flex-1 p-2">
             <svg viewBox="0 0 180 90" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <text x="90" y="8" textAnchor="middle" fontSize="5" fontWeight="700" fill={RED} fontFamily="Calibri, sans-serif">Quarterly Revenue Growth</text>
@@ -187,7 +187,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
               { name: 'Product A', revenue: '$32M', growth: '+45%' },
@@ -219,7 +219,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3">
           <div className="flex flex-col gap-2 flex-1">
             {[
               { name: 'AI Research', status: 'Active', progress: '75%' },
@@ -252,7 +252,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 items-center justify-center">
           <div className="grid grid-cols-2 gap-4 w-full">
             <div className="text-center">
               <div className="text-[24px] font-bold" style={{ color: RED }}>1,200+</div>
@@ -280,7 +280,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3">
           <div className="grid grid-cols-2 gap-2 flex-1">
             {['San Francisco 🇺🇸', 'London 🇬🇧', 'Tokyo 🇯🇵', 'Sydney 🇦🇺', 'Berlin 🇩🇪', 'Toronto 🇨🇦'].map((office, i) => (
               <div key={i} className="px-3 py-2 text-center" style={{ background: '#FFF5F5', border: `1px solid ${ROSE}` }}>
@@ -305,7 +305,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 items-center justify-center">
           <div className="flex flex-col gap-2 flex-1">
             {[
               { award: 'Best Tech Company 2025', org: 'Tech Awards' },
@@ -338,7 +338,7 @@ export const uploadSlides: SlideContent[] = [
           <OldLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3">
           <div className="grid grid-cols-2 gap-3 flex-1">
             {[
               { metric: 'Volunteer Hours', value: '10,000+' },
@@ -398,7 +398,7 @@ export const uploadSlides: SlideContent[] = [
           <NewLogo />
         </div>
 
-        <div className="flex flex-col flex-1 px-6 pt-4 pb-2 justify-center">
+        <div className="flex flex-col flex-1 px-5 pt-2.5 pb-3 justify-center">
           <div className="text-center mb-4">
             <div className="text-[9px] font-bold leading-tight mb-2" style={{ color: RED }}>
               "Empowering businesses through innovative technology solutions"
@@ -437,7 +437,7 @@ export const uploadSlides: SlideContent[] = [
           <NewLogo />
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           {[
             { name: 'Sarah Chen', role: 'CEO & Founder', bg: RED },
             { name: 'Michael Ross', role: 'CTO', bg: CRIMSON },

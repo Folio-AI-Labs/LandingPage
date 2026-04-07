@@ -52,7 +52,7 @@ export const controlSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Revenue Up 23%, Conversion Up 0.8pp</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           {/* LEFT: Revenue Chart */}
           <div className="flex flex-col" style={{ width: '60%' }}>
             <div className="text-[6px] font-bold mb-1.5" style={{ color: TEAL }}>Revenue Growth</div>
@@ -115,7 +115,7 @@ export const controlSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Revenue Up 23%, Conversion Up 0.8pp</h3>
         </div>
 
-        <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3">
           {/* LEFT: KPI Cards (NOW ORANGE) */}
           <div className="flex flex-col gap-2" style={{ width: '40%' }}>
             <div className="text-[6px] font-bold mb-0.5" style={{ color: ORANGE }}>Key Metrics</div>
@@ -178,7 +178,7 @@ export const controlSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Product A Commands 35% Market Share</h3>
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 gap-4 items-center justify-center">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-4 items-center justify-center">
           <div className="p-3">
           <svg viewBox="0 0 100 100" width="90" height="90">
             <circle cx="50" cy="50" r="35" fill="none" stroke={TEAL} strokeWidth="16"
@@ -219,7 +219,7 @@ export const controlSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Sales Crushed Target at 142%</h3>
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3">
           <div className="grid grid-cols-3 gap-3 flex-1">
             {[
               { name: 'Sales', value: '142%', target: 'of target' },
@@ -249,7 +249,7 @@ export const controlSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>All 6 Milestones Delivered On Time</h3>
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 flex-col gap-2">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 flex-col gap-2">
           {[
             { month: 'January', projects: ['Launch new website', 'Q4 reporting complete'] },
             { month: 'February', projects: ['Mobile app beta', 'Team expansion'] },
@@ -282,7 +282,7 @@ export const controlSlides: SlideContent[] = [
           <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>Q1 Beat All Targets, Q2 Goes Global</h3>
         </div>
 
-        <div className="flex flex-1 px-6 pt-3 pb-2 flex-col gap-3">
+        <div className="flex flex-1 px-5 pt-2.5 pb-3 flex-col gap-3">
           <div>
             <div className="text-[6px] font-bold mb-1.5" style={{ color: TEAL }}>Key Achievements</div>
             <div className="space-y-1">
@@ -336,7 +336,7 @@ export const controlSlides: SlideContent[] = [
             <h3 className="text-[11px] font-semibold" style={{ color: TEAL }}>{titles[i]}</h3>
           </div>
 
-          <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
+          <div className="flex flex-1 px-5 pt-2.5 pb-3 items-center justify-center">
             <div className="grid grid-cols-2 gap-3" style={{ width: '100%' }}>
               {Array.from({ length: 4 }, (_, j) => (
                 <div key={j} className="px-3 py-2 text-center" style={{ background: i % 2 === 0 ? '#E0F2F1' : '#B2DFDB', border: `1px solid ${CYAN}` }}>
