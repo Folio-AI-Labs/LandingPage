@@ -9,7 +9,7 @@ function renderSlide(slide: SlideContent) {
     return (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         {slide.header?.()}
-        <div className="flex-1 px-5 pt-2.5 pb-6 min-h-0 overflow-hidden">
+        <div className="flex-1 px-5 pt-2.5 pb-10 min-h-0 overflow-hidden">
           {slide.body()}
         </div>
       </div>
