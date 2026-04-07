@@ -57,13 +57,13 @@ const fileTitles: Record<string, string> = {
   de: 'Unternehmensübersicht.pptx',
 }
 
-const visible15 = Array.from({ length: 15 }, (_, i) => i)
+const visible10 = Array.from({ length: 10 }, (_, i) => i)
 
 // Slide replacement mapping: tool index -> { at, with }
 const slideReplacements: Record<number, { at: number; with: number }> = {
-  1: { at: 0, with: 20 },
-  2: { at: 1, with: 21 },
-  3: { at: 2, with: 22 },
+  1: { at: 0, with: 10 },
+  2: { at: 1, with: 11 },
+  3: { at: 2, with: 12 },
 }
 
 export default function UploadFilesDemo({ lang = 'en' }: { lang?: string }) {
@@ -71,7 +71,7 @@ export default function UploadFilesDemo({ lang = 'en' }: { lang?: string }) {
     const t = demoText[lang] || demoText.en
     return {
       allSlides: uploadSlides,
-      initialVisible: visible15,
+      initialVisible: visible10,
       initialActive: 0,
       turns: [{
         uploadFile: t.uploadFileName,
@@ -84,7 +84,7 @@ export default function UploadFilesDemo({ lang = 'en' }: { lang?: string }) {
         })),
       }],
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
-      totalSlideCount: 76,
+      totalSlideCount: 10,
       loopDelay: 2500,
       variant: 'half-bar' as const,
     }

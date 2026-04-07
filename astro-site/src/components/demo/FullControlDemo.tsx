@@ -45,14 +45,14 @@ const fileTitles: Record<string, string> = {
   de: 'Q1-Leistungsbericht.pptx',
 }
 
-const visible15 = Array.from({ length: 15 }, (_, i) => i)
+const visible9 = Array.from({ length: 9 }, (_, i) => i)
 
 export default function FullControlDemo({ lang = 'en' }: { lang?: string }) {
   const config = useMemo((): DemoWorkflowConfig => {
     const t = demoText[lang] || demoText.en
     return {
       allSlides: controlSlides,
-      initialVisible: visible15,
+      initialVisible: visible9,
       initialActive: 1,
       turns: [{
         prompt: t.prompt,
@@ -64,7 +64,7 @@ export default function FullControlDemo({ lang = 'en' }: { lang?: string }) {
         })),
       }],
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
-      totalSlideCount: 81,
+      totalSlideCount: 9,
       loopDelay: 2500,
       variant: 'minimal' as const,
     }

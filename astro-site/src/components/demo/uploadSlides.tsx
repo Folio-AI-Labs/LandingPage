@@ -356,171 +356,8 @@ export const uploadSlides: SlideContent[] = [
       </div>
     ),
   },
-  // Slide 10: Customer Satisfaction - OLD LOGO
-  {
-    title: 'Customer Satisfaction',
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2">
-          <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Customer Satisfaction Scores</h3>
-          </div>
-          <OldLogo />
-        </div>
-
-        <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
-          <div className="text-center">
-            <div className="text-[28px] font-bold mb-1" style={{ color: RED }}>4.8/5</div>
-            <div className="text-[6px] mb-2" style={{ color: '#757575' }}>Average Customer Rating</div>
-            <div className="flex gap-2 justify-center">
-              {['⭐', '⭐', '⭐', '⭐', '⭐'].map((star, i) => (
-                <span key={i} className="text-[10px]">{star}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  // Slide 11: Roadmap Timeline - OLD LOGO
-  {
-    title: 'Roadmap',
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2">
-          <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>2026 Product Roadmap</h3>
-          </div>
-          <OldLogo />
-        </div>
-
-        <div className="flex flex-1 px-6 pt-3 pb-2">
-          <div className="flex flex-col gap-2 flex-1">
-            {[
-              { q: 'Q1 2026', item: 'Launch AI Assistant' },
-              { q: 'Q2 2026', item: 'Mobile App 3.0' },
-              { q: 'Q3 2026', item: 'Enterprise Dashboard' },
-              { q: 'Q4 2026', item: 'Global Expansion' },
-            ].map((milestone, i) => (
-              <div key={i} className="flex items-center gap-2 px-3 py-1.5" style={{ background: '#FFF5F5', border: `1px solid ${ROSE}` }}>
-                <div className="text-[6px] font-bold" style={{ color: RED, minWidth: '30px' }}>{milestone.q}</div>
-                <div className="text-[5px]" style={{ color: '#424242' }}>{milestone.item}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  // Slide 12: Market Share - OLD LOGO
-  {
-    title: 'Market Share',
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2">
-          <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Market Share Analysis</h3>
-          </div>
-          <OldLogo />
-        </div>
-
-        <div className="flex flex-1 px-6 pt-3 pb-2 items-center justify-center">
-          <div className="text-center">
-            <div className="text-[32px] font-bold mb-1" style={{ color: RED }}>23%</div>
-            <div className="text-[6px] mb-3" style={{ color: '#757575' }}>Market Leadership Position</div>
-            <div className="text-[5px]" style={{ color: '#66BB6A' }}>▲ +5% YoY Growth</div>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  // Slide 13: Partnerships - OLD LOGO
-  {
-    title: 'Strategic Partnerships',
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2">
-          <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Key Partnerships</h3>
-          </div>
-          <OldLogo />
-        </div>
-
-        <div className="flex flex-1 px-6 pt-3 pb-2">
-          <div className="grid grid-cols-3 gap-2 flex-1">
-            {['Partner A', 'Partner B', 'Partner C', 'Partner D', 'Partner E', 'Partner F'].map((partner, i) => (
-              <div key={i} className="flex items-center justify-center px-2 py-2 text-center" style={{ background: '#FFF5F5', border: `1px solid ${ROSE}` }}>
-                <div className="text-[5px] font-bold" style={{ color: RED }}>{partner}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  // Slide 14: Sustainability - OLD LOGO
-  {
-    title: 'Sustainability',
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2">
-          <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Sustainability Initiatives</h3>
-          </div>
-          <OldLogo />
-        </div>
-
-        <div className="flex flex-1 px-6 pt-3 pb-2">
-          <div className="grid grid-cols-2 gap-3 flex-1">
-            {[
-              { metric: 'Carbon Neutral', value: '2025' },
-              { metric: 'Renewable Energy', value: '100%' },
-              { metric: 'Waste Reduction', value: '85%' },
-              { metric: 'Green Suppliers', value: '92%' },
-            ].map((item, i) => (
-              <div key={i} className="px-3 py-2 text-center" style={{ background: '#FFF5F5', border: `1px solid ${ROSE}` }}>
-                <div className="text-[8px] font-bold mb-0.5" style={{ color: RED }}>{item.value}</div>
-                <div className="text-[5px]" style={{ color: '#757575' }}>{item.metric}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  // Slides 15-19: Same slides with NEW logo
-  ...Array.from({ length: 5 }, (_, i) => ({
-    title: ['Goals', 'Market', 'Growth', 'Strategy', 'Vision'][i],
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
-        <div className="flex items-center justify-between px-5 py-2">
-          <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>{['2026 Goals', 'Market Position', 'Growth Metrics', 'Strategy', 'Vision 2027'][i]}</h3>
-          </div>
-          <NewLogo />
-        </div>
-
-        <div className="flex flex-1 px-6 pt-3 pb-2">
-          <div className="grid grid-cols-2 gap-2 flex-1">
-            {Array.from({ length: 4 }, (_, j) => (
-              <div key={j} className="px-2 py-1.5 text-center" style={{ background: '#FFF5F5', border: `1px solid ${ROSE}` }}>
-                <div className="text-[5px] font-bold" style={{ color: RED }}>Metric {j + 1}</div>
-                <div className="text-[8px] font-bold" style={{ color: CRIMSON }}>{90 + j * 3}%</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    ),
-  })),
-  // Slides for logo replacement animation (NEW logo versions of slides 0, 1, 2)
-  // Slide 20: Title slide - NEW LOGO (replacement for slide 0)
+  // Slides 10-12: NEW logo versions of slides 0, 1, 2 (for logo replacement animation)
+  // Slide 10: Title slide - NEW LOGO (replacement for slide 0)
   {
     title: 'Title Slide',
     render: () => (
@@ -548,7 +385,7 @@ export const uploadSlides: SlideContent[] = [
       </div>
     ),
   },
-  // Slide 21: Mission - NEW LOGO (replacement for slide 1)
+  // Slide 11: Mission - NEW LOGO (replacement for slide 1)
   {
     title: 'Our Mission',
     render: () => (
@@ -587,7 +424,7 @@ export const uploadSlides: SlideContent[] = [
       </div>
     ),
   },
-  // Slide 22: Team - NEW LOGO (replacement for slide 2)
+  // Slide 12: Team - NEW LOGO (replacement for slide 2)
   {
     title: 'Leadership Team',
     render: () => (

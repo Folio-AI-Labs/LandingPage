@@ -72,14 +72,14 @@ const fileTitles: Record<string, string> = {
   de: 'Tech-Marktanalyse.pptx',
 }
 
-const visible15 = Array.from({ length: 15 }, (_, i) => i)
+const visible10 = Array.from({ length: 10 }, (_, i) => i)
 
 export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
   const config = useMemo((): DemoWorkflowConfig => {
     const t = demoText[lang] || demoText.en
     return {
       allSlides: editSlides,
-      initialVisible: visible15,
+      initialVisible: visible10,
       initialActive: 2,
       turns: [
         {
@@ -102,7 +102,7 @@ export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
         },
       ],
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
-      totalSlideCount: 55,
+      totalSlideCount: 10,
       loopDelay: 2000,
       variant: 'ribbon-only' as const,
     }
