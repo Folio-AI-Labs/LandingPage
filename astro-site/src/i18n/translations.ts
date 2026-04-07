@@ -177,8 +177,17 @@ export const translations = {
     'support.form.successMessage': 'We\'ll get back to you shortly.',
 
     // Footer
-    'footer.privacyPolicy': 'Privacy Policy',
+    'footer.tagline': 'Native PowerPoint editing powered by AI. Built for consultants and strategy teams.',
+    'footer.product': 'Product',
+    'footer.pricing': 'Pricing',
+    'footer.demo': 'Request Demo',
+    'footer.articles': 'Articles',
+    'footer.resources': 'Resources',
     'footer.support': 'Support',
+    'footer.privacyPolicy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
+    'footer.company': 'Company',
+    'footer.gdpr': 'GDPR Compliant',
     'footer.copyright': '© 2026 Verso AI. All rights reserved.',
 
     // Meta
@@ -474,8 +483,17 @@ export const translations = {
     'support.form.successMessage': 'Nous vous répondrons sous peu.',
 
     // Footer
-    'footer.privacyPolicy': 'Politique de confidentialité',
+    'footer.tagline': 'Édition native de PowerPoint propulsée par l\'IA. Conçu pour les consultants et les équipes stratégiques.',
+    'footer.product': 'Produit',
+    'footer.pricing': 'Tarifs',
+    'footer.demo': 'Demander une démo',
+    'footer.articles': 'Articles',
+    'footer.resources': 'Ressources',
     'footer.support': 'Support',
+    'footer.privacyPolicy': 'Politique de confidentialité',
+    'footer.terms': 'Conditions d\'utilisation',
+    'footer.company': 'Entreprise',
+    'footer.gdpr': 'Conforme RGPD',
     'footer.copyright': '© 2026 Verso AI. Tous droits réservés.',
 
     // Meta
@@ -771,8 +789,17 @@ export const translations = {
     'support.form.successMessage': 'Te responderemos pronto.',
 
     // Footer
-    'footer.privacyPolicy': 'Política de privacidad',
+    'footer.tagline': 'Edición nativa de PowerPoint impulsada por IA. Diseñado para consultores y equipos de estrategia.',
+    'footer.product': 'Producto',
+    'footer.pricing': 'Precios',
+    'footer.demo': 'Solicitar demo',
+    'footer.articles': 'Artículos',
+    'footer.resources': 'Recursos',
     'footer.support': 'Soporte',
+    'footer.privacyPolicy': 'Política de privacidad',
+    'footer.terms': 'Términos de servicio',
+    'footer.company': 'Empresa',
+    'footer.gdpr': 'Cumple con RGPD',
     'footer.copyright': '© 2026 Verso AI. Todos los derechos reservados.',
 
     // Meta
@@ -1068,8 +1095,17 @@ export const translations = {
     'support.form.successMessage': 'Wir melden uns in Kürze bei Ihnen.',
 
     // Footer
-    'footer.privacyPolicy': 'Datenschutzerklärung',
+    'footer.tagline': 'Native PowerPoint-Bearbeitung mit KI. Entwickelt für Berater und Strategieteams.',
+    'footer.product': 'Produkt',
+    'footer.pricing': 'Preise',
+    'footer.demo': 'Demo anfragen',
+    'footer.articles': 'Artikel',
+    'footer.resources': 'Ressourcen',
     'footer.support': 'Support',
+    'footer.privacyPolicy': 'Datenschutzerklärung',
+    'footer.terms': 'Nutzungsbedingungen',
+    'footer.company': 'Unternehmen',
+    'footer.gdpr': 'DSGVO-konform',
     'footer.copyright': '© 2026 Verso AI. Alle Rechte vorbehalten.',
 
     // Meta
