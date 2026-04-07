@@ -42,7 +42,7 @@ export function makeBlankSlide(titlePlaceholder = 'Click to add title', subtitle
 
 export const evSlides: SlideContent[] = [
   {
-    title: 'Title Slide',
+    title: 'Japan EV Sales Surge to 1.2M Units in 2025',
     render: () => (
       <div className="flex flex-col justify-between h-full" style={{ background: FOREST, fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div style={{ height: '3px', background: `linear-gradient(90deg, ${LIME}, ${LIME}80, transparent)` }} />
@@ -66,12 +66,12 @@ export const evSlides: SlideContent[] = [
     ),
   },
   {
-    title: 'Market Timeline',
+    title: 'EV Sales Nearly Tripled From 2021 to 2025',
     render: () => {
       return (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: FOREST }}>
-          <h3 className="text-[11px] font-semibold text-white">EV Market Evolution Timeline</h3>
+          <h3 className="text-[11px] font-semibold text-white">EV Sales Nearly Tripled From 2021 to 2025</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
@@ -95,7 +95,7 @@ export const evSlides: SlideContent[] = [
             ))}
           </div>
           <div className="flex-1 flex gap-2.5 min-h-0 min-w-0">
-            <div className="flex items-center" style={{ width: '185px', flexShrink: 0 }}>
+            <div className="flex items-center p-2" style={{ width: '185px', flexShrink: 0 }}>
               <svg viewBox="0 0 150 120" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                 <rect x="25" y="5" width="105" height="80" fill="#F2F2F2" />
                 {[5, 25, 45, 65, 85].map(y => (
@@ -159,11 +159,11 @@ export const evSlides: SlideContent[] = [
     },
   },
   {
-    title: 'Financial Analysis',
+    title: 'Market Value Reached ¥4.2T With 38% Annual Growth',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: FOREST }}>
-          <h3 className="text-[11px] font-semibold text-white">Financial Analysis & Projections</h3>
+          <h3 className="text-[11px] font-semibold text-white">Market Value Reached ¥4.2T With 38% Annual Growth</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 min-h-0">
@@ -188,7 +188,7 @@ export const evSlides: SlideContent[] = [
               </div>
             </div>
             {/* Line chart */}
-            <div className="flex-1">
+            <div className="flex-1 p-2">
               <svg viewBox="0 0 200 80" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                 <rect x="25" y="3" width="165" height="50" fill="#F2F2F2" />
                 {[3, 15.5, 28, 40.5, 53].map(y => (
@@ -237,7 +237,7 @@ export const evSlides: SlideContent[] = [
               <div className="mt-1" style={{ height: '1.5px', width: '30px', background: LIME }} />
             </div>
             {/* Donut chart — market segments */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 p-2">
               <svg viewBox="0 0 80 80" width="65" height="65" className="shrink-0">
                 <circle cx="40" cy="40" r="28" fill="none" stroke={FOREST} strokeWidth="12"
                   strokeDasharray={`${0.45 * 175.9} ${175.9}`} strokeDashoffset="0" transform="rotate(-90 40 40)" />
@@ -301,11 +301,11 @@ export const evSlides: SlideContent[] = [
     ),
   },
   {
-    title: 'Consumer Trends',
+    title: 'Urban Millennials Drive 42% of EV Purchases',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: FOREST }}>
-          <h3 className="text-[11px] font-semibold text-white">Consumer Adoption Trends</h3>
+          <h3 className="text-[11px] font-semibold text-white">Urban Millennials Drive 42% of EV Purchases</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
@@ -337,11 +337,11 @@ export const evSlides: SlideContent[] = [
     ),
   },
   {
-    title: 'Technology Roadmap',
+    title: 'Solid-State Batteries Enter Production by 2027',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: FOREST }}>
-          <h3 className="text-[11px] font-semibold text-white">Technology & Innovation Roadmap</h3>
+          <h3 className="text-[11px] font-semibold text-white">Solid-State Batteries Enter Production by 2027</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
@@ -366,11 +366,11 @@ export const evSlides: SlideContent[] = [
     ),
   },
   {
-    title: 'Market Outlook',
+    title: 'Japan Poised to Lead Asia-Pacific EV Transition by 2028',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: FOREST }}>
-          <h3 className="text-[11px] font-semibold text-white">Strategic Outlook & Recommendations</h3>
+          <h3 className="text-[11px] font-semibold text-white">Japan Poised to Lead Asia-Pacific EV Transition by 2028</h3>
         </div>
         <div style={{ height: '2px', background: LIME }} />
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">

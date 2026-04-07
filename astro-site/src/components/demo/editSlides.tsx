@@ -68,11 +68,11 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 1: Market overview
   {
-    title: 'Market Overview',
+    title: 'AI Infrastructure Spending Surged 42% YoY',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">Global AI Infrastructure Market</h3>
+          <h3 className="text-[11px] font-semibold text-white">AI Infrastructure Spending Surged 42% YoY</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
@@ -98,11 +98,11 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 2: Technology trends (BEFORE edit - no competitive section)
   {
-    title: 'Technology Trends',
+    title: 'Next-Gen GPUs Deliver 5x Performance Gains',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">Key Technology Trends</h3>
+          <h3 className="text-[11px] font-semibold text-white">Next-Gen GPUs Deliver 5x Performance Gains</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-3">
@@ -132,11 +132,11 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 3: Technology trends (AFTER first edit - WITH competitive analysis)
   {
-    title: 'Technology Trends',
+    title: 'NVIDIA Commands 80% GPU Market Share',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">Key Technology Trends</h3>
+          <h3 className="text-[11px] font-semibold text-white">NVIDIA Commands 80% GPU Market Share</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2.5">
@@ -177,11 +177,11 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 4: Technology trends (AFTER second edit - enhanced title + growth %)
   {
-    title: 'Technology Trends',
+    title: 'NVIDIA Leads at 80% Share With 127% YoY Growth',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">Technology Trends & Competitive Dynamics</h3>
+          <h3 className="text-[11px] font-semibold text-white">NVIDIA Leads at 80% Share With 127% YoY Growth</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2.5">
@@ -225,15 +225,15 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 5: Investment Landscape with bar chart
   {
-    title: 'Investment Trends',
+    title: 'VC Funding Tripled to $35B Since 2023',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">AI Infrastructure Investment Landscape</h3>
+          <h3 className="text-[11px] font-semibold text-white">VC Funding Tripled to $35B Since 2023</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
-          <div style={{ width: '180px', flexShrink: 0 }}>
+          <div className="p-2" style={{ width: '180px', flexShrink: 0 }}>
             <svg viewBox="0 0 160 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <text x="80" y="8" textAnchor="middle" fontSize="5" fontWeight="700" fill={PURPLE} fontFamily="Calibri, sans-serif">Venture Capital Investment ($B)</text>
               {[20, 40, 60, 80].map(y => (
@@ -275,15 +275,16 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 6: Market Segments with donut chart
   {
-    title: 'Market Segments',
+    title: 'Cloud Infrastructure Captured Largest Share at 40%',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">Market Segmentation & Revenue Distribution</h3>
+          <h3 className="text-[11px] font-semibold text-white">Cloud Infrastructure Captured Largest Share at 40%</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 items-center">
-          <svg viewBox="0 0 90 90" width="75" height="75" className="shrink-0">
+          <div className="p-2 shrink-0">
+            <svg viewBox="0 0 90 90" width="75" height="75">
             <circle cx="45" cy="45" r="32" fill="none" stroke={PURPLE} strokeWidth="14"
               strokeDasharray={`${0.40 * 201.06} ${201.06}`} strokeDashoffset="0" transform="rotate(-90 45 45)" />
             <circle cx="45" cy="45" r="32" fill="none" stroke={VIOLET} strokeWidth="14"
@@ -295,6 +296,7 @@ export const editSlides: SlideContent[] = [
             <text x="45" y="43" textAnchor="middle" fontSize="7" fontWeight="700" fill={PURPLE} fontFamily="Calibri, sans-serif">$285B</text>
             <text x="45" y="51" textAnchor="middle" fontSize="4" fill="#595959" fontFamily="Calibri, sans-serif">Total Market</text>
           </svg>
+          </div>
           <div className="flex-1 flex flex-col gap-1.5">
             {[
               { color: PURPLE, label: 'Cloud Infrastructure', pct: '40%', value: '$114B' },
@@ -320,15 +322,15 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 7: Growth Forecast with line chart
   {
-    title: 'Growth Forecast',
+    title: 'Market on Track to Reach $600B by 2028',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">5-Year Market Growth Projection</h3>
+          <h3 className="text-[11px] font-semibold text-white">Market on Track to Reach $600B by 2028</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3">
-          <div className="flex-1">
+          <div className="flex-1 p-2">
             <svg viewBox="0 0 220 90" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <rect x="30" y="8" width="180" height="55" fill="#F8F8F8" />
               {[8, 21.75, 35.5, 49.25, 63].map(y => (
@@ -369,11 +371,11 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 8: Customer Feedback
   {
-    title: 'Customer Feedback',
+    title: 'NPS Jumped 8 Points to Best-in-Class 72',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">Customer Satisfaction Metrics</h3>
+          <h3 className="text-[11px] font-semibold text-white">NPS Jumped 8 Points to Best-in-Class 72</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5">
@@ -397,11 +399,11 @@ export const editSlides: SlideContent[] = [
   },
   // Slide 9: Roadmap
   {
-    title: 'Product Roadmap',
+    title: 'Three Launches Set to Unlock Multi-Region Scale',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: PURPLE }}>
-          <h3 className="text-[11px] font-semibold text-white">2026 Product Roadmap</h3>
+          <h3 className="text-[11px] font-semibold text-white">Three Launches Set to Unlock Multi-Region Scale</h3>
         </div>
 
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 flex-col gap-2">

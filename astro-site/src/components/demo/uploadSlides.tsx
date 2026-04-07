@@ -41,7 +41,7 @@ const NewLogo = () => (
 export const uploadSlides: SlideContent[] = [
   // Slide 0: Title slide - OLD LOGO
   {
-    title: 'Title Slide',
+    title: 'Acme at a Glance: Record Growth & Global Scale',
     render: () => (
       <div className="flex flex-col justify-between h-full" style={{ background: RED, fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div style={{ height: '3px', background: `linear-gradient(90deg, ${ROSE}, ${ROSE}80, transparent)` }} />
@@ -53,7 +53,7 @@ export const uploadSlides: SlideContent[] = [
             </div>
           </div>
           <h3 className="text-[18px] font-bold text-white mb-1.5 leading-tight" style={{ letterSpacing: '-0.01em' }}>
-            Company<br />Overview 2026
+            Record Growth<br />& Global Scale
           </h3>
           <div className="w-8 mt-2 mb-3" style={{ height: '1.5px', background: ROSE }} />
           <p className="text-[8px] font-normal" style={{ color: '#FFCDD2' }}>
@@ -69,13 +69,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 1: Mission - OLD LOGO
   {
-    title: 'Our Mission',
+    title: 'Empowering 50+ Countries with Tech Solutions',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Our Mission</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Empowering 50+ Countries with Tech Solutions</h3>
           </div>
           <OldLogo />
         </div>
@@ -108,13 +108,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 2: Team - OLD LOGO
   {
-    title: 'Leadership Team',
+    title: 'Seasoned Leaders with 80+ Years Combined Experience',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Leadership Team</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Seasoned Leaders with 80+ Years Combined Experience</h3>
           </div>
           <OldLogo />
         </div>
@@ -126,7 +126,7 @@ export const uploadSlides: SlideContent[] = [
             { name: 'Emily Zhang', role: 'CFO', bg: SCARLET },
           ].map((person, i) => (
             <div key={i} className="flex-1 flex flex-col">
-              <div className="aspect-square rounded-lg mb-2" style={{ background: person.bg, width: '100%' }} />
+              <div className="aspect-square mb-2" style={{ background: person.bg, width: '100%' }} />
               <div className="text-[6px] font-bold" style={{ color: RED }}>{person.name}</div>
               <div className="text-[5px]" style={{ color: '#757575' }}>{person.role}</div>
             </div>
@@ -137,19 +137,19 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 3: Revenue Analysis - OLD LOGO
   {
-    title: 'Revenue Analysis',
+    title: 'Revenue Crossed $50M Milestone in 2025',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Revenue Analysis 2025</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Revenue Crossed $50M Milestone in 2025</h3>
           </div>
           <OldLogo />
         </div>
 
         <div className="flex flex-1 px-6 pt-3 pb-2 gap-3">
-          <div className="flex-1">
+          <div className="flex-1 p-2">
             <svg viewBox="0 0 180 90" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <text x="90" y="8" textAnchor="middle" fontSize="5" fontWeight="700" fill={RED} fontFamily="Calibri, sans-serif">Quarterly Revenue Growth</text>
               {[20, 35, 50, 65, 80].map(y => (
@@ -176,13 +176,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 4: Products - OLD LOGO
   {
-    title: 'Product Portfolio',
+    title: '4 Product Lines Serving 12 Industries',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Product Portfolio</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>4 Product Lines Serving 12 Industries</h3>
           </div>
           <OldLogo />
         </div>
@@ -208,13 +208,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 5: Innovation Lab - OLD LOGO
   {
-    title: 'Innovation Lab',
+    title: '3 R&D Bets Targeting $500M Market by 2028',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Innovation Lab Projects</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>3 R&D Bets Targeting $500M Market by 2028</h3>
           </div>
           <OldLogo />
         </div>
@@ -241,13 +241,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 6: Employee Stats - OLD LOGO
   {
-    title: 'Employee Statistics',
+    title: '1,200 Employees with 85% Satisfaction Rate',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Employee Statistics</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>1,200 Employees with 85% Satisfaction Rate</h3>
           </div>
           <OldLogo />
         </div>
@@ -269,13 +269,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 7: Global Offices - OLD LOGO
   {
-    title: 'Global Offices',
+    title: '6 Offices Across 4 Continents',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Global Office Locations</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>6 Offices Across 4 Continents</h3>
           </div>
           <OldLogo />
         </div>
@@ -294,13 +294,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 8: Awards - OLD LOGO
   {
-    title: 'Awards & Recognition',
+    title: '3 Major Industry Awards Won in 2025',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Awards & Recognition</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>3 Major Industry Awards Won in 2025</h3>
           </div>
           <OldLogo />
         </div>
@@ -327,13 +327,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 9: Community Impact - OLD LOGO
   {
-    title: 'Community Impact',
+    title: '$2M Donated & 10K Volunteer Hours in 2025',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Community Impact</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>$2M Donated & 10K Volunteer Hours in 2025</h3>
           </div>
           <OldLogo />
         </div>
@@ -359,7 +359,7 @@ export const uploadSlides: SlideContent[] = [
   // Slides 10-12: NEW logo versions of slides 0, 1, 2 (for logo replacement animation)
   // Slide 10: Title slide - NEW LOGO (replacement for slide 0)
   {
-    title: 'Title Slide',
+    title: 'Acme at a Glance: Record Growth & Global Scale',
     render: () => (
       <div className="flex flex-col justify-between h-full" style={{ background: RED, fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div style={{ height: '3px', background: `linear-gradient(90deg, ${ROSE}, ${ROSE}80, transparent)` }} />
@@ -371,7 +371,7 @@ export const uploadSlides: SlideContent[] = [
             </div>
           </div>
           <h3 className="text-[18px] font-bold text-white mb-1.5 leading-tight" style={{ letterSpacing: '-0.01em' }}>
-            Company<br />Overview 2026
+            Record Growth<br />& Global Scale
           </h3>
           <div className="w-8 mt-2 mb-3" style={{ height: '1.5px', background: ROSE }} />
           <p className="text-[8px] font-normal" style={{ color: '#FFCDD2' }}>
@@ -387,13 +387,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 11: Mission - NEW LOGO (replacement for slide 1)
   {
-    title: 'Our Mission',
+    title: 'Empowering 50+ Countries with Tech Solutions',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Our Mission</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Empowering 50+ Countries with Tech Solutions</h3>
           </div>
           <NewLogo />
         </div>
@@ -426,13 +426,13 @@ export const uploadSlides: SlideContent[] = [
   },
   // Slide 12: Team - NEW LOGO (replacement for slide 2)
   {
-    title: 'Leadership Team',
+    title: 'Seasoned Leaders with 80+ Years Combined Experience',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="flex items-center justify-between px-5 py-2">
           <div className="flex items-center gap-2">
-            <div style={{ width: '30px', height: '3px', background: RED, borderRadius: '1.5px', flexShrink: 0 }} />
-            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Leadership Team</h3>
+            <div style={{ width: '30px', height: '3px', background: RED, flexShrink: 0 }} />
+            <h3 className="text-[11px] font-semibold" style={{ color: '#333' }}>Seasoned Leaders with 80+ Years Combined Experience</h3>
           </div>
           <NewLogo />
         </div>
@@ -444,7 +444,7 @@ export const uploadSlides: SlideContent[] = [
             { name: 'Emily Zhang', role: 'CFO', bg: SCARLET },
           ].map((person, i) => (
             <div key={i} className="flex-1 flex flex-col">
-              <div className="aspect-square rounded-lg mb-2" style={{ background: person.bg, width: '100%' }} />
+              <div className="aspect-square mb-2" style={{ background: person.bg, width: '100%' }} />
               <div className="text-[6px] font-bold" style={{ color: RED }}>{person.name}</div>
               <div className="text-[5px]" style={{ color: '#757575' }}>{person.role}</div>
             </div>

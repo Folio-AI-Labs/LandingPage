@@ -105,7 +105,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
   }, [t, ui])
 
   const editConfig = useMemo((): DemoWorkflowConfig => ({
-    allSlides: [...defaultSlides.slice(0, 1), frenchSlide2, ...defaultSlides.slice(2)],
+    allSlides: [...defaultSlides.slice(0, 3), frenchSlide2],
     initialVisible: [0, 1, 2],
     initialActive: 1,
     turns: [{
@@ -114,7 +114,7 @@ export default function AddinDemo({ lang = 'en' }: { lang?: string }) {
       tools: [{
         toolName: 'edit_slide',
         label: t.w2Tool,
-        slideUpdate: { replaceSlide: { at: 1, with: 1 } },
+        slideUpdate: { replaceSlide: { at: 1, with: 3 } },
       }],
       followup: t.w2Followup,
     }],

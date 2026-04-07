@@ -41,7 +41,7 @@ export const blankSlide: SlideContent = makeBlankSlide()
 
 export const defaultSlides: SlideContent[] = [
   {
-    title: 'Title Slide',
+    title: 'Oil Market Under Pressure as OPEC+ Unwinds Cuts',
     render: () => (
       <div className="flex flex-col justify-between h-full" style={{ background: NAVY, fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div style={{ height: '3px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD}80, transparent)` }} />
@@ -50,7 +50,7 @@ export const defaultSlides: SlideContent[] = [
             Market Analysis
           </div>
           <h3 className="text-[18px] font-bold text-white mb-1.5 leading-tight" style={{ letterSpacing: '-0.01em' }}>
-            Outlook on the<br />Current Oil Market
+            Oil Market Under Pressure<br />as OPEC+ Unwinds Cuts
           </h3>
           <div className="w-8 mt-2 mb-3" style={{ height: '1.5px', background: GOLD }} />
           <p className="text-[8px] font-normal" style={{ color: '#8CA3C4' }}>
@@ -65,12 +65,12 @@ export const defaultSlides: SlideContent[] = [
     ),
   },
   {
-    title: 'Supply & Demand',
+    title: 'Supply Surplus Reached 1.6M bbl/day in 2026',
     render: () => {
       return (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: NAVY }}>
-          <h3 className="text-[11px] font-semibold text-white">Supply & Demand Overview</h3>
+          <h3 className="text-[11px] font-semibold text-white">Supply Surplus Reached 1.6M bbl/day in 2026</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
         <div className="flex flex-1 px-4 pt-2 pb-1 gap-2 min-h-0">
@@ -94,7 +94,7 @@ export const defaultSlides: SlideContent[] = [
             ))}
           </div>
           <div className="flex-1 flex gap-2.5 min-h-0 min-w-0">
-            <div className="flex items-center" style={{ width: '185px', flexShrink: 0 }}>
+            <div className="flex items-center p-2" style={{ width: '185px', flexShrink: 0 }}>
               <svg viewBox="0 0 150 120" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                 <rect x="25" y="5" width="105" height="80" fill="#F2F2F2" />
                 {[5, 25, 45, 65, 85].map(y => (
@@ -165,11 +165,11 @@ export const defaultSlides: SlideContent[] = [
     },
   },
   {
-    title: 'Price Trends',
+    title: 'Brent Crude Forecast to Decline to $70 by Year-End',
     render: () => (
       <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
         <div className="px-5 py-2" style={{ background: NAVY }}>
-          <h3 className="text-[11px] font-semibold text-white">Price Trends & Forecast</h3>
+          <h3 className="text-[11px] font-semibold text-white">Brent Crude Forecast to Decline to $70 by Year-End</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
         <div className="flex flex-1 px-4 pt-2.5 pb-1.5 gap-3 min-h-0">
@@ -194,7 +194,7 @@ export const defaultSlides: SlideContent[] = [
               </div>
             </div>
             {/* Line chart */}
-            <div className="flex-1">
+            <div className="flex-1 p-2">
               <svg viewBox="0 0 200 80" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                 <rect x="25" y="3" width="165" height="50" fill="#F2F2F2" />
                 {[3, 15.5, 28, 40.5, 53].map(y => (
