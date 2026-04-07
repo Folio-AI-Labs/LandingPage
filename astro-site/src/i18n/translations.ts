@@ -602,7 +602,7 @@ export const translations = {
     'nav.support': 'Soporte',
     'nav.articles': 'Artículos',
     'nav.contact': 'Contáctanos',
-    'nav.getStarted': 'Comenzar',
+    'nav.getStarted': 'Empezar',
     'nav.bookDemo': 'Reservar una demo',
 
     // Hero Section
@@ -667,7 +667,7 @@ export const translations = {
     'pricing.annual': 'Anual (-25 %)',
     'pricing.monthly': 'Mensual',
     'pricing.perMonth': '/mes',
-    'pricing.getStarted': 'Comenzar',
+    'pricing.getStarted': 'Empezar',
     'pricing.mostPopular': 'Más popular',
 
     'pricing.starter.name': 'Starter',
