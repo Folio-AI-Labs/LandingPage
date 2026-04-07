@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 import PerformanceChart from '../components/PerformanceChart.astro';
+import DemoFrame from '../components/DemoFrame.astro';
 import AddinDemo from '../components/demo/AddinDemo';
 import PromptToDeckDemo from '../components/demo/PromptToDeckDemo';
 import EditDeckDemo from '../components/demo/EditDeckDemo';
@@ -77,10 +78,8 @@ const showTrustedBy = false;
       <div class="flex flex-col gap-14 nav:gap-12">
         <!-- Prompt to deck - Screenshot LEFT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-3 nav:gap-8 items-center">
-          <div class="order-2 nav:order-1 aspect-video flex items-center justify-center relative">
-            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
-              <PromptToDeckDemo lang={lang} client:visible />
-            </div>
+          <div class="order-2 nav:order-1">
+            <DemoFrame><PromptToDeckDemo lang={lang} client:visible /></DemoFrame>
           </div>
           <div class="order-1 nav:order-2">
             <div class="flex items-center gap-3 mb-3">
@@ -95,10 +94,8 @@ const showTrustedBy = false;
 
         <!-- Edit an existing deck - Screenshot RIGHT -->
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-3 nav:gap-8 items-center">
-          <div class="order-2 nav:order-2 aspect-video flex items-center justify-center relative">
-            <div style="width: 820px; height: 420px; transform: scale(0.667); transform-origin: center; position: absolute;">
-              <EditDeckDemo lang={lang} client:visible />
-            </div>
+          <div class="order-2 nav:order-2">
+            <DemoFrame><EditDeckDemo lang={lang} client:visible /></DemoFrame>
           </div>
           <div class="order-1 nav:order-1 nav:text-right">
             <div class="flex items-center gap-3 mb-3 nav:justify-end">
