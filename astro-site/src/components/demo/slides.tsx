@@ -1,6 +1,8 @@
 export interface SlideContent {
   title: string
-  render: () => React.ReactNode
+  render?: () => React.ReactNode
+  header?: () => React.ReactNode
+  body?: () => React.ReactNode
 }
 
 const NAVY = '#0C1F3F'
@@ -66,14 +68,17 @@ export const defaultSlides: SlideContent[] = [
   },
   {
     title: 'Supply Surplus Reached 1.6M bbl/day in 2026',
-    render: () => {
-      return (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
+    header: () => (
+      <>
         <div className="px-5 py-2" style={{ background: NAVY }}>
           <h3 className="text-[11px] font-semibold text-white">Supply Surplus Reached 1.6M bbl/day in 2026</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
-        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2 min-h-0">
+      </>
+    ),
+    body: () => (
+      <div className="flex flex-col h-full gap-0 min-h-0">
+        <div className="flex flex-1 gap-2 min-h-0">
           <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
             {[
               { color: GOLD, label: 'Global Demand', value: '104.5M', unit: 'bbl/day', sub: '+0.9M YoY', subColor: '#6BCB77' },
@@ -161,18 +166,21 @@ export const defaultSlides: SlideContent[] = [
           <span className="text-[3.5px]" style={{ color: '#A0A0A0' }}>Source: IEA Oil Market Report, EIA STEO — March 2026</span>
         </div>
       </div>
-      )
-    },
+    ),
   },
   {
     title: 'Brent Crude Forecast to Decline to $70 by Year-End',
-    render: () => (
-      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
+    header: () => (
+      <>
         <div className="px-5 py-2" style={{ background: NAVY }}>
           <h3 className="text-[11px] font-semibold text-white">Brent Crude Forecast to Decline to $70 by Year-End</h3>
         </div>
         <div style={{ height: '2px', background: GOLD }} />
-        <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-3 min-h-0">
+      </>
+    ),
+    body: () => (
+      <div className="flex flex-col h-full gap-0 min-h-0">
+        <div className="flex flex-1 gap-3 min-h-0">
           {/* Left: compact line chart */}
           <div className="flex flex-col" style={{ width: '220px', flexShrink: 0 }}>
             {/* Price callouts */}
@@ -310,14 +318,17 @@ export const defaultSlides: SlideContent[] = [
 
 export const frenchSlide2: SlideContent = {
   title: 'Offre & Demande',
-  render: () => {
-    return (
-    <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
+  header: () => (
+    <>
       <div className="px-5 py-2" style={{ background: NAVY }}>
         <h3 className="text-[11px] font-semibold text-white">{"Vue d'ensemble Offre & Demande"}</h3>
       </div>
       <div style={{ height: '2px', background: GOLD }} />
-      <div className="flex flex-1 px-5 pt-2.5 pb-3 gap-2 min-h-0">
+    </>
+  ),
+  body: () => (
+    <div className="flex flex-col h-full gap-0 min-h-0">
+      <div className="flex flex-1 gap-2 min-h-0">
         <div className="flex flex-col gap-1.5 justify-start pt-0.5" style={{ width: '80px', flexShrink: 0 }}>
           {[
             { color: GOLD, label: 'Demande mondiale', value: '104,5M', unit: 'bbl/j', sub: '+0,9M sur un an', subColor: '#6BCB77' },
@@ -401,6 +412,5 @@ export const frenchSlide2: SlideContent = {
         <span className="text-[3.5px]" style={{ color: '#A0A0A0' }}>{"Source : Rapport sur le marché pétrolier de l'AIE, EIA STEO — Mars 2026"}</span>
       </div>
     </div>
-    )
-  },
+  ),
 }

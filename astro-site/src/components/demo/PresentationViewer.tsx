@@ -4,6 +4,20 @@ import type { SlideContent } from './slides'
 export { defaultSlides }
 export type { SlideContent }
 
+function renderSlide(slide: SlideContent) {
+  if (slide.body) {
+    return (
+      <div className="flex flex-col h-full" style={{ background: '#FFFFFF', fontFamily: "Calibri, 'Inter', sans-serif" }}>
+        {slide.header?.()}
+        <div className="flex-1 px-5 pt-2.5 pb-4 min-h-0 overflow-hidden">
+          {slide.body()}
+        </div>
+      </div>
+    )
+  }
+  return slide.render?.() ?? null
+}
+
 function SlideThumbnail({ slide, isActive }: { slide: SlideContent; isActive: boolean }) {
   return (
     <div
@@ -13,7 +27,7 @@ function SlideThumbnail({ slide, isActive }: { slide: SlideContent; isActive: bo
       style={{ aspectRatio: '16 / 9', width: '100%' }}
     >
       <div className="absolute overflow-hidden" style={{ width: '520px', height: '293px', transform: 'scale(0.115)', transformOrigin: 'top left' }}>
-        {slide.render()}
+        {renderSlide(slide)}
       </div>
     </div>
   )
@@ -22,7 +36,7 @@ function SlideThumbnail({ slide, isActive }: { slide: SlideContent; isActive: bo
 function MainSlide({ slide }: { slide: SlideContent }) {
   return (
     <div className="demo-slide-in shadow-sm border border-[#e0e0e0] overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
-      {slide.render()}
+      {renderSlide(slide)}
     </div>
   )
 }
