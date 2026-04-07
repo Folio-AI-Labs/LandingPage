@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import ChatPanel from './ChatPanel'
 import PresentationViewer from './PresentationViewer'
-import type { PresentationVariant } from './PresentationViewer'
+
 import type { SlideContent } from './slides'
 import './demo-styles.css'
 import type { Message, ToolCall, Phase } from './types'
@@ -51,7 +51,6 @@ export interface DemoWorkflowConfig {
   }
   totalSlideCount?: number
   loopDelay?: number
-  variant?: PresentationVariant
 }
 
 // --- Shared PPT UI strings per locale ---
@@ -356,7 +355,6 @@ export default function DemoWorkflow({ config, onComplete }: { config: DemoWorkf
             statusSlideOf={config.ui.slideOf}
             statusReady={config.ui.ready}
             totalSlideCount={config.totalSlideCount}
-            variant={config.variant}
           />
         </div>
       </div>

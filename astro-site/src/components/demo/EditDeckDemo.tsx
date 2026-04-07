@@ -104,7 +104,6 @@ export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
       totalSlideCount: 10,
       loopDelay: 2000,
-      variant: 'ribbon-only' as const,
     }
   }, [lang])
 

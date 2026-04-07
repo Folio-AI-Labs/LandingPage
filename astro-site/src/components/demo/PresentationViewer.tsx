@@ -41,8 +41,6 @@ function MainSlide({ slide }: { slide: SlideContent }) {
   )
 }
 
-export type PresentationVariant = 'full' | 'ribbon-only' | 'minimal' | 'half-bar'
-
 interface PresentationViewerProps {
   slides: SlideContent[]
   visibleSlides: number[]
@@ -54,10 +52,9 @@ interface PresentationViewerProps {
   statusSlideOf?: (current: number, total: number) => string
   statusReady?: string
   totalSlideCount?: number
-  variant?: PresentationVariant
 }
 
-export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready', totalSlideCount, variant = 'full' }: PresentationViewerProps) {
+export default function PresentationViewer({ slides: slideData, visibleSlides, activeSlide, sidePanel, onSlideClick, fileTitle = 'Oil Market Outlook Q1 2026.pptx', ribbonTabs = ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'], statusSlideOf = (c, t) => `Slide ${c} of ${t}`, statusReady = 'Ready', totalSlideCount }: PresentationViewerProps) {
   return (
     <div className="flex flex-col border border-[#d5d5d5] bg-[#f5f5f5]"
       style={{ fontFamily: 'Inter, sans-serif', height: '420px', boxShadow: '0 8px 40px rgba(0,0,0,0.15), 0 0 20px rgba(0,0,0,0.08)', borderRadius: '8px', overflow: 'visible' }}>

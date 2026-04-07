@@ -66,7 +66,6 @@ export default function FullControlDemo({ lang = 'en' }: { lang?: string }) {
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
       totalSlideCount: 9,
       loopDelay: 2500,
-      variant: 'minimal' as const,
     }
   }, [lang])
 
