@@ -1,13 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
-import { useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages, defaultLang } from '../../i18n/languages';
 
-const t = useTranslations('en');
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter(lang => lang !== defaultLang)
+    .map(lang => ({ params: { locale: lang } }));
+}
 
-const posts = (await getCollection('blog', ({ data }) => data.lang === 'en')).sort(
+const { locale } = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const localeFormats: Record<string, string> = {
+  fr: 'fr-FR',
+  de: 'de-DE',
+  es: 'es-ES',
+};
+
+const posts = (await getCollection('blog', ({ data }) => data.lang === locale)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 ---
@@ -20,10 +35,10 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === 'en')).so
 
     <div class="grid gap-6">
       {posts.map((post) => (
-        <a href={`/blog/${post.id}/`} class="block no-underline group">
+        <a href={`/${locale}/blog/${post.id.split('/').slice(1).join('/')}/`} class="block no-underline group">
           <div class="border border-brand-border rounded-xl p-6 nav:p-8 transition duration-300 hover:border-brand/30 hover:shadow-md bg-white">
             <p class="text-sm text-brand-muted/60 mb-2 font-body">
-              {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {post.data.date.toLocaleDateString(localeFormats[locale!] || 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
             <h2 class="font-heading text-xl nav:text-2xl font-semibold text-brand mb-3 group-hover:text-brand/80 transition-colors duration-300">
               {post.data.title}

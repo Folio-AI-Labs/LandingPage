@@ -94,7 +94,7 @@ const t = useTranslations(lang);
     // Open mailto link to notify about quote request
     const subject = encodeURIComponent('Quote request');
     const body = encodeURIComponent(`User ${fullName} at address ${email} is requesting a quote for ${licenses} licenses, contact is ${phone}`);
-    window.open(`mailto:adrienurlacher@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    window.open(`mailto:contact@get-verso.ai?subject=${subject}&body=${body}`, '_blank');
 
     // Hide the form and show confirmation message
     if (form && confirmationMessage) {

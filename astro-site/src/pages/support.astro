@@ -154,10 +154,7 @@ import Footer from '../components/Footer.astro';
       <div class="mt-16 max-w-[640px] mx-auto">
         <h2 class="font-display text-[28px] nav:text-[36px] font-normal text-brand mb-8 text-center">Send us a message</h2>
 
-      <form action="https://formsubmit.co/adrien@get-verso.ai" method="POST" class="space-y-6">
-        <input type="hidden" name="_subject" value="New support request from get-verso.ai" />
-        <input type="hidden" name="_next" value="https://get-verso.ai/support/?sent=1" />
-        <input type="text" name="_honey" style="display:none" />
+      <form id="supportForm" class="space-y-6">
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
@@ -197,9 +194,24 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  if (new URLSearchParams(window.location.search).has('sent')) {
-    document.getElementById('success-msg')?.classList.remove('hidden');
-  }
+  document.getElementById('supportForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const subject = (document.getElementById('subject') as HTMLInputElement).value;
+    const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+
+    const mailSubject = encodeURIComponent(`Support: ${subject}`);
+    const mailBody = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
+    window.open(`mailto:contact@get-verso.ai?subject=${mailSubject}&body=${mailBody}`, '_blank');
+
+    const form = document.getElementById('supportForm') as HTMLFormElement;
+    const successMsg = document.getElementById('success-msg');
+    if (form && successMsg) {
+      form.style.display = 'none';
+      successMsg.classList.remove('hidden');
+    }
+  });
 
   // FAQ smooth open/close
   const faqItems = document.querySelectorAll('details');

@@ -68,7 +68,7 @@ export const translations = {
     'pricing.metaTitle': 'Pricing — Verso AI',
     'pricing.metaDescription': 'Choose the perfect plan for your presentation needs. Flexible credit-based pricing for everyone.',
     'pricing.title': 'Pricing',
-    'pricing.subtitle': 'Start with 200 free credits. Pay for what you use on top.',
+    'pricing.subtitle': 'Start with 300 free credits. Pay for what you use on top.',
     'pricing.subtitle2': 'Subscribe to a plan for the best rates.',
     'pricing.annual': 'Annual (Save 25%)',
     'pricing.monthly': 'Monthly',
@@ -78,12 +78,12 @@ export const translations = {
 
     'pricing.starter.name': 'Starter',
     'pricing.starter.description': 'For first-time Verso users and occasional slide work',
-    'pricing.starter.credits': '200 credits',
+    'pricing.starter.credits': '300 credits',
     'pricing.starter.creditsDesc': 'to start',
     'pricing.starter.creditPrice': '$4',
     'pricing.starter.creditPriceDesc': 'for 100 credits after',
     'pricing.starter.feature1': 'AI-powered slide editing',
-    'pricing.starter.feature2': 'Uses Verso Chapter 1.0',
+    'pricing.starter.feature2': 'Uses Verso Mini',
     'pricing.starter.feature3': 'Chat interface',
     'pricing.starter.feature4': 'PowerPoint add-in',
     'pricing.starter.feature5': 'Multi-format exports',
@@ -95,7 +95,7 @@ export const translations = {
     'pricing.plus.creditPrice': '$3',
     'pricing.plus.creditPriceDesc': 'for 100 credits after',
     'pricing.plus.feature1': 'Everything in Starter',
-    'pricing.plus.feature2': 'Unlocks Verso Story 1.0',
+    'pricing.plus.feature2': 'Unlocks Verso Medium',
     'pricing.plus.feature3': 'Dedicated Support access',
 
     'pricing.pro.name': 'Pro',
@@ -115,7 +115,7 @@ export const translations = {
     'pricing.ultimate.creditPrice': '$1.5',
     'pricing.ultimate.creditPriceDesc': 'for 100 credits after',
     'pricing.ultimate.feature1': 'Everything in Pro',
-    'pricing.ultimate.feature2': 'Unlocks Verso Saga 1.0',
+    'pricing.ultimate.feature2': 'Unlocks Verso Pro',
     'pricing.ultimate.feature3': 'SSO & MFA login',
     'pricing.ultimate.feature4': 'Dedicated account manager',
 
@@ -189,6 +189,13 @@ export const translations = {
     'footer.company': 'Company',
     'footer.gdpr': 'GDPR Compliant',
     'footer.copyright': '© 2026 Verso AI. All rights reserved.',
+
+    // Blog
+    'blog.allArticles': '← All articles',
+    'blog.minRead': 'min read',
+    'blog.metaTitle': 'Articles — Verso AI',
+    'blog.metaDescription': 'Articles and research from the Verso AI team.',
+    'blog.title': 'Articles',
 
     // Meta
     'meta.title': 'Verso AI',
@@ -318,7 +325,7 @@ export const translations = {
     'nav.bookDemo': 'Réserver une démo',
 
     // Hero Section
-    'hero.title': 'Des présentations de qualité, directement dans PowerPoint.',
+    'hero.title': 'Des présentations de qualité, dans PowerPoint.',
     'hero.subtitle1': 'Aucun agent IA ne travaille directement dans PowerPoint. Verso, si.',
     'hero.subtitle2': 'Génération et modification natives de slides, là où vous en avez besoin.',
     'hero.trustedBy': 'Ils nous font confiance',
@@ -374,7 +381,7 @@ export const translations = {
     'pricing.metaTitle': 'Tarifs — Verso AI',
     'pricing.metaDescription': 'Choisissez le plan adapté à vos besoins. Tarification flexible par crédits.',
     'pricing.title': 'Tarifs',
-    'pricing.subtitle': '200 crédits gratuits. Payez selon votre usage.',
+    'pricing.subtitle': '300 crédits gratuits. Payez selon votre usage.',
     'pricing.subtitle2': 'Passez à un plan pour un meilleur tarif.',
     'pricing.annual': 'Annuel (-25 %)',
     'pricing.monthly': 'Mensuel',
@@ -384,12 +391,12 @@ export const translations = {
 
     'pricing.starter.name': 'Starter',
     'pricing.starter.description': 'Pour ceux qui découvrent Verso et ont un usage occasionnel',
-    'pricing.starter.credits': '200 crédits',
+    'pricing.starter.credits': '300 crédits',
     'pricing.starter.creditsDesc': 'offerts',
     'pricing.starter.creditPrice': '4 €',
     'pricing.starter.creditPriceDesc': 'les 100 crédits ensuite',
     'pricing.starter.feature1': 'Modification de slides par IA',
-    'pricing.starter.feature2': 'Utilise Verso Chapter 1.0',
+    'pricing.starter.feature2': 'Utilise Verso Mini',
     'pricing.starter.feature3': 'Interface de chat',
     'pricing.starter.feature4': 'Add-in PowerPoint',
     'pricing.starter.feature5': 'Export multi-formats',
@@ -401,7 +408,7 @@ export const translations = {
     'pricing.plus.creditPrice': '3 €',
     'pricing.plus.creditPriceDesc': 'les 100 crédits ensuite',
     'pricing.plus.feature1': 'Tout le plan Starter',
-    'pricing.plus.feature2': 'Débloque Verso Story 1.0',
+    'pricing.plus.feature2': 'Débloque Verso Medium',
     'pricing.plus.feature3': 'Accès au Support dédié',
 
     'pricing.pro.name': 'Pro',
@@ -421,7 +428,7 @@ export const translations = {
     'pricing.ultimate.creditPrice': '1,5 €',
     'pricing.ultimate.creditPriceDesc': 'les 100 crédits ensuite',
     'pricing.ultimate.feature1': 'Tout le plan Pro',
-    'pricing.ultimate.feature2': 'Débloque Verso Saga 1.0',
+    'pricing.ultimate.feature2': 'Débloque Verso Pro',
     'pricing.ultimate.feature3': 'SSO et MFA',
     'pricing.ultimate.feature4': 'Account manager dédié',
 
@@ -495,6 +502,13 @@ export const translations = {
     'footer.company': 'Entreprise',
     'footer.gdpr': 'Conforme RGPD',
     'footer.copyright': '© 2026 Verso AI. Tous droits réservés.',
+
+    // Blog
+    'blog.allArticles': '← Tous les articles',
+    'blog.minRead': 'min de lecture',
+    'blog.metaTitle': 'Articles — Verso AI',
+    'blog.metaDescription': 'Articles et recherches de l\'équipe Verso AI.',
+    'blog.title': 'Articles',
 
     // Meta
     'meta.title': 'Verso AI',
@@ -624,7 +638,7 @@ export const translations = {
     'nav.bookDemo': 'Reservar una demo',
 
     // Hero Section
-    'hero.title': 'Slides profesionales, directamente en PowerPoint.',
+    'hero.title': 'Slides profesionales, en PowerPoint.',
     'hero.subtitle1': 'Los agentes de IA no trabajan directamente en PowerPoint. Verso sí.',
     'hero.subtitle2': 'Generación y edición nativa de slides, justo donde lo necesitas.',
     'hero.trustedBy': 'Confían en nosotros',
@@ -680,7 +694,7 @@ export const translations = {
     'pricing.metaTitle': 'Precios — Verso AI',
     'pricing.metaDescription': 'Elige el plan que se adapte a ti. Precios flexibles por créditos.',
     'pricing.title': 'Precios',
-    'pricing.subtitle': '200 créditos gratis para empezar. Paga solo por lo que uses.',
+    'pricing.subtitle': '300 créditos gratis para empezar. Paga solo por lo que uses.',
     'pricing.subtitle2': 'Suscríbete a un plan para obtener mejor precio.',
     'pricing.annual': 'Anual (-25 %)',
     'pricing.monthly': 'Mensual',
@@ -690,12 +704,12 @@ export const translations = {
 
     'pricing.starter.name': 'Starter',
     'pricing.starter.description': 'Para nuevos usuarios de Verso y trabajo ocasional con slides',
-    'pricing.starter.credits': '200 créditos',
+    'pricing.starter.credits': '300 créditos',
     'pricing.starter.creditsDesc': 'gratis',
     'pricing.starter.creditPrice': '4 €',
     'pricing.starter.creditPriceDesc': 'por 100 créditos después',
     'pricing.starter.feature1': 'Edición de slides con IA',
-    'pricing.starter.feature2': 'Usa Verso Chapter 1.0',
+    'pricing.starter.feature2': 'Usa Verso Mini',
     'pricing.starter.feature3': 'Interfaz de chat',
     'pricing.starter.feature4': 'Add-in PowerPoint',
     'pricing.starter.feature5': 'Exportación multiformato',
@@ -707,7 +721,7 @@ export const translations = {
     'pricing.plus.creditPrice': '3 €',
     'pricing.plus.creditPriceDesc': 'por 100 créditos después',
     'pricing.plus.feature1': 'Todo el plan Starter',
-    'pricing.plus.feature2': 'Desbloquea Verso Story 1.0',
+    'pricing.plus.feature2': 'Desbloquea Verso Medium',
     'pricing.plus.feature3': 'Acceso a Soporte dedicado',
 
     'pricing.pro.name': 'Pro',
@@ -727,7 +741,7 @@ export const translations = {
     'pricing.ultimate.creditPrice': '1,5 €',
     'pricing.ultimate.creditPriceDesc': 'por 100 créditos después',
     'pricing.ultimate.feature1': 'Todo el plan Pro',
-    'pricing.ultimate.feature2': 'Desbloquea Verso Saga 1.0',
+    'pricing.ultimate.feature2': 'Desbloquea Verso Pro',
     'pricing.ultimate.feature3': 'SSO y MFA',
     'pricing.ultimate.feature4': 'Account manager dedicado',
 
@@ -801,6 +815,13 @@ export const translations = {
     'footer.company': 'Empresa',
     'footer.gdpr': 'Cumple con RGPD',
     'footer.copyright': '© 2026 Verso AI. Todos los derechos reservados.',
+
+    // Blog
+    'blog.allArticles': '← Todos los artículos',
+    'blog.minRead': 'min de lectura',
+    'blog.metaTitle': 'Artículos — Verso AI',
+    'blog.metaDescription': 'Artículos e investigación del equipo de Verso AI.',
+    'blog.title': 'Artículos',
 
     // Meta
     'meta.title': 'Verso AI',
@@ -986,7 +1007,7 @@ export const translations = {
     'pricing.metaTitle': 'Preise — Verso AI',
     'pricing.metaDescription': 'Wählen Sie den passenden Plan. Flexible Preise auf Credit-Basis.',
     'pricing.title': 'Preise',
-    'pricing.subtitle': '200 Credits gratis zum Start. Danach zahlen Sie nach Verbrauch.',
+    'pricing.subtitle': '300 Credits gratis zum Start. Danach zahlen Sie nach Verbrauch.',
     'pricing.subtitle2': 'Mit einem Abo erhalten Sie die besten Konditionen.',
     'pricing.annual': 'Jährlich (-25 %)',
     'pricing.monthly': 'Monatlich',
@@ -996,12 +1017,12 @@ export const translations = {
 
     'pricing.starter.name': 'Starter',
     'pricing.starter.description': 'Für Verso-Einsteiger und gelegentliche Folienarbeit',
-    'pricing.starter.credits': '200 Credits',
+    'pricing.starter.credits': '300 Credits',
     'pricing.starter.creditsDesc': 'gratis',
     'pricing.starter.creditPrice': '4 €',
     'pricing.starter.creditPriceDesc': 'je 100 Credits danach',
     'pricing.starter.feature1': 'KI-gestützte Folienbearbeitung',
-    'pricing.starter.feature2': 'Nutzt Verso Chapter 1.0',
+    'pricing.starter.feature2': 'Nutzt Verso Mini',
     'pricing.starter.feature3': 'Chat-Oberfläche',
     'pricing.starter.feature4': 'PowerPoint-Add-in',
     'pricing.starter.feature5': 'Multiformat-Export',
@@ -1013,7 +1034,7 @@ export const translations = {
     'pricing.plus.creditPrice': '3 €',
     'pricing.plus.creditPriceDesc': 'je 100 Credits danach',
     'pricing.plus.feature1': 'Alles aus Starter',
-    'pricing.plus.feature2': 'Schaltet Verso Story 1.0 frei',
+    'pricing.plus.feature2': 'Schaltet Verso Medium frei',
     'pricing.plus.feature3': 'Persönlicher Support',
 
     'pricing.pro.name': 'Pro',
@@ -1033,7 +1054,7 @@ export const translations = {
     'pricing.ultimate.creditPrice': '1,5 €',
     'pricing.ultimate.creditPriceDesc': 'je 100 Credits danach',
     'pricing.ultimate.feature1': 'Alles aus Pro',
-    'pricing.ultimate.feature2': 'Schaltet Verso Saga 1.0 frei',
+    'pricing.ultimate.feature2': 'Schaltet Verso Pro frei',
     'pricing.ultimate.feature3': 'SSO & MFA Login',
     'pricing.ultimate.feature4': 'Persönlicher Ansprechpartner',
 
@@ -1107,6 +1128,13 @@ export const translations = {
     'footer.company': 'Unternehmen',
     'footer.gdpr': 'DSGVO-konform',
     'footer.copyright': '© 2026 Verso AI. Alle Rechte vorbehalten.',
+
+    // Blog
+    'blog.allArticles': '← Alle Artikel',
+    'blog.minRead': 'Min. Lesezeit',
+    'blog.metaTitle': 'Artikel — Verso AI',
+    'blog.metaDescription': 'Artikel und Forschung vom Verso AI-Team.',
+    'blog.title': 'Artikel',
 
     // Meta
     'meta.title': 'Verso AI',
