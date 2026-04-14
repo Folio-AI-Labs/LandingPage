@@ -56,19 +56,23 @@ El agente edita entonces la diapositiva mediante llamadas a herramientas, y el r
 
 ## Resultados
 
-Comparamos tres configuraciones:
+Comparamos cinco configuraciones:
 
-| Configuración         | Puntuación | Tiempo  | Pasos | Tareas |
-|-----------------------|------------|---------|-------|--------|
-| **Verso Medium**      | 49,6%      | 207,7s  | 8,8   | 61/61  |
-| **Verso Fast**        | 38,9%      | 157,5s  | 9,5   | 61/61  |
-| Claude for Powerpoint | 36,5%      | 176,5s  | 11,6  | 61/61  |
+| Configuración                    | Puntuación | Tiempo  | Pasos | Tareas |
+|----------------------------------|------------|---------|-------|--------|
+| **Verso Max**                    | 70,8%      | 293,4s  | 6,3   | 60/61  |
+| **Verso Medium**                 | 49,6%      | 207,7s  | 8,8   | 61/61  |
+| **Verso Fast**                   | 38,9%      | 157,5s  | 9,5   | 61/61  |
+| Claude for Powerpoint (Opus)     | 36,5%      | 176,5s  | 11,6  | 61/61  |
+| Claude for Powerpoint (Sonnet)   | 32,4%      | 154,4s  | 9,2   | 61/61  |
 
-**Verso Medium** obtiene la puntuación más alta con un 49,6%: la mayoría de las reproducciones capturan la estructura y el contenido correctos, pero presentan diferencias notables en estilo o posicionamiento.
+**Verso Max** lidera con amplia ventaja con un 70,8%, casi duplicando la puntuación del mejor agente no-Verso. Lo logra con el menor número de pasos en promedio (6,3), lo que sugiere un enfoque más eficiente para la reproducción de diapositivas, aunque tarda más por tarea (293,4s) debido a un razonamiento más profundo.
 
-**Verso Fast** sacrifica precisión por velocidad, completando las tareas un 24% más rápido con una puntuación de 38,9%. Curiosamente, utiliza más pasos en promedio (9,5 frente a 8,8), lo que sugiere que el modelo más pequeño realiza más acciones exploratorias.
+**Verso Medium** obtiene un 49,6%: la mayoría de las reproducciones capturan la estructura y el contenido correctos, pero presentan diferencias notables en estilo o posicionamiento.
 
-**Claude for Powerpoint** obtiene un 36,5% a pesar de utilizar el mayor número de pasos (11,6) y significativamente más capacidad de cómputo.
+**Verso Fast** sacrifica precisión por velocidad, completando las tareas un 24% más rápido que Verso Medium con una puntuación de 38,9%. Curiosamente, utiliza más pasos en promedio (9,5 frente a 8,8), lo que sugiere que el modelo más pequeño realiza más acciones exploratorias.
+
+**Claude for Powerpoint (Opus)** obtiene un 36,5% a pesar de utilizar el mayor número de pasos (11,6) y significativamente más capacidad de cómputo. **Claude for Powerpoint (Sonnet)** obtiene un 32,4%, la puntuación más baja de todas las configuraciones, siendo al mismo tiempo el más rápido con 154,4s por tarea.
 
 <div id="prezeval-chart"></div>
 
@@ -90,11 +94,11 @@ Las diapositivas con mucho texto son la categoría más fácil, mientras que los
 
 ### Dónde Verso destaca
 
-Verso obtiene sistemáticamente buenas puntuaciones en diapositivas de texto estructurado: texto legal formateado, diseños de múltiples secciones con cuadros de colores, páginas estilo índice de contenidos y diseños de iconos en múltiples columnas. En estos casos, tanto Verso Medium como Verso Fast logran puntuaciones casi perfectas (75-100%), mientras que Claude for Powerpoint suele quedar significativamente por detrás.
+Verso obtiene sistemáticamente buenas puntuaciones en diapositivas de texto estructurado: texto legal formateado, diseños de múltiples secciones con cuadros de colores, páginas estilo índice de contenidos y diseños de iconos en múltiples columnas. En estos casos, Verso Max logra rutinariamente puntuaciones casi perfectas, e incluso Verso Medium y Verso Fast alcanzan 75-100%, mientras que ambas variantes de Claude for Powerpoint suelen quedar significativamente por detrás.
 
 ### Lo que sigue siendo difícil
 
-Aproximadamente el 20% del benchmark está esencialmente sin resolver: los tres agentes obtienen un 25% o menos. Los modos de fallo más comunes son:
+Aproximadamente el 20% del benchmark está esencialmente sin resolver: los cinco agentes obtienen un 25% o menos en las tareas más difíciles. Los modos de fallo más comunes son:
 
 - **Mapas geográficos.** Los agentes tienen dificultades para producir visualizaciones de mapas precisas. Pueden sustituir el mapa por una forma no relacionada, renderizarlo a una escala incorrecta o perder la codificación de color a nivel de estado. Verso intenta los mapas, pero los resultados son consistentemente pobres: un mapa de EE. UU. puede aparecer reducido con detalles faltantes, o un mapa del mundo puede ser reemplazado por un diagrama circular.
 - **Gráficos complejos con datos densos.** Los gráficos combinados (barras + líneas en doble eje), los paneles de múltiples secciones y las matrices de mapa de calor rompen sistemáticamente a todos los agentes. Los fallos más comunes incluyen gráficos completos faltantes, etiquetas de ejes eliminadas y valores de datos ausentes.
@@ -102,6 +106,6 @@ Aproximadamente el 20% del benchmark está esencialmente sin resolver: los tres 
 
 ### Dónde Verso aún tiene margen de mejora
 
-En aproximadamente 15 tareas, las variantes de Verso siguen teniendo dificultades (puntuando 25% o menos). Estas tienden a ser diapositivas con grandes cuadrículas estructuradas, logotipos de marca incrustados en gráficos o elementos decorativos. Esto sugiere oportunidades específicas para mejorar el manejo de Verso en estos patrones.
+Incluso Verso Max, a pesar de su promedio de 70,8%, sigue teniendo dificultades en algunas tareas (puntuando 25% o menos). Estas tienden a ser diapositivas con grandes cuadrículas estructuradas, logotipos de marca incrustados en gráficos o elementos decorativos. Esto sugiere oportunidades específicas para mejorar el manejo de Verso en estos patrones.
 
 Todos los resultados, incluidas las imágenes generadas frente a las de referencia por tarea y las críticas del evaluador, están disponibles en [el repositorio de PrezEval](https://github.com/VersoLabs/PrezEvalPublic).

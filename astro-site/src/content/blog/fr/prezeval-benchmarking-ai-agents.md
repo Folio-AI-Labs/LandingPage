@@ -56,19 +56,23 @@ L'agent modifie ensuite la slide via des appels d'outils, et le résultat final 
 
 ## Résultats
 
-Nous avons comparé trois configurations :
+Nous avons comparé cinq configurations :
 
-| Configuration         | Score | Temps  | Étapes | Tâches  |
-|-----------------------|-------|--------|--------|---------|
-| **Verso Medium**      | 49,6 % | 207,7 s | 8,8  | 61/61   |
-| **Verso Fast**        | 38,9 % | 157,5 s | 9,5  | 61/61   |
-| Claude for Powerpoint | 36,5 % | 176,5 s | 11,6 | 61/61   |
+| Configuration                    | Score   | Temps   | Étapes | Tâches  |
+|----------------------------------|---------|---------|--------|---------|
+| **Verso Max**                    | 70,8 %  | 293,4 s | 6,3    | 60/61   |
+| **Verso Medium**                 | 49,6 %  | 207,7 s | 8,8    | 61/61   |
+| **Verso Fast**                   | 38,9 %  | 157,5 s | 9,5    | 61/61   |
+| Claude for Powerpoint (Opus)     | 36,5 %  | 176,5 s | 11,6   | 61/61   |
+| Claude for Powerpoint (Sonnet)   | 32,4 %  | 154,4 s | 9,2    | 61/61   |
 
-**Verso Medium** obtient le score le plus élevé avec 49,6 % : la plupart des reproductions capturent la bonne structure et le bon contenu, mais présentent des différences notables dans le style ou le positionnement.
+**Verso Max** domine largement avec 70,8 %, soit près du double du score du meilleur agent non-Verso. Il y parvient avec le moins d'étapes en moyenne (6,3), ce qui suggère une approche plus efficace de la reproduction de slides, bien qu'il prenne plus de temps par tâche (293,4 s) en raison d'un raisonnement plus approfondi.
 
-**Verso Fast** sacrifie la précision au profit de la vitesse, en complétant les tâches 24 % plus rapidement tout en atteignant un score de 38,9 %. Fait intéressant, il utilise davantage d'étapes en moyenne (9,5 contre 8,8), ce qui suggère que le modèle plus léger effectue davantage d'actions exploratoires.
+**Verso Medium** obtient 49,6 % : la plupart des reproductions capturent la bonne structure et le bon contenu, mais présentent des différences notables dans le style ou le positionnement.
 
-**Claude for Powerpoint** obtient un score de 36,5 % malgré l'utilisation du plus grand nombre d'étapes (11,6) et d'une puissance de calcul significativement supérieure.
+**Verso Fast** sacrifie la précision au profit de la vitesse, en complétant les tâches 24 % plus rapidement que Verso Medium tout en atteignant un score de 38,9 %. Fait intéressant, il utilise davantage d'étapes en moyenne (9,5 contre 8,8), ce qui suggère que le modèle plus léger effectue davantage d'actions exploratoires.
+
+**Claude for Powerpoint (Opus)** obtient un score de 36,5 % malgré l'utilisation du plus grand nombre d'étapes (11,6) et d'une puissance de calcul significativement supérieure. **Claude for Powerpoint (Sonnet)** obtient 32,4 %, le score le plus bas de toutes les configurations, tout en étant le plus rapide à 154,4 s par tâche.
 
 <div id="prezeval-chart"></div>
 
@@ -90,11 +94,11 @@ Les slides à forte densité textuelle constituent la catégorie la plus facile,
 
 ### Là où Verso excelle
 
-Verso obtient systématiquement de bons scores sur les slides à texte structuré : texte juridique mis en forme, mises en page multi-sections avec encadrés colorés, pages de type table des matières et mises en page multi-colonnes avec icônes. Sur ces éléments, Verso Medium et Verso Fast obtiennent tous deux des scores quasi parfaits (75–100 %), tandis que Claude for Powerpoint reste généralement bien en deçà.
+Verso obtient systématiquement de bons scores sur les slides à texte structuré : texte juridique mis en forme, mises en page multi-sections avec encadrés colorés, pages de type table des matières et mises en page multi-colonnes avec icônes. Sur ces éléments, Verso Max atteint régulièrement des scores quasi parfaits, et même Verso Medium et Verso Fast obtiennent entre 75 et 100 %, tandis que les deux variantes Claude for Powerpoint restent généralement bien en deçà.
 
 ### Ce qui reste difficile
 
-Environ 20 % du benchmark est pour ainsi dire non résolu : les trois agents y obtiennent un score de 25 % ou moins. Les modes d'échec récurrents sont :
+Environ 20 % du benchmark est pour ainsi dire non résolu : les cinq agents y obtiennent un score de 25 % ou moins sur les tâches les plus difficiles. Les modes d'échec récurrents sont :
 
 - **Cartes géographiques.** Les agents peinent à produire des visualisations cartographiques précises. Ils peuvent substituer la carte par une forme sans rapport, la restituer à la mauvaise échelle ou perdre le codage couleur par État. Verso tente bien de produire des cartes, mais les résultats sont systématiquement médiocres : une carte des États-Unis peut apparaître réduite avec des détails manquants, ou une carte du monde peut être remplacée par un diagramme circulaire.
 - **Graphiques complexes à données denses.** Les graphiques combinés (barres + courbes sur double axe), les tableaux de bord multi-panneaux et les matrices de heatmap mettent systématiquement tous les agents en échec. Parmi les erreurs fréquentes : des graphiques entiers manquants, des intitulés d'axes supprimés et des valeurs de données absentes.
@@ -102,6 +106,6 @@ Environ 20 % du benchmark est pour ainsi dire non résolu : les trois agents y o
 
 ### Là où Verso a encore des marges de progression
 
-Sur une quinzaine de tâches, les variantes Verso peinent encore (score de 25 % ou moins). Il s'agit généralement de slides comportant de grandes grilles structurées, des logos de marque intégrés dans des graphiques ou des éléments décoratifs. Cela suggère des axes d'amélioration spécifiques pour la gestion de ces types de contenu par Verso.
+Même Verso Max, malgré sa moyenne de 70,8 %, peine encore sur certaines tâches (score de 25 % ou moins). Il s'agit généralement de slides comportant de grandes grilles structurées, des logos de marque intégrés dans des graphiques ou des éléments décoratifs. Cela suggère des axes d'amélioration spécifiques pour la gestion de ces types de contenu par Verso.
 
 Tous les résultats, y compris les images générées et de référence par tâche ainsi que les critiques de l'évaluateur, sont disponibles dans [le dépôt PrezEval](https://github.com/VersoLabs/PrezEvalPublic).

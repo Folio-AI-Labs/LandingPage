@@ -56,19 +56,23 @@ The agent then edits the slide through tool calls, and the final result is rende
 
 ## Results
 
-We compared three configurations:
+We compared five configurations:
 
-| Config                | Score | Time   | Steps | Tasks |
-|-----------------------|-------|--------|-------|-------|
-| **Verso Medium**      | 49.6% | 207.7s | 8.8   | 61/61 |
-| **Verso Fast**        | 38.9% | 157.5s | 9.5   | 61/61 |
-| Claude for Powerpoint | 36.5% | 176.5s | 11.6  | 61/61 |
+| Config                          | Score | Time   | Steps | Tasks |
+|---------------------------------|-------|--------|-------|-------|
+| **Verso Max**                   | 70.8% | 293.4s | 6.3   | 60/61 |
+| **Verso Medium**                | 49.6% | 207.7s | 8.8   | 61/61 |
+| **Verso Fast**                  | 38.9% | 157.5s | 9.5   | 61/61 |
+| Claude for Powerpoint (Opus)    | 36.5% | 176.5s | 11.6  | 61/61 |
+| Claude for Powerpoint (Sonnet)  | 32.4% | 154.4s | 9.2   | 61/61 |
 
-**Verso Medium** achieves the highest score at 49.6%: most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
+**Verso Max** leads by a wide margin at 70.8%, nearly doubling the score of the next-best non-Verso agent. It achieves this with the fewest steps on average (6.3), suggesting a more efficient approach to slide reproduction, though it takes longer per task (293.4s) due to deeper reasoning.
 
-**Verso Fast** trades accuracy for speed, completing tasks 24% faster while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
+**Verso Medium** scores 49.6%: most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
 
-**Claude for Powerpoint** scores 36.5% despite using the most steps (11.6) and significantly more compute.
+**Verso Fast** trades accuracy for speed, completing tasks 24% faster than Verso Medium while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
+
+**Claude for Powerpoint (Opus)** scores 36.5% despite using the most steps (11.6) and significantly more compute. **Claude for Powerpoint (Sonnet)** scores 32.4%, the lowest of all configurations, while being the fastest at 154.4s per task.
 
 <div id="prezeval-chart"></div>
 
@@ -90,11 +94,11 @@ Text-heavy slides are the easiest category, while maps are the hardest (equally 
 
 ### Where Verso excels
 
-Verso consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, both Verso Medium and Verso Fast achieve near-perfect scores (75-100%), while Claude for Powerpoint typically lags significantly behind.
+Verso consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, Verso Max routinely achieves near-perfect scores, and even Verso Medium and Verso Fast reach 75-100%, while both Claude for Powerpoint variants typically lag significantly behind.
 
 ### What remains hard
 
-About 20% of the benchmark is essentially unsolved: all three agents score 25% or below. The common failure modes:
+About 20% of the benchmark is essentially unsolved: all five agents score 25% or below on the hardest tasks. The common failure modes:
 
 - **Geographic maps.** Agents struggle to produce accurate map visualizations. They may substitute the map with an unrelated shape, render it at the wrong scale, or lose state-level color coding. Verso does attempt maps but the results are consistently poor: a US map might appear shrunken with missing detail, or a world map might be replaced by a circular diagram.
 - **Complex charts with dense data.** Combo charts (bars + lines on dual axes), multi-panel dashboards, and heatmap matrices consistently break all agents. Common failures include entire charts missing, axis labels dropped, and data values absent.
@@ -102,6 +106,6 @@ About 20% of the benchmark is essentially unsolved: all three agents score 25% o
 
 ### Where Verso still has room to grow
 
-On about 15 tasks, Verso variants still struggle (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
+Even Verso Max, despite its 70.8% average, still struggles on some tasks (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
 
 All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/VersoLabs/PrezEvalPublic).

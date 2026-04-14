@@ -56,19 +56,23 @@ Der Agent bearbeitet die Folie anschließend über Tool-Aufrufe, und das finale 
 
 ## Ergebnisse
 
-Wir haben drei Konfigurationen verglichen:
+Wir haben fünf Konfigurationen verglichen:
 
-| Konfiguration         | Punkte | Zeit   | Schritte | Aufgaben |
-|-----------------------|--------|--------|----------|----------|
-| **Verso Medium**      | 49,6%  | 207,7s | 8,8      | 61/61    |
-| **Verso Fast**        | 38,9%  | 157,5s | 9,5      | 61/61    |
-| Claude for Powerpoint | 36,5%  | 176,5s | 11,6     | 61/61    |
+| Konfiguration                    | Punkte | Zeit   | Schritte | Aufgaben |
+|----------------------------------|--------|--------|----------|----------|
+| **Verso Max**                    | 70,8%  | 293,4s | 6,3      | 60/61    |
+| **Verso Medium**                 | 49,6%  | 207,7s | 8,8      | 61/61    |
+| **Verso Fast**                   | 38,9%  | 157,5s | 9,5      | 61/61    |
+| Claude for Powerpoint (Opus)     | 36,5%  | 176,5s | 11,6     | 61/61    |
+| Claude for Powerpoint (Sonnet)   | 32,4%  | 154,4s | 9,2      | 61/61    |
 
-**Verso Medium** erzielt mit 49,6% die höchste Punktzahl: Die meisten Reproduktionen erfassen die richtige Struktur und den richtigen Inhalt, weisen jedoch spürbare Unterschiede in Gestaltung oder Positionierung auf.
+**Verso Max** führt mit großem Abstand bei 70,8% – fast doppelt so hoch wie der beste Nicht-Verso-Agent. Es erreicht dies mit den wenigsten Schritten im Durchschnitt (6,3), was auf einen effizienteren Ansatz zur Folienreproduktion hindeutet, obwohl es aufgrund tiefergehender Analyse länger pro Aufgabe benötigt (293,4s).
 
-**Verso Fast** tauscht Genauigkeit gegen Geschwindigkeit: Es erledigt Aufgaben 24% schneller und erreicht dabei 38,9%. Interessanterweise benötigt es im Durchschnitt mehr Schritte (9,5 vs. 8,8), was darauf hindeutet, dass das kleinere Modell mehr explorative Aktionen ausführt.
+**Verso Medium** erzielt 49,6%: Die meisten Reproduktionen erfassen die richtige Struktur und den richtigen Inhalt, weisen jedoch spürbare Unterschiede in Gestaltung oder Positionierung auf.
 
-**Claude for Powerpoint** erzielt 36,5%, obwohl es die meisten Schritte (11,6) und deutlich mehr Rechenleistung einsetzt.
+**Verso Fast** tauscht Genauigkeit gegen Geschwindigkeit: Es erledigt Aufgaben 24% schneller als Verso Medium und erreicht dabei 38,9%. Interessanterweise benötigt es im Durchschnitt mehr Schritte (9,5 vs. 8,8), was darauf hindeutet, dass das kleinere Modell mehr explorative Aktionen ausführt.
+
+**Claude for Powerpoint (Opus)** erzielt 36,5%, obwohl es die meisten Schritte (11,6) und deutlich mehr Rechenleistung einsetzt. **Claude for Powerpoint (Sonnet)** erzielt 32,4%, die niedrigste Punktzahl aller Konfigurationen, bei gleichzeitig kürzester Laufzeit von 154,4s pro Aufgabe.
 
 <div id="prezeval-chart"></div>
 
@@ -90,11 +94,11 @@ Textlastige Folien sind die einfachste Kategorie, während Karten am schwersten 
 
 ### Wo Verso glänzt
 
-Verso erzielt konstant gute Ergebnisse bei strukturierten Textfolien: formatierter Rechtstext, mehrgliedrige Layouts mit farbigen Kästen, Inhaltsverzeichnis-Seiten und mehrspaltige Icon-Layouts. Hier erzielen sowohl Verso Medium als auch Verso Fast nahezu perfekte Punktzahlen (75-100%), während Claude for Powerpoint typischerweise deutlich zurückliegt.
+Verso erzielt konstant gute Ergebnisse bei strukturierten Textfolien: formatierter Rechtstext, mehrgliedrige Layouts mit farbigen Kästen, Inhaltsverzeichnis-Seiten und mehrspaltige Icon-Layouts. Hier erzielt Verso Max routinemäßig nahezu perfekte Ergebnisse, und selbst Verso Medium und Verso Fast erreichen 75-100%, während beide Claude for Powerpoint-Varianten typischerweise deutlich zurückliegen.
 
 ### Was weiterhin schwierig bleibt
 
-Etwa 20% des Benchmarks sind im Wesentlichen ungelöst: Alle drei Agenten erzielen 25% oder weniger. Die häufigsten Fehlertypen:
+Etwa 20% des Benchmarks sind im Wesentlichen ungelöst: Alle fünf Agenten erzielen bei den schwierigsten Aufgaben 25% oder weniger. Die häufigsten Fehlertypen:
 
 - **Geografische Karten.** Agenten haben Schwierigkeiten, genaue Kartenvisualisierungen zu erstellen. Sie ersetzen die Karte möglicherweise durch eine unrelated Form, rendern sie im falschen Maßstab oder verlieren die farbliche Kodierung auf Staatsebene. Verso versucht Karten zwar zu erstellen, aber die Ergebnisse sind durchgängig schlecht: Eine US-Karte könnte verkleinert mit fehlenden Details erscheinen, oder eine Weltkarte könnte durch ein kreisförmiges Diagramm ersetzt werden.
 - **Komplexe Diagramme mit dichten Daten.** Kombi-Diagramme (Balken + Linien auf doppelten Achsen), mehrteilige Dashboards und Heatmap-Matrizen scheitern bei allen Agenten konsistent. Häufige Fehler sind vollständig fehlende Diagramme, weggefallene Achsenbeschriftungen und fehlende Datenwerte.
@@ -102,6 +106,6 @@ Etwa 20% des Benchmarks sind im Wesentlichen ungelöst: Alle drei Agenten erziel
 
 ### Wo Verso noch Verbesserungspotenzial hat
 
-Bei etwa 15 Aufgaben haben Verso-Varianten noch Schwierigkeiten (Punktzahl 25% oder darunter). Diese Folien weisen in der Regel große strukturierte Raster, in Diagramme eingebettete Markenlogos oder dekorative Elemente auf. Das deutet auf konkrete Möglichkeiten hin, Versos Umgang mit diesen Mustern zu verbessern.
+Selbst Verso Max hat trotz seines Durchschnitts von 70,8% bei einigen Aufgaben noch Schwierigkeiten (Punktzahl 25% oder darunter). Diese Folien weisen in der Regel große strukturierte Raster, in Diagramme eingebettete Markenlogos oder dekorative Elemente auf. Das deutet auf konkrete Möglichkeiten hin, Versos Umgang mit diesen Mustern zu verbessern.
 
 Alle Ergebnisse, einschließlich der je Aufgabe generierten und referenzierten Bilder sowie der Evaluator-Kritiken, sind im [PrezEval-Repository](https://github.com/VersoLabs/PrezEvalPublic) verfügbar.

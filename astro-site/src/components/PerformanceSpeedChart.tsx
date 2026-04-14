@@ -2,12 +2,14 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 
 const verso = [
+  { name: 'Verso Max', score: 70.8, time: 293.4 },
   { name: 'Verso Medium', score: 49.6, time: 207.7 },
   { name: 'Verso Fast', score: 38.9, time: 157.5 },
 ];
 
 const claude = [
-  { name: 'Claude for Powerpoint', score: 36.5, time: 176.5 },
+  { name: 'Claude for Powerpoint (Opus)', score: 36.5, time: 176.5 },
+  { name: 'Claude for Powerpoint (Sonnet)', score: 32.4, time: 154.4 },
 ];
 
 export default function PerformanceSpeedChart() {
@@ -30,19 +32,19 @@ export default function PerformanceSpeedChart() {
           mode: 'markers+text',
           marker: { color: '#000000', size: 16, symbol: 'diamond' },
           text: verso.map(d => d.name),
-          textposition: ['top center', 'bottom center'],
+          textposition: ['top center', 'bottom center', 'bottom center'],
           textfont: { size: 13, color: '#000000', family: 'Inter, sans-serif', weight: 600 },
           name: 'Verso',
           hovertemplate: '%{text}<br>Score: %{y:.1f}%<br>Time: %{x:.0f}s<extra></extra>',
         },
-        // Claude marker
+        // Claude markers
         {
           x: claude.map(d => d.time),
           y: claude.map(d => d.score),
           mode: 'markers+text',
           marker: { color: '#D4A27F', size: 16, symbol: 'circle' },
           text: claude.map(d => d.name),
-          textposition: ['bottom center'],
+          textposition: ['bottom center', 'top center'],
           textfont: { size: 13, color: '#D4A27F', family: 'Inter, sans-serif', weight: 600 },
           name: 'Claude',
           hovertemplate: '%{text}<br>Score: %{y:.1f}%<br>Time: %{x:.0f}s<extra></extra>',
@@ -54,7 +56,7 @@ export default function PerformanceSpeedChart() {
         margin: { l: 60, r: 30, t: 30, b: 60 },
         xaxis: {
           title: { text: 'Time per task (s)', font: { size: 13, family: 'Inter, sans-serif', color: '#999' }, standoff: 12 },
-          range: [140, 225],
+          range: [130, 320],
           gridcolor: '#f0f0f0',
           zeroline: false,
           autorange: false,
@@ -62,7 +64,7 @@ export default function PerformanceSpeedChart() {
         },
         yaxis: {
           title: { text: 'Score (%)', font: { size: 13, family: 'Inter, sans-serif', color: '#999' }, standoff: 8 },
-          range: [30, 55],
+          range: [25, 80],
           gridcolor: '#f0f0f0',
           zeroline: false,
           autorange: false,
@@ -75,23 +77,23 @@ export default function PerformanceSpeedChart() {
         shapes: [
           {
             type: 'path',
-            path: 'M 140,55 L 200,55 L 140,38 Z',
+            path: 'M 130,80 L 250,80 L 130,45 Z',
             fillcolor: 'rgba(34, 197, 94, 0.07)',
             line: { width: 0 },
           },
         ],
         annotations: [
           {
-            x: 143,
-            y: 53,
+            x: 135,
+            y: 77,
             text: '<b>\u2191 Better</b>',
             showarrow: false,
             font: { size: 22, color: '#ccc', family: 'Inter, sans-serif' },
             xanchor: 'left',
           },
           {
-            x: 143,
-            y: 51,
+            x: 135,
+            y: 73,
             text: '<b>\u2190 Faster</b>',
             showarrow: false,
             font: { size: 22, color: '#ccc', family: 'Inter, sans-serif' },
