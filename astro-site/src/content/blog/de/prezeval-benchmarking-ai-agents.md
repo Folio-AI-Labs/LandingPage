@@ -108,4 +108,6 @@ Etwa 20% des Benchmarks sind im Wesentlichen ungelöst: Alle fünf Agenten erzie
 
 Selbst Verso Max hat trotz seines Durchschnitts von 70,8% bei einigen Aufgaben noch Schwierigkeiten (Punktzahl 25% oder darunter). Diese Folien weisen in der Regel große strukturierte Raster, in Diagramme eingebettete Markenlogos oder dekorative Elemente auf. Das deutet auf konkrete Möglichkeiten hin, Versos Umgang mit diesen Mustern zu verbessern.
 
+Auch die Geschwindigkeit ist ein Schwerpunkt. Verso Max benötigt fast 5 Minuten pro Aufgabe, und selbst Verso Fast liegt im Durchschnitt bei über 2,5 Minuten. Ein guter KI-Assistent sollte sich eher wie eine fließende Fortsetzung der eigenen Arbeit anfühlen als wie ein Tennisspiel, bei dem man darauf wartet, dass der Ball zurückkommt. Wir werden in den kommenden Wochen intensiv an der Reduzierung der Latenz arbeiten.
+
 Alle Ergebnisse, einschließlich der je Aufgabe generierten und referenzierten Bilder sowie der Evaluator-Kritiken, sind im [PrezEval-Repository](https://github.com/VersoLabs/PrezEvalPublic) verfügbar.

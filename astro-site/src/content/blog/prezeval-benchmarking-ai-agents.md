@@ -108,4 +108,6 @@ About 20% of the benchmark is essentially unsolved: all five agents score 25% or
 
 Even Verso Max, despite its 70.8% average, still struggles on some tasks (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
 
+Speed is also an area of focus. Verso Max takes nearly 5 minutes per task, and even Verso Fast averages over 2.5 minutes. A good AI assistant should feel more like a streaming continuation of your work rather than a tennis game where you wait for the ball to come back. We will be working on reducing latency significantly in the coming weeks.
+
 All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/VersoLabs/PrezEvalPublic).

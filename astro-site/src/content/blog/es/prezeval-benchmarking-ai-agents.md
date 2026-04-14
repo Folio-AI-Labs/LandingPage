@@ -108,4 +108,6 @@ Aproximadamente el 20% del benchmark está esencialmente sin resolver: los cinco
 
 Incluso Verso Max, a pesar de su promedio de 70,8%, sigue teniendo dificultades en algunas tareas (puntuando 25% o menos). Estas tienden a ser diapositivas con grandes cuadrículas estructuradas, logotipos de marca incrustados en gráficos o elementos decorativos. Esto sugiere oportunidades específicas para mejorar el manejo de Verso en estos patrones.
 
+La velocidad también es un área de enfoque. Verso Max tarda casi 5 minutos por tarea, e incluso Verso Fast supera los 2,5 minutos de media. Un buen asistente de IA debería sentirse más como una continuación fluida de tu trabajo que como un partido de tenis donde esperas a que la pelota regrese. Trabajaremos en reducir significativamente la latencia en las próximas semanas.
+
 Todos los resultados, incluidas las imágenes generadas frente a las de referencia por tarea y las críticas del evaluador, están disponibles en [el repositorio de PrezEval](https://github.com/VersoLabs/PrezEvalPublic).
