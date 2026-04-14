@@ -8,8 +8,8 @@ const verso = [
 ];
 
 const claude = [
-  { name: 'Claude for Powerpoint (Opus)', score: 36.5, time: 176.5 },
-  { name: 'Claude for Powerpoint (Sonnet)', score: 32.4, time: 154.4 },
+  { name: 'Claude Opus', score: 36.5, time: 176.5 },
+  { name: 'Claude Sonnet', score: 32.4, time: 154.4 },
 ];
 
 export default function PerformanceSpeedChart() {
