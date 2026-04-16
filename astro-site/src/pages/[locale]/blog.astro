@@ -22,7 +22,11 @@ const localeFormats: Record<string, string> = {
   es: 'es-ES',
 };
 
-const posts = (await getCollection('blog', ({ data }) => data.lang === locale)).sort(
+const localizedLangs = new Set(['fr']);
+const contentLang = localizedLangs.has(locale!) ? locale! : defaultLang;
+const blogBase = contentLang === defaultLang ? '/blog' : `/${contentLang}/blog`;
+
+const posts = (await getCollection('blog', ({ data }) => data.lang === contentLang)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 ---
@@ -34,8 +38,10 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === locale)).
     <h1 class="font-heading text-3xl nav:text-4xl font-semibold text-brand mb-12">{t('blog.title')}</h1>
 
     <div class="grid gap-6">
-      {posts.map((post) => (
-        <a href={`/${locale}/blog/${post.id.split('/').slice(1).join('/')}/`} class="block no-underline group">
+      {posts.map((post) => {
+        const slug = post.id.includes('/') ? post.id.split('/').slice(1).join('/') : post.id;
+        return (
+        <a href={`${blogBase}/${slug}/`} class="block no-underline group">
           <div class="border border-brand-border rounded-xl p-6 nav:p-8 transition duration-300 hover:border-brand/30 hover:shadow-md bg-white">
             <p class="text-sm text-brand-muted/60 mb-2 font-body">
               {post.data.date.toLocaleDateString(localeFormats[locale!] || 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -48,7 +54,8 @@ const posts = (await getCollection('blog', ({ data }) => data.lang === locale)).
             </p>
           </div>
         </a>
-      ))}
+        );
+      })}
     </div>
   </section>
 
