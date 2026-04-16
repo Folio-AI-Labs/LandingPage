@@ -14,7 +14,7 @@ export const translations = {
     // Hero Section
     'hero.title': 'Professional slides, directly in PowerPoint.',
     'hero.subtitle1': 'AI agents don\'t work directly in PowerPoint. Verso does.',
-    'hero.subtitle2': 'Native slide generation & editing, right where you need it.',
+    'hero.subtitle2': 'Slide generation & editing, right where you need it.',
     'hero.trustedBy': 'Trusted by',
 
     // Features Section
@@ -22,18 +22,18 @@ export const translations = {
     'features.prompt.title': 'Prompt to deck',
     'features.prompt.desc': 'Generate a full slide deck from scratch: describe what you need, and how you want it done. Start by asking for a draft of what you want, then refine: Verso uses your existing PowerPoint template, applying your on-brand fonts, colors, and pre-set layouts automatically.',
     'features.edit.title': 'Edit an existing deck',
-    'features.edit.desc': 'Open any deck and prompt Verso to modify it at will. Native integration means you can make manual adjustments, then prompt again, seamlessly blending AI-powered heavy lifting with your own final touch.',
+    'features.edit.desc': 'Open any deck and prompt Verso to modify it at will. Direct integration into PowerPoint lets you make manual adjustments, then prompt again, seamlessly blending AI-powered heavy lifting with your own final touch.',
     'features.control.title': 'Full control',
     'features.control.desc': 'Verso works directly with real PowerPoint shapes and objects - not images masquerading as slides. Every element remains fully editable.',
     'features.upload.title': 'Upload files',
     'features.upload.desc': 'Verso lets you upload anything relevant for your prompt: logo, image, inspiration, etc. Upload your file and Verso will use it.',
     'features.enterprise.title': 'Enterprise-ready',
-    'features.enterprise.desc': 'Bring your own API keys with enterprise plans. We are GDPR compliant, and provide SSO and MFA login. Your data stays yours.',
+    'features.enterprise.desc': 'Bring your own API keys with enterprise plans. Verso is GDPR compliant, and provides SSO and MFA login. Your data stays yours.',
 
     // Models Section
     'models.title': 'Unmatched performance.',
     'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that AI can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
-    'models.evaluation': 'PrezEval© benchmark',
+    'models.evaluation': 'Success rate on reproducing professional slides: PrezEval© benchmark',
 
     // CTA Banner
     'cta.title': 'Start working on your presentations in seconds.',
@@ -41,7 +41,7 @@ export const translations = {
 
     // Demo/Contact Page
     'demo.metaTitle': 'Book a Demo — Verso AI',
-    'demo.metaDescription': 'Request a demo of Verso AI\'s native PowerPoint generation platform.',
+    'demo.metaDescription': 'Book a demo with the Verso AI team.',
     'demo.title': 'Book a demo',
     'demo.subtitle': 'See for yourself — book a 20-minute demo and we\'ll show you how it works.',
     'demo.emailPlaceholder': 'your work email',
@@ -327,7 +327,7 @@ export const translations = {
     // Hero Section
     'hero.title': 'Des présentations de qualité, dans PowerPoint.',
     'hero.subtitle1': 'Aucun agent IA ne travaille directement dans PowerPoint. Verso, si.',
-    'hero.subtitle2': 'Génération et modification natives de slides, là où vous en avez besoin.',
+    'hero.subtitle2': 'Génération et modification de slides, là où vous en avez besoin.',
     'hero.trustedBy': 'Ils nous font confiance',
 
     // Features Section
@@ -335,30 +335,30 @@ export const translations = {
     'features.prompt.title': 'Du prompt à la présentation',
     'features.prompt.desc': 'Générez une présentation complète en partant de zéro : décrivez votre besoin et le résultat attendu. Demandez d\'abord une ébauche, puis affinez : Verso utilise votre modèle PowerPoint existant, en appliquant automatiquement vos polices, couleurs et mises en page.',
     'features.edit.title': 'Modifiez une présentation existante',
-    'features.edit.desc': 'Ouvrez n\'importe quelle présentation et demandez à Verso de la modifier. L\'intégration native vous permet d\'alterner entre ajustements manuels et instructions à l\'IA, pour un résultat qui allie puissance de l\'automatisation et touche personnelle.',
+    'features.edit.desc': 'Ouvrez n\'importe quelle présentation et demandez à Verso de la modifier. L\'intégration directe dans PowerPoint vous permet d\'alterner entre ajustements manuels et instructions à l\'IA, pour un résultat qui allie puissance de l\'automatisation et touche personnelle.',
     'features.control.title': 'Contrôle total',
     'features.control.desc': 'Verso travaille directement avec de vrais objets PowerPoint - pas des images qui imitent des slides. Chaque élément reste entièrement modifiable.',
     'features.upload.title': 'Téléchargez des fichiers',
     'features.upload.desc': 'Verso vous permet de télécharger tout ce qui est pertinent pour votre prompt : logo, image, inspiration, etc. Téléchargez votre fichier et Verso s\'en servira.',
     'features.enterprise.title': 'Prêt pour l\'entreprise',
-    'features.enterprise.desc': 'Utilisez vos propres clés API avec les plans Enterprise. Nous sommes conformes au RGPD, et fournissons SSO et MFA. Vos données restent les vôtres.',
+    'features.enterprise.desc': 'Utilisez vos propres clés API avec les plans Enterprise. Verso est conforme au RGPD, et fournit SSO et MFA. Vos données restent les vôtres.',
 
     // Models Section
     'models.title': 'Vous ne trouverez pas mieux.',
     'models.desc': 'Notre système utilise une simplification propriétaire qui convertit la complexité des slides PowerPoint en un langage plus clair que l\'IA peut éditer naturellement, tout en conservant une expressivité complète. Cela permet d\'obtenir de bien meilleures performances et une exécution plus rapide.',
-    'models.evaluation': 'PrezEval© benchmark',
+    'models.evaluation': 'Taux de succès sur la reproduction de slides professionnelles : PrezEval© benchmark',
 
     // CTA Banner
     'cta.title': 'Créez vos présentations en quelques secondes.',
-    'cta.subtitle': 'Pas de carte bancaire requise.',
+    'cta.subtitle': 'Pas besoin de carte bancaire.',
 
     // Demo/Contact Page
     'demo.metaTitle': 'Réserver une démo — Verso AI',
-    'demo.metaDescription': 'Demandez une démo de la plateforme Verso AI pour la génération native de slides PowerPoint.',
+    'demo.metaDescription': 'Réservez une démo avec l\'équipe Verso AI.',
     'demo.title': 'Réserver une démo',
     'demo.subtitle': 'Voyez par vous-même — réservez une démo de 20 min et découvrez comment Verso fonctionne.',
     'demo.emailPlaceholder': 'votre email professionnel',
-    'demo.submitButton': 'Demander une démo',
+    'demo.submitButton': 'Réserver une démo',
     'demo.confirmationTitle': 'Merci pour votre intérêt !',
     'demo.confirmationMessage': 'Nous avons bien reçu votre demande et reviendrons vers vous très vite.',
     'demo.backToHomepage': 'Retour à l\'accueil',
@@ -493,7 +493,7 @@ export const translations = {
     'footer.tagline': 'Édition native de PowerPoint propulsée par l\'IA. Conçu pour les consultants et les équipes stratégiques.',
     'footer.product': 'Produit',
     'footer.pricing': 'Tarifs',
-    'footer.demo': 'Demander une démo',
+    'footer.demo': 'Réserver une démo',
     'footer.articles': 'Articles',
     'footer.resources': 'Ressources',
     'footer.support': 'Support',
@@ -648,18 +648,18 @@ export const translations = {
     'features.prompt.title': 'Del prompt a la presentación',
     'features.prompt.desc': 'Genera una presentación completa desde cero: describe lo que necesitas y cómo lo quieres. Comienza pidiendo un borrador, luego afínalo: Verso utiliza tu plantilla de PowerPoint existente, aplicando automáticamente tus fuentes, colores y diseños corporativos.',
     'features.edit.title': 'Edita una presentación existente',
-    'features.edit.desc': 'Abre cualquier presentación y pide a Verso que la modifique. La integración nativa te permite hacer ajustes manuales y luego volver a dar instrucciones, combinando sin esfuerzo el trabajo pesado de la IA con tu toque final.',
+    'features.edit.desc': 'Abre cualquier presentación y pide a Verso que la modifique. La integración directa en PowerPoint te permite hacer ajustes manuales y luego volver a dar instrucciones, combinando sin esfuerzo el trabajo pesado de la IA con tu toque final.',
     'features.control.title': 'Control total',
     'features.control.desc': 'Verso trabaja directamente con objetos reales de PowerPoint - no con imágenes que simulan diapositivas. Cada elemento es completamente editable.',
     'features.upload.title': 'Sube archivos',
     'features.upload.desc': 'Verso te permite subir cualquier cosa relevante para tu prompt: logo, imagen, inspiración, etc. Sube tu archivo y Verso lo usará.',
     'features.enterprise.title': 'Listo para empresas',
-    'features.enterprise.desc': 'Usa tus propias claves API con los planes Enterprise. Cumplimos con el RGPD, con SSO y MFA incluidos. Tus datos son tuyos.',
+    'features.enterprise.desc': 'Usa tus propias claves API con los planes Enterprise. Verso cumple con el RGPD, con SSO y MFA incluidos. Tus datos son tuyos.',
 
     // Models Section
     'models.title': 'A otro nivel.',
     'models.desc': 'Nuestro sistema utiliza una simplificación propietaria que convierte la complejidad de las slides de PowerPoint en un lenguaje más claro que los modelos de IA pueden editar naturalmente, manteniendo total expresividad. Esto se traduce en un rendimiento muy superior y una ejecución más rápida.',
-    'models.evaluation': 'PrezEval© benchmark',
+    'models.evaluation': 'Tasa de éxito en la reproducción de slides profesionales: PrezEval© benchmark',
 
     // CTA Banner
     'cta.title': 'Crea tus presentaciones en segundos.',
@@ -667,7 +667,7 @@ export const translations = {
 
     // Demo/Contact Page
     'demo.metaTitle': 'Reservar una demo — Verso AI',
-    'demo.metaDescription': 'Solicita una demo de Verso AI, la plataforma de generación nativa de slides PowerPoint.',
+    'demo.metaDescription': 'Reserva una demo con el equipo de Verso AI.',
     'demo.title': 'Reservar una demo',
     'demo.subtitle': 'Compruébalo tú mismo, reserva una demo de 20min y te mostraremos cómo funciona.',
     'demo.emailPlaceholder': 'tu email de trabajo',
@@ -953,7 +953,7 @@ export const translations = {
     // Hero Section
     'hero.title': 'Professionelle Folien, direkt in PowerPoint.',
     'hero.subtitle1': 'KI-Agenten arbeiten nicht direkt in PowerPoint. Verso schon.',
-    'hero.subtitle2': 'Native Folienerstellung und -bearbeitung, genau dort, wo Sie sie brauchen.',
+    'hero.subtitle2': 'Folienerstellung und -bearbeitung, genau dort, wo Sie sie brauchen.',
     'hero.trustedBy': 'Sie vertrauen auf uns',
 
     // Features Section
@@ -961,18 +961,18 @@ export const translations = {
     'features.prompt.title': 'Vom Prompt zur Präsentation',
     'features.prompt.desc': 'Erstellen Sie eine komplette Präsentation von Grund auf: beschreiben Sie, was Sie brauchen und wie es aussehen soll. Starten Sie mit einem Entwurf und verfeinern Sie ihn Schritt für Schritt. Verso nutzt Ihre bestehende PowerPoint-Vorlage und übernimmt automatisch Ihre Schriften, Farben und Layouts.',
     'features.edit.title': 'Bestehende Präsentation bearbeiten',
-    'features.edit.desc': 'Öffnen Sie eine beliebige Präsentation und lassen Sie Verso sie nach Ihren Wünschen anpassen. Dank nativer Integration können Sie manuelle Änderungen vornehmen und Verso erneut anweisen — so verbinden Sie die Leistung der KI nahtlos mit Ihrem eigenen Feinschliff.',
+    'features.edit.desc': 'Öffnen Sie eine beliebige Präsentation und lassen Sie Verso sie nach Ihren Wünschen anpassen. Dank direkter Integration in PowerPoint können Sie manuelle Änderungen vornehmen und Verso erneut anweisen — so verbinden Sie die Leistung der KI nahtlos mit Ihrem eigenen Feinschliff.',
     'features.control.title': 'Volle Kontrolle',
     'features.control.desc': 'Verso arbeitet direkt mit echten PowerPoint-Objekten und -Formen - nicht mit Bildern, die Folien imitieren. Jedes Element bleibt vollständig bearbeitbar.',
     'features.upload.title': 'Dateien hochladen',
     'features.upload.desc': 'Verso ermöglicht es Ihnen, alles Relevante für Ihren Prompt hochzuladen: Logo, Bild, Inspiration, etc. Laden Sie Ihre Datei hoch und Verso wird sie verwenden.',
     'features.enterprise.title': 'Bereit für den Unternehmenseinsatz',
-    'features.enterprise.desc': 'Nutzen Sie Ihre eigenen API-Schlüssel mit Enterprise-Plänen. DSGVO-konform, mit SSO und MFA. Ihre Daten bleiben Ihre.',
+    'features.enterprise.desc': 'Nutzen Sie Ihre eigenen API-Schlüssel mit Enterprise-Plänen. Verso ist DSGVO-konform und bietet SSO und MFA. Ihre Daten bleiben Ihre.',
 
     // Models Section
     'models.title': 'Besser geht\'s nicht.',
     'models.desc': 'Unser System nutzt eine proprietäre Vereinfachung, die die Komplexität von PowerPoint-Folien in eine klarere Sprache übersetzt, die KI-Modelle natürlich bearbeiten können, ohne Einbußen bei der Gestaltungsfreiheit. Das Ergebnis: deutlich bessere Leistung und schnellere Ausführung.',
-    'models.evaluation': 'PrezEval© benchmark',
+    'models.evaluation': 'Erfolgsquote bei der Reproduktion professioneller Folien: PrezEval©-Benchmark',
 
     // CTA Banner
     'cta.title': 'Starten Sie in Sekunden mit Ihrer nächsten Präsentation.',
@@ -980,7 +980,7 @@ export const translations = {
 
     // Demo/Contact Page
     'demo.metaTitle': 'Demo buchen — Verso AI',
-    'demo.metaDescription': 'Fordern Sie eine Demo von Verso AI an — native PowerPoint-Folienerstellung.',
+    'demo.metaDescription': 'Buchen Sie eine Demo mit dem Verso AI-Team.',
     'demo.title': 'Demo buchen',
     'demo.subtitle': 'Überzeugen Sie sich selbst, buchen Sie eine 20-minütige Demo und wir zeigen Ihnen, wie es funktioniert.',
     'demo.emailPlaceholder': 'Ihre geschäftliche E-Mail',
