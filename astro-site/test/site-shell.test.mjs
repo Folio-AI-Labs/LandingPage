@@ -47,3 +47,12 @@ test('performance chart renders a dated Prezeval note', async () => {
   assert.match(chart, /<time dateTime=\{evaluationDateIso\}>\{evaluationDate\}<\/time>/);
   assert.equal((translations.match(/'models\.evaluation':/g) || []).length, 4);
 });
+
+test('performance speed chart keeps Anthropic labels and axes styling aligned with the article spec', async () => {
+  const chart = await read('src/components/PerformanceSpeedChart.tsx');
+
+  assert.match(chart, /line: \{ color: '#D4A27F', width: 2, dash: 'dash' \}/);
+  assert.match(chart, /textposition: \['bottom center', 'bottom center'\]/);
+  assert.match(chart, /xaxis:[\s\S]*showline: true[\s\S]*linecolor: '#000000'/);
+  assert.match(chart, /yaxis:[\s\S]*showline: true[\s\S]*linecolor: '#000000'/);
+});
