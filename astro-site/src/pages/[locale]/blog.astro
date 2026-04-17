@@ -22,7 +22,7 @@ const localeFormats: Record<string, string> = {
   es: 'es-ES',
 };
 
-const localizedLangs = new Set(['fr']);
+const localizedLangs = new Set(['fr', 'es', 'de']);
 const contentLang = localizedLangs.has(locale!) ? locale! : defaultLang;
 const blogBase = contentLang === defaultLang ? '/blog' : `/${contentLang}/blog`;
 
