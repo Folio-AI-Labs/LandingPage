@@ -25,15 +25,6 @@ const t = useTranslations(lang);
       <p class="font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark max-w-[600px] mx-auto">{t('pricing.subtitle')}<br />{t('pricing.subtitle2')}</p>
     </div>
 
-    <!-- Billing Toggle -->
-    <div class="flex justify-center mb-10">
-      <div class="relative inline-flex bg-white border-2 border-brand-border rounded-pill p-1 gap-1">
-        <div id="toggleIndicator" class="absolute inset-y-1 bg-brand rounded-pill transition-all duration-200 pointer-events-none"></div>
-        <button class="relative z-10 py-3 px-8 border-none bg-transparent text-white text-sm font-semibold cursor-pointer rounded-pill transition-colors duration-300 font-body" id="annualBtn">{t('pricing.annual')}</button>
-        <button class="relative z-10 py-3 px-8 border-none bg-transparent text-brand-muted text-sm font-semibold cursor-pointer rounded-pill transition-colors duration-300 font-body" id="monthlyBtn">{t('pricing.monthly')}</button>
-      </div>
-    </div>
-
     <!-- Pricing Cards -->
     <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
@@ -79,13 +70,8 @@ const t = useTranslations(lang);
         </div>
 
         <div class="mb-3 min-h-[56px]">
-          <div class="flex items-baseline gap-1 flex-wrap annual-price">
-            <span class="text-[20px] sm:text-[24px] lg:text-[30px] font-bold text-brand-light line-through font-display">€19</span>
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€15</span>
-            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
-          </div>
-          <div class="items-baseline gap-1 flex-wrap monthly-price hidden">
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€19</span>
+          <div class="flex items-baseline gap-1 flex-wrap">
+            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$49</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
@@ -115,13 +101,8 @@ const t = useTranslations(lang);
         </div>
 
         <div class="mb-3 min-h-[56px]">
-          <div class="flex items-baseline gap-1 flex-wrap annual-price">
-            <span class="text-[20px] sm:text-[24px] lg:text-[30px] font-bold text-brand-light line-through font-display">€49</span>
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€37</span>
-            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
-          </div>
-          <div class="items-baseline gap-1 flex-wrap monthly-price hidden">
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€49</span>
+          <div class="flex items-baseline gap-1 flex-wrap">
+            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$199</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
@@ -150,13 +131,8 @@ const t = useTranslations(lang);
         </div>
 
         <div class="mb-3 min-h-[56px]">
-          <div class="flex items-baseline gap-1 flex-wrap annual-price">
-            <span class="text-[20px] sm:text-[24px] lg:text-[30px] font-bold text-brand-light line-through font-display">€99</span>
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€75</span>
-            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
-          </div>
-          <div class="items-baseline gap-1 flex-wrap monthly-price hidden">
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€99</span>
+          <div class="flex items-baseline gap-1 flex-wrap">
+            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$499</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
@@ -276,42 +252,6 @@ const t = useTranslations(lang);
 </Layout>
 
 <script>
-  // Billing toggle with sliding indicator
-  const annualBtn = document.getElementById('annualBtn');
-  const monthlyBtn = document.getElementById('monthlyBtn');
-  const indicator = document.getElementById('toggleIndicator');
-  const annualPrices = document.querySelectorAll('.annual-price');
-  const monthlyPrices = document.querySelectorAll('.monthly-price');
-
-  function moveIndicator(btn: HTMLElement) {
-    if (indicator) {
-      indicator.style.left = btn.offsetLeft + 'px';
-      indicator.style.width = btn.offsetWidth + 'px';
-    }
-  }
-
-  if (annualBtn) moveIndicator(annualBtn);
-
-  annualBtn?.addEventListener('click', () => {
-    moveIndicator(annualBtn);
-    annualBtn.classList.add('text-white');
-    annualBtn.classList.remove('text-brand-muted');
-    monthlyBtn?.classList.add('text-brand-muted');
-    monthlyBtn?.classList.remove('text-white');
-    annualPrices.forEach(price => { price.classList.remove('hidden'); price.classList.add('flex'); });
-    monthlyPrices.forEach(price => { price.classList.add('hidden'); price.classList.remove('flex'); });
-  });
-
-  monthlyBtn?.addEventListener('click', () => {
-    if (monthlyBtn) moveIndicator(monthlyBtn);
-    monthlyBtn?.classList.add('text-white');
-    monthlyBtn?.classList.remove('text-brand-muted');
-    annualBtn?.classList.add('text-brand-muted');
-    annualBtn?.classList.remove('text-white');
-    annualPrices.forEach(price => { price.classList.add('hidden'); price.classList.remove('flex'); });
-    monthlyPrices.forEach(price => { price.classList.remove('hidden'); price.classList.add('flex'); });
-  });
-
   // FAQ smooth open/close
   const faqItems = document.querySelectorAll('details');
 
