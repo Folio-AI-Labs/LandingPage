@@ -12,7 +12,7 @@ export const translations = {
     'nav.bookDemo': 'Book a demo',
 
     // Hero Section
-    'hero.title': 'AI for PowerPoint decks where every slide counts.',
+    'hero.title': 'AI for decks where every slide counts.',
     'hero.subtitle1': 'AI agents don\'t work directly in PowerPoint. Verso does.',
     'hero.subtitle2': 'Slide generation & editing, right where you need it.',
     'hero.trustedBy': 'Trusted by',
@@ -323,7 +323,7 @@ export const translations = {
     'nav.bookDemo': 'Réserver une démo',
 
     // Hero Section
-    'hero.title': 'L\'IA pour les PowerPoint où chaque slide compte.',
+    'hero.title': 'L\'IA pour les decks où chaque slide compte.',
     'hero.subtitle1': 'Aucun agent IA ne travaille directement dans PowerPoint. Verso, si.',
     'hero.subtitle2': 'Génération et modification de slides, là où vous en avez besoin.',
     'hero.trustedBy': 'Ils nous font confiance',
@@ -634,7 +634,7 @@ export const translations = {
     'nav.bookDemo': 'Reservar una demo',
 
     // Hero Section
-    'hero.title': 'IA para los PowerPoint donde cada slide cuenta.',
+    'hero.title': 'IA para los decks donde cada slide cuenta.',
     'hero.subtitle1': 'Los agentes de IA no trabajan directamente en PowerPoint. Verso sí.',
     'hero.subtitle2': 'Generación y edición nativa de slides, justo donde lo necesitas.',
     'hero.trustedBy': 'Confían en nosotros',
@@ -945,7 +945,7 @@ export const translations = {
     'nav.bookDemo': 'Demo buchen',
 
     // Hero Section
-    'hero.title': 'KI für PowerPoint-Decks, wo jede Folie zählt.',
+    'hero.title': 'KI für Decks, wo jede Folie zählt.',
     'hero.subtitle1': 'KI-Agenten arbeiten nicht direkt in PowerPoint. Verso schon.',
     'hero.subtitle2': 'Folienerstellung und -bearbeitung, genau dort, wo Sie sie brauchen.',
     'hero.trustedBy': 'Sie vertrauen auf uns',
