@@ -196,7 +196,7 @@ export const translations = {
     'blog.title': 'Articles',
 
     // Meta
-    'meta.title': 'Verso AI - AI in PowerPoint, when every slide counts',
+    'meta.title': 'Verso AI - AI for PowerPoint decks where every slide counts',
     'meta.description': 'Native PowerPoint editing powered by AI. Built for consultants and strategy teams.',
 
     // Privacy Policy
@@ -818,7 +818,7 @@ export const translations = {
     'blog.title': 'Artículos',
 
     // Meta
-    'meta.title': 'Verso AI - IA en PowerPoint, cuando cada slide cuenta',
+    'meta.title': 'Verso AI - IA para los PowerPoint donde cada slide cuenta',
     'meta.description': 'Edición nativa de PowerPoint con IA de vanguardia. Para consultores y equipos de estrategia.',
 
     // Privacy Policy
@@ -1129,7 +1129,7 @@ export const translations = {
     'blog.title': 'Artikel',
 
     // Meta
-    'meta.title': 'Verso AI - KI in PowerPoint, wenn jede Folie zählt',
+    'meta.title': 'Verso AI - KI für PowerPoint-Decks, wo jede Folie zählt',
     'meta.description': 'Native PowerPoint-Bearbeitung mit KI. Für Berater und Strategie-Teams.',
 
     // Privacy Policy
