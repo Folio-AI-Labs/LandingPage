@@ -13,12 +13,12 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'AI for decks where every slide counts.',
-    'hero.subtitle1': 'AI agents don\'t work directly in PowerPoint. Verso does.',
-    'hero.subtitle2': 'Slide generation & editing, right where you need it.',
+    'hero.subtitle1': 'Verso is the only AI agent to deliver professional-grade slides.',
+    'hero.subtitle2': 'And it works with you directly in PowerPoint.',
     'hero.trustedBy': 'Trusted by',
 
     // Features Section
-    'features.title': 'Slides, your way.',
+    'features.title': 'No more late nights on slides: Verso ships them.',
     'features.prompt.title': 'Prompt to deck',
     'features.prompt.desc': 'Generate a full slide deck from scratch: describe what you need, and how you want it done. Start by asking for a draft of what you want, then refine: Verso uses your existing PowerPoint template, applying your on-brand fonts, colors, and pre-set layouts automatically.',
     'features.edit.title': 'Edit an existing deck',
@@ -324,12 +324,12 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'L\'IA pour les decks où chaque slide compte.',
-    'hero.subtitle1': 'Aucun agent IA ne travaille directement dans PowerPoint. Verso, si.',
-    'hero.subtitle2': 'Génération et modification de slides, là où vous en avez besoin.',
+    'hero.subtitle1': 'Verso est le seul agent IA à produire des slides de qualité professionnelle.',
+    'hero.subtitle2': 'Et il travaille avec vous, directement dans PowerPoint.',
     'hero.trustedBy': 'Ils nous font confiance',
 
     // Features Section
-    'features.title': 'Vos slides, à votre façon.',
+    'features.title': 'Plus de nuits blanches sur vos slides: Verso s\'en charge.',
     'features.prompt.title': 'Du prompt à la présentation',
     'features.prompt.desc': 'Générez une présentation complète en partant de zéro : décrivez votre besoin et le résultat attendu. Demandez d\'abord une ébauche, puis affinez : Verso utilise votre modèle PowerPoint existant, en appliquant automatiquement vos polices, couleurs et mises en page.',
     'features.edit.title': 'Modifiez une présentation existante',
@@ -635,12 +635,12 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'IA para los decks donde cada slide cuenta.',
-    'hero.subtitle1': 'Los agentes de IA no trabajan directamente en PowerPoint. Verso sí.',
-    'hero.subtitle2': 'Generación y edición nativa de slides, justo donde lo necesitas.',
+    'hero.subtitle1': 'Verso es el único agente de IA que produce slides de calidad profesional.',
+    'hero.subtitle2': 'Y trabaja contigo directamente en PowerPoint.',
     'hero.trustedBy': 'Confían en nosotros',
 
     // Features Section
-    'features.title': 'Tus slides, a tu manera.',
+    'features.title': 'No más noches en vela con tus slides: Verso se encarga.',
     'features.prompt.title': 'Del prompt a la presentación',
     'features.prompt.desc': 'Genera una presentación completa desde cero: describe lo que necesitas y cómo lo quieres. Comienza pidiendo un borrador, luego afínalo: Verso utiliza tu plantilla de PowerPoint existente, aplicando automáticamente tus fuentes, colores y diseños corporativos.',
     'features.edit.title': 'Edita una presentación existente',
@@ -946,12 +946,12 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'KI für Decks, wo jede Folie zählt.',
-    'hero.subtitle1': 'KI-Agenten arbeiten nicht direkt in PowerPoint. Verso schon.',
-    'hero.subtitle2': 'Folienerstellung und -bearbeitung, genau dort, wo Sie sie brauchen.',
+    'hero.subtitle1': 'Verso ist der einzige KI-Agent für professionelle Folien.',
+    'hero.subtitle2': 'Und das direkt in PowerPoint, an Ihrer Seite.',
     'hero.trustedBy': 'Sie vertrauen auf uns',
 
     // Features Section
-    'features.title': 'Ihre Folien, wie Sie sie wollen.',
+    'features.title': 'Keine Nachtschichten mehr für Ihre Folien: Verso übernimmt.',
     'features.prompt.title': 'Vom Prompt zur Präsentation',
     'features.prompt.desc': 'Erstellen Sie eine komplette Präsentation von Grund auf: beschreiben Sie, was Sie brauchen und wie es aussehen soll. Starten Sie mit einem Entwurf und verfeinern Sie ihn Schritt für Schritt. Verso nutzt Ihre bestehende PowerPoint-Vorlage und übernimmt automatisch Ihre Schriften, Farben und Layouts.',
     'features.edit.title': 'Bestehende Präsentation bearbeiten',
