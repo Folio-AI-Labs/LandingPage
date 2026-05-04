@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+import { DEMO_BOOKING_URL } from '../consts';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,53 +10,24 @@ const t = useTranslations(lang);
 
 <Layout title={t('demo.metaTitle')} description={t('demo.metaDescription')}>
 
-  <!-- Demo Form Section -->
   <section class="min-h-screen flex flex-col justify-center items-center py-[60px] px-[30px] nav:py-20 nav:px-[60px] relative overflow-hidden">
     <div class="absolute inset-0 bg-center bg-[length:100%] opacity-50 z-0" style="background-image: url('/monet8.jpg')"></div>
-    <div class="max-w-[600px] w-full bg-white rounded-2xl py-10 px-[30px] nav:p-[60px] border-2 border-brand-border shadow-md relative z-10">
-      <h1 class="font-display text-[32px] nav:text-[42px] font-normal leading-tight text-brand mb-4 text-center">{t('demo.title')}</h1>
-      <p class="text-lg leading-relaxed text-brand-muted mb-10 text-center">{t('demo.subtitle')}</p>
+    <div class="max-w-[600px] w-full bg-white rounded-2xl py-10 px-[30px] nav:p-[60px] border-2 border-brand-border shadow-md relative z-10 text-center">
+      <h1 class="font-display text-[32px] nav:text-[42px] font-normal leading-tight text-brand mb-4">{t('demo.title')}</h1>
+      <p class="text-lg leading-relaxed text-brand-muted mb-10">{t('demo.subtitle')}</p>
 
-      <div class="min-h-[140px]">
-        <form class="flex flex-col gap-6" id="demoForm">
-          <div class="flex flex-col gap-2">
-            <input type="email" id="email" name="email" placeholder={t('demo.emailPlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
-          </div>
+      <a
+        href={DEMO_BOOKING_URL}
+        target="_blank"
+        rel="noopener"
+        class="inline-block w-full bg-brand text-white py-4 px-8 rounded-pill text-base font-semibold no-underline transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+      >
+        {t('demo.submitButton')}
+      </a>
 
-          <button type="submit" class="w-full bg-brand text-white py-4 border-none rounded-pill text-base font-semibold cursor-pointer transition duration-300 font-body hover:-translate-y-0.5 hover:shadow-lg">{t('demo.submitButton')}</button>
-        </form>
-
-        <div id="confirmationMessage" class="hidden text-center">
-          <div class="bg-brand-bg border-2 border-brand rounded-lg p-6 mb-4">
-            <p class="text-lg font-semibold text-brand mb-2">{t('demo.confirmationTitle')}</p>
-            <p class="text-base text-brand-muted">{t('demo.confirmationMessage')}</p>
-          </div>
-        </div>
-      </div>
-
-      <a href={getLocalizedPath('/', lang)} class="block text-center mt-5 font-heading text-sm text-brand-muted no-underline transition-colors duration-300 hover:text-brand">{t('demo.backToHomepage')}</a>
+      <a href={getLocalizedPath('/', lang)} class="block mt-6 font-heading text-sm text-brand-muted no-underline transition-colors duration-300 hover:text-brand">{t('demo.backToHomepage')}</a>
     </div>
   </section>
 
   <Footer />
 </Layout>
-
-<script>
-  document.getElementById('demoForm')?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const form = document.getElementById('demoForm') as HTMLFormElement;
-    const confirmationMessage = document.getElementById('confirmationMessage');
-
-    // Open mailto link to notify about demo request
-    const subject = encodeURIComponent('Demo request');
-    const body = encodeURIComponent(`User ${email} has requested a demo at ${new Date().toLocaleString()}`);
-    window.open(`mailto:contact@get-verso.ai?subject=${subject}&body=${body}`, '_blank');
-
-    // Hide the form and show confirmation message
-    if (form && confirmationMessage) {
-      form.style.display = 'none';
-      confirmationMessage.classList.remove('hidden');
-    }
-  });
-</script>
