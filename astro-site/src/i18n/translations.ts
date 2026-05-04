@@ -12,13 +12,13 @@ export const translations = {
     'nav.bookDemo': 'Book a demo',
 
     // Hero Section
-    'hero.title': 'AI for decks where every slide counts.',
-    'hero.subtitle1': 'Verso is the only AI agent to deliver professional-grade slides.',
-    'hero.subtitle2': 'And it works with you directly in PowerPoint.',
+    'hero.title': 'AI for decks where every slide counts',
+    'hero.subtitle1': 'Verso is the only AI agent to deliver professional-grade slides',
+    'hero.subtitle2': 'And it works with you directly in PowerPoint',
     'hero.trustedBy': 'Trusted by',
 
     // Features Section
-    'features.title': 'No more late nights on slides: Verso ships them.',
+    'features.title': 'No more late nights on slides: Verso ships them',
     'features.prompt.title': 'Prompt to deck',
     'features.prompt.desc': 'Generate a full slide deck from scratch: describe what you need, and how you want it done. Start by asking for a draft of what you want, then refine: Verso uses your existing PowerPoint template, applying your on-brand fonts, colors, and pre-set layouts automatically.',
     'features.edit.title': 'Edit an existing deck',
@@ -31,19 +31,19 @@ export const translations = {
     'features.enterprise.desc': 'Bring your own API keys with enterprise plans. Verso is GDPR compliant, and provides SSO and MFA login. Your data stays yours.',
 
     // Models Section
-    'models.title': 'Unmatched performance.',
+    'models.title': 'Unmatched performance',
     'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint slides into a clearer language that AI can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
     'models.evaluation': 'Success rate on reproducing professional slides: PrezEval© benchmark',
 
     // CTA Banner
-    'cta.title': 'Start working on your presentations in seconds.',
-    'cta.subtitle': 'No credit cards needed.',
+    'cta.title': 'Start working on your presentations in seconds',
+    'cta.subtitle': 'No credit cards needed',
 
     // Demo/Contact Page
     'demo.metaTitle': 'Book a Demo — Verso AI',
     'demo.metaDescription': 'Book a demo with the Verso AI team.',
     'demo.title': 'Book a demo',
-    'demo.subtitle': 'See for yourself — book a 20-minute demo and we\'ll show you how it works.',
+    'demo.subtitle': 'See for yourself — book a 20-minute demo and we\'ll show you how it works',
     'demo.emailPlaceholder': 'your work email',
     'demo.submitButton': 'Request a demo',
     'demo.confirmationTitle': 'Thank you for your interest!',
@@ -54,7 +54,7 @@ export const translations = {
     'quote.metaTitle': 'Get a Quote — Verso AI',
     'quote.metaDescription': 'Request a custom quote for Verso AI\'s unlimited plan.',
     'quote.title': 'Get a quote',
-    'quote.subtitle': 'Tell us about your needs and we\'ll send you a custom quote.',
+    'quote.subtitle': 'Tell us about your needs and we\'ll send you a custom quote',
     'quote.fullNamePlaceholder': 'Name',
     'quote.emailPlaceholder': 'Email',
     'quote.phonePlaceholder': 'Phone Number',
@@ -68,8 +68,8 @@ export const translations = {
     'pricing.metaTitle': 'Pricing — Verso AI',
     'pricing.metaDescription': 'Choose the perfect plan for your presentation needs. Flexible credit-based pricing for everyone.',
     'pricing.title': 'Pricing',
-    'pricing.subtitle': 'Start with 2,000 free credits. Pay for what you use on top.',
-    'pricing.subtitle2': 'Subscribe to a plan for the best rates.',
+    'pricing.subtitle': 'Start with 2,000 free credits. Pay for what you use on top',
+    'pricing.subtitle2': 'Subscribe to a plan for the best rates',
     'pricing.perMonth': '/month',
     'pricing.getStarted': 'Get Started',
     'pricing.mostPopular': 'Most Popular',
@@ -175,7 +175,7 @@ export const translations = {
     'support.form.successMessage': 'We\'ll get back to you shortly.',
 
     // Footer
-    'footer.tagline': 'Native PowerPoint editing powered by AI. Built for consultants and strategy teams.',
+    'footer.tagline': 'AI for decks where every slide counts.',
     'footer.product': 'Product',
     'footer.pricing': 'Pricing',
     'footer.demo': 'Request Demo',
@@ -323,13 +323,13 @@ export const translations = {
     'nav.bookDemo': 'Réserver une démo',
 
     // Hero Section
-    'hero.title': 'L\'IA pour les decks où chaque slide compte.',
-    'hero.subtitle1': 'Verso est le seul agent IA à produire des slides de qualité professionnelle.',
-    'hero.subtitle2': 'Et il travaille avec vous, directement dans PowerPoint.',
+    'hero.title': 'L\'IA pour les decks où chaque slide compte',
+    'hero.subtitle1': 'Verso est le seul agent IA à produire des slides de qualité professionnelle',
+    'hero.subtitle2': 'Et il travaille avec vous, directement dans PowerPoint',
     'hero.trustedBy': 'Ils nous font confiance',
 
     // Features Section
-    'features.title': 'Plus de nuits blanches sur vos slides: Verso s\'en charge.',
+    'features.title': 'Plus de nuits blanches sur vos slides: Verso s\'en charge',
     'features.prompt.title': 'Du prompt à la présentation',
     'features.prompt.desc': 'Générez une présentation complète en partant de zéro : décrivez votre besoin et le résultat attendu. Demandez d\'abord une ébauche, puis affinez : Verso utilise votre modèle PowerPoint existant, en appliquant automatiquement vos polices, couleurs et mises en page.',
     'features.edit.title': 'Modifiez une présentation existante',
@@ -342,19 +342,19 @@ export const translations = {
     'features.enterprise.desc': 'Utilisez vos propres clés API avec les plans Enterprise. Verso est conforme au RGPD, et fournit SSO et MFA. Vos données restent les vôtres.',
 
     // Models Section
-    'models.title': 'Vous ne trouverez pas mieux.',
+    'models.title': 'Vous ne trouverez pas mieux',
     'models.desc': 'Notre système utilise une simplification propriétaire qui convertit la complexité des slides PowerPoint en un langage plus clair que l\'IA peut éditer naturellement, tout en conservant une expressivité complète. Cela permet d\'obtenir de bien meilleures performances et une exécution plus rapide.',
     'models.evaluation': 'Taux de succès sur la reproduction de slides professionnelles : PrezEval© benchmark',
 
     // CTA Banner
-    'cta.title': 'Créez vos présentations en quelques secondes.',
-    'cta.subtitle': 'Pas besoin de carte bancaire.',
+    'cta.title': 'Créez vos présentations en quelques secondes',
+    'cta.subtitle': 'Pas besoin de carte bancaire',
 
     // Demo/Contact Page
     'demo.metaTitle': 'Réserver une démo — Verso AI',
     'demo.metaDescription': 'Réservez une démo avec l\'équipe Verso AI.',
     'demo.title': 'Réserver une démo',
-    'demo.subtitle': 'Voyez par vous-même — réservez une démo de 20 min et découvrez comment Verso fonctionne.',
+    'demo.subtitle': 'Voyez par vous-même — réservez une démo de 20 min et découvrez comment Verso fonctionne',
     'demo.emailPlaceholder': 'votre email professionnel',
     'demo.submitButton': 'Réserver une démo',
     'demo.confirmationTitle': 'Merci pour votre intérêt !',
@@ -365,7 +365,7 @@ export const translations = {
     'quote.metaTitle': 'Demander un devis — Verso AI',
     'quote.metaDescription': 'Demandez un devis personnalisé pour le plan illimité de Verso AI.',
     'quote.title': 'Demander un devis',
-    'quote.subtitle': 'Dites-nous vos besoins et nous vous enverrons un devis personnalisé.',
+    'quote.subtitle': 'Dites-nous vos besoins et nous vous enverrons un devis personnalisé',
     'quote.fullNamePlaceholder': 'Nom',
     'quote.emailPlaceholder': 'Email',
     'quote.phonePlaceholder': 'Téléphone',
@@ -379,8 +379,8 @@ export const translations = {
     'pricing.metaTitle': 'Tarifs — Verso AI',
     'pricing.metaDescription': 'Choisissez le plan adapté à vos besoins. Tarification flexible par crédits.',
     'pricing.title': 'Tarifs',
-    'pricing.subtitle': '2 000 crédits gratuits. Payez selon votre usage.',
-    'pricing.subtitle2': 'Passez à un plan pour un meilleur tarif.',
+    'pricing.subtitle': '2 000 crédits gratuits. Payez selon votre usage',
+    'pricing.subtitle2': 'Passez à un plan pour un meilleur tarif',
     'pricing.perMonth': '/mois',
     'pricing.getStarted': 'Commencer',
     'pricing.mostPopular': 'Le plus populaire',
@@ -486,7 +486,7 @@ export const translations = {
     'support.form.successMessage': 'Nous vous répondrons sous peu.',
 
     // Footer
-    'footer.tagline': 'Édition native de PowerPoint propulsée par l\'IA. Conçu pour les consultants et les équipes stratégiques.',
+    'footer.tagline': 'L\'IA pour les decks où chaque slide compte.',
     'footer.product': 'Produit',
     'footer.pricing': 'Tarifs',
     'footer.demo': 'Réserver une démo',
@@ -634,13 +634,13 @@ export const translations = {
     'nav.bookDemo': 'Reservar una demo',
 
     // Hero Section
-    'hero.title': 'IA para los decks donde cada slide cuenta.',
-    'hero.subtitle1': 'Verso es el único agente de IA que produce slides de calidad profesional.',
-    'hero.subtitle2': 'Y trabaja contigo directamente en PowerPoint.',
+    'hero.title': 'IA para los decks donde cada slide cuenta',
+    'hero.subtitle1': 'Verso es el único agente de IA que produce slides de calidad profesional',
+    'hero.subtitle2': 'Y trabaja contigo directamente en PowerPoint',
     'hero.trustedBy': 'Confían en nosotros',
 
     // Features Section
-    'features.title': 'No más noches en vela con tus slides: Verso se encarga.',
+    'features.title': 'No más noches en vela con tus slides: Verso se encarga',
     'features.prompt.title': 'Del prompt a la presentación',
     'features.prompt.desc': 'Genera una presentación completa desde cero: describe lo que necesitas y cómo lo quieres. Comienza pidiendo un borrador, luego afínalo: Verso utiliza tu plantilla de PowerPoint existente, aplicando automáticamente tus fuentes, colores y diseños corporativos.',
     'features.edit.title': 'Edita una presentación existente',
@@ -653,19 +653,19 @@ export const translations = {
     'features.enterprise.desc': 'Usa tus propias claves API con los planes Enterprise. Verso cumple con el RGPD, con SSO y MFA incluidos. Tus datos son tuyos.',
 
     // Models Section
-    'models.title': 'A otro nivel.',
+    'models.title': 'A otro nivel',
     'models.desc': 'Nuestro sistema utiliza una simplificación propietaria que convierte la complejidad de las slides de PowerPoint en un lenguaje más claro que los modelos de IA pueden editar naturalmente, manteniendo total expresividad. Esto se traduce en un rendimiento muy superior y una ejecución más rápida.',
     'models.evaluation': 'Tasa de éxito en la reproducción de slides profesionales: PrezEval© benchmark',
 
     // CTA Banner
-    'cta.title': 'Crea tus presentaciones en segundos.',
-    'cta.subtitle': 'No se requiere tarjeta de crédito.',
+    'cta.title': 'Crea tus presentaciones en segundos',
+    'cta.subtitle': 'No se requiere tarjeta de crédito',
 
     // Demo/Contact Page
     'demo.metaTitle': 'Reservar una demo — Verso AI',
     'demo.metaDescription': 'Reserva una demo con el equipo de Verso AI.',
     'demo.title': 'Reservar una demo',
-    'demo.subtitle': 'Compruébalo tú mismo, reserva una demo de 20min y te mostraremos cómo funciona.',
+    'demo.subtitle': 'Compruébalo tú mismo, reserva una demo de 20min y te mostraremos cómo funciona',
     'demo.emailPlaceholder': 'tu email de trabajo',
     'demo.submitButton': 'Solicitar una demo',
     'demo.confirmationTitle': '¡Gracias por tu interés!',
@@ -676,7 +676,7 @@ export const translations = {
     'quote.metaTitle': 'Solicitar presupuesto — Verso AI',
     'quote.metaDescription': 'Solicita un presupuesto personalizado para el plan ilimitado de Verso AI.',
     'quote.title': 'Solicitar presupuesto',
-    'quote.subtitle': 'Cuéntanos tus necesidades y te enviaremos un presupuesto personalizado.',
+    'quote.subtitle': 'Cuéntanos tus necesidades y te enviaremos un presupuesto personalizado',
     'quote.fullNamePlaceholder': 'Nombre',
     'quote.emailPlaceholder': 'Email',
     'quote.phonePlaceholder': 'Teléfono',
@@ -690,8 +690,8 @@ export const translations = {
     'pricing.metaTitle': 'Precios — Verso AI',
     'pricing.metaDescription': 'Elige el plan que se adapte a ti. Precios flexibles por créditos.',
     'pricing.title': 'Precios',
-    'pricing.subtitle': '2.000 créditos gratis para empezar. Paga solo por lo que uses.',
-    'pricing.subtitle2': 'Suscríbete a un plan para obtener mejor precio.',
+    'pricing.subtitle': '2.000 créditos gratis para empezar. Paga solo por lo que uses',
+    'pricing.subtitle2': 'Suscríbete a un plan para obtener mejor precio',
     'pricing.perMonth': '/mes',
     'pricing.getStarted': 'Empezar',
     'pricing.mostPopular': 'Más popular',
@@ -797,7 +797,7 @@ export const translations = {
     'support.form.successMessage': 'Te responderemos pronto.',
 
     // Footer
-    'footer.tagline': 'Edición nativa de PowerPoint impulsada por IA. Diseñado para consultores y equipos de estrategia.',
+    'footer.tagline': 'IA para los decks donde cada slide cuenta.',
     'footer.product': 'Producto',
     'footer.pricing': 'Precios',
     'footer.demo': 'Solicitar demo',
@@ -945,13 +945,13 @@ export const translations = {
     'nav.bookDemo': 'Demo buchen',
 
     // Hero Section
-    'hero.title': 'KI für Decks, wo jede Folie zählt.',
-    'hero.subtitle1': 'Verso ist der einzige KI-Agent für professionelle Folien.',
-    'hero.subtitle2': 'Und das direkt in PowerPoint, an Ihrer Seite.',
+    'hero.title': 'KI für Decks, wo jede Folie zählt',
+    'hero.subtitle1': 'Verso ist der einzige KI-Agent für professionelle Folien',
+    'hero.subtitle2': 'Und das direkt in PowerPoint, an Ihrer Seite',
     'hero.trustedBy': 'Sie vertrauen auf uns',
 
     // Features Section
-    'features.title': 'Keine Nachtschichten mehr für Ihre Folien: Verso übernimmt.',
+    'features.title': 'Keine Nachtschichten mehr für Ihre Folien: Verso übernimmt',
     'features.prompt.title': 'Vom Prompt zur Präsentation',
     'features.prompt.desc': 'Erstellen Sie eine komplette Präsentation von Grund auf: beschreiben Sie, was Sie brauchen und wie es aussehen soll. Starten Sie mit einem Entwurf und verfeinern Sie ihn Schritt für Schritt. Verso nutzt Ihre bestehende PowerPoint-Vorlage und übernimmt automatisch Ihre Schriften, Farben und Layouts.',
     'features.edit.title': 'Bestehende Präsentation bearbeiten',
@@ -964,19 +964,19 @@ export const translations = {
     'features.enterprise.desc': 'Nutzen Sie Ihre eigenen API-Schlüssel mit Enterprise-Plänen. Verso ist DSGVO-konform und bietet SSO und MFA. Ihre Daten bleiben Ihre.',
 
     // Models Section
-    'models.title': 'Besser geht\'s nicht.',
+    'models.title': 'Besser geht\'s nicht',
     'models.desc': 'Unser System nutzt eine proprietäre Vereinfachung, die die Komplexität von PowerPoint-Folien in eine klarere Sprache übersetzt, die KI-Modelle natürlich bearbeiten können, ohne Einbußen bei der Gestaltungsfreiheit. Das Ergebnis: deutlich bessere Leistung und schnellere Ausführung.',
     'models.evaluation': 'Erfolgsquote bei der Reproduktion professioneller Folien: PrezEval©-Benchmark',
 
     // CTA Banner
-    'cta.title': 'Starten Sie in Sekunden mit Ihrer nächsten Präsentation.',
-    'cta.subtitle': 'Keine Kreditkarte erforderlich.',
+    'cta.title': 'Starten Sie in Sekunden mit Ihrer nächsten Präsentation',
+    'cta.subtitle': 'Keine Kreditkarte erforderlich',
 
     // Demo/Contact Page
     'demo.metaTitle': 'Demo buchen — Verso AI',
     'demo.metaDescription': 'Buchen Sie eine Demo mit dem Verso AI-Team.',
     'demo.title': 'Demo buchen',
-    'demo.subtitle': 'Überzeugen Sie sich selbst, buchen Sie eine 20-minütige Demo und wir zeigen Ihnen, wie es funktioniert.',
+    'demo.subtitle': 'Überzeugen Sie sich selbst, buchen Sie eine 20-minütige Demo und wir zeigen Ihnen, wie es funktioniert',
     'demo.emailPlaceholder': 'Ihre geschäftliche E-Mail',
     'demo.submitButton': 'Demo anfordern',
     'demo.confirmationTitle': 'Vielen Dank für Ihr Interesse!',
@@ -987,7 +987,7 @@ export const translations = {
     'quote.metaTitle': 'Angebot anfordern — Verso AI',
     'quote.metaDescription': 'Fordern Sie ein individuelles Angebot für den Unlimited-Plan von Verso AI an.',
     'quote.title': 'Angebot anfordern',
-    'quote.subtitle': 'Teilen Sie uns Ihre Anforderungen mit und wir senden Ihnen ein individuelles Angebot.',
+    'quote.subtitle': 'Teilen Sie uns Ihre Anforderungen mit und wir senden Ihnen ein individuelles Angebot',
     'quote.fullNamePlaceholder': 'Name',
     'quote.emailPlaceholder': 'Email',
     'quote.phonePlaceholder': 'Telefonnummer',
@@ -1001,8 +1001,8 @@ export const translations = {
     'pricing.metaTitle': 'Preise — Verso AI',
     'pricing.metaDescription': 'Wählen Sie den passenden Plan. Flexible Preise auf Credit-Basis.',
     'pricing.title': 'Preise',
-    'pricing.subtitle': '2.000 Credits gratis zum Start. Danach zahlen Sie nach Verbrauch.',
-    'pricing.subtitle2': 'Mit einem Abo erhalten Sie die besten Konditionen.',
+    'pricing.subtitle': '2.000 Credits gratis zum Start. Danach zahlen Sie nach Verbrauch',
+    'pricing.subtitle2': 'Mit einem Abo erhalten Sie die besten Konditionen',
     'pricing.perMonth': '/Monat',
     'pricing.getStarted': 'Loslegen',
     'pricing.mostPopular': 'Am beliebtesten',
@@ -1108,7 +1108,7 @@ export const translations = {
     'support.form.successMessage': 'Wir melden uns in Kürze bei Ihnen.',
 
     // Footer
-    'footer.tagline': 'Native PowerPoint-Bearbeitung mit KI. Entwickelt für Berater und Strategieteams.',
+    'footer.tagline': 'KI für Decks, wo jede Folie zählt.',
     'footer.product': 'Produkt',
     'footer.pricing': 'Preise',
     'footer.demo': 'Demo anfragen',
