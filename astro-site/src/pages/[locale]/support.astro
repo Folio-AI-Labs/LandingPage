@@ -4,6 +4,7 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { languages, defaultLang } from '../../i18n/languages';
+import { SUPPORT_FORM_URL } from '../../consts';
 
 export function getStaticPaths() {
   return Object.keys(languages)
@@ -165,7 +166,7 @@ const t = useTranslations(lang);
       <div class="mt-16 max-w-[640px] mx-auto">
         <h2 class="font-display text-[28px] nav:text-[36px] font-normal text-brand mb-8 text-center">{t('support.contactTitle')}</h2>
 
-      <form id="supportForm" class="space-y-6">
+      <form id="supportForm" data-action={SUPPORT_FORM_URL} class="space-y-6">
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
@@ -205,22 +206,29 @@ const t = useTranslations(lang);
 </Layout>
 
 <script>
-  document.getElementById('supportForm')?.addEventListener('submit', function(e) {
+  const supportForm = document.getElementById('supportForm') as HTMLFormElement;
+  supportForm?.addEventListener('submit', async function(e) {
     e.preventDefault();
+    const url = supportForm.dataset.action!;
     const name = (document.getElementById('name') as HTMLInputElement).value;
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const subject = (document.getElementById('subject') as HTMLInputElement).value;
     const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+    const submitBtn = supportForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.disabled = true;
 
-    const mailSubject = encodeURIComponent(`Support: ${subject}`);
-    const mailBody = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
-    window.open(`mailto:contact@get-verso.ai?subject=${mailSubject}&body=${mailBody}`, '_blank');
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, subject, message }),
+    });
 
-    const form = document.getElementById('supportForm') as HTMLFormElement;
-    const successMsg = document.getElementById('success-msg');
-    if (form && successMsg) {
-      form.style.display = 'none';
-      successMsg.classList.remove('hidden');
+    if (response.ok) {
+      supportForm.style.display = 'none';
+      (document.getElementById('success-msg') as HTMLElement).classList.remove('hidden');
+    } else {
+      submitBtn.disabled = false;
+      alert('Something went wrong. Please try again or email us at contact@get-verso.ai.');
     }
   });
 

@@ -40,7 +40,7 @@ export const translations = {
     'cta.subtitle': 'No credit cards needed',
 
     // Demo/Contact Page
-    'demo.metaTitle': 'Book a Demo — Verso AI',
+    'demo.metaTitle': 'Book a Demo',
     'demo.metaDescription': 'Book a demo with the Verso AI team.',
     'demo.title': 'Book a demo',
     'demo.subtitle': 'See for yourself — book a 20-minute demo and we\'ll show you how it works',
@@ -51,7 +51,7 @@ export const translations = {
     'demo.backToHomepage': 'Back to homepage',
 
     // Quote Page
-    'quote.metaTitle': 'Get a Quote — Verso AI',
+    'quote.metaTitle': 'Get a Quote',
     'quote.metaDescription': 'Request a custom quote for Verso AI\'s unlimited plan.',
     'quote.title': 'Get a quote',
     'quote.subtitle': 'Tell us about your needs and we\'ll send you a custom quote',
@@ -65,7 +65,7 @@ export const translations = {
     'quote.backToHomepage': 'Back to homepage',
 
     // Pricing Page
-    'pricing.metaTitle': 'Pricing — Verso AI',
+    'pricing.metaTitle': 'Pricing',
     'pricing.metaDescription': 'Choose the perfect plan for your presentation needs. Flexible credit-based pricing for everyone.',
     'pricing.title': 'Pricing',
     'pricing.subtitle': 'Start with 2,000 free credits. Pay for what you use on top',
@@ -140,7 +140,7 @@ export const translations = {
     'pricing.faq.a5': 'Yes! We offer a free trial with 2,000 credits to test all features. No credit card required to start.',
 
     // Support Page
-    'support.metaTitle': 'Support — Verso AI',
+    'support.metaTitle': 'Support',
     'support.metaDescription': 'Get help with Verso AI. Contact our team for questions, feedback, or support.',
     'support.title': 'How can we help?',
     'support.faqTitle': 'Frequently Asked Questions',
@@ -191,16 +191,16 @@ export const translations = {
     // Blog
     'blog.allArticles': '← All articles',
     'blog.minRead': 'min read',
-    'blog.metaTitle': 'Articles — Verso AI',
+    'blog.metaTitle': 'Articles',
     'blog.metaDescription': 'Articles and research from the Verso AI team.',
     'blog.title': 'Articles',
 
     // Meta
-    'meta.title': 'Verso AI - AI for PowerPoint decks where every slide counts',
+    'meta.title': 'Home',
     'meta.description': 'Native PowerPoint editing powered by AI. Built for consultants and strategy teams.',
 
     // Privacy Policy
-    'privacy.meta.title': 'Privacy Policy — Verso AI',
+    'privacy.meta.title': 'Privacy Policy',
     'privacy.meta.description': 'How Verso AI collects, uses, and protects your personal information.',
     'privacy.title': 'Privacy Policy',
     'privacy.effectiveDate': 'Effective as of March 9, 2026',
@@ -351,7 +351,7 @@ export const translations = {
     'cta.subtitle': 'Pas besoin de carte bancaire',
 
     // Demo/Contact Page
-    'demo.metaTitle': 'Réserver une démo — Verso AI',
+    'demo.metaTitle': 'Réserver une démo',
     'demo.metaDescription': 'Réservez une démo avec l\'équipe Verso AI.',
     'demo.title': 'Réserver une démo',
     'demo.subtitle': 'Voyez par vous-même — réservez une démo de 20 min et découvrez comment Verso fonctionne',
@@ -362,7 +362,7 @@ export const translations = {
     'demo.backToHomepage': 'Retour à l\'accueil',
 
     // Quote Page
-    'quote.metaTitle': 'Demander un devis — Verso AI',
+    'quote.metaTitle': 'Demander un devis',
     'quote.metaDescription': 'Demandez un devis personnalisé pour le plan illimité de Verso AI.',
     'quote.title': 'Demander un devis',
     'quote.subtitle': 'Dites-nous vos besoins et nous vous enverrons un devis personnalisé',
@@ -376,7 +376,7 @@ export const translations = {
     'quote.backToHomepage': 'Retour à l\'accueil',
 
     // Pricing Page
-    'pricing.metaTitle': 'Tarifs — Verso AI',
+    'pricing.metaTitle': 'Tarifs',
     'pricing.metaDescription': 'Choisissez le plan adapté à vos besoins. Tarification flexible par crédits.',
     'pricing.title': 'Tarifs',
     'pricing.subtitle': '2 000 crédits gratuits. Payez selon votre usage',
@@ -451,7 +451,7 @@ export const translations = {
     'pricing.faq.a5': 'Oui ! Nous offrons un essai gratuit avec 2 000 crédits pour tester toutes les fonctionnalités. Aucune carte bancaire requise.',
 
     // Support Page
-    'support.metaTitle': 'Support — Verso AI',
+    'support.metaTitle': 'Support',
     'support.metaDescription': 'Obtenez de l\'aide avec Verso AI. Contactez notre équipe pour toute question, commentaire ou assistance.',
     'support.title': 'Comment pouvons-nous vous aider ?',
     'support.faqTitle': 'Questions fréquentes',
@@ -502,16 +502,16 @@ export const translations = {
     // Blog
     'blog.allArticles': '← Tous les articles',
     'blog.minRead': 'min de lecture',
-    'blog.metaTitle': 'Articles — Verso AI',
+    'blog.metaTitle': 'Articles',
     'blog.metaDescription': 'Articles et recherches de l\'équipe Verso AI.',
     'blog.title': 'Articles',
 
     // Meta
-    'meta.title': 'Verso AI - L\'IA pour les PowerPoint où chaque slide compte',
+    'meta.title': 'Accueil',
     'meta.description': 'Modification native de PowerPoint par IA. Conçu pour les consultants et les équipes stratégie.',
 
     // Privacy Policy
-    'privacy.meta.title': 'Politique de confidentialité — Verso AI',
+    'privacy.meta.title': 'Politique de confidentialité',
     'privacy.meta.description': 'Comment Verso AI collecte, utilise et protège vos informations personnelles.',
     'privacy.title': 'Politique de confidentialité',
     'privacy.effectiveDate': 'En vigueur depuis le 9 mars 2026',
@@ -662,7 +662,7 @@ export const translations = {
     'cta.subtitle': 'No se requiere tarjeta de crédito',
 
     // Demo/Contact Page
-    'demo.metaTitle': 'Reservar una demo — Verso AI',
+    'demo.metaTitle': 'Reservar una demo',
     'demo.metaDescription': 'Reserva una demo con el equipo de Verso AI.',
     'demo.title': 'Reservar una demo',
     'demo.subtitle': 'Compruébalo tú mismo, reserva una demo de 20min y te mostraremos cómo funciona',
@@ -673,7 +673,7 @@ export const translations = {
     'demo.backToHomepage': 'Volver al inicio',
 
     // Quote Page
-    'quote.metaTitle': 'Solicitar presupuesto — Verso AI',
+    'quote.metaTitle': 'Solicitar presupuesto',
     'quote.metaDescription': 'Solicita un presupuesto personalizado para el plan ilimitado de Verso AI.',
     'quote.title': 'Solicitar presupuesto',
     'quote.subtitle': 'Cuéntanos tus necesidades y te enviaremos un presupuesto personalizado',
@@ -687,7 +687,7 @@ export const translations = {
     'quote.backToHomepage': 'Volver al inicio',
 
     // Pricing Page
-    'pricing.metaTitle': 'Precios — Verso AI',
+    'pricing.metaTitle': 'Precios',
     'pricing.metaDescription': 'Elige el plan que se adapte a ti. Precios flexibles por créditos.',
     'pricing.title': 'Precios',
     'pricing.subtitle': '2.000 créditos gratis para empezar. Paga solo por lo que uses',
@@ -762,7 +762,7 @@ export const translations = {
     'pricing.faq.a5': '¡Sí! Ofrecemos una prueba gratuita con 2.000 créditos para probar todas las funciones. No se requiere tarjeta de crédito.',
 
     // Support Page
-    'support.metaTitle': 'Soporte — Verso AI',
+    'support.metaTitle': 'Soporte',
     'support.metaDescription': 'Obtén ayuda con Verso AI. Contacta a nuestro equipo para preguntas, comentarios o soporte.',
     'support.title': '¿Cómo podemos ayudarte?',
     'support.faqTitle': 'Preguntas frecuentes',
@@ -813,16 +813,16 @@ export const translations = {
     // Blog
     'blog.allArticles': '← Todos los artículos',
     'blog.minRead': 'min de lectura',
-    'blog.metaTitle': 'Artículos — Verso AI',
+    'blog.metaTitle': 'Artículos',
     'blog.metaDescription': 'Artículos e investigación del equipo de Verso AI.',
     'blog.title': 'Artículos',
 
     // Meta
-    'meta.title': 'Verso AI - IA para los PowerPoint donde cada slide cuenta',
+    'meta.title': 'Inicio',
     'meta.description': 'Edición nativa de PowerPoint con IA de vanguardia. Para consultores y equipos de estrategia.',
 
     // Privacy Policy
-    'privacy.meta.title': 'Política de privacidad — Verso AI',
+    'privacy.meta.title': 'Política de privacidad',
     'privacy.meta.description': 'Cómo Verso AI recopila, utiliza y protege su información personal.',
     'privacy.title': 'Política de privacidad',
     'privacy.effectiveDate': 'Vigente desde el 9 de marzo de 2026',
@@ -973,7 +973,7 @@ export const translations = {
     'cta.subtitle': 'Keine Kreditkarte erforderlich',
 
     // Demo/Contact Page
-    'demo.metaTitle': 'Demo buchen — Verso AI',
+    'demo.metaTitle': 'Demo buchen',
     'demo.metaDescription': 'Buchen Sie eine Demo mit dem Verso AI-Team.',
     'demo.title': 'Demo buchen',
     'demo.subtitle': 'Überzeugen Sie sich selbst, buchen Sie eine 20-minütige Demo und wir zeigen Ihnen, wie es funktioniert',
@@ -984,7 +984,7 @@ export const translations = {
     'demo.backToHomepage': 'Zurück zur Startseite',
 
     // Quote Page
-    'quote.metaTitle': 'Angebot anfordern — Verso AI',
+    'quote.metaTitle': 'Angebot anfordern',
     'quote.metaDescription': 'Fordern Sie ein individuelles Angebot für den Unlimited-Plan von Verso AI an.',
     'quote.title': 'Angebot anfordern',
     'quote.subtitle': 'Teilen Sie uns Ihre Anforderungen mit und wir senden Ihnen ein individuelles Angebot',
@@ -998,7 +998,7 @@ export const translations = {
     'quote.backToHomepage': 'Zurück zur Startseite',
 
     // Pricing Page
-    'pricing.metaTitle': 'Preise — Verso AI',
+    'pricing.metaTitle': 'Preise',
     'pricing.metaDescription': 'Wählen Sie den passenden Plan. Flexible Preise auf Credit-Basis.',
     'pricing.title': 'Preise',
     'pricing.subtitle': '2.000 Credits gratis zum Start. Danach zahlen Sie nach Verbrauch',
@@ -1073,7 +1073,7 @@ export const translations = {
     'pricing.faq.a5': 'Ja! Wir bieten eine kostenlose Testversion mit 2.000 Credits zum Testen aller Funktionen. Keine Kreditkarte erforderlich.',
 
     // Support Page
-    'support.metaTitle': 'Support — Verso AI',
+    'support.metaTitle': 'Support',
     'support.metaDescription': 'Hilfe und Support für Verso AI. Kontaktieren Sie unser Team für Fragen oder Feedback.',
     'support.title': 'Wie können wir helfen?',
     'support.faqTitle': 'Häufig gestellte Fragen',
@@ -1124,16 +1124,16 @@ export const translations = {
     // Blog
     'blog.allArticles': '← Alle Artikel',
     'blog.minRead': 'Min. Lesezeit',
-    'blog.metaTitle': 'Artikel — Verso AI',
+    'blog.metaTitle': 'Artikel',
     'blog.metaDescription': 'Artikel und Forschung vom Verso AI-Team.',
     'blog.title': 'Artikel',
 
     // Meta
-    'meta.title': 'Verso AI - KI für PowerPoint-Decks, wo jede Folie zählt',
+    'meta.title': 'Startseite',
     'meta.description': 'Native PowerPoint-Bearbeitung mit KI. Für Berater und Strategie-Teams.',
 
     // Privacy Policy
-    'privacy.meta.title': 'Datenschutzerklärung — Verso AI',
+    'privacy.meta.title': 'Datenschutzerklärung',
     'privacy.meta.description': 'Wie Verso AI Ihre personenbezogenen Daten erfasst, verwendet und schützt.',
     'privacy.title': 'Datenschutzerklärung',
     'privacy.effectiveDate': 'Gültig ab dem 9. März 2026',

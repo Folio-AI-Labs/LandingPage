@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations, getLocalizedPath } from '../../i18n/utils';
 import { languages, defaultLang } from '../../i18n/languages';
+import { QUOTE_FORM_URL } from '../../consts';
 
 export function getStaticPaths() {
   return Object.keys(languages)
@@ -16,7 +17,6 @@ const t = useTranslations(lang);
 
 <Layout title={t('quote.metaTitle')} description={t('quote.metaDescription')}>
 
-  <!-- Quote Form Section -->
   <section class="min-h-screen flex flex-col justify-center items-center py-[60px] px-[30px] nav:py-20 nav:px-[60px] relative overflow-hidden">
     <div class="absolute inset-0 bg-center bg-[length:100%] opacity-50 z-0" style="background-image: url('/monet-quote2.jpg')"></div>
     <div class="max-w-[600px] w-full bg-white rounded-2xl py-10 px-[30px] nav:p-[60px] border-2 border-brand-border shadow-md relative z-10">
@@ -25,21 +25,12 @@ const t = useTranslations(lang);
 
       <div class="min-h-[140px]">
         <form class="flex flex-col gap-6" id="quoteForm">
-          <div class="flex flex-col gap-2">
-            <input type="text" id="fullName" name="fullName" placeholder={t('quote.fullNamePlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
-          </div>
+          <input type="text" id="fullName" name="fullName" placeholder={t('quote.fullNamePlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
+          <input type="email" id="email" name="email" placeholder={t('quote.emailPlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
+          <input type="tel" id="phone" name="phone" placeholder={t('quote.phonePlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
+          <input type="number" id="licenses" name="licenses" placeholder={t('quote.licensesPlaceholder')} required min="1" class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
 
-          <div class="flex flex-col gap-2">
-            <input type="email" id="email" name="email" placeholder={t('quote.emailPlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <input type="tel" id="phone" name="phone" placeholder={t('quote.phonePlaceholder')} required class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <input type="number" id="licenses" name="licenses" placeholder={t('quote.licensesPlaceholder')} required min="1" class="py-3.5 px-4 text-base border-2 border-brand-border rounded-lg font-body transition-colors duration-300 focus:outline-none focus:border-brand" />
-          </div>
+          <p id="errorMessage" class="hidden text-sm text-red-600 text-center">Something went wrong. Please try again or email us at contact@get-verso.ai.</p>
 
           <button type="submit" id="submitButton" disabled class="w-full bg-brand text-white py-4 border-none rounded-pill text-base font-semibold cursor-pointer transition duration-300 font-body hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none">{t('quote.submitButton')}</button>
         </form>
@@ -59,47 +50,49 @@ const t = useTranslations(lang);
   <Footer />
 </Layout>
 
-<script>
-  const fullNameInput = document.getElementById('fullName') as HTMLInputElement;
-  const emailInput = document.getElementById('email') as HTMLInputElement;
-  const phoneInput = document.getElementById('phone') as HTMLInputElement;
-  const licensesInput = document.getElementById('licenses') as HTMLInputElement;
-  const submitButton = document.getElementById('submitButton') as HTMLButtonElement;
+<script define:vars={{ QUOTE_FORM_URL }}>
+  const fullNameInput = document.getElementById('fullName');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const licensesInput = document.getElementById('licenses');
+  const submitButton = document.getElementById('submitButton');
+  const errorMessage = document.getElementById('errorMessage');
 
-  // Function to check if all fields are filled
   function checkFormValidity() {
-    const allFieldsFilled =
-      fullNameInput.value.trim() !== '' &&
-      emailInput.value.trim() !== '' &&
-      phoneInput.value.trim() !== '' &&
-      licensesInput.value.trim() !== '';
-
-    submitButton.disabled = !allFieldsFilled;
+    submitButton.disabled = !(
+      fullNameInput.value.trim() &&
+      emailInput.value.trim() &&
+      phoneInput.value.trim() &&
+      licensesInput.value.trim()
+    );
   }
 
-  // Add event listeners to all inputs
   [fullNameInput, emailInput, phoneInput, licensesInput].forEach(input => {
     input?.addEventListener('input', checkFormValidity);
   });
 
   document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const fullName = fullNameInput.value;
-    const email = emailInput.value;
-    const phone = phoneInput.value;
-    const licenses = licensesInput.value;
-    const form = document.getElementById('quoteForm') as HTMLFormElement;
-    const confirmationMessage = document.getElementById('confirmationMessage');
+    submitButton.disabled = true;
+    errorMessage.classList.add('hidden');
 
-    // Open mailto link to notify about quote request
-    const subject = encodeURIComponent('Quote request');
-    const body = encodeURIComponent(`User ${fullName} at address ${email} is requesting a quote for ${licenses} licenses, contact is ${phone}`);
-    window.open(`mailto:contact@get-verso.ai?subject=${subject}&body=${body}`, '_blank');
+    const response = await fetch(QUOTE_FORM_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        fullName: fullNameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+        licenses: licensesInput.value,
+      }),
+    });
 
-    // Hide the form and show confirmation message
-    if (form && confirmationMessage) {
-      form.style.display = 'none';
-      confirmationMessage.classList.remove('hidden');
+    if (response.ok) {
+      document.getElementById('quoteForm').style.display = 'none';
+      document.getElementById('confirmationMessage').classList.remove('hidden');
+    } else {
+      errorMessage.classList.remove('hidden');
+      submitButton.disabled = false;
     }
   });
 </script>
