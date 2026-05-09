@@ -16,6 +16,10 @@ export const translations = {
     'hero.subtitle1': 'Verso is the only AI agent to deliver professional-grade slides',
     'hero.subtitle2': 'And it works with you directly in PowerPoint',
     'hero.trustedBy': 'Trusted by',
+    'examples.subtitle': 'Some decks made in one-shot with Verso (click to open):',
+    'examples.draghi': 'Draghi report summary',
+    'examples.stateofai': 'State of AI 2024',
+    'examples.airfrance': 'Air France strategy review',
 
     // Features Section
     'features.title': 'No more late nights on slides: Verso ships them',
@@ -327,6 +331,10 @@ export const translations = {
     'hero.subtitle1': 'Verso est le seul agent IA à produire des slides de qualité professionnelle',
     'hero.subtitle2': 'Et il travaille avec vous, directement dans PowerPoint',
     'hero.trustedBy': 'Ils nous font confiance',
+    'examples.subtitle': 'Quelques decks faits en one-shot avec Verso (cliquez pour ouvrir) :',
+    'examples.draghi': 'Synthèse du rapport Draghi',
+    'examples.stateofai': 'State of AI 2024',
+    'examples.airfrance': 'Revue stratégique Air France',
 
     // Features Section
     'features.title': 'Plus de nuits blanches sur vos slides: Verso s\'en charge',
@@ -638,6 +646,10 @@ export const translations = {
     'hero.subtitle1': 'Verso es el único agente de IA que produce slides de calidad profesional',
     'hero.subtitle2': 'Y trabaja contigo directamente en PowerPoint',
     'hero.trustedBy': 'Confían en nosotros',
+    'examples.subtitle': 'Algunos decks hechos en one-shot con Verso (haz clic para abrir):',
+    'examples.draghi': 'Resumen del informe Draghi',
+    'examples.stateofai': 'State of AI 2024',
+    'examples.airfrance': 'Revisión estratégica Air France',
 
     // Features Section
     'features.title': 'No más noches en vela con tus slides: Verso se encarga',
@@ -949,6 +961,10 @@ export const translations = {
     'hero.subtitle1': 'Verso ist der einzige KI-Agent für professionelle Folien',
     'hero.subtitle2': 'Und das direkt in PowerPoint, an Ihrer Seite',
     'hero.trustedBy': 'Sie vertrauen auf uns',
+    'examples.subtitle': 'Einige Decks, in einem Schuss mit Verso erstellt (zum Öffnen klicken):',
+    'examples.draghi': 'Zusammenfassung des Draghi-Berichts',
+    'examples.stateofai': 'State of AI 2024',
+    'examples.airfrance': 'Air France Strategie-Review',
 
     // Features Section
     'features.title': 'Keine Nachtschichten mehr für Ihre Folien: Verso übernimmt',
