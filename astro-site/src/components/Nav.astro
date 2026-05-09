@@ -18,7 +18,7 @@ const navLinks = [
 ];
 ---
 
-<nav class="relative z-[1002] grid grid-cols-[auto_1fr] nav:grid-cols-[auto_1fr_auto] items-center gap-6 py-4 px-6 nav:px-[60px] bg-brand-bg/80 border-b border-black/5 backdrop-blur-sm font-heading overflow-visible">
+<nav class="relative z-[1002] grid grid-cols-[auto_1fr] nav:grid-cols-[auto_1fr_auto] items-center gap-6 py-4 px-6 nav:px-[60px] bg-white/80 border-b border-black/5 backdrop-blur-sm font-heading overflow-visible">
   <a href={getLocalizedPath('/', lang)} class="flex items-center gap-2 text-[15px] font-semibold text-brand no-underline transition-colors duration-300 hover:text-black">
     <img src="/v_icon.svg" alt="Verso AI Logo" class="w-[29px] h-[29px]" />
     <span class="font-heading">Verso AI</span>
@@ -50,7 +50,7 @@ const navLinks = [
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu block nav:hidden fixed top-[72px] left-0 right-0 bg-brand-bg/95 px-6 z-[1000] max-h-0 overflow-hidden transition duration-300 backdrop-blur-sm [&.active]:max-h-[500px] [&.active]:py-5">
+<div class="mobile-menu block nav:hidden fixed top-[72px] left-0 right-0 bg-white/95 px-6 z-[1000] max-h-0 overflow-hidden transition duration-300 backdrop-blur-sm [&.active]:max-h-[500px] [&.active]:py-5">
   <ul class="list-none flex flex-col gap-4">
     {navLinks.map(link => (
       <li>
