@@ -11,7 +11,7 @@ Un analyste ou un consultant junior dans un cabinet de conseil en stratégie pas
 
 C'est presque la moitié d'une semaine de travail. Chaque semaine.
 
-Nous avons interrogé une douzaine de consultants dans des cabinets MBB, Big 4 et indépendants en construisant Verso. Un senior manager dans un cabinet du top 3 l'a dit simplement : *« Je passe 40 % de mon temps sur les slides. Peut-être 10 % de ce temps est vraiment de la réflexion. Le reste, c'est de la mise en forme. »*
+Nous avons interrogé une douzaine de consultants dans des cabinets MBB, Big 4 et indépendants en construisant Folio. Un senior manager dans un cabinet du top 3 l'a dit simplement : *« Je passe 40 % de mon temps sur les slides. Peut-être 10 % de ce temps est vraiment de la réflexion. Le reste, c'est de la mise en forme. »*
 
 Comment en est-on arrivé là ?
 

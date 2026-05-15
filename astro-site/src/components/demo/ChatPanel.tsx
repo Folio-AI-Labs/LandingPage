@@ -13,7 +13,7 @@ interface ChatPanelProps {
   uploadedFile?: string | null
 }
 
-export default function ChatPanel({ messages, toolCalls, isTyping, composerText, isRunning, composerPlaceholder = 'Ask Verso to edit your slides', uploadedFile }: ChatPanelProps) {
+export default function ChatPanel({ messages, toolCalls, isTyping, composerText, isRunning, composerPlaceholder = 'Ask Folio to edit your slides', uploadedFile }: ChatPanelProps) {
   const threadRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

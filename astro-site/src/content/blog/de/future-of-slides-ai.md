@@ -75,7 +75,7 @@ Was sich ändert, ist das Verhältnis zwischen Denk- und Produktionszeit. Für v
 
 ## Unsere These
 
-Wir bauen Verso auf einer klaren Hypothese: Die Tools, die sich in professionelle Workflows einbetten werden, sind die, die *innerhalb* bestehender Dateien arbeiten - nicht um sie herum.
+Wir bauen Folio auf einer klaren Hypothese: Die Tools, die sich in professionelle Workflows einbetten werden, sind die, die *innerhalb* bestehender Dateien arbeiten - nicht um sie herum.
 
 Jede große Beratung hat ein Folien-Template, das Jahre an Markeninvestition und Klientenerwartungen kodiert. Eine KI, die das ignoriert, produziert Output, der weggeworfen wird. Eine KI, die es versteht, wird Teil des Workflows.
 

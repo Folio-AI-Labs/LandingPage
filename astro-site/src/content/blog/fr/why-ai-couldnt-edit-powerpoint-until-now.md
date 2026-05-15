@@ -73,12 +73,12 @@ Sur notre benchmark PrezEval :
 
 Ce n'est pas une amélioration marginale. C'est la différence entre un outil qui fonctionne de temps en temps et un outil sur lequel on peut compter.
 
-Cela signifie aussi que Verso peut faire des choses que les autres outils ne peuvent tout simplement pas faire : éditer des slides existantes en préservant leur structure, appliquer une mise en forme conforme au template, modifier des graphiques avec de vraies données, et gérer toute la complexité des objets PowerPoint - sans générer un nouveau fichier.
+Cela signifie aussi que Folio peut faire des choses que les autres outils ne peuvent tout simplement pas faire : éditer des slides existantes en préservant leur structure, appliquer une mise en forme conforme au template, modifier des graphiques avec de vraies données, et gérer toute la complexité des objets PowerPoint - sans générer un nouveau fichier.
 
 ## Pourquoi c'est un avantage durable
 
 Construire ce codec a demandé un investissement ingénierie significatif, et il continue d'évoluer au fil des cas particuliers rencontrés dans des fichiers PowerPoint réels. Ce n'est pas une fonctionnalité qui peut être rapidement reproduite.
 
-Plus important encore, il ne fait que gagner en valeur à mesure que les LLM progressent. Chaque fois qu'un nouveau modèle frontier sort, les performances de Verso s'améliorent automatiquement - parce que le goulot d'étranglement n'a jamais été le modèle, mais l'interface entre le modèle et le format de fichier.
+Plus important encore, il ne fait que gagner en valeur à mesure que les LLM progressent. Chaque fois qu'un nouveau modèle frontier sort, les performances de Folio s'améliorent automatiquement - parce que le goulot d'étranglement n'a jamais été le modèle, mais l'interface entre le modèle et le format de fichier.
 
 Nous avons résolu cette interface.

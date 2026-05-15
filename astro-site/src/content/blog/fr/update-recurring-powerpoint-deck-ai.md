@@ -21,7 +21,7 @@ Le quatrième problème, c'est la vérification finale de la mise en forme. Une 
 
 ## Le workflow de mise à jour avec l'IA
 
-Voici comment le même processus fonctionne avec Verso.
+Voici comment le même processus fonctionne avec Folio.
 
 ### Étape 1 : Préparer vos données (ça, ça ne change pas)
 
@@ -29,11 +29,11 @@ Avant toute mise à jour de deck, vous avez besoin de vos nouveaux chiffres. Ext
 
 ### Étape 2 : Mettre à jour toutes les références de période en un seul passage
 
-Ouvrez votre deck dans PowerPoint avec Verso actif. Commencez par une mise à jour globale des périodes :
+Ouvrez votre deck dans PowerPoint avec Folio actif. Commencez par une mise à jour globale des périodes :
 
 *« Mets à jour toutes les références dans le deck de T3 2025 à T4 2025. Mets à jour la date dans le pied de page et la slide de titre en conséquence. Remplace "neuf mois clos au 30 septembre" par "douze mois clos au 31 décembre". »*
 
-Verso scanne chaque élément de texte sur chaque slide et met à jour les occurrences correspondantes. Ce qui impliquait autrefois de parcourir 40 slides devient une opération de 20 secondes. Cela seul élimine l'une des sources d'erreur les plus fréquentes dans la production de decks récurrents.
+Folio scanne chaque élément de texte sur chaque slide et met à jour les occurrences correspondantes. Ce qui impliquait autrefois de parcourir 40 slides devient une opération de 20 secondes. Cela seul élimine l'une des sources d'erreur les plus fréquentes dans la production de decks récurrents.
 
 ### Étape 3 : Mettre à jour les graphiques avec les nouvelles données
 
@@ -59,11 +59,11 @@ Relisez et corrigez le brouillon. Cela prend 5 minutes au lieu de 20.
 
 *« Passe en revue toutes les slides et signale les zones de texte où le texte déborde. Applique des tailles de police cohérentes : corps de texte 10 pt, encadrés de callout 9 pt. Vérifie que tous les titres sont positionnés de manière uniforme. »*
 
-Verso vérifie et corrige. Plus besoin de relecture slide par slide.
+Folio vérifie et corrige. Plus besoin de relecture slide par slide.
 
 ## La comparaison des temps
 
-| Tâche | Manuel | Avec Verso |
+| Tâche | Manuel | Avec Folio |
 |---|---|---|
 | Mise à jour des références de période | 30-45 min | 2 min |
 | Mise à jour des données de graphiques (20 graphiques) | 90-120 min | 20 min |

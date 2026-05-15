@@ -21,7 +21,7 @@ Das vierte Problem ist die abschließende Formatierungsprüfung. Nach allen Aktu
 
 ## Der KI-gestützte Update-Workflow
 
-So läuft derselbe Prozess mit Verso ab.
+So läuft derselbe Prozess mit Folio ab.
 
 ### Schritt 1: Daten vorbereiten (dieser Teil ändert sich nicht)
 
@@ -29,11 +29,11 @@ Vor jedem Deck-Update braucht man die aktuellen Zahlen. Diese werden wie gewohnt
 
 ### Schritt 2: Alle Periodenangaben in einem Durchgang aktualisieren
 
-Das Deck in PowerPoint mit aktivem Verso öffnen. Zunächst ein globales Perioden-Update:
+Das Deck in PowerPoint mit aktivem Folio öffnen. Zunächst ein globales Perioden-Update:
 
 *„Aktualisiere alle Periodenangaben im gesamten Deck von Q3 2025 auf Q4 2025. Aktualisiere das Datum in der Fußzeile und auf der Titelfolie entsprechend. Ändere ‚neun Monate zum 30. September' in ‚zwölf Monate zum 31. Dezember'."*
 
-Verso scannt jedes Textelement auf jeder Folie und aktualisiert passende Referenzen. Was früher bedeutete, sich durch 40 Folien zu kämpfen, ist ein 20-Sekunden-Vorgang. Das allein eliminiert eine der häufigsten Fehlerquellen bei der Produktion wiederkehrender Decks.
+Folio scannt jedes Textelement auf jeder Folie und aktualisiert passende Referenzen. Was früher bedeutete, sich durch 40 Folien zu kämpfen, ist ein 20-Sekunden-Vorgang. Das allein eliminiert eine der häufigsten Fehlerquellen bei der Produktion wiederkehrender Decks.
 
 ### Schritt 3: Charts mit neuen Daten aktualisieren
 
@@ -59,11 +59,11 @@ Entwurf prüfen und bearbeiten. Das dauert 5 Minuten statt 20.
 
 *„Überprüfe alle Folien und markiere Textboxen, in denen Text überläuft. Einheitliche Schriftgrößen anwenden: Fließtext 10 pt, Callout-Boxen 9 pt. Vergewissern, dass alle Titel konsistent positioniert sind."*
 
-Verso prüft und korrigiert. Kein manueller Folie-für-Folie-Review erforderlich.
+Folio prüft und korrigiert. Kein manueller Folie-für-Folie-Review erforderlich.
 
 ## Der Zeitvergleich
 
-| Aufgabe                              | Manuell       | Mit Verso   |
+| Aufgabe                              | Manuell       | Mit Folio   |
 |--------------------------------------|---------------|-------------|
 | Periodenangaben aktualisieren        | 30-45 Min.    | 2 Min.      |
 | Chart-Daten aktualisieren (20 Charts)| 90-120 Min.   | 20 Min.     |

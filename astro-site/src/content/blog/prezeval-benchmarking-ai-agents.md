@@ -9,7 +9,7 @@ lang: en
 
 How well can an AI agent reproduce professional consulting slides from visual guidance?
 
-After building Verso, we've come to the belief that our aproach produces far superior results to others.
+After building Folio, we've come to the belief that our aproach produces far superior results to others.
 
 But let's put numbers on that.
 
@@ -60,17 +60,17 @@ We compared five configurations:
 
 | Config                          | Score | Time   | Steps | Tasks |
 |---------------------------------|-------|--------|-------|-------|
-| **Verso Max**                   | 70.8% | 293.4s | 6.3   | 60/61 |
-| **Verso Medium**                | 49.6% | 207.7s | 8.8   | 61/61 |
-| **Verso Fast**                  | 38.9% | 157.5s | 9.5   | 61/61 |
+| **Folio Max**                   | 70.8% | 293.4s | 6.3   | 60/61 |
+| **Folio Medium**                | 49.6% | 207.7s | 8.8   | 61/61 |
+| **Folio Fast**                  | 38.9% | 157.5s | 9.5   | 61/61 |
 | Claude for Powerpoint (Opus)    | 36.5% | 176.5s | 11.6  | 61/61 |
 | Claude for Powerpoint (Sonnet)  | 32.4% | 154.4s | 9.2   | 61/61 |
 
-**Verso Max** leads by a wide margin at 70.8%, nearly doubling the score of the next-best non-Verso agent. It achieves this with the fewest steps on average (6.3), suggesting a more efficient approach to slide reproduction, though it takes longer per task (293.4s) due to deeper reasoning.
+**Folio Max** leads by a wide margin at 70.8%, nearly doubling the score of the next-best non-Folio agent. It achieves this with the fewest steps on average (6.3), suggesting a more efficient approach to slide reproduction, though it takes longer per task (293.4s) due to deeper reasoning.
 
-**Verso Medium** scores 49.6%: most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
+**Folio Medium** scores 49.6%: most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
 
-**Verso Fast** trades accuracy for speed, completing tasks 24% faster than Verso Medium while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
+**Folio Fast** trades accuracy for speed, completing tasks 24% faster than Folio Medium while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
 
 **Claude for Powerpoint (Opus)** scores 36.5% despite using the most steps (11.6) and significantly more compute. **Claude for Powerpoint (Sonnet)** scores 32.4%, the lowest of all configurations, while being the fastest at 154.4s per task.
 
@@ -80,7 +80,7 @@ We compared five configurations:
 
 Breaking down scores by what the slide contains reveals clear patterns:
 
-| Content type       | Verso Medium | Claude for PPT |
+| Content type       | Folio Medium | Claude for PPT |
 |--------------------|--------------|----------------|
 | Dense text         | 66.8%        | 48.3%          |
 | Non-chart slides   | 63.5%        | 44.8%          |
@@ -92,22 +92,22 @@ Breaking down scores by what the slide contains reveals clear patterns:
 
 Text-heavy slides are the easiest category, while maps are the hardest (equally bad for both agents). Charts, which make up 54% of the benchmark, pull the overall score down significantly.
 
-### Where Verso excels
+### Where Folio excels
 
-Verso consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, Verso Max routinely achieves near-perfect scores, and even Verso Medium and Verso Fast reach 75-100%, while both Claude for Powerpoint variants typically lag significantly behind.
+Folio consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, Folio Max routinely achieves near-perfect scores, and even Folio Medium and Folio Fast reach 75-100%, while both Claude for Powerpoint variants typically lag significantly behind.
 
 ### What remains hard
 
 About 20% of the benchmark is essentially unsolved: all five agents score 25% or below on the hardest tasks. The common failure modes:
 
-- **Geographic maps.** Agents struggle to produce accurate map visualizations. They may substitute the map with an unrelated shape, render it at the wrong scale, or lose state-level color coding. Verso does attempt maps but the results are consistently poor: a US map might appear shrunken with missing detail, or a world map might be replaced by a circular diagram.
+- **Geographic maps.** Agents struggle to produce accurate map visualizations. They may substitute the map with an unrelated shape, render it at the wrong scale, or lose state-level color coding. Folio does attempt maps but the results are consistently poor: a US map might appear shrunken with missing detail, or a world map might be replaced by a circular diagram.
 - **Complex charts with dense data.** Combo charts (bars + lines on dual axes), multi-panel dashboards, and heatmap matrices consistently break all agents. Common failures include entire charts missing, axis labels dropped, and data values absent.
 - **Custom composite shapes.** Funnels built from trapezoids, quadrant charts with curved dividers, and similar constructions require precise layering and alignment that agents can't yet achieve reliably.
 
-### Where Verso still has room to grow
+### Where Folio still has room to grow
 
-Even Verso Max, despite its 70.8% average, still struggles on some tasks (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Verso's handling of these patterns.
+Even Folio Max, despite its 70.8% average, still struggles on some tasks (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Folio's handling of these patterns.
 
-Speed is also an area of focus. Verso Max takes nearly 5 minutes per task, and even Verso Fast averages over 2.5 minutes. A good AI assistant should feel more like a streaming continuation of your work rather than a tennis game where you wait for the ball to come back. We will be working on reducing latency significantly in the coming weeks.
+Speed is also an area of focus. Folio Max takes nearly 5 minutes per task, and even Folio Fast averages over 2.5 minutes. A good AI assistant should feel more like a streaming continuation of your work rather than a tennis game where you wait for the ball to come back. We will be working on reducing latency significantly in the coming weeks.
 
-All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/VersoLabs/PrezEvalPublic).
+All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/FolioLabs/PrezEvalPublic).

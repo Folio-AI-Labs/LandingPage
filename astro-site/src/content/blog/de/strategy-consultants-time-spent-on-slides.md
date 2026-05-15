@@ -11,7 +11,7 @@ Der durchschnittliche Analyst oder Associate bei einer Strategieberatung verbrin
 
 Das ist fast die Hälfte einer Arbeitswoche. Jede Woche.
 
-Wir haben beim Aufbau von Verso ein Dutzend Berater aus MBB, Big 4 und unabhängigen Firmen befragt. Ein Senior Manager bei einer der drei großen Beratungen brachte es direkt auf den Punkt: *„Ich verbringe 40 % meiner Zeit mit Folien. Vielleicht 10 % davon ist wirklich Denken. Der Rest ist Formatieren."*
+Wir haben beim Aufbau von Folio ein Dutzend Berater aus MBB, Big 4 und unabhängigen Firmen befragt. Ein Senior Manager bei einer der drei großen Beratungen brachte es direkt auf den Punkt: *„Ich verbringe 40 % meiner Zeit mit Folien. Vielleicht 10 % davon ist wirklich Denken. Der Rest ist Formatieren."*
 
 Wie ist es so weit gekommen?
 

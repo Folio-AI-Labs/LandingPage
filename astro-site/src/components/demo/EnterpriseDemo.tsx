@@ -22,7 +22,7 @@ const pptUI: Record<string, {
     ready: 'Ready',
     clickTitle: 'Click to add title',
     clickSubtitle: 'Click to add subtitle',
-    composerPlaceholder: 'Ask Verso to edit your slides',
+    composerPlaceholder: 'Ask Folio to edit your slides',
   },
   fr: {
     fileTitle: 'Nouvelle Présentation.pptx',
@@ -31,7 +31,7 @@ const pptUI: Record<string, {
     ready: 'Prêt',
     clickTitle: 'Cliquez pour ajouter un titre',
     clickSubtitle: 'Cliquez pour ajouter un sous-titre',
-    composerPlaceholder: 'Demandez à Verso de modifier vos slides',
+    composerPlaceholder: 'Demandez à Folio de modifier vos slides',
   },
   es: {
     fileTitle: 'Nueva Presentación.pptx',
@@ -40,7 +40,7 @@ const pptUI: Record<string, {
     ready: 'Listo',
     clickTitle: 'Haga clic para agregar título',
     clickSubtitle: 'Haga clic para agregar subtítulo',
-    composerPlaceholder: 'Pide a Verso que edite tus diapositivas',
+    composerPlaceholder: 'Pide a Folio que edite tus diapositivas',
   },
   de: {
     fileTitle: 'Neue Präsentation.pptx',
@@ -49,7 +49,7 @@ const pptUI: Record<string, {
     ready: 'Bereit',
     clickTitle: 'Titel durch Klicken hinzufügen',
     clickSubtitle: 'Untertitel durch Klicken hinzufügen',
-    composerPlaceholder: 'Bitten Sie Verso, Ihre Folien zu bearbeiten',
+    composerPlaceholder: 'Bitten Sie Folio, Ihre Folien zu bearbeiten',
   },
 }
 
@@ -77,7 +77,7 @@ function MicrosoftIcon() {
   )
 }
 
-type Phase = 'idle' | 'clicking-microsoft' | 'popup-open' | 'typing-email' | 'typing-password' | 'authenticating' | 'success' | 'closing' | 'showing-verso'
+type Phase = 'idle' | 'clicking-microsoft' | 'popup-open' | 'typing-email' | 'typing-password' | 'authenticating' | 'success' | 'closing' | 'showing-folio'
 
 export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
   const ui = pptUI[lang] || pptUI.en
@@ -167,13 +167,13 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
       setShowPopup(false)
     }, elapsed)
 
-    // Show Verso chat interface
+    // Show Folio chat interface
     elapsed += PAUSE_MED
     schedule(() => {
-      setPhase('showing-verso')
+      setPhase('showing-folio')
     }, elapsed)
 
-    // Hold on Verso interface
+    // Hold on Folio interface
     elapsed += PAUSE_LONG * 2
 
     // Loop
@@ -213,7 +213,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
 
       {/* Sign in heading */}
       <h2 style={{ fontSize: '17px', fontWeight: 600, color: '#1a1a1a', textAlign: 'center' as const, marginBottom: '6px' }}>Sign in</h2>
-      <p style={{ fontSize: '9px', color: '#666', textAlign: 'center' as const, marginBottom: '17px' }}>to continue to Verso AI</p>
+      <p style={{ fontSize: '9px', color: '#666', textAlign: 'center' as const, marginBottom: '17px' }}>to continue to Folio AI</p>
 
       {phase === 'success' ? (
         // Success message
@@ -314,8 +314,8 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
   ) : null
 
   // Decide which panel to show based on phase
-  const showLoginPanel = phase !== 'showing-verso'
-  const showVersoPanel = phase === 'showing-verso'
+  const showLoginPanel = phase !== 'showing-folio'
+  const showFolioPanel = phase === 'showing-folio'
 
   const loginPanel = showPanel && showLoginPanel ? (
     <div
@@ -346,7 +346,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
         borderBottom: '1px solid #d5d5d5',
         flexShrink: 0,
       }}>
-        Verso AI
+        Folio AI
       </div>
 
       {/* Login content */}
@@ -367,7 +367,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
           textAlign: 'center' as const,
           marginBottom: '2px',
         }}>
-          Verso AI
+          Folio AI
         </div>
 
         {/* SSO buttons */}
@@ -493,7 +493,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
     </div>
   ) : null
 
-  const versoPanel = showPanel && showVersoPanel ? (
+  const folioPanel = showPanel && showFolioPanel ? (
     <div
       className="demo-chat-panel"
       style={{
@@ -522,7 +522,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
         borderBottom: '1px solid #d5d5d5',
         flexShrink: 0,
       }}>
-        Verso AI
+        Folio AI
       </div>
       <ChatPanel
         messages={[]}
@@ -540,7 +540,7 @@ export default function EnterpriseDemo({ lang = 'en' }: { lang?: string }) {
       slides={slides}
       visibleSlides={visibleSlides}
       activeSlide={activeSlide}
-      sidePanel={showVersoPanel ? versoPanel : loginPanel}
+      sidePanel={showFolioPanel ? folioPanel : loginPanel}
       onSlideClick={handleSlideClick}
       fileTitle={ui.fileTitle}
       ribbonTabs={ui.tabs}

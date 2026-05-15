@@ -21,7 +21,7 @@ The fourth problem is the final formatting check. After all the updates, someone
 
 ## The AI-powered update workflow
 
-Here's how the same process works with Verso.
+Here's how the same process works with Folio.
 
 ### Step 1: Prepare your data (this part doesn't change)
 
@@ -29,11 +29,11 @@ Before any deck update, you need your updated numbers. Pull them from your finan
 
 ### Step 2: Update all period references in one pass
 
-Open your deck in PowerPoint with Verso active. Start with a global period update:
+Open your deck in PowerPoint with Folio active. Start with a global period update:
 
 *"Update all references throughout the deck from Q3 2025 to Q4 2025. Update the date in the footer and title slide accordingly. Update 'nine months ended September' to 'twelve months ended December'."*
 
-Verso scans every text element on every slide and updates matching references. What used to mean hunting through 40 slides is a 20-second operation. This alone eliminates one of the most common error sources in recurring deck production.
+Folio scans every text element on every slide and updates matching references. What used to mean hunting through 40 slides is a 20-second operation. This alone eliminates one of the most common error sources in recurring deck production.
 
 ### Step 3: Update charts with new data
 
@@ -59,11 +59,11 @@ Review and edit the draft. This takes 5 minutes instead of 20.
 
 *"Review all slides and flag any text boxes where the text is overflowing. Apply consistent font sizes: body text 10pt, callout boxes 9pt. Verify all titles are consistently positioned."*
 
-Verso checks and corrects. No manual slide-by-slide review needed.
+Folio checks and corrects. No manual slide-by-slide review needed.
 
 ## The time comparison
 
-| Task | Manual | With Verso |
+| Task | Manual | With Folio |
 |---|---|---|
 | Period reference updates | 30-45 min | 2 min |
 | Chart data updates (20 charts) | 90-120 min | 20 min |

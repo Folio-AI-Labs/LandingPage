@@ -1,10 +1,10 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-const verso = [
-  { name: 'Verso Max', score: 70.8, time: 293.4 },
-  { name: 'Verso Medium', score: 49.6, time: 207.7 },
-  { name: 'Verso Fast', score: 38.9, time: 157.5 },
+const folio = [
+  { name: 'Folio Max', score: 70.8, time: 293.4 },
+  { name: 'Folio Medium', score: 49.6, time: 207.7 },
+  { name: 'Folio Fast', score: 38.9, time: 157.5 },
 ];
 
 const claude = [
@@ -18,8 +18,8 @@ export default function PerformanceSpeedChart() {
       data={[
         // Pareto frontier dashed line
         {
-          x: verso.map(d => d.time),
-          y: verso.map(d => d.score),
+          x: folio.map(d => d.time),
+          y: folio.map(d => d.score),
           mode: 'lines',
           line: { color: '#000000', width: 2, dash: 'dash' },
           showlegend: false,
@@ -34,16 +34,16 @@ export default function PerformanceSpeedChart() {
           showlegend: false,
           hoverinfo: 'skip',
         },
-        // Verso markers
+        // Folio markers
         {
-          x: verso.map(d => d.time),
-          y: verso.map(d => d.score),
+          x: folio.map(d => d.time),
+          y: folio.map(d => d.score),
           mode: 'markers+text',
           marker: { color: '#000000', size: 16, symbol: 'diamond' },
-          text: verso.map(d => d.name),
+          text: folio.map(d => d.name),
           textposition: ['top center', 'bottom center', 'bottom center'],
           textfont: { size: 13, color: '#000000', family: 'Inter, sans-serif', weight: 600 },
-          name: 'Verso',
+          name: 'Folio',
           hovertemplate: '%{text}<br>Score: %{y:.1f}%<br>Time: %{x:.0f}s<extra></extra>',
         },
         // Claude markers

@@ -75,7 +75,7 @@ Ce qui change, c'est le rapport entre le temps passé à réfléchir et le temps
 
 ## Notre pari
 
-Nous construisons Verso sur une hypothèse précise : les outils qui s'intègreront dans les workflows professionnels seront ceux qui fonctionnent *au sein* des fichiers existants, et non autour d'eux.
+Nous construisons Folio sur une hypothèse précise : les outils qui s'intègreront dans les workflows professionnels seront ceux qui fonctionnent *au sein* des fichiers existants, et non autour d'eux.
 
 Chaque grande entreprise dispose d'un template de slides qui condense des années d'investissement en charte graphique et d'attentes clients. Une IA qui l'ignore produit un résultat qui finit à la corbeille. Une IA qui le comprend devient partie intégrante du workflow.
 

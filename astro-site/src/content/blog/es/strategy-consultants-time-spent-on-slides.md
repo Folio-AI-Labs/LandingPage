@@ -11,7 +11,7 @@ El analista o associate medio en una firma de consultoría estratégica dedica a
 
 Eso es casi la mitad de una semana laboral. Cada semana.
 
-Entrevistamos a una docena de consultores de MBB, Big 4 y firmas independientes mientras construíamos Verso. Un senior manager de una de las tres grandes lo dijo sin rodeos: *"El 40% de mi tiempo lo dedico a diapositivas. Quizás el 10% de eso es pensar. El resto es formatear."*
+Entrevistamos a una docena de consultores de MBB, Big 4 y firmas independientes mientras construíamos Folio. Un senior manager de una de las tres grandes lo dijo sin rodeos: *"El 40% de mi tiempo lo dedico a diapositivas. Quizás el 10% de eso es pensar. El resto es formatear."*
 
 Entonces, ¿cómo hemos llegado hasta aquí?
 

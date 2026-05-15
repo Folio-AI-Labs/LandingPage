@@ -11,11 +11,11 @@ Sie lösen nicht dasselbe Problem. Dieser Unterschied ist wichtiger als jeder Fu
 
 ## Die Tools
 
-### 1. Verso
+### 1. Folio
 
-Verso ist das einzige Tool auf dieser Liste, das speziell für die Bearbeitung bestehender PowerPoint-Dateien entwickelt wurde — nicht für die Erstellung neuer. Es ist ein PowerPoint-Add-in, das Ihre Präsentation liest, Ihre Vorlage und Ihr Design versteht und Folien anhand von Anweisungen in natürlicher Sprache bearbeitet.
+Folio ist das einzige Tool auf dieser Liste, das speziell für die Bearbeitung bestehender PowerPoint-Dateien entwickelt wurde — nicht für die Erstellung neuer. Es ist ein PowerPoint-Add-in, das Ihre Präsentation liest, Ihre Vorlage und Ihr Design versteht und Folien anhand von Anweisungen in natürlicher Sprache bearbeitet.
 
-Die meisten KI-Tools generieren eine leere Präsentation aus einer Eingabe einigermaßen zuverlässig. Sie versagen, wenn man ihnen eine 40-seitige Unternehmenspräsentation übergibt und sie bittet, diese umzustrukturieren. Verso wurde genau für dieses Szenario entwickelt. Diagrammbearbeitung, Tabellenformatierung, strukturelle Änderungen über eine gesamte Präsentation — alles über Eingaben gesteuert, alles direkt in Ihrer PowerPoint-Datei angewendet, mit Ihrer Vorlage intakt.
+Die meisten KI-Tools generieren eine leere Präsentation aus einer Eingabe einigermaßen zuverlässig. Sie versagen, wenn man ihnen eine 40-seitige Unternehmenspräsentation übergibt und sie bittet, diese umzustrukturieren. Folio wurde genau für dieses Szenario entwickelt. Diagrammbearbeitung, Tabellenformatierung, strukturelle Änderungen über eine gesamte Präsentation — alles über Eingaben gesteuert, alles direkt in Ihrer PowerPoint-Datei angewendet, mit Ihrer Vorlage intakt.
 
 Es ist nicht das schnellste Tool für die reine Neuerstellung von Grund auf. Das ist ein bewusster Kompromiss. Wenn Sie in einer bestehenden Vorlage arbeiten, ist dieser Kompromiss irrelevant.
 
@@ -77,7 +77,7 @@ Die oben genannten Tools teilen sich in zwei Kategorien auf, und diese Aufteilun
 
 Generierungstools — Gamma, Beautiful.ai, Presentations.ai, Plus AI — eignen sich hervorragend für die Erstellung neuer Präsentationen von einer leeren Seite aus. Sie sind schlecht bis unbrauchbar für die Bearbeitung bestehender Unternehmensvorlagen. Das ist keine Kritik; es ist der Zweck, für den sie entwickelt wurden.
 
-Bearbeitungstools — Verso und Copilot — arbeiten mit Ihren vorhandenen Dateien. Sie bewahren Ihre Vorlagen. Sie bewältigen iterative Änderungen an bereits vorhandenen Präsentationen.
+Bearbeitungstools — Folio und Copilot — arbeiten mit Ihren vorhandenen Dateien. Sie bewahren Ihre Vorlagen. Sie bewältigen iterative Änderungen an bereits vorhandenen Präsentationen.
 
 Der professionelle Präsentations-Workflow liegt fast vollständig in der Bearbeitungskategorie. Die meisten Berater, Analysten und Unternehmenskommunikationsteams erstellen Präsentationen nicht jedes Mal von Grund auf neu. Sie arbeiten in Vorlagen, die jahrelange Markeninvestionen codieren, iterieren an Kundendateien, aktualisieren wiederkehrende Präsentationen mit neuen Daten. Generierungstools lösen dieses Problem nicht, egal wie gut die Ausgabe auf einer leeren Leinwand aussieht.
 
@@ -85,10 +85,10 @@ Das ist der Teil, den die meisten KI-Präsentationsvergleiche falsch machen. Sie
 
 ## Unsere Empfehlung
 
-Für Profis, die mit bestehenden PowerPoint-Vorlagen arbeiten — Berater, Analysten, Unternehmenskommunikationsteams — ist Verso das einzige Tool, das für Ihren tatsächlichen Workflow entwickelt wurde. Es arbeitet dort, wo Ihre Dateien gespeichert sind, bewahrt das, was Sie aufgebaut haben, und bewältigt die komplexen Bearbeitungen, die andere Tools überspringen.
+Für Profis, die mit bestehenden PowerPoint-Vorlagen arbeiten — Berater, Analysten, Unternehmenskommunikationsteams — ist Folio das einzige Tool, das für Ihren tatsächlichen Workflow entwickelt wurde. Es arbeitet dort, wo Ihre Dateien gespeichert sind, bewahrt das, was Sie aufgebaut haben, und bewältigt die komplexen Bearbeitungen, die andere Tools überspringen.
 
 Für M365-Benutzer, die grundlegende KI-Unterstützung ohne ein neues Tool wünschen, ist Copilot ein vernünftiger Ausgangspunkt. Beachten Sie im Voraus, dass es teuer ist und dass komplexe Bearbeitungsaufgaben weiterhin manuelle Arbeit erfordern werden.
 
 Für Teams, die hauptsächlich neue Präsentationen erstellen müssen und keine PowerPoint-Vorlageneinschränkungen haben, bietet Gamma die beste Generierungsqualität zu einem vernünftigen Preis.
 
-**Verso kostenlos testen: [get-verso.ai](https://get-verso.ai)**
+**Folio kostenlos testen: [get-folio.ai](https://get-folio.ai)**

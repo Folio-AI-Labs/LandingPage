@@ -9,7 +9,7 @@ lang: fr
 
 Dans quelle mesure un agent IA est-il capable de reproduire des slides de conseil professionnel à partir d'une simple image ?
 
-Après avoir développé Verso, nous sommes convaincus que notre approche donne des résultats nettement supérieurs à ceux des autres solutions.
+Après avoir développé Folio, nous sommes convaincus que notre approche donne des résultats nettement supérieurs à ceux des autres solutions.
 
 Encore faut-il le démontrer chiffres à l'appui.
 
@@ -60,17 +60,17 @@ Nous avons comparé cinq configurations :
 
 | Configuration                    | Score   | Temps   | Étapes | Tâches  |
 |----------------------------------|---------|---------|--------|---------|
-| **Verso Max**                    | 70,8 %  | 293,4 s | 6,3    | 60/61   |
-| **Verso Medium**                 | 49,6 %  | 207,7 s | 8,8    | 61/61   |
-| **Verso Fast**                   | 38,9 %  | 157,5 s | 9,5    | 61/61   |
+| **Folio Max**                    | 70,8 %  | 293,4 s | 6,3    | 60/61   |
+| **Folio Medium**                 | 49,6 %  | 207,7 s | 8,8    | 61/61   |
+| **Folio Fast**                   | 38,9 %  | 157,5 s | 9,5    | 61/61   |
 | Claude for Powerpoint (Opus)     | 36,5 %  | 176,5 s | 11,6   | 61/61   |
 | Claude for Powerpoint (Sonnet)   | 32,4 %  | 154,4 s | 9,2    | 61/61   |
 
-**Verso Max** se détache largement avec 70,8 %, soit près du double du meilleur agent non-Verso. Il y parvient en moyenne avec le moins d'étapes (6,3), signe d'une approche plus efficace, même s'il prend plus de temps par tâche (293,4 s) en raison d'un raisonnement plus poussé.
+**Folio Max** se détache largement avec 70,8 %, soit près du double du meilleur agent non-Folio. Il y parvient en moyenne avec le moins d'étapes (6,3), signe d'une approche plus efficace, même s'il prend plus de temps par tâche (293,4 s) en raison d'un raisonnement plus poussé.
 
-**Verso Medium** atteint 49,6 % : la plupart des reproductions capturent la bonne structure et le bon contenu, mais présentent des écarts notables sur le style ou le positionnement.
+**Folio Medium** atteint 49,6 % : la plupart des reproductions capturent la bonne structure et le bon contenu, mais présentent des écarts notables sur le style ou le positionnement.
 
-**Verso Fast** sacrifie la précision à la vitesse, en achevant les tâches 24 % plus vite que Verso Medium pour un score de 38,9 %. Curieusement, il fait davantage d'étapes en moyenne (9,5 contre 8,8), ce qui suggère que le modèle plus léger explore davantage avant de trouver la bonne action.
+**Folio Fast** sacrifie la précision à la vitesse, en achevant les tâches 24 % plus vite que Folio Medium pour un score de 38,9 %. Curieusement, il fait davantage d'étapes en moyenne (9,5 contre 8,8), ce qui suggère que le modèle plus léger explore davantage avant de trouver la bonne action.
 
 **Claude for Powerpoint (Opus)** obtient 36,5 % malgré le plus grand nombre d'étapes (11,6) et beaucoup plus de calcul. **Claude for Powerpoint (Sonnet)** ferme la marche à 32,4 %, le score le plus bas de la comparaison, tout en étant le plus rapide à 154,4 s par tâche.
 
@@ -80,7 +80,7 @@ Nous avons comparé cinq configurations :
 
 Décomposer les scores selon ce que contient la slide fait apparaître des tendances nettes :
 
-| Type de contenu        | Verso Medium | Claude for PPT |
+| Type de contenu        | Folio Medium | Claude for PPT |
 |------------------------|--------------|----------------|
 | Texte dense            | 66,8 %       | 48,3 %         |
 | Slides sans graphique  | 63,5 %       | 44,8 %         |
@@ -92,22 +92,22 @@ Décomposer les scores selon ce que contient la slide fait apparaître des tenda
 
 Les slides à forte densité textuelle constituent la catégorie la plus facile, tandis que les cartes sont les plus difficiles (et les deux agents s'y cassent les dents à part égale). Les graphiques, qui représentent 54 % du benchmark, tirent fortement le score global vers le bas.
 
-### Là où Verso excelle
+### Là où Folio excelle
 
-Verso obtient systématiquement de bons scores sur les slides à texte structuré : texte juridique mis en forme, mises en page multi-sections avec encadrés colorés, pages de type sommaire et mises en page multi-colonnes avec icônes. Sur ces tâches, Verso Max décroche régulièrement des scores quasi parfaits, et même Verso Medium et Verso Fast atteignent 75 à 100 %, alors que les deux variantes Claude for Powerpoint restent généralement loin derrière.
+Folio obtient systématiquement de bons scores sur les slides à texte structuré : texte juridique mis en forme, mises en page multi-sections avec encadrés colorés, pages de type sommaire et mises en page multi-colonnes avec icônes. Sur ces tâches, Folio Max décroche régulièrement des scores quasi parfaits, et même Folio Medium et Folio Fast atteignent 75 à 100 %, alors que les deux variantes Claude for Powerpoint restent généralement loin derrière.
 
 ### Ce qui reste difficile
 
 Environ 20 % du benchmark est en pratique non résolu : sur les tâches les plus dures, les cinq agents plafonnent à 25 % ou moins. Les modes d'échec récurrents :
 
-- **Cartes géographiques.** Les agents peinent à produire des cartes précises. Ils peuvent remplacer la carte par une forme sans rapport, la rendre à la mauvaise échelle ou perdre le code couleur par État. Verso essaie bien de produire des cartes, mais les résultats sont systématiquement médiocres : une carte des États-Unis peut apparaître réduite avec des détails manquants, ou une carte du monde être remplacée par un diagramme circulaire.
+- **Cartes géographiques.** Les agents peinent à produire des cartes précises. Ils peuvent remplacer la carte par une forme sans rapport, la rendre à la mauvaise échelle ou perdre le code couleur par État. Folio essaie bien de produire des cartes, mais les résultats sont systématiquement médiocres : une carte des États-Unis peut apparaître réduite avec des détails manquants, ou une carte du monde être remplacée par un diagramme circulaire.
 - **Graphiques complexes à données denses.** Les graphiques combinés (barres + courbes sur double axe), les tableaux de bord multi-panneaux et les heatmaps mettent systématiquement tous les agents en échec. Erreurs fréquentes : graphiques entièrement manquants, intitulés d'axes oubliés, valeurs absentes.
 - **Formes composites personnalisées.** Les entonnoirs construits à partir de trapèzes, les graphiques en quadrants avec séparateurs courbes et les constructions du même genre exigent un empilage et un alignement précis que les agents ne maîtrisent pas encore de manière fiable.
 
-### Là où Verso peut encore progresser
+### Là où Folio peut encore progresser
 
-Même Verso Max, malgré sa moyenne de 70,8 %, peine encore sur certaines tâches (score de 25 % ou moins). Ce sont généralement des slides avec de grandes grilles structurées, des logos de marque intégrés dans des graphiques ou des éléments décoratifs. Autant de pistes d'amélioration concrètes pour Verso sur ces types de contenu.
+Même Folio Max, malgré sa moyenne de 70,8 %, peine encore sur certaines tâches (score de 25 % ou moins). Ce sont généralement des slides avec de grandes grilles structurées, des logos de marque intégrés dans des graphiques ou des éléments décoratifs. Autant de pistes d'amélioration concrètes pour Folio sur ces types de contenu.
 
-La vitesse aussi reste un chantier. Verso Max prend près de 5 minutes par tâche, et même Verso Fast dépasse 2,5 minutes en moyenne. Un bon assistant IA devrait ressembler davantage à un prolongement fluide de votre travail qu'à une partie de tennis où l'on attend que la balle revienne. Nous travaillerons à réduire cette latence de manière significative dans les semaines qui viennent.
+La vitesse aussi reste un chantier. Folio Max prend près de 5 minutes par tâche, et même Folio Fast dépasse 2,5 minutes en moyenne. Un bon assistant IA devrait ressembler davantage à un prolongement fluide de votre travail qu'à une partie de tennis où l'on attend que la balle revienne. Nous travaillerons à réduire cette latence de manière significative dans les semaines qui viennent.
 
-L'intégralité des résultats (images générées, références par tâche et critiques de l'évaluateur) est disponible dans [le repo PrezEval](https://github.com/VersoLabs/PrezEvalPublic).
+L'intégralité des résultats (images générées, références par tâche et critiques de l'évaluateur) est disponible dans [le repo PrezEval](https://github.com/FolioLabs/PrezEvalPublic).

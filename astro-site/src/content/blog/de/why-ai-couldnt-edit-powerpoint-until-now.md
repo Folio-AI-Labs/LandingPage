@@ -73,12 +73,12 @@ Auf unserem PrezEval-Benchmark:
 
 Das ist keine marginale Verbesserung. Es ist der Unterschied zwischen einem Tool, das gelegentlich funktioniert, und einem, auf das man sich verlassen kann.
 
-Es bedeutet auch, dass Verso Dinge kann, die andere Tools schlicht nicht können: bestehende Folien bearbeiten und dabei ihre Struktur erhalten, template-bewusstes Formatieren anwenden, Charts mit echten Daten anpassen und die volle Komplexität von PowerPoint-Objekten handhaben - ohne eine neue Datei zu generieren.
+Es bedeutet auch, dass Folio Dinge kann, die andere Tools schlicht nicht können: bestehende Folien bearbeiten und dabei ihre Struktur erhalten, template-bewusstes Formatieren anwenden, Charts mit echten Daten anpassen und die volle Komplexität von PowerPoint-Objekten handhaben - ohne eine neue Datei zu generieren.
 
 ## Warum das ein Graben ist
 
 Der Aufbau dieses Codecs hat erheblichen Engineering-Aufwand erfordert, und er entwickelt sich weiter, wenn wir Randfälle in realen PowerPoint-Dateien entdecken. Das lässt sich nicht schnell replizieren.
 
-Wichtiger noch: Er wird mit jedem Fortschritt der LLMs wertvoller. Jedes Mal, wenn ein neues Frontier-Modell erscheint, verbessert sich Versos Performance automatisch - denn der Flaschenhals war nie das Modell. Er war die Schnittstelle zwischen dem Modell und dem Dateiformat.
+Wichtiger noch: Er wird mit jedem Fortschritt der LLMs wertvoller. Jedes Mal, wenn ein neues Frontier-Modell erscheint, verbessert sich Folios Performance automatisch - denn der Flaschenhals war nie das Modell. Er war die Schnittstelle zwischen dem Modell und dem Dateiformat.
 
 Diese Schnittstelle haben wir gelöst.

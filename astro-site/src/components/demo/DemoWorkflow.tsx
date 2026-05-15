@@ -67,25 +67,25 @@ export const defaultPptUI: Record<string, PptUIStrings> = {
     tabs: ['Home', 'Insert', 'Design', 'Transitions', 'Slide Show'],
     slideOf: (c, t) => `Slide ${c} of ${t}`,
     ready: 'Ready',
-    composerPlaceholder: 'Ask Verso to edit your slides',
+    composerPlaceholder: 'Ask Folio to edit your slides',
   },
   fr: {
     tabs: ['Accueil', 'Insertion', 'Création', 'Transitions', 'Diaporama'],
     slideOf: (c, t) => `Diapositive ${c} sur ${t}`,
     ready: 'Prêt',
-    composerPlaceholder: 'Demandez à Verso de modifier vos slides',
+    composerPlaceholder: 'Demandez à Folio de modifier vos slides',
   },
   es: {
     tabs: ['Inicio', 'Insertar', 'Diseño', 'Transiciones', 'Presentación con diapositivas'],
     slideOf: (c, t) => `Diapositiva ${c} de ${t}`,
     ready: 'Listo',
-    composerPlaceholder: 'Pide a Verso que edite tus diapositivas',
+    composerPlaceholder: 'Pide a Folio que edite tus diapositivas',
   },
   de: {
     tabs: ['Start', 'Einfügen', 'Entwurf', 'Übergänge', 'Bildschirmpräsentation'],
     slideOf: (c, t) => `Folie ${c} von ${t}`,
     ready: 'Bereit',
-    composerPlaceholder: 'Bitten Sie Verso, Ihre Folien zu bearbeiten',
+    composerPlaceholder: 'Bitten Sie Folio, Ihre Folien zu bearbeiten',
   },
 }
 
@@ -326,7 +326,7 @@ export default function DemoWorkflow({ config, onComplete }: { config: DemoWorkf
         color: '#555', letterSpacing: '0.3px', fontFamily: 'Inter, sans-serif',
         borderBottom: '1px solid #d5d5d5', flexShrink: 0,
       }}>
-        Verso AI
+        Folio AI
       </div>
       <ChatPanel
         messages={messages}

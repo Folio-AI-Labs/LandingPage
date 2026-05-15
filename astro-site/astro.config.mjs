@@ -4,6 +4,6 @@ import tailwindcss from '@astrojs/tailwind';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://get-verso.ai',
+  site: 'https://get-folio.ai',
   integrations: [tailwindcss(), react()],
 });

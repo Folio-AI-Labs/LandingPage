@@ -11,11 +11,11 @@ No están resolviendo el mismo problema. Esa distinción importa más que cualqu
 
 ## Las herramientas
 
-### 1. Verso
+### 1. Folio
 
-Verso es la única herramienta de esta lista diseñada específicamente para editar archivos PowerPoint existentes en lugar de generar nuevos. Es un complemento de PowerPoint que lee tu presentación, comprende tu plantilla y tema, y modifica las diapositivas basándose en instrucciones en lenguaje natural.
+Folio es la única herramienta de esta lista diseñada específicamente para editar archivos PowerPoint existentes en lugar de generar nuevos. Es un complemento de PowerPoint que lee tu presentación, comprende tu plantilla y tema, y modifica las diapositivas basándose en instrucciones en lenguaje natural.
 
-La mayoría de las herramientas de IA funcionan razonablemente bien para generar una presentación en blanco a partir de una instrucción. Se desmoronan cuando les entregas una presentación corporativa de 40 diapositivas y les pides que la reestructuren. Verso fue diseñado precisamente para ese escenario. Edición de gráficos, formato de tablas, cambios estructurales en toda una presentación — todo gestionado mediante instrucciones, todo aplicado directamente en tu archivo PowerPoint, con tu plantilla intacta.
+La mayoría de las herramientas de IA funcionan razonablemente bien para generar una presentación en blanco a partir de una instrucción. Se desmoronan cuando les entregas una presentación corporativa de 40 diapositivas y les pides que la reestructuren. Folio fue diseñado precisamente para ese escenario. Edición de gráficos, formato de tablas, cambios estructurales en toda una presentación — todo gestionado mediante instrucciones, todo aplicado directamente en tu archivo PowerPoint, con tu plantilla intacta.
 
 No es la herramienta más rápida para la generación desde una página en blanco. Ese es un compromiso deliberado. Si trabajas en una plantilla existente, ese compromiso es irrelevante.
 
@@ -77,7 +77,7 @@ Las herramientas anteriores se dividen en dos categorías, y la división es má
 
 Las herramientas de generación — Gamma, Beautiful.ai, Presentations.ai, Plus AI — son excelentes para crear nuevas presentaciones desde una página en blanco. Son pobres o inutilizables para editar plantillas corporativas existentes. Esto no es una crítica; es para lo que están diseñadas.
 
-Las herramientas de edición — Verso y Copilot — trabajan con tus archivos existentes. Preservan tus plantillas. Gestionan cambios iterativos en presentaciones que ya existen.
+Las herramientas de edición — Folio y Copilot — trabajan con tus archivos existentes. Preservan tus plantillas. Gestionan cambios iterativos en presentaciones que ya existen.
 
 El flujo de trabajo profesional con diapositivas está casi en su totalidad en la categoría de edición. La mayoría de consultores, analistas y equipos de comunicación corporativa no construyen presentaciones desde cero cada vez. Trabajan dentro de plantillas que codifican años de inversión en marca, iteran sobre archivos de clientes, actualizan presentaciones recurrentes con nuevos datos. Las herramientas de generación no resuelven ese problema, sin importar qué tan bien se vea el resultado en un lienzo en blanco.
 
@@ -85,10 +85,10 @@ Esta es la parte que la mayoría de las comparaciones de herramientas de IA para
 
 ## Nuestra recomendación
 
-Para los profesionales que trabajan con plantillas PowerPoint existentes — consultores, analistas, equipos de comunicación corporativa — Verso es la única herramienta diseñada para tu flujo de trabajo real. Funciona donde viven tus archivos, preserva lo que has construido y gestiona las ediciones complejas que otras herramientas evitan.
+Para los profesionales que trabajan con plantillas PowerPoint existentes — consultores, analistas, equipos de comunicación corporativa — Folio es la única herramienta diseñada para tu flujo de trabajo real. Funciona donde viven tus archivos, preserva lo que has construido y gestiona las ediciones complejas que otras herramientas evitan.
 
 Para los usuarios de M365 que quieren asistencia básica de IA sin añadir una nueva herramienta, Copilot es un punto de partida razonable. Ten en cuenta que es caro y que las tareas de edición complejas seguirán requiriendo trabajo manual.
 
 Para los equipos que principalmente necesitan generar nuevas presentaciones y no tienen restricciones de plantilla PowerPoint, Gamma ofrece la mejor calidad de generación a un precio razonable.
 
-**Prueba Verso gratis: [get-verso.ai](https://get-verso.ai)**
+**Prueba Folio gratis: [get-folio.ai](https://get-folio.ai)**

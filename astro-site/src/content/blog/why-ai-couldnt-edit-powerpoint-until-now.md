@@ -73,12 +73,12 @@ On our PrezEval benchmark:
 
 That's not a marginal improvement. It's the difference between a tool that occasionally works and one you can rely on.
 
-It also means Verso can do things that other tools simply cannot: edit existing slides while preserving their structure, apply template-aware formatting, modify charts with real data, and handle the full complexity of PowerPoint objects, without generating a new file.
+It also means Folio can do things that other tools simply cannot: edit existing slides while preserving their structure, apply template-aware formatting, modify charts with real data, and handle the full complexity of PowerPoint objects, without generating a new file.
 
 ## Why this is a moat
 
 Building this codec took significant engineering time, and it continues to evolve as we encounter edge cases in real-world PowerPoint files. It's not a feature that can be quickly replicated.
 
-More importantly, it only gets more valuable as LLMs improve. Every time a new frontier model releases, Verso's performance improves automatically, because the bottleneck was never the model - it was the interface between the model and the file format.
+More importantly, it only gets more valuable as LLMs improve. Every time a new frontier model releases, Folio's performance improves automatically, because the bottleneck was never the model - it was the interface between the model and the file format.
 
 We solved that interface.

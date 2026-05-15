@@ -30,7 +30,7 @@ const demoText: Record<string, {
   continueButton: string
   authenticating: string
   successMessage: string
-  versoTitle: string
+  folioTitle: string
   emailValue: string
   passwordValue: string
 }> = {
@@ -41,7 +41,7 @@ const demoText: Record<string, {
     ready: 'Ready',
     clickTitle: 'Click to add title',
     clickSubtitle: 'Click to add subtitle',
-    loginTitle: 'Sign in to Verso',
+    loginTitle: 'Sign in to Folio',
     emailLabel: 'Email',
     passwordLabel: 'Password',
     emailPlaceholder: 'you@company.com',
@@ -51,11 +51,11 @@ const demoText: Record<string, {
     googleSSO: 'Google',
     microsoftSSO: 'Microsoft',
     microsoftTitle: 'Sign in',
-    microsoftSubtitle: 'to continue to Verso',
+    microsoftSubtitle: 'to continue to Folio',
     continueButton: 'Next',
     authenticating: 'Signing you in...',
     successMessage: 'Success!',
-    versoTitle: 'Verso AI',
+    folioTitle: 'Folio AI',
     emailValue: 'john.doe@acmecorp.com',
     passwordValue: 'mypassword123',
   },
@@ -66,7 +66,7 @@ const demoText: Record<string, {
     ready: 'Prêt',
     clickTitle: 'Cliquez pour ajouter un titre',
     clickSubtitle: 'Cliquez pour ajouter un sous-titre',
-    loginTitle: 'Connexion à Verso',
+    loginTitle: 'Connexion à Folio',
     emailLabel: 'E-mail',
     passwordLabel: 'Mot de passe',
     emailPlaceholder: 'vous@entreprise.com',
@@ -76,11 +76,11 @@ const demoText: Record<string, {
     googleSSO: 'Google',
     microsoftSSO: 'Microsoft',
     microsoftTitle: 'Se connecter',
-    microsoftSubtitle: 'pour continuer vers Verso',
+    microsoftSubtitle: 'pour continuer vers Folio',
     continueButton: 'Suivant',
     authenticating: 'Connexion en cours...',
     successMessage: 'Succès !',
-    versoTitle: 'Verso AI',
+    folioTitle: 'Folio AI',
     emailValue: 'jean.dupont@acmecorp.com',
     passwordValue: 'motdepasse123',
   },
@@ -91,7 +91,7 @@ const demoText: Record<string, {
     ready: 'Listo',
     clickTitle: 'Haga clic para agregar título',
     clickSubtitle: 'Haga clic para agregar subtítulo',
-    loginTitle: 'Iniciar sesión en Verso',
+    loginTitle: 'Iniciar sesión en Folio',
     emailLabel: 'Correo electrónico',
     passwordLabel: 'Contraseña',
     emailPlaceholder: 'tu@empresa.com',
@@ -101,11 +101,11 @@ const demoText: Record<string, {
     googleSSO: 'Google',
     microsoftSSO: 'Microsoft',
     microsoftTitle: 'Iniciar sesión',
-    microsoftSubtitle: 'para continuar a Verso',
+    microsoftSubtitle: 'para continuar a Folio',
     continueButton: 'Siguiente',
     authenticating: 'Iniciando sesión...',
     successMessage: '¡Éxito!',
-    versoTitle: 'Verso AI',
+    folioTitle: 'Folio AI',
     emailValue: 'juan.perez@acmecorp.com',
     passwordValue: 'micontraseña123',
   },
@@ -116,7 +116,7 @@ const demoText: Record<string, {
     ready: 'Bereit',
     clickTitle: 'Titel durch Klicken hinzufügen',
     clickSubtitle: 'Untertitel durch Klicken hinzufügen',
-    loginTitle: 'Bei Verso anmelden',
+    loginTitle: 'Bei Folio anmelden',
     emailLabel: 'E-Mail',
     passwordLabel: 'Passwort',
     emailPlaceholder: 'du@unternehmen.de',
@@ -126,11 +126,11 @@ const demoText: Record<string, {
     googleSSO: 'Google',
     microsoftSSO: 'Microsoft',
     microsoftTitle: 'Anmelden',
-    microsoftSubtitle: 'um zu Verso fortzufahren',
+    microsoftSubtitle: 'um zu Folio fortzufahren',
     continueButton: 'Weiter',
     authenticating: 'Anmeldung läuft...',
     successMessage: 'Erfolg!',
-    versoTitle: 'Verso AI',
+    folioTitle: 'Folio AI',
     emailValue: 'max.mustermann@acmecorp.com',
     passwordValue: 'meinpasswort123',
   },
@@ -315,7 +315,7 @@ export default function SSODemo({ lang = 'en' }: { lang?: string }) {
           </div>
         </div>
 
-        {/* Verso Panel */}
+        {/* Folio Panel */}
         {showPanel && (
           <div
             className="demo-slide-in-right"
@@ -340,7 +340,7 @@ export default function SSODemo({ lang = 'en' }: { lang?: string }) {
               alignItems: 'center',
               justifyContent: 'space-between',
             }}>
-              <span>{t.versoTitle}</span>
+              <span>{t.folioTitle}</span>
               <button style={{
                 background: 'transparent',
                 border: 'none',
@@ -363,7 +363,7 @@ export default function SSODemo({ lang = 'en' }: { lang?: string }) {
                   backgroundClip: 'text',
                   marginBottom: '4px',
                 }}>
-                  Verso
+                  Folio
                 </div>
                 <div style={{ fontSize: '12px', color: '#666' }}>
                   {t.loginTitle}

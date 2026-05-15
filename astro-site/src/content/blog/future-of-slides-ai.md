@@ -75,7 +75,7 @@ What changes is the ratio of time spent thinking versus producing. For many team
 
 ## Our bet
 
-We're building Verso on a specific hypothesis: the tools that become embedded in professional workflows will be the ones that work *within* existing files, not around them.
+We're building Folio on a specific hypothesis: the tools that become embedded in professional workflows will be the ones that work *within* existing files, not around them.
 
 Every major firm has a slide template that encodes years of brand investment and client expectations. An AI that ignores it generates output that gets thrown out. An AI that understands it becomes part of the workflow.
 

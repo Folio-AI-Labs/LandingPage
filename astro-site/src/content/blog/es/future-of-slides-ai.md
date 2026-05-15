@@ -75,7 +75,7 @@ Lo que cambia es la proporción de tiempo dedicado a pensar frente a producir. P
 
 ## Nuestra apuesta
 
-Estamos construyendo Verso sobre una hipótesis concreta: las herramientas que se integren en los flujos de trabajo profesionales serán las que funcionen *dentro* de los archivos existentes, no a su alrededor.
+Estamos construyendo Folio sobre una hipótesis concreta: las herramientas que se integren en los flujos de trabajo profesionales serán las que funcionen *dentro* de los archivos existentes, no a su alrededor.
 
 Cada gran firma tiene una plantilla de diapositivas que codifica años de inversión en marca y expectativas del cliente. Una IA que la ignora genera resultados que acaban en la papelera. Una IA que la entiende se convierte en parte del flujo de trabajo.
 

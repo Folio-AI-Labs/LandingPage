@@ -11,11 +11,11 @@ They are not solving the same problem. That distinction matters more than any fe
 
 ## The tools
 
-### 1. Verso
+### 1. Folio
 
-Verso is the only tool on this list built specifically to edit existing PowerPoint files rather than generate new ones. It's a PowerPoint add-in that reads your deck, understands your template and theme, and modifies slides based on natural language prompts.
+Folio is the only tool on this list built specifically to edit existing PowerPoint files rather than generate new ones. It's a PowerPoint add-in that reads your deck, understands your template and theme, and modifies slides based on natural language prompts.
 
-Most AI tools perform reasonably well at generating a blank deck from a prompt. They fall apart when you hand them a 40-slide corporate deck and ask them to restructure it. Verso was designed for exactly that scenario. Chart editing, table formatting, structural changes across a full deck — all handled via prompt, all applied directly in your PowerPoint file, with your template intact.
+Most AI tools perform reasonably well at generating a blank deck from a prompt. They fall apart when you hand them a 40-slide corporate deck and ask them to restructure it. Folio was designed for exactly that scenario. Chart editing, table formatting, structural changes across a full deck — all handled via prompt, all applied directly in your PowerPoint file, with your template intact.
 
 It's not the fastest tool for truly blank-page generation. That's a deliberate trade-off. If you're working in an existing template, that trade-off is irrelevant.
 
@@ -77,7 +77,7 @@ The tools above split into two categories, and the split is more important than 
 
 Generation tools — Gamma, Beautiful.ai, Presentations.ai, Plus AI — are great at creating new decks from a blank page. They're poor to unusable for editing existing corporate templates. This isn't a criticism; it's what they're built for.
 
-Editing tools — Verso and Copilot — work with your existing files. They preserve your templates. They handle iterative changes on decks that already exist.
+Editing tools — Folio and Copilot — work with your existing files. They preserve your templates. They handle iterative changes on decks that already exist.
 
 The professional slide workflow is almost entirely in the editing category. Most consultants, analysts, and corporate communications teams aren't building decks from scratch every time. They're working inside templates that encode years of brand investment, iterating on client files, updating recurring presentations with new data. Generation tools don't solve that problem, no matter how good the output looks on a blank canvas.
 
@@ -85,10 +85,10 @@ This is the part most AI slide comparisons get wrong. They rank tools on how goo
 
 ## Our recommendation
 
-For professionals who work with existing PowerPoint templates — consultants, analysts, corporate communications teams — Verso is the only tool built for your actual workflow. It works where your files live, preserves what you've built, and handles the complex edits that other tools skip.
+For professionals who work with existing PowerPoint templates — consultants, analysts, corporate communications teams — Folio is the only tool built for your actual workflow. It works where your files live, preserves what you've built, and handles the complex edits that other tools skip.
 
 For M365 users who want basic AI assistance without adding a new tool, Copilot is a reasonable starting point. Know going in that it's expensive and that complex editing tasks will still require manual work.
 
 For teams that primarily need to generate new decks and don't have PowerPoint template constraints, Gamma delivers the best generation quality at a reasonable price.
 
-**Try Verso free: [get-verso.ai](https://get-verso.ai)**
+**Try Folio free: [get-folio.ai](https://get-folio.ai)**

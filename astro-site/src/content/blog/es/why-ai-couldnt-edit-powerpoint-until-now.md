@@ -73,12 +73,12 @@ En nuestro benchmark PrezEval:
 
 No es una mejora marginal. Es la diferencia entre una herramienta que funciona de vez en cuando y una en la que puedes confiar.
 
-También significa que Verso puede hacer cosas que otras herramientas simplemente no pueden: editar diapositivas existentes preservando su estructura, aplicar formatos que respetan las plantillas, modificar gráficas con datos reales y manejar toda la complejidad de los objetos de PowerPoint, sin generar un archivo nuevo.
+También significa que Folio puede hacer cosas que otras herramientas simplemente no pueden: editar diapositivas existentes preservando su estructura, aplicar formatos que respetan las plantillas, modificar gráficas con datos reales y manejar toda la complejidad de los objetos de PowerPoint, sin generar un archivo nuevo.
 
 ## Por qué esto es una ventaja competitiva duradera
 
 Construir este codec requirió un tiempo de ingeniería considerable, y sigue evolucionando a medida que encontramos casos extremos en archivos PowerPoint del mundo real. No es una función que se pueda replicar rápidamente.
 
-Más importante aún, solo se vuelve más valioso a medida que los LLMs mejoran. Cada vez que se lanza un nuevo modelo de frontera, el rendimiento de Verso mejora automáticamente, porque el cuello de botella nunca fue el modelo - fue la interfaz entre el modelo y el formato de archivo.
+Más importante aún, solo se vuelve más valioso a medida que los LLMs mejoran. Cada vez que se lanza un nuevo modelo de frontera, el rendimiento de Folio mejora automáticamente, porque el cuello de botella nunca fue el modelo - fue la interfaz entre el modelo y el formato de archivo.
 
 Esa interfaz ya está resuelta.

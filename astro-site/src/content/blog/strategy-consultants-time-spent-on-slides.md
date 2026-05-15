@@ -11,7 +11,7 @@ The average analyst or associate at a strategy consulting firm spends roughly 15
 
 That's nearly half a working week. Every week.
 
-We interviewed a dozen consultants across MBB, Big 4, and independent firms while building Verso. One senior manager at a top-three firm put it plainly: *"I spend 40% of my time on slides. Maybe 10% of that is actually thinking. The rest is formatting."*
+We interviewed a dozen consultants across MBB, Big 4, and independent firms while building Folio. One senior manager at a top-three firm put it plainly: *"I spend 40% of my time on slides. Maybe 10% of that is actually thinking. The rest is formatting."*
 
 So how did we get here?
 

@@ -9,7 +9,7 @@ lang: es
 
 ¿Qué tan bien puede un agente de IA reproducir diapositivas de consultoría profesional a partir de una imagen de referencia?
 
-Tras construir Verso, hemos llegado a la convicción de que nuestro enfoque produce resultados muy superiores a los de otros sistemas.
+Tras construir Folio, hemos llegado a la convicción de que nuestro enfoque produce resultados muy superiores a los de otros sistemas.
 
 Pero pongamos números sobre la mesa.
 
@@ -60,17 +60,17 @@ Comparamos cinco configuraciones:
 
 | Configuración                   | Puntuación | Tiempo   | Pasos | Tareas |
 |---------------------------------|------------|----------|-------|--------|
-| **Verso Max**                   | 70,8%      | 293,4s   | 6,3   | 60/61  |
-| **Verso Medium**                | 49,6%      | 207,7s   | 8,8   | 61/61  |
-| **Verso Fast**                  | 38,9%      | 157,5s   | 9,5   | 61/61  |
+| **Folio Max**                   | 70,8%      | 293,4s   | 6,3   | 60/61  |
+| **Folio Medium**                | 49,6%      | 207,7s   | 8,8   | 61/61  |
+| **Folio Fast**                  | 38,9%      | 157,5s   | 9,5   | 61/61  |
 | Claude for Powerpoint (Opus)    | 36,5%      | 176,5s   | 11,6  | 61/61  |
 | Claude for Powerpoint (Sonnet)  | 32,4%      | 154,4s   | 9,2   | 61/61  |
 
-**Verso Max** lidera con amplia ventaja con un 70,8%, casi duplicando la puntuación del siguiente agente no-Verso. Lo logra con el menor número de pasos promedio (6,3), lo que sugiere un enfoque más eficiente en la reproducción de diapositivas, aunque tarda más por tarea (293,4s) debido a un razonamiento más profundo.
+**Folio Max** lidera con amplia ventaja con un 70,8%, casi duplicando la puntuación del siguiente agente no-Folio. Lo logra con el menor número de pasos promedio (6,3), lo que sugiere un enfoque más eficiente en la reproducción de diapositivas, aunque tarda más por tarea (293,4s) debido a un razonamiento más profundo.
 
-**Verso Medium** obtiene un 49,6%: la mayoría de las reproducciones capturan la estructura y el contenido correctos, pero presentan diferencias notables en estilo o posicionamiento.
+**Folio Medium** obtiene un 49,6%: la mayoría de las reproducciones capturan la estructura y el contenido correctos, pero presentan diferencias notables en estilo o posicionamiento.
 
-**Verso Fast** sacrifica precisión por velocidad, completando las tareas un 24% más rápido que Verso Medium con una puntuación del 38,9%. Curiosamente, usa más pasos en promedio (9,5 vs 8,8), lo que sugiere que el modelo más pequeño realiza más acciones exploratorias.
+**Folio Fast** sacrifica precisión por velocidad, completando las tareas un 24% más rápido que Folio Medium con una puntuación del 38,9%. Curiosamente, usa más pasos en promedio (9,5 vs 8,8), lo que sugiere que el modelo más pequeño realiza más acciones exploratorias.
 
 **Claude for Powerpoint (Opus)** obtiene un 36,5% a pesar de usar más pasos (11,6) y significativamente más cómputo. **Claude for Powerpoint (Sonnet)** obtiene un 32,4%, el más bajo de todas las configuraciones, siendo el más rápido con 154,4s por tarea.
 
@@ -80,7 +80,7 @@ Comparamos cinco configuraciones:
 
 Desglosar las puntuaciones según el contenido de cada diapositiva revela patrones claros:
 
-| Tipo de contenido        | Verso Medium | Claude for PPT |
+| Tipo de contenido        | Folio Medium | Claude for PPT |
 |--------------------------|--------------|----------------|
 | Texto denso              | 66,8%        | 48,3%          |
 | Diapositivas sin gráfica | 63,5%        | 44,8%          |
@@ -92,22 +92,22 @@ Desglosar las puntuaciones según el contenido de cada diapositiva revela patron
 
 Las diapositivas con mucho texto son la categoría más fácil, mientras que los mapas son los más difíciles (igual de malos para ambos agentes). Las gráficas, que representan el 54% del benchmark, tiran considerablemente la puntuación global hacia abajo.
 
-### Donde Verso destaca
+### Donde Folio destaca
 
-Verso obtiene sistemáticamente buenas puntuaciones en diapositivas de texto estructurado: texto legal formateado, maquetaciones de varias secciones con cajas de color, páginas estilo índice y maquetaciones multicolumna con iconos. En estas, Verso Max logra habitualmente puntuaciones casi perfectas, e incluso Verso Medium y Verso Fast alcanzan el 75-100%, mientras que ambas variantes de Claude for Powerpoint suelen quedar significativamente por detrás.
+Folio obtiene sistemáticamente buenas puntuaciones en diapositivas de texto estructurado: texto legal formateado, maquetaciones de varias secciones con cajas de color, páginas estilo índice y maquetaciones multicolumna con iconos. En estas, Folio Max logra habitualmente puntuaciones casi perfectas, e incluso Folio Medium y Folio Fast alcanzan el 75-100%, mientras que ambas variantes de Claude for Powerpoint suelen quedar significativamente por detrás.
 
 ### Lo que sigue siendo difícil
 
 Alrededor del 20% del benchmark está esencialmente sin resolver: los cinco agentes obtienen un 25% o menos en las tareas más difíciles. Los modos de fallo más comunes:
 
-- **Mapas geográficos.** Los agentes tienen dificultades para producir visualizaciones de mapas precisas. Pueden sustituir el mapa por una forma sin relación, renderizarlo a una escala incorrecta o perder la codificación de colores por estados. Verso sí intenta los mapas, pero los resultados son consistentemente pobres: un mapa de EE.UU. puede aparecer reducido con detalles que faltan, o un mapa mundial puede ser reemplazado por un diagrama circular.
+- **Mapas geográficos.** Los agentes tienen dificultades para producir visualizaciones de mapas precisas. Pueden sustituir el mapa por una forma sin relación, renderizarlo a una escala incorrecta o perder la codificación de colores por estados. Folio sí intenta los mapas, pero los resultados son consistentemente pobres: un mapa de EE.UU. puede aparecer reducido con detalles que faltan, o un mapa mundial puede ser reemplazado por un diagrama circular.
 - **Gráficas complejas con datos densos.** Las gráficas combinadas (barras + líneas en doble eje), los paneles de múltiples gráficas y las matrices de mapa de calor rompen consistentemente todos los agentes. Los fallos habituales incluyen gráficas enteras que desaparecen, etiquetas de ejes que se pierden y valores de datos que faltan.
 - **Formas compuestas personalizadas.** Embudos construidos con trapecios, gráficas de cuadrantes con divisores curvos y construcciones similares requieren capas y alineación precisas que los agentes aún no pueden lograr de forma fiable.
 
-### Donde Verso aún tiene margen de mejora
+### Donde Folio aún tiene margen de mejora
 
-Incluso Verso Max, a pesar de su media del 70,8%, sigue teniendo dificultades en algunas tareas (puntuando 25% o menos). Estas tienden a ser diapositivas con grandes cuadrículas estructuradas, logotipos de marca incrustados en gráficas o elementos decorativos. Esto sugiere oportunidades específicas para mejorar el manejo de estos patrones en Verso.
+Incluso Folio Max, a pesar de su media del 70,8%, sigue teniendo dificultades en algunas tareas (puntuando 25% o menos). Estas tienden a ser diapositivas con grandes cuadrículas estructuradas, logotipos de marca incrustados en gráficas o elementos decorativos. Esto sugiere oportunidades específicas para mejorar el manejo de estos patrones en Folio.
 
-La velocidad también es un área de foco. Verso Max tarda casi 5 minutos por tarea, e incluso Verso Fast promedia más de 2,5 minutos. Un buen asistente de IA debería sentirse más como una continuación fluida de tu trabajo que como un partido de tenis donde esperas a que te devuelvan la pelota. Trabajaremos en reducir la latencia significativamente en las próximas semanas.
+La velocidad también es un área de foco. Folio Max tarda casi 5 minutos por tarea, e incluso Folio Fast promedia más de 2,5 minutos. Un buen asistente de IA debería sentirse más como una continuación fluida de tu trabajo que como un partido de tenis donde esperas a que te devuelvan la pelota. Trabajaremos en reducir la latencia significativamente en las próximas semanas.
 
-Todos los resultados, incluyendo las imágenes generadas frente a las de referencia por tarea y las críticas del evaluador, están disponibles en [el repositorio de PrezEval](https://github.com/VersoLabs/PrezEvalPublic).
+Todos los resultados, incluyendo las imágenes generadas frente a las de referencia por tarea y las críticas del evaluador, están disponibles en [el repositorio de PrezEval](https://github.com/FolioLabs/PrezEvalPublic).

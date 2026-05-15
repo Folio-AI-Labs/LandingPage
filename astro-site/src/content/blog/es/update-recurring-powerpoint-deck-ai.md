@@ -21,7 +21,7 @@ El cuarto problema es la revisión de formato final. Después de todas las actua
 
 ## El flujo de trabajo con IA
 
-Así es como funciona el mismo proceso con Verso.
+Así es como funciona el mismo proceso con Folio.
 
 ### Paso 1: Preparar los datos (esta parte no cambia)
 
@@ -29,11 +29,11 @@ Antes de cualquier actualización, necesitas tus cifras actualizadas. Extráelas
 
 ### Paso 2: Actualizar todas las referencias al período en una sola pasada
 
-Abre tu presentación en PowerPoint con Verso activo. Empieza con una actualización global del período:
+Abre tu presentación en PowerPoint con Folio activo. Empieza con una actualización global del período:
 
 *"Actualiza todas las referencias en la presentación de Q3 2025 a Q4 2025. Actualiza la fecha en el pie de página y en la diapositiva de portada. Cambia 'nueve meses terminados en septiembre' por 'doce meses terminados en diciembre'."*
 
-Verso escanea cada elemento de texto en cada diapositiva y actualiza las referencias coincidentes. Lo que antes significaba buscar a través de 40 diapositivas es ahora una operación de 20 segundos. Esto solo elimina una de las fuentes de error más comunes en la producción de presentaciones periódicas.
+Folio escanea cada elemento de texto en cada diapositiva y actualiza las referencias coincidentes. Lo que antes significaba buscar a través de 40 diapositivas es ahora una operación de 20 segundos. Esto solo elimina una de las fuentes de error más comunes en la producción de presentaciones periódicas.
 
 ### Paso 3: Actualizar las gráficas con los nuevos datos
 
@@ -59,11 +59,11 @@ Revisa y edita el borrador. Esto lleva 5 minutos en lugar de 20.
 
 *"Revisa todas las diapositivas y marca los cuadros de texto donde el texto se desborda. Aplica tamaños de fuente consistentes: texto de cuerpo 10pt, cuadros de llamada 9pt. Verifica que todos los títulos estén posicionados de forma coherente."*
 
-Verso revisa y corrige. No hace falta revisar diapositiva a diapositiva manualmente.
+Folio revisa y corrige. No hace falta revisar diapositiva a diapositiva manualmente.
 
 ## La comparación de tiempos
 
-| Tarea                                   | Manual        | Con Verso    |
+| Tarea                                   | Manual        | Con Folio    |
 |-----------------------------------------|---------------|--------------|
 | Actualización de referencias al período | 30-45 min     | 2 min        |
 | Actualización de datos de gráficas (20) | 90-120 min    | 20 min       |

@@ -11,11 +11,11 @@ Ils ne résolvent pas le même problème. Cette distinction est plus importante 
 
 ## Les outils
 
-### 1. Verso
+### 1. Folio
 
-Verso est le seul outil de cette liste conçu spécifiquement pour éditer des fichiers PowerPoint existants plutôt que d'en générer de nouveaux. C'est un add-in PowerPoint qui lit votre deck, comprend votre modèle et votre thème, et modifie les slides sur la base de commandes en langage naturel.
+Folio est le seul outil de cette liste conçu spécifiquement pour éditer des fichiers PowerPoint existants plutôt que d'en générer de nouveaux. C'est un add-in PowerPoint qui lit votre deck, comprend votre modèle et votre thème, et modifie les slides sur la base de commandes en langage naturel.
 
-La plupart des outils IA s'en sortent raisonnablement bien pour générer un deck vierge à partir d'une invite. Ils s'effondrent quand vous leur confiez un deck d'entreprise de 40 slides et que vous leur demandez de le restructurer. Verso a été conçu précisément pour ce scénario. Édition de graphiques, mise en forme de tableaux, modifications structurelles sur un deck entier — tout est géré via une invite, tout est appliqué directement dans votre fichier PowerPoint, avec votre modèle intact.
+La plupart des outils IA s'en sortent raisonnablement bien pour générer un deck vierge à partir d'une invite. Ils s'effondrent quand vous leur confiez un deck d'entreprise de 40 slides et que vous leur demandez de le restructurer. Folio a été conçu précisément pour ce scénario. Édition de graphiques, mise en forme de tableaux, modifications structurelles sur un deck entier — tout est géré via une invite, tout est appliqué directement dans votre fichier PowerPoint, avec votre modèle intact.
 
 Ce n'est pas l'outil le plus rapide pour la génération à partir d'une page blanche. C'est un compromis délibéré. Si vous travaillez dans un modèle existant, ce compromis est sans pertinence.
 
@@ -77,7 +77,7 @@ Les outils ci-dessus se répartissent en deux catégories, et cette distinction 
 
 Les outils de génération — Gamma, Beautiful.ai, Presentations.ai, Plus AI — excellent pour créer de nouveaux decks à partir d'une page blanche. Ils sont mauvais, voire inutilisables, pour éditer des modèles d'entreprise existants. Ce n'est pas une critique ; c'est simplement leur conception.
 
-Les outils d'édition — Verso et Copilot — travaillent avec vos fichiers existants. Ils préservent vos modèles. Ils gèrent les modifications itératives sur des decks déjà existants.
+Les outils d'édition — Folio et Copilot — travaillent avec vos fichiers existants. Ils préservent vos modèles. Ils gèrent les modifications itératives sur des decks déjà existants.
 
 Le flux de travail professionnel sur les slides appartient presque entièrement à la catégorie édition. La plupart des consultants, analystes et équipes de communication d'entreprise ne construisent pas des decks à partir de zéro à chaque fois. Ils travaillent dans des modèles qui encodent des années d'investissement de marque, ils itèrent sur des fichiers clients, ils mettent à jour des présentations récurrentes avec de nouvelles données. Les outils de génération ne résolvent pas ce problème, peu importe la qualité du résultat sur un canevas vierge.
 
@@ -85,10 +85,10 @@ C'est ce que la plupart des comparatifs d'outils IA pour slides ratent. Ils clas
 
 ## Notre recommandation
 
-Pour les professionnels qui travaillent avec des modèles PowerPoint existants — consultants, analystes, équipes de communication d'entreprise — Verso est le seul outil conçu pour votre flux de travail réel. Il fonctionne là où vivent vos fichiers, préserve ce que vous avez construit et gère les modifications complexes que les autres outils évitent.
+Pour les professionnels qui travaillent avec des modèles PowerPoint existants — consultants, analystes, équipes de communication d'entreprise — Folio est le seul outil conçu pour votre flux de travail réel. Il fonctionne là où vivent vos fichiers, préserve ce que vous avez construit et gère les modifications complexes que les autres outils évitent.
 
 Pour les utilisateurs M365 qui veulent une assistance IA de base sans ajouter un nouvel outil, Copilot est un point de départ raisonnable. Sachez à l'avance qu'il est cher et que les tâches d'édition complexes nécessiteront toujours un travail manuel.
 
 Pour les équipes qui ont principalement besoin de générer de nouveaux decks et n'ont pas de contraintes de modèle PowerPoint, Gamma offre la meilleure qualité de génération à un prix raisonnable.
 
-**Essayez Verso gratuitement : [get-verso.ai](https://get-verso.ai)**
+**Essayez Folio gratuitement : [get-folio.ai](https://get-folio.ai)**
