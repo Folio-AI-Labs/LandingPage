@@ -201,7 +201,7 @@ export const translations = {
 
     // Meta
     'meta.title': 'Home',
-    'meta.description': 'Native PowerPoint editing powered by AI. Built for consultants and strategy teams.',
+    'meta.description': 'AI for decks where every slide counts. Works directly in PowerPoint - built for consultants and finance teams.',
 
     // Privacy Policy
     'privacy.meta.title': 'Privacy Policy',
@@ -516,7 +516,7 @@ export const translations = {
 
     // Meta
     'meta.title': 'Accueil',
-    'meta.description': 'Modification native de PowerPoint par IA. Conçu pour les consultants et les équipes stratégie.',
+    'meta.description': 'L\'IA pour les decks où chaque slide compte. Fonctionne directement dans PowerPoint - conçu pour les consultants et les équipes finance.',
 
     // Privacy Policy
     'privacy.meta.title': 'Politique de confidentialité',
@@ -831,7 +831,7 @@ export const translations = {
 
     // Meta
     'meta.title': 'Inicio',
-    'meta.description': 'Edición nativa de PowerPoint con IA de vanguardia. Para consultores y equipos de estrategia.',
+    'meta.description': 'IA para los decks donde cada slide cuenta. Funciona directamente en PowerPoint - diseñado para consultores y equipos de finanzas.',
 
     // Privacy Policy
     'privacy.meta.title': 'Política de privacidad',
@@ -1146,7 +1146,7 @@ export const translations = {
 
     // Meta
     'meta.title': 'Startseite',
-    'meta.description': 'Native PowerPoint-Bearbeitung mit KI. Für Berater und Strategie-Teams.',
+    'meta.description': 'KI für Decks, wo jede Folie zählt. Direkt in PowerPoint - für Berater und Finance-Teams.',
 
     // Privacy Policy
     'privacy.meta.title': 'Datenschutzerklärung',
