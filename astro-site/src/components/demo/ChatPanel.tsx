@@ -23,16 +23,17 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
   }, [messages, toolCalls, isTyping])
 
   return (
-    <div className="demo-chat flex flex-col flex-1 min-h-0 overflow-hidden">
+    <div className="demo-chat flex flex-col flex-1 min-h-0 overflow-hidden relative">
+      {/* Folio logo watermark — pinned to the chat window, so it doesn't shift
+          when the composer/thread heights change while typing. */}
+      {messages.length === 0 && toolCalls.length === 0 && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+          <img src="/folio_logo.png" alt="" className="w-32 h-32" />
+        </div>
+      )}
 
       {/* Thread — matches ThreadPrimitive.Viewport */}
       <div ref={threadRef} className="flex-1 min-h-0 overflow-y-hidden relative">
-        {/* Folio logo watermark — centered in thread area above composer */}
-        {messages.length === 0 && toolCalls.length === 0 && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <img src="/folio_logo.png" alt="" className="w-20 h-20" />
-          </div>
-        )}
         {/* padding matches addin: pt-12 on viewport, px-3 py-2 on messages */}
         <div className="pt-4">
           {(() => {
