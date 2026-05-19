@@ -27,7 +27,7 @@ export default function ChatPanel({ messages, toolCalls, isTyping, composerText,
       {/* Folio logo watermark — pinned to the chat window, so it doesn't shift
           when the composer/thread heights change while typing. */}
       {messages.length === 0 && toolCalls.length === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        <div className="absolute inset-x-0 top-0 bottom-16 flex items-center justify-center pointer-events-none z-0">
           <img src="/folio_logo.png" alt="" className="w-32 h-32" />
         </div>
       )}
