@@ -76,6 +76,7 @@
 .demo-viewer-outer {
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .demo-viewer-inner {
