@@ -33,10 +33,16 @@ const evaluationDateIso = evaluationDateValue.toISOString().slice(0, 10);
       <clipPath id="clip-bottom">
         <rect x="0" y="0" width="500" height="280"/>
       </clipPath>
+      <pattern id="folio-medium-fill" patternUnits="userSpaceOnUse" x="65" y="124" width="70" height="162">
+        <image href="/bar_texture_medium.webp" x="0" y="0" width="70" height="162" preserveAspectRatio="xMidYMid slice"/>
+      </pattern>
+      <pattern id="folio-fast-fill" patternUnits="userSpaceOnUse" x="165" y="152.8" width="70" height="133.2">
+        <image href="/bar_texture_fast.webp" x="0" y="0" width="70" height="133.2" preserveAspectRatio="xMidYMid slice"/>
+      </pattern>
     </defs>
 
     <!-- Folio AI Pro: 65% => height=156, y=124 -->
-    <rect x="65" y="124" width="70" height="162" rx="6" ry="6" fill="#1a1a1a" clip-path="url(#clip-bottom)"/>
+    <rect x="65" y="124" width="70" height="162" rx="6" ry="6" fill="url(#folio-medium-fill)" clip-path="url(#clip-bottom)"/>
     <text x="100" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">65%</text>
     <text x="100" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
       <tspan x="100" dy="0">Folio</tspan>
@@ -44,7 +50,7 @@ const evaluationDateIso = evaluationDateValue.toISOString().slice(0, 10);
     </text>
 
     <!-- Folio AI Starter: 53% => height=127.2, y=152.8 -->
-    <rect x="165" y="152.8" width="70" height="133.2" rx="6" ry="6" fill="#1a1a1a" clip-path="url(#clip-bottom)"/>
+    <rect x="165" y="152.8" width="70" height="133.2" rx="6" ry="6" fill="url(#folio-fast-fill)" clip-path="url(#clip-bottom)"/>
     <text x="200" y="142.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">53%</text>
     <text x="200" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
       <tspan x="200" dy="0">Folio</tspan>

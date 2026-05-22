@@ -146,21 +146,21 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Unlimited Plan -->
-      <div class="bg-black rounded-2xl px-6 py-5 border-2 border-black transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl">
+      <div class="rounded-2xl px-6 py-5 transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl bg-cover bg-center" style="background-image: url('/unlimited_bg.webp');">
         <div class="mb-3 min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-white">{t('pricing.unlimited.name')}</h3>
           </div>
-          <p class="text-sm text-gray-400 leading-normal">{t('pricing.unlimited.description')}</p>
+          <p class="text-sm text-white leading-normal">{t('pricing.unlimited.description')}</p>
         </div>
 
         <div class="mb-3 min-h-[56px] flex items-center">
-          <a href={getLocalizedPath('/quote', lang)} class="block w-full py-3 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-white text-black hover:bg-gray-200">{t('pricing.unlimited.getQuote')}</a>
+          <a href={getLocalizedPath('/quote', lang)} class="block w-full py-3 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-black text-white hover:bg-gray-800">{t('pricing.unlimited.getQuote')}</a>
         </div>
 
-        <div class="bg-gray-800 rounded-xl px-3 py-3 mb-4">
-          <p class="text-sm leading-relaxed text-white"><span class="font-semibold text-white">{t('pricing.unlimited.credits')}</span> {t('pricing.unlimited.creditsDesc')}</p>
-          <p class="text-sm leading-relaxed text-white">&nbsp;</p>
+        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.unlimited.credits')}</span> {t('pricing.unlimited.creditsDesc')}</p>
+          <p class="text-sm leading-relaxed text-brand-dark">&nbsp;</p>
         </div>
 
         <ul class="list-none mb-5 flex-grow">
