@@ -76,7 +76,13 @@
 .demo-viewer-outer {
   display: flex;
   justify-content: center;
-  overflow-x: hidden;
+  /* Clip (not just overflow-x) so the chat panel's scale(1.25) pop-out and the
+     slide-in transform never leak vertically into the document and spawn a
+     transient body scrollbar. overflow: clip creates no scroll container and no
+     layout box, so it works inside the absolutely-positioned DemoFrame too. The
+     clip-margin keeps the frame drop-shadow and the popped-out panel painting. */
+  overflow: clip;
+  overflow-clip-margin: 80px;
 }
 
 .demo-viewer-inner {
