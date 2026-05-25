@@ -71,7 +71,7 @@ const t = useTranslations(lang);
 
         <div class="mb-3 min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$49</span>
+            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$10</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
@@ -91,8 +91,7 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Pro Plan -->
-      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand transition duration-300 flex flex-col relative hover:-translate-y-2 hover:shadow-xl">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white py-1.5 px-4 rounded-[20px] text-[10px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">{t('pricing.mostPopular')}</span>
+      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
         <div class="mb-3 min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.pro.name')}</h3>
@@ -102,7 +101,7 @@ const t = useTranslations(lang);
 
         <div class="mb-3 min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
-            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$199</span>
+            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$49</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
@@ -116,6 +115,37 @@ const t = useTranslations(lang);
           <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.pro.feature1')}</strong></li>
           <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature2')}</li>
           <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature3')}</li>
+        </ul>
+
+        <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand transition duration-300 flex flex-col relative hover:-translate-y-2 hover:shadow-xl">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white py-1.5 px-4 rounded-[20px] text-[10px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">{t('pricing.mostPopular')}</span>
+        <div class="mb-3 min-h-[90px]">
+          <div class="flex items-center gap-3 mb-1">
+            <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.enterprise.name')}</h3>
+          </div>
+          <p class="text-sm text-brand-muted leading-normal">{t('pricing.enterprise.description')}</p>
+        </div>
+
+        <div class="mb-3 min-h-[56px]">
+          <div class="flex items-baseline gap-1 flex-wrap">
+            <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$199</span>
+            <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
+          </div>
+        </div>
+
+        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.enterprise.credits')}</span> {t('pricing.enterprise.creditsDesc')}</p>
+          <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.enterprise.creditPrice')}</span> {t('pricing.enterprise.creditPriceDesc')}</p>
+        </div>
+
+        <ul class="list-none mb-5 flex-grow">
+          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.enterprise.feature1')}</strong></li>
+          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.enterprise.feature2')}</li>
+          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.enterprise.feature3')}</li>
         </ul>
 
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer bg-brand text-white border-none hover:bg-opacity-90">{t('pricing.getStarted')}</button>
@@ -152,30 +182,12 @@ const t = useTranslations(lang);
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</button>
       </div>
 
-      <!-- Unlimited Plan -->
-      <div class="rounded-2xl px-6 py-5 transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl bg-cover bg-center" style="background-image: url('/unlimited_bg.webp');">
-        <div class="mb-3 min-h-[90px]">
-          <div class="flex items-center gap-3 mb-1">
-            <h3 class="font-display text-[28px] font-semibold text-white">{t('pricing.unlimited.name')}</h3>
-          </div>
-          <p class="text-sm text-white leading-normal">{t('pricing.unlimited.description')}</p>
-        </div>
+    </div>
 
-        <div class="mb-3 min-h-[56px] flex items-center">
-          <a href={getLocalizedPath('/quote', lang)} class="block w-full py-3 rounded-pill text-center no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-black text-white hover:bg-gray-800">{t('pricing.unlimited.getQuote')}</a>
-        </div>
-
-        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
-          <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.unlimited.credits')}</span> {t('pricing.unlimited.creditsDesc')}</p>
-          <p class="text-sm leading-relaxed text-brand-dark">&nbsp;</p>
-        </div>
-
-        <ul class="list-none mb-5 flex-grow">
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-white"><span class="text-white font-bold text-base shrink-0">✓</span><strong>{t('pricing.unlimited.feature1')}</strong></li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-white"><span class="text-white font-bold text-base shrink-0">✓</span>{t('pricing.unlimited.feature2')}</li>
-        </ul>
-      </div>
-
+    <!-- Unlimited Banner -->
+    <div class="-mx-[30px] nav:-mx-[60px] mt-12 px-[30px] nav:px-[60px] py-12 bg-cover bg-center flex flex-col items-center justify-center text-center gap-6" style="background-image: url('/unlimited_bg.webp');">
+      <p class="font-display text-[32px] nav:text-[29px] font-normal leading-[1.3] text-white max-w-[800px]">{t('pricing.unlimited.banner')}</p>
+      <a href={getLocalizedPath('/quote', lang)} class="inline-block py-3 px-8 rounded-pill no-underline text-[14px] font-semibold transition duration-300 cursor-pointer bg-black text-white hover:bg-gray-800 whitespace-nowrap">{t('pricing.unlimited.getQuote')}</a>
     </div>
 
     <!-- FAQ Section -->
