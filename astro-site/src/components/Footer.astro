@@ -53,7 +53,8 @@ const t = useTranslations(lang);
           <h4 class="font-heading text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">{t('footer.company')}</h4>
           <ul class="space-y-3 list-none p-0 m-0">
             <li><a href={getLocalizedPath('/privacy/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.privacyPolicy')}</a></li>
-            <li><a href={getLocalizedPath('/terms/', lang)} class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.terms')}</a></li>
+            <!-- Terms is English-only (no [locale]/terms.astro), so always link the canonical /terms/ -->
+            <li><a href="/terms/" class="text-sm text-white/70 hover:text-white transition-colors duration-200 no-underline">{t('footer.terms')}</a></li>
           </ul>
         </div>
       </div>

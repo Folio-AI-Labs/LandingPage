@@ -5,6 +5,15 @@ import { languages as languageMap } from '../i18n/languages';
 const lang = getLangFromUrl(Astro.url);
 const currentPath = getCurrentPath(Astro.url);
 
+// Pages that have a localized ([locale]/) build. Anything outside this set is
+// English-only (e.g. /terms/, standalone deck pages), so switching language must
+// go to that locale's home instead of fabricating a URL that 404s.
+const localizedRoute = [
+  /^\/$/,
+  /^\/(pricing|demo|privacy|quote|support|blog)\/$/,
+  /^\/blog\/[^/]+\/$/,
+].some((re) => re.test(currentPath));
+
 const languages = [
   { code: 'en', label: 'English', display: 'EN' },
   { code: 'fr', label: 'Français', display: 'FR' },
@@ -28,7 +37,9 @@ const currentLanguage = languages.find(l => l.code === lang)?.display || 'EN';
 
   <div class="language-dropdown absolute right-0 top-full mt-2 bg-white border border-brand-border rounded-lg shadow-lg py-1 w-auto z-[1003]">
     {languages.map(l => {
-      const href = l.code === 'en' ? currentPath : `/${l.code}${currentPath}`;
+      const href = l.code === 'en'
+        ? currentPath
+        : localizedRoute ? `/${l.code}${currentPath}` : `/${l.code}/`;
       const isActive = l.display === currentLanguage;
       return (
         <a
