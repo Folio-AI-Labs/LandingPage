@@ -324,6 +324,12 @@ export const translations = {
     'privacy.s13.p1': 'For privacy-related inquiries or to exercise your rights:',
     'privacy.s13.email': '<strong>Email:</strong> privacy@get-folio.ai',
     'privacy.disclaimer': 'Folio AI is not affiliated with or endorsed by Microsoft.',
+
+    // Install Modal
+    'install.title': 'Get Folio AI',
+    'install.powerpoint': 'Open in PowerPoint',
+    'install.googleSlides': 'Open in Google Slides',
+    'install.fallback': "Don't have PowerPoint installed or a Google account? Use the online version",
   },
   fr: {
     // Navigation
@@ -650,6 +656,12 @@ export const translations = {
     'privacy.s13.p1': 'Pour les demandes liées à la confidentialité ou pour exercer vos droits :',
     'privacy.s13.email': '<strong>Email :</strong> privacy@get-folio.ai',
     'privacy.disclaimer': 'Folio AI n\'est ni affilié à, ni approuvé par Microsoft.',
+
+    // Install Modal
+    'install.title': 'Installer Folio AI',
+    'install.powerpoint': 'Ouvrir dans PowerPoint',
+    'install.googleSlides': 'Ouvrir dans Google Slides',
+    'install.fallback': "Pas de PowerPoint installé ni de compte Google ? Utilisez la version en ligne",
   },
   es: {
     // Navigation
@@ -976,6 +988,12 @@ export const translations = {
     'privacy.s13.p1': 'Para consultas relacionadas con la privacidad o para ejercer sus derechos:',
     'privacy.s13.email': '<strong>Correo electrónico:</strong> privacy@get-folio.ai',
     'privacy.disclaimer': 'Folio AI no está afiliado ni respaldado por Microsoft.',
+
+    // Install Modal
+    'install.title': 'Instalar Folio AI',
+    'install.powerpoint': 'Abrir en PowerPoint',
+    'install.googleSlides': 'Abrir en Google Slides',
+    'install.fallback': '¿No tienes PowerPoint instalado ni una cuenta de Google? Usa la versión en línea',
   },
   de: {
     // Navigation
@@ -1302,6 +1320,12 @@ export const translations = {
     'privacy.s13.p1': 'Für datenschutzbezogene Anfragen oder um Ihre Rechte auszuüben:',
     'privacy.s13.email': '<strong>E-Mail:</strong> privacy@get-folio.ai',
     'privacy.disclaimer': 'Folio AI ist nicht mit Microsoft verbunden oder von Microsoft empfohlen.',
+
+    // Install Modal
+    'install.title': 'Folio AI installieren',
+    'install.powerpoint': 'In PowerPoint öffnen',
+    'install.googleSlides': 'In Google Slides öffnen',
+    'install.fallback': 'Kein PowerPoint installiert oder kein Google-Konto? Nutzen Sie die Online-Version',
   },
 };
 

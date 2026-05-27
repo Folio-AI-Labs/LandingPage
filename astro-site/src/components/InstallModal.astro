@@ -1,5 +1,8 @@
 ---
-import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL } from '../consts';
+import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL, GOOGLE_SLIDES_INSTALL_URL } from '../consts';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div id="install-modal" class="fixed inset-0 z-[2000] hidden items-center justify-center">
@@ -9,15 +12,26 @@ import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL } from '../consts';
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
 
-    <h3 class="font-heading text-xl font-semibold text-brand mb-6">Get Folio AI</h3>
+    <h3 class="font-heading text-xl font-semibold text-brand mb-6">{t('install.title')}</h3>
 
     <a
       href={DESKTOP_INSTALL_URL}
       class="flex items-center justify-center gap-3 w-full bg-brand text-white py-4 px-6 rounded-xl no-underline text-base font-semibold transition duration-300 hover:-translate-y-0.5 hover:shadow-lg mb-4"
       data-install-choice="desktop"
     >
-      <img src="/powerpoint.png" alt="PowerPoint" class="w-8 h-8" />
-      <span>Open in PowerPoint</span>
+      <img src="/powerpoint-logo.png" alt="PowerPoint" class="h-8 w-auto" />
+      <span>{t('install.powerpoint')}</span>
+    </a>
+
+    <a
+      href={GOOGLE_SLIDES_INSTALL_URL}
+      target="_blank"
+      rel="noopener"
+      class="flex items-center justify-center gap-3 w-full bg-brand text-white py-4 px-6 rounded-xl no-underline text-base font-semibold transition duration-300 hover:-translate-y-0.5 hover:shadow-lg mb-4"
+      data-install-choice="google-slides"
+    >
+      <img src="/google-slides-logo.png" alt="Google Slides" class="h-8 w-auto" />
+      <span>{t('install.googleSlides')}</span>
     </a>
 
     <a
@@ -27,7 +41,7 @@ import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL } from '../consts';
       class="inline-block text-sm text-brand-muted hover:text-brand transition-colors no-underline underline-offset-2 hover:underline"
       data-install-choice="web"
     >
-      Don't have PowerPoint installed? Use the online version
+      {t('install.fallback')}
     </a>
   </div>
 </div>
