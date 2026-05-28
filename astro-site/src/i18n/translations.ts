@@ -13,8 +13,8 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'AI for decks where every slide counts',
-    'hero.subtitle1': 'Folio is the only AI agent to deliver professional-grade slides',
-    'hero.subtitle2': 'And it works with you directly in PowerPoint',
+    'hero.subtitle1': 'Folio is the only AI agent tailored for consulting and strategy teams',
+    'hero.subtitle2': 'It works with you in PowerPoint or Google Slides, nothing to install.',
     'hero.trustedBy': 'Trusted by',
     'examples.subtitle': 'Some decks made in one-shot with Folio (click to open):',
     'examples.draghi': 'Draghi report summary',
@@ -345,8 +345,8 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'L\'IA pour les decks où chaque slide compte',
-    'hero.subtitle1': 'Folio est le seul agent IA à produire des slides de qualité professionnelle',
-    'hero.subtitle2': 'Et il travaille avec vous, directement dans PowerPoint',
+    'hero.subtitle1': 'Folio est le seul agent IA conçu pour les équipes de conseil et de stratégie',
+    'hero.subtitle2': 'Il travaille avec vous dans PowerPoint ou Google Slides, rien à installer.',
     'hero.trustedBy': 'Ils nous font confiance',
     'examples.subtitle': 'Quelques decks faits en one-shot avec Folio (cliquez pour ouvrir) :',
     'examples.draghi': 'Synthèse du rapport Draghi',
@@ -677,8 +677,8 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'IA para los decks donde cada slide cuenta',
-    'hero.subtitle1': 'Folio es el único agente de IA que produce slides de calidad profesional',
-    'hero.subtitle2': 'Y trabaja contigo directamente en PowerPoint',
+    'hero.subtitle1': 'Folio es el único agente de IA diseñado para equipos de consultoría y estrategia',
+    'hero.subtitle2': 'Trabaja contigo en PowerPoint o Google Slides, sin nada que instalar.',
     'hero.trustedBy': 'Confían en nosotros',
     'examples.subtitle': 'Algunos decks hechos en one-shot con Folio (haz clic para abrir):',
     'examples.draghi': 'Resumen del informe Draghi',
@@ -1009,8 +1009,8 @@ export const translations = {
 
     // Hero Section
     'hero.title': 'KI für Decks, wo jede Folie zählt',
-    'hero.subtitle1': 'Folio ist der einzige KI-Agent für professionelle Folien',
-    'hero.subtitle2': 'Und das direkt in PowerPoint, an Ihrer Seite',
+    'hero.subtitle1': 'Folio ist der einzige KI-Agent für Beratungs- und Strategieteams',
+    'hero.subtitle2': 'Er arbeitet mit Ihnen in PowerPoint oder Google Slides — ohne Installation.',
     'hero.trustedBy': 'Sie vertrauen auf uns',
     'examples.subtitle': 'Einige Decks, in einem Schuss mit Folio erstellt (zum Öffnen klicken):',
     'examples.draghi': 'Zusammenfassung des Draghi-Berichts',
