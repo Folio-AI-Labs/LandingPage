@@ -8,78 +8,80 @@ const demoText: Record<string, {
   w2Prompt: string; w2Ai: string; w2Tools: string[]
 }> = {
   en: {
-    w1Prompt: 'Update slide 3 to add a competitive analysis section with key players.',
-    w1Ai: "I'll add a competitive analysis section to slide 3.",
+    w1Prompt: 'Rework slide 3 to break the productivity gap into its three root-cause shocks.',
+    w1Ai: "I'll restructure slide 3 around the three shocks behind the gap.",
     w1Tools: [
       'Analyzing current slide 3 structure',
-      'Adding competitive landscape section with market players',
+      'Rebuilding slide 3 around the three growth shocks',
     ],
-    w2Prompt: 'Make the title more impactful and add growth percentages.',
-    w2Ai: "I'll enhance the title and add specific growth metrics.",
+    w2Prompt: 'Now refocus slide 3 on the innovation gap, where Europe loses most.',
+    w2Ai: "I'll refocus slide 3 on the innovation and scale-up gap.",
     w2Tools: [
-      'Updating slide title for stronger impact',
-      'Adding YoY growth percentages to competitive data',
+      'Reviewing the slide content',
+      'Rebuilding slide 3 around the innovation gap',
     ],
   },
   fr: {
-    w1Prompt: 'Mets à jour la slide 3 pour ajouter une section d\'analyse concurrentielle avec les acteurs clés.',
-    w1Ai: 'Je vais ajouter une section d\'analyse concurrentielle à la slide 3.',
+    w1Prompt: 'Retravaille la slide 3 pour décomposer l\'écart de productivité en ses trois chocs d\'origine.',
+    w1Ai: 'Je vais restructurer la slide 3 autour des trois chocs à l\'origine de l\'écart.',
     w1Tools: [
       'Analyse de la structure actuelle de la slide 3',
-      'Ajout de la section paysage concurrentiel avec acteurs du marché',
+      'Reconstruction de la slide 3 autour des trois chocs de croissance',
     ],
-    w2Prompt: 'Rends le titre plus percutant et ajoute les pourcentages de croissance.',
-    w2Ai: 'Je vais améliorer le titre et ajouter des métriques de croissance spécifiques.',
+    w2Prompt: 'Maintenant recentre la slide 3 sur l\'écart d\'innovation, là où l\'Europe perd le plus.',
+    w2Ai: 'Je vais recentrer la slide 3 sur l\'écart d\'innovation et de passage à l\'échelle.',
     w2Tools: [
-      'Mise à jour du titre pour plus d\'impact',
-      'Ajout des pourcentages de croissance annuelle aux données concurrentielles',
+      'Revue du contenu de la slide',
+      'Reconstruction de la slide 3 autour de l\'écart d\'innovation',
     ],
   },
   es: {
-    w1Prompt: 'Actualiza la diapositiva 3 para agregar una sección de análisis competitivo con jugadores clave.',
-    w1Ai: 'Voy a agregar una sección de análisis competitivo a la diapositiva 3.',
+    w1Prompt: 'Reelabora la diapositiva 3 para desglosar la brecha de productividad en sus tres choques de origen.',
+    w1Ai: 'Voy a reestructurar la diapositiva 3 en torno a los tres choques detrás de la brecha.',
     w1Tools: [
       'Analizando estructura actual de diapositiva 3',
-      'Agregando sección de panorama competitivo con actores del mercado',
+      'Reconstruyendo la diapositiva 3 en torno a los tres choques de crecimiento',
     ],
-    w2Prompt: 'Haz el título más impactante y agrega porcentajes de crecimiento.',
-    w2Ai: 'Voy a mejorar el título y agregar métricas de crecimiento específicas.',
+    w2Prompt: 'Ahora reenfoca la diapositiva 3 en la brecha de innovación, donde Europa pierde más.',
+    w2Ai: 'Voy a reenfocar la diapositiva 3 en la brecha de innovación y escalado.',
     w2Tools: [
-      'Actualizando título para mayor impacto',
-      'Agregando porcentajes de crecimiento interanual a datos competitivos',
+      'Revisando el contenido de la diapositiva',
+      'Reconstruyendo la diapositiva 3 en torno a la brecha de innovación',
     ],
   },
   de: {
-    w1Prompt: 'Aktualisiere Folie 3, um einen Wettbewerbsanalyse-Abschnitt mit Hauptakteuren hinzuzufügen.',
-    w1Ai: 'Ich füge der Folie 3 einen Wettbewerbsanalyse-Abschnitt hinzu.',
+    w1Prompt: 'Überarbeite Folie 3, um die Produktivitätslücke in ihre drei Ursachen-Schocks aufzuschlüsseln.',
+    w1Ai: 'Ich strukturiere Folie 3 um die drei Schocks hinter der Lücke neu.',
     w1Tools: [
       'Analyse der aktuellen Struktur von Folie 3',
-      'Hinzufügen des Wettbewerbslandschaft-Abschnitts mit Marktakteuren',
+      'Neuaufbau von Folie 3 rund um die drei Wachstumsschocks',
     ],
-    w2Prompt: 'Mache den Titel wirkungsvoller und füge Wachstumsprozentsätze hinzu.',
-    w2Ai: 'Ich verbessere den Titel und füge spezifische Wachstumsmetriken hinzu.',
+    w2Prompt: 'Richte Folie 3 nun auf die Innovationslücke aus, wo Europa am meisten verliert.',
+    w2Ai: 'Ich richte Folie 3 auf die Innovations- und Scale-up-Lücke aus.',
     w2Tools: [
-      'Aktualisierung des Titels für stärkere Wirkung',
-      'Hinzufügen von YoY-Wachstumsprozentsätzen zu Wettbewerbsdaten',
+      'Überprüfung des Folieninhalts',
+      'Neuaufbau von Folie 3 rund um die Innovationslücke',
     ],
   },
 }
 
 const fileTitles: Record<string, string> = {
-  en: 'Tech Market Analysis.pptx',
-  fr: 'Analyse Marché Tech.pptx',
-  es: 'Análisis Mercado Tech.pptx',
-  de: 'Tech-Marktanalyse.pptx',
+  en: 'European Competitiveness — Draghi.pptx',
+  fr: 'Compétitivité européenne — Draghi.pptx',
+  es: 'Competitividad europea — Draghi.pptx',
+  de: 'Europäische Wettbewerbsfähigkeit — Draghi.pptx',
 }
 
-const visible10 = Array.from({ length: 10 }, (_, i) => i)
+// Rail of 8 slides. Pages 4 & 5 (indices 3, 4) are held back so the edited
+// "slide 3" can morph into them without any thumbnail appearing twice.
+const initialRail = [0, 1, 2, 5, 6, 7, 8, 9]
 
 export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
   const config = useMemo((): DemoWorkflowConfig => {
     const t = demoText[lang] || demoText.en
     return {
       allSlides: editSlides,
-      initialVisible: visible10,
+      initialVisible: initialRail,
       initialActive: 2,
       turns: [
         {
@@ -102,7 +104,7 @@ export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
         },
       ],
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
-      totalSlideCount: 10,
+      totalSlideCount: 8,
       loopDelay: 2000,
     }
   }, [lang])
