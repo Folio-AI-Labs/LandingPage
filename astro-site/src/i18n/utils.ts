@@ -14,8 +14,11 @@ export function useTranslations(lang: LanguageCode) {
 }
 
 export function getLocalizedPath(path: string, lang: LanguageCode): string {
-  if (lang === defaultLang) return path;
-  return `/${lang}${path}`;
+  const localized = lang === defaultLang ? path : `/${lang}${path}`;
+  // GitHub Pages serves directory-style URLs and 301-redirects the slashless
+  // form (/privacy -> /privacy/). Emit the trailing slash so internal links
+  // match the canonical URL and Google does not flag "Page with redirect".
+  return localized.endsWith('/') ? localized : `${localized}/`;
 }
 
 export function getCurrentPath(url: URL): string {
