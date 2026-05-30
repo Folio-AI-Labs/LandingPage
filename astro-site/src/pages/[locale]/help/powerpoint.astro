@@ -1,0 +1,106 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpBlocks from '../../../components/HelpBlocks.astro';
+import type { HelpPageContent } from '../../../components/helpBlocks';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL } from '../../../consts';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+const content: Record<string, HelpPageContent> = {
+  fr: {
+    title: 'Utiliser Folio AI dans PowerPoint',
+    description: "Installez l'add-in Folio AI dans PowerPoint, connectez-vous et générez votre première présentation.",
+    blocks: [
+      { type: 'p', html: `Folio AI s'exécute comme un add-in dans PowerPoint : il fonctionne juste à côté de vos slides, sans rien à télécharger sur votre ordinateur. Il est compatible avec <strong>PowerPoint pour Microsoft 365</strong>, <strong>PowerPoint 2021 et 2019</strong> et <strong>PowerPoint sur le web</strong>, sur Windows comme sur Mac. Suivez les étapes ci-dessous pour vous lancer.` },
+      { type: 'h2', text: "1. Obtenir l'add-in Folio AI" },
+      { type: 'p', html: `Deux façons d'installer Folio dans PowerPoint :` },
+      { type: 'ul', items: [
+        `<strong>Depuis PowerPoint (recommandé).</strong> Ouvrez PowerPoint, allez dans l'onglet <strong>Accueil</strong> ou <strong>Insertion</strong>, sélectionnez <strong>Compléments</strong> (ou <strong>Obtenir des compléments</strong>), recherchez <strong>Folio AI</strong> et choisissez <strong>Ajouter</strong>.`,
+        `<strong>Depuis le store Microsoft AppSource.</strong> Vous pouvez aussi installer Folio directement depuis le store Microsoft, puis revenir dans PowerPoint. <a href="${WEB_INSTALL_URL}" target="_blank" rel="noopener">Ouvrir la fiche Folio AI sur AppSource →</a>`,
+      ] },
+      { type: 'p', html: `PowerPoint est déjà installé ? Vous pouvez <a href="${DESKTOP_INSTALL_URL}">ouvrir Folio directement dans l'application bureau</a>.` },
+      { type: 'media', caption: 'Capture : recherche de Folio AI dans Accueil → Compléments dans PowerPoint.' },
+      { type: 'h2', text: '2. Lancer Folio AI' },
+      { type: 'p', html: `Après l'installation, le bouton Folio AI apparaît dans le ruban de PowerPoint (généralement dans l'onglet <strong>Accueil</strong>). Cliquez dessus pour ouvrir le panneau Folio à côté de vos slides. Si vous ne le voyez pas tout de suite, redémarrez PowerPoint et vérifiez à nouveau.` },
+      { type: 'media', caption: 'Capture : le bouton Folio AI dans le ruban et l\'ouverture du panneau latéral.' },
+      { type: 'h2', text: '3. Se connecter à votre compte Folio' },
+      { type: 'p', html: `Dans le panneau, connectez-vous à votre compte Folio. Votre compte Folio est indépendant de votre compte Microsoft : vous pouvez donc vous connecter avec la méthode de votre choix. Lors de votre première utilisation, la création du compte ne prend que quelques secondes.` },
+      { type: 'h2', text: '4. Démarrer avec vos crédits gratuits' },
+      { type: 'p', html: `Chaque nouveau compte inclut <strong>500 crédits gratuits</strong>, <strong>sans carte bancaire</strong>, pour essayer Folio immédiatement. Quand vous en aurez besoin de plus, vous pourrez choisir un forfait à tout moment — voir <a href="/fr/help/plans-and-billing/">Forfaits et facturation</a>.` },
+      { type: 'h2', text: '5. Générer votre première présentation' },
+      { type: 'p', html: `Le panneau ouvert, décrivez le deck souhaité — ou ouvrez une présentation existante et demandez à Folio de la modifier. Folio utilise les polices, couleurs et mises en page de votre template actuel pour rester dans votre charte. Vous pouvez affiner avec des prompts successifs et apporter des retouches manuelles dans PowerPoint à tout moment, chaque forme restant entièrement modifiable.` },
+      { type: 'media', caption: 'Capture : saisie d\'un prompt dans le panneau Folio pour générer un deck.' },
+      { type: 'h2', text: 'Dépannage' },
+      { type: 'p', html: `L'add-in n'apparaît pas, problèmes de connexion ou restrictions sur un compte professionnel ? Consultez le guide <a href="/fr/help/troubleshooting/">Dépannage</a> ou <a href="/fr/help/get-support/">contactez notre équipe</a>.` },
+    ],
+  },
+  es: {
+    title: 'Usar Folio AI en PowerPoint',
+    description: 'Instala el complemento de Folio AI en PowerPoint, inicia sesión y genera tu primera presentación.',
+    blocks: [
+      { type: 'p', html: `Folio AI se ejecuta como un complemento dentro de PowerPoint, así que funciona justo al lado de tus diapositivas y no hay nada que descargar en tu ordenador. Es compatible con <strong>PowerPoint para Microsoft 365</strong>, <strong>PowerPoint 2021 y 2019</strong> y <strong>PowerPoint en la web</strong>, tanto en Windows como en Mac. Sigue los pasos para empezar.` },
+      { type: 'h2', text: '1. Conseguir el complemento de Folio AI' },
+      { type: 'p', html: `Hay dos formas de instalar Folio en PowerPoint:` },
+      { type: 'ul', items: [
+        `<strong>Desde PowerPoint (recomendado).</strong> Abre PowerPoint, ve a la pestaña <strong>Inicio</strong> o <strong>Insertar</strong>, selecciona <strong>Complementos</strong> (u <strong>Obtener complementos</strong>), busca <strong>Folio AI</strong> y elige <strong>Agregar</strong>.`,
+        `<strong>Desde la tienda Microsoft AppSource.</strong> También puedes instalar Folio directamente desde la tienda de Microsoft y luego volver a PowerPoint. <a href="${WEB_INSTALL_URL}" target="_blank" rel="noopener">Abrir la ficha de Folio AI en AppSource →</a>`,
+      ] },
+      { type: 'p', html: `¿Ya tienes PowerPoint instalado? Puedes <a href="${DESKTOP_INSTALL_URL}">abrir Folio directamente en la aplicación de escritorio</a>.` },
+      { type: 'media', caption: 'Captura: buscar Folio AI en Inicio → Complementos en PowerPoint.' },
+      { type: 'h2', text: '2. Abrir Folio AI' },
+      { type: 'p', html: `Tras la instalación, el botón de Folio AI aparece en la cinta de PowerPoint (normalmente en la pestaña <strong>Inicio</strong>). Selecciónalo para abrir el panel de Folio junto a tus diapositivas. Si no aparece enseguida, reinicia PowerPoint y vuelve a comprobarlo.` },
+      { type: 'media', caption: 'Captura: el botón de Folio AI en la cinta y la apertura del panel lateral.' },
+      { type: 'h2', text: '3. Inicia sesión en tu cuenta de Folio' },
+      { type: 'p', html: `En el panel, inicia sesión en tu cuenta de Folio. Tu cuenta de Folio es independiente de tu cuenta de Microsoft, así que puedes iniciar sesión con el método que prefieras. Si es tu primera vez, crearás una cuenta en unos segundos.` },
+      { type: 'h2', text: '4. Empieza con tus créditos gratis' },
+      { type: 'p', html: `Cada cuenta nueva incluye <strong>500 créditos gratis</strong>, <strong>sin tarjeta de crédito</strong>, para probar Folio de inmediato. Cuando necesites más, puedes elegir un plan en cualquier momento; consulta <a href="/es/help/plans-and-billing/">Planes y facturación</a>.` },
+      { type: 'h2', text: '5. Genera tu primera presentación' },
+      { type: 'p', html: `Con el panel abierto, describe el deck que quieres o abre una presentación existente y pide a Folio que la edite. Folio usa las fuentes, los colores y los diseños de tu plantilla actual para mantener tu marca. Puedes seguir refinando con prompts adicionales y hacer ediciones manuales en PowerPoint en cualquier momento, ya que cada forma sigue siendo editable.` },
+      { type: 'media', caption: 'Captura: introducir un prompt en el panel de Folio para generar un deck.' },
+      { type: 'h2', text: 'Solución de problemas' },
+      { type: 'p', html: `¿El complemento no aparece, problemas al iniciar sesión o restricciones en una cuenta de trabajo? Consulta la guía de <a href="/es/help/troubleshooting/">Solución de problemas</a> o <a href="/es/help/get-support/">contacta con nuestro equipo</a>.` },
+    ],
+  },
+  de: {
+    title: 'Folio AI in PowerPoint verwenden',
+    description: 'Installiere das Folio-AI-Add-in in PowerPoint, melde dich an und generiere deine erste Präsentation.',
+    blocks: [
+      { type: 'p', html: `Folio AI läuft als Add-in in PowerPoint und arbeitet direkt neben deinen Folien – es gibt nichts auf deinen Computer herunterzuladen. Es wird unterstützt von <strong>PowerPoint für Microsoft 365</strong>, <strong>PowerPoint 2021 und 2019</strong> sowie <strong>PowerPoint im Web</strong>, sowohl unter Windows als auch auf dem Mac. Folge den Schritten unten, um loszulegen.` },
+      { type: 'h2', text: '1. Das Folio-AI-Add-in holen' },
+      { type: 'p', html: `Es gibt zwei Wege, Folio in PowerPoint zu installieren:` },
+      { type: 'ul', items: [
+        `<strong>Aus PowerPoint heraus (empfohlen).</strong> Öffne PowerPoint, gehe zur Registerkarte <strong>Start</strong> oder <strong>Einfügen</strong>, wähle <strong>Add-Ins</strong> (oder <strong>Add-Ins abrufen</strong>), suche nach <strong>Folio AI</strong> und wähle <strong>Hinzufügen</strong>.`,
+        `<strong>Über den Microsoft-AppSource-Store.</strong> Du kannst Folio auch direkt aus dem Microsoft-Store installieren und dann zu PowerPoint zurückkehren. <a href="${WEB_INSTALL_URL}" target="_blank" rel="noopener">Folio-AI-Eintrag auf AppSource öffnen →</a>`,
+      ] },
+      { type: 'p', html: `PowerPoint bereits installiert? Du kannst <a href="${DESKTOP_INSTALL_URL}">Folio direkt in der Desktop-App öffnen</a>.` },
+      { type: 'media', caption: 'Screenshot: Suche nach Folio AI unter Start → Add-Ins in PowerPoint.' },
+      { type: 'h2', text: '2. Folio AI starten' },
+      { type: 'p', html: `Nach der Installation erscheint die Folio-AI-Schaltfläche im PowerPoint-Menüband (meist auf der Registerkarte <strong>Start</strong>). Wähle sie aus, um das Folio-Panel neben deinen Folien zu öffnen. Falls es nicht sofort erscheint, starte PowerPoint neu und prüfe erneut.` },
+      { type: 'media', caption: 'Screenshot: die Folio-AI-Schaltfläche im Menüband und das sich öffnende Seitenpanel.' },
+      { type: 'h2', text: '3. Bei deinem Folio-Konto anmelden' },
+      { type: 'p', html: `Melde dich im Panel bei deinem Folio-Konto an. Dein Folio-Konto ist unabhängig von deinem Microsoft-Konto, du kannst dich also mit der von dir bevorzugten Methode anmelden. Beim ersten Mal erstellst du in wenigen Sekunden ein Konto.` },
+      { type: 'h2', text: '4. Mit deinen kostenlosen Credits starten' },
+      { type: 'p', html: `Jedes neue Konto enthält <strong>500 kostenlose Credits</strong> <strong>ohne Kreditkarte</strong>, sodass du Folio sofort ausprobieren kannst. Wenn du mehr brauchst, kannst du jederzeit einen Tarif wählen – siehe <a href="/de/help/plans-and-billing/">Tarife und Abrechnung</a>.` },
+      { type: 'h2', text: '5. Deine erste Präsentation generieren' },
+      { type: 'p', html: `Beschreibe bei geöffnetem Panel das gewünschte Deck – oder öffne eine bestehende Präsentation und bitte Folio, sie zu bearbeiten. Folio verwendet die Schriften, Farben und Layouts deiner aktuellen Vorlage, damit das Ergebnis markenkonform bleibt. Du kannst mit Folge-Prompts weiter verfeinern und jederzeit manuelle Änderungen in PowerPoint vornehmen, da jedes Objekt vollständig bearbeitbar bleibt.` },
+      { type: 'media', caption: 'Screenshot: Eingabe eines Prompts im Folio-Panel zum Generieren eines Decks.' },
+      { type: 'h2', text: 'Fehlerbehebung' },
+      { type: 'p', html: `Add-in erscheint nicht, Anmeldeprobleme oder Einschränkungen bei einem Geschäftskonto? Siehe den Leitfaden <a href="/de/help/troubleshooting/">Fehlerbehebung</a> oder <a href="/de/help/get-support/">wende dich an unser Team</a>.` },
+    ],
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="powerpoint" description={c.description}>
+  <HelpBlocks blocks={c.blocks} />
+</HelpLayout>

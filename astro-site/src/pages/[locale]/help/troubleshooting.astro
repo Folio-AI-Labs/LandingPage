@@ -1,0 +1,240 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpMedia from '../../../components/HelpMedia.astro';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+interface Group {
+  heading: string;
+  media?: string;
+  items: { q: string; a: string }[];
+}
+
+interface TPage {
+  title: string;
+  description: string;
+  intro: string;
+  groups: Group[];
+  moreTitle: string;
+  moreBody: string;
+}
+
+const content: Record<string, TPage> = {
+  fr: {
+    title: 'Dépannage',
+    description: 'Solutions aux problèmes courants de Folio AI dans PowerPoint et Google Slides.',
+    intro: `La plupart des problèmes se règlent rapidement. Trouvez votre situation ci-dessous — si vous êtes toujours bloqué, <a href="/fr/help/get-support/">notre équipe se fera un plaisir de vous aider</a>.`,
+    groups: [
+      {
+        heading: 'Général',
+        items: [
+          { q: "J'ai changé de forfait mais je vois toujours mes anciennes limites", a: "Les changements de forfait prennent effet immédiatement, mais l'add-in peut nécessiter un rafraîchissement pour les prendre en compte. Fermez puis rouvrez le panneau Folio (ou redémarrez PowerPoint / rechargez Google Slides) et reconnectez-vous si on vous le demande. Si vos nouveaux crédits n'apparaissent toujours pas, contactez notre équipe." },
+          { q: 'Je suis connecté au mauvais compte', a: "Ouvrez le panneau Folio, allez dans le menu de votre compte et déconnectez-vous. Reconnectez-vous ensuite avec le bon compte. Votre compte Folio est indépendant de votre compte Microsoft ou Google : vérifiez bien vos identifiants." },
+          { q: 'Comment voir quel compte ou forfait j\'utilise ?', a: "Ouvrez le menu du compte dans le panneau Folio. Il affiche le compte connecté, votre forfait actuel et vos crédits restants." },
+        ],
+      },
+      {
+        heading: 'Google Slides',
+        media: 'Capture : lancement de Folio depuis le menu Extensions dans Google Slides.',
+        items: [
+          { q: 'Le module ne se charge pas ou affiche des options limitées', a: "Rechargez l'onglet Google Slides et rouvrez Folio via Extensions → Folio AI. S'il ne se charge toujours pas, vérifiez que le module a bien fini de s'installer et que vous avez accordé les autorisations demandées lors de l'installation." },
+          { q: "J'obtiens une erreur avec plusieurs comptes Google", a: "Folio fonctionne avec le compte Google sur lequel il a été installé. Si vous êtes connecté à plusieurs comptes Google dans le même navigateur, ouvrez Google Slides dans un profil ou une fenêtre dédiée au bon compte, puis relancez Folio." },
+        ],
+      },
+      {
+        heading: 'PowerPoint',
+        media: "Capture : le bouton Folio AI dans Accueil et l'exigence du mode Normal de PowerPoint.",
+        items: [
+          { q: "L'add-in n'apparaît pas dans PowerPoint", a: "Redémarrez complètement PowerPoint, puis vérifiez dans Accueil → Compléments que Folio AI est installé. Assurez-vous d'être connecté à votre compte Microsoft. Le bouton de l'add-in est disponible en mode d'édition Normal." },
+          { q: 'Je ne peux pas me connecter avec plusieurs comptes Microsoft', a: "La connexion à Folio est indépendante de votre compte Microsoft. Si vous avez plusieurs comptes Microsoft, connectez-vous à Folio avec le compte lié à votre abonnement Folio. Se déconnecter puis se reconnecter résout généralement les confusions de compte." },
+          { q: 'Le bouton Compléments est désactivé ou bloqué sur mon compte professionnel', a: "Certaines organisations restreignent les compléments Office via une politique informatique. Si le bouton Compléments est grisé ou si Folio est bloqué, votre administrateur devra peut-être l'autoriser. Partagez la fiche AppSource avec votre service informatique, ou contactez-nous et nous vous aiderons." },
+        ],
+      },
+      {
+        heading: 'Générer des présentations',
+        items: [
+          { q: 'La génération semble bloquée ou échoue en cours de route', a: "Folio a besoin d'une connexion internet pour générer des slides. Si une génération se fige, rechargez le panneau et réessayez. Les demandes très volumineuses ou complexes peuvent prendre plus de temps — découper une grande demande en plusieurs prompts plus courts est souvent plus rapide et plus fiable." },
+          { q: "Folio a terminé mais je ne vois pas les nouveaux slides", a: "Vérifiez le panneau des miniatures — les slides nouveaux ou modifiés ont pu être ajoutés à la fin du deck ou aux slides précis que vous avez désignés. Faites défiler votre deck pour les retrouver." },
+        ],
+      },
+      {
+        heading: 'Mise en forme et design',
+        items: [
+          { q: "Mes polices ou couleurs de marque ne sont pas appliquées", a: "Folio applique les polices, couleurs et mises en page de votre template existant. Si quelque chose semble incorrect, vérifiez que votre présentation utilise bien le template souhaité, puis demandez à Folio de réappliquer votre charte. Sur les forfaits entreprise, vous pouvez enregistrer des instructions de marque pour qu'elles soient appliquées automatiquement." },
+          { q: 'Folio peut-il reformater un deck que j\'ai déjà ?', a: "Oui. Ouvrez la présentation existante et demandez à Folio de la restructurer ou de la restyler. Comme Folio modifie des objets PowerPoint et Google Slides natifs plutôt que des images figées, chaque élément reste entièrement modifiable ensuite." },
+        ],
+      },
+    ],
+    moreTitle: "Besoin de plus d'aide ?",
+    moreBody: `Si rien de tout cela ne règle votre problème, rendez-vous sur <a href="/fr/help/get-support/">Obtenir de l'aide</a> pour contacter directement notre équipe.`,
+  },
+  es: {
+    title: 'Solución de problemas',
+    description: 'Soluciones a los problemas más comunes de Folio AI en PowerPoint y Google Slides.',
+    intro: `La mayoría de los problemas se resuelven rápido. Busca tu caso abajo; si sigues atascado, <a href="/es/help/get-support/">nuestro equipo estará encantado de ayudarte</a>.`,
+    groups: [
+      {
+        heading: 'General',
+        items: [
+          { q: 'Subí de plan pero sigo viendo mis límites antiguos', a: "Los cambios de plan surten efecto de inmediato, pero el complemento puede necesitar una actualización para aplicarlos. Cierra y vuelve a abrir el panel de Folio (o reinicia PowerPoint / recarga Google Slides) e inicia sesión de nuevo si se te pide. Si tus nuevos créditos siguen sin aparecer, contacta con nuestro equipo." },
+          { q: 'He iniciado sesión con la cuenta equivocada', a: "Abre el panel de Folio, ve al menú de tu cuenta y cierra sesión. Después vuelve a iniciar sesión con la cuenta correcta. Tu cuenta de Folio es independiente de tu cuenta de Microsoft o Google, así que comprueba que usas las credenciales correctas." },
+          { q: '¿Cómo compruebo qué cuenta o plan tengo?', a: "Abre el menú de la cuenta en el panel de Folio. Muestra la cuenta con la que has iniciado sesión, tu plan actual y los créditos que te quedan." },
+        ],
+      },
+      {
+        heading: 'Google Slides',
+        media: 'Captura: abrir Folio desde el menú Extensiones en Google Slides.',
+        items: [
+          { q: 'El complemento no carga o muestra opciones limitadas', a: "Recarga la pestaña de Google Slides y vuelve a abrir Folio desde Extensiones → Folio AI. Si sigue sin cargar, asegúrate de que el complemento terminó de instalarse y de que concediste los permisos solicitados durante la configuración." },
+          { q: 'Recibo un error al usar varias cuentas de Google', a: "Folio funciona con la cuenta de Google en la que se instaló. Si tienes varias cuentas de Google en el mismo navegador, abre Google Slides en un perfil o ventana dedicados a la cuenta correcta y vuelve a abrir Folio." },
+        ],
+      },
+      {
+        heading: 'PowerPoint',
+        media: 'Captura: el botón de Folio AI en Inicio y el requisito de la vista Normal de PowerPoint.',
+        items: [
+          { q: 'El complemento no aparece en PowerPoint', a: "Reinicia PowerPoint por completo y luego comprueba en Inicio → Complementos que Folio AI está instalado. Asegúrate de haber iniciado sesión en tu cuenta de Microsoft. El botón del complemento está disponible en la vista de edición Normal." },
+          { q: 'No puedo iniciar sesión con varias cuentas de Microsoft', a: "El inicio de sesión de Folio es independiente de tu cuenta de Microsoft. Si tienes varias cuentas de Microsoft, inicia sesión en Folio con la cuenta asociada a tu suscripción de Folio. Cerrar sesión y volver a iniciarla suele resolver las confusiones de cuenta." },
+          { q: 'El botón Complementos está desactivado o bloqueado en mi cuenta de trabajo', a: "Algunas organizaciones restringen los complementos de Office mediante políticas de TI. Si el botón Complementos está atenuado o Folio está bloqueado, puede que tu administrador deba permitirlo. Comparte la ficha de AppSource con tu equipo de TI, o contáctanos y te ayudaremos." },
+        ],
+      },
+      {
+        heading: 'Generar presentaciones',
+        items: [
+          { q: 'La generación parece atascada o falla a mitad', a: "Folio necesita conexión a internet para generar diapositivas. Si una generación se queda parada, recarga el panel e inténtalo de nuevo. Las peticiones muy grandes o complejas pueden tardar más; dividir una petición grande en varios prompts más pequeños suele ser más rápido y fiable." },
+          { q: 'Folio terminó pero no veo las nuevas diapositivas', a: "Revisa el panel de miniaturas: las diapositivas nuevas o editadas pueden haberse añadido al final del deck o a las diapositivas concretas que indicaste. Desplázate por tu deck para localizarlas." },
+        ],
+      },
+      {
+        heading: 'Formato y diseño',
+        items: [
+          { q: 'No se aplican mis fuentes o colores de marca', a: "Folio aplica las fuentes, los colores y los diseños de tu plantilla existente. Si algo se ve raro, asegúrate de que tu presentación usa la plantilla prevista y luego pide a Folio que vuelva a aplicar tu marca. En los planes empresariales puedes guardar instrucciones de marca para que se apliquen automáticamente." },
+          { q: '¿Puede Folio reformatear un deck que ya tengo?', a: "Sí. Abre la presentación existente y pide a Folio que la reestructure o le dé un nuevo estilo. Como Folio edita objetos nativos de PowerPoint y Google Slides en lugar de imágenes planas, cada elemento sigue siendo totalmente editable después." },
+        ],
+      },
+    ],
+    moreTitle: '¿Necesitas más ayuda?',
+    moreBody: `Si nada de lo anterior lo resuelve, ve a <a href="/es/help/get-support/">Obtener soporte</a> para contactar directamente con nuestro equipo.`,
+  },
+  de: {
+    title: 'Fehlerbehebung',
+    description: 'Lösungen für häufige Probleme mit Folio AI in PowerPoint und Google Slides.',
+    intro: `Die meisten Probleme sind schnell gelöst. Finde deine Situation unten – wenn du nicht weiterkommst, <a href="/de/help/get-support/">hilft dir unser Team gern</a>.`,
+    groups: [
+      {
+        heading: 'Allgemein',
+        items: [
+          { q: 'Ich habe meinen Tarif gewechselt, sehe aber weiterhin meine alten Limits', a: "Tarifwechsel werden sofort wirksam, aber das Add-in muss möglicherweise aktualisiert werden, um sie zu übernehmen. Schließe das Folio-Panel und öffne es erneut (oder starte PowerPoint neu / lade Google Slides neu) und melde dich bei Aufforderung erneut an. Wenn deine neuen Credits weiterhin nicht erscheinen, wende dich an unser Team." },
+          { q: 'Ich bin mit dem falschen Konto angemeldet', a: "Öffne das Folio-Panel, gehe zum Kontomenü und melde dich ab. Melde dich anschließend mit dem richtigen Konto wieder an. Dein Folio-Konto ist unabhängig von deinem Microsoft- oder Google-Konto – prüfe also, dass du die richtigen Zugangsdaten verwendest." },
+          { q: 'Wie sehe ich, welches Konto oder welchen Tarif ich nutze?', a: "Öffne das Kontomenü im Folio-Panel. Es zeigt das angemeldete Konto, deinen aktuellen Tarif und deine verbleibenden Credits an." },
+        ],
+      },
+      {
+        heading: 'Google Slides',
+        media: 'Screenshot: Folio über das Menü Erweiterungen in Google Slides starten.',
+        items: [
+          { q: 'Das Add-on lädt nicht oder zeigt eingeschränkte Optionen', a: "Lade den Google-Slides-Tab neu und öffne Folio erneut über Erweiterungen → Folio AI. Wenn es weiterhin nicht lädt, stelle sicher, dass das Add-on vollständig installiert wurde und du die bei der Einrichtung angeforderten Berechtigungen erteilt hast." },
+          { q: 'Ich erhalte einen Fehler bei mehreren Google-Konten', a: "Folio arbeitet mit dem Google-Konto, mit dem es installiert wurde. Wenn du im selben Browser bei mehreren Google-Konten angemeldet bist, öffne Google Slides in einem Profil oder Fenster, das dem richtigen Konto gewidmet ist, und starte Folio erneut." },
+        ],
+      },
+      {
+        heading: 'PowerPoint',
+        media: 'Screenshot: die Folio-AI-Schaltfläche unter Start und die Anforderung der Normalansicht in PowerPoint.',
+        items: [
+          { q: 'Das Add-in erscheint nicht in PowerPoint', a: "Starte PowerPoint vollständig neu und prüfe dann unter Start → Add-Ins, ob Folio AI installiert ist. Stelle sicher, dass du bei deinem Microsoft-Konto angemeldet bist. Die Add-in-Schaltfläche ist in der normalen Bearbeitungsansicht verfügbar." },
+          { q: 'Ich kann mich nicht mit mehreren Microsoft-Konten anmelden', a: "Die Folio-Anmeldung ist unabhängig von deinem Microsoft-Konto. Wenn du mehrere Microsoft-Konten hast, melde dich bei Folio mit dem Konto an, das mit deinem Folio-Abo verknüpft ist. Ab- und erneutes Anmelden behebt Kontoverwechslungen meist." },
+          { q: 'Die Schaltfläche „Add-Ins“ ist auf meinem Geschäftskonto deaktiviert oder blockiert', a: "Manche Organisationen schränken Office-Add-ins per IT-Richtlinie ein. Wenn die Add-Ins-Schaltfläche ausgegraut ist oder Folio blockiert wird, muss dein Administrator es möglicherweise zulassen. Teile den AppSource-Eintrag mit deinem IT-Team oder kontaktiere uns, und wir helfen dir." },
+        ],
+      },
+      {
+        heading: 'Präsentationen generieren',
+        items: [
+          { q: 'Die Generierung scheint zu hängen oder bricht zwischendrin ab', a: "Folio benötigt eine Internetverbindung, um Folien zu generieren. Wenn eine Generierung stockt, lade das Panel neu und versuche es erneut. Sehr große oder komplexe Anfragen können länger dauern – eine große Anfrage in mehrere kleinere Prompts aufzuteilen ist oft schneller und zuverlässiger." },
+          { q: 'Folio ist fertig, aber ich sehe die neuen Folien nicht', a: "Prüfe die Folienübersicht – neue oder bearbeitete Folien wurden möglicherweise am Ende des Decks oder bei den konkreten Folien hinzugefügt, auf die du dich bezogen hast. Scrolle durch dein Deck, um sie zu finden." },
+        ],
+      },
+      {
+        heading: 'Formatierung und Design',
+        items: [
+          { q: 'Meine Markenschriften oder -farben werden nicht angewendet', a: "Folio wendet die Schriften, Farben und Layouts deiner bestehenden Vorlage an. Wenn etwas nicht stimmt, stelle sicher, dass deine Präsentation die vorgesehene Vorlage verwendet, und bitte Folio dann, dein Branding erneut anzuwenden. In Enterprise-Tarifen kannst du Marken-Anweisungen speichern, damit sie automatisch angewendet werden." },
+          { q: 'Kann Folio ein Deck neu formatieren, das ich bereits habe?', a: "Ja. Öffne die bestehende Präsentation und bitte Folio, sie umzustrukturieren oder neu zu gestalten. Da Folio native PowerPoint- und Google-Slides-Objekte statt flacher Bilder bearbeitet, bleibt danach jedes Element vollständig bearbeitbar." },
+        ],
+      },
+    ],
+    moreTitle: 'Brauchst du mehr Hilfe?',
+    moreBody: `Wenn nichts davon hilft, gehe zu <a href="/de/help/get-support/">Support erhalten</a>, um dich direkt an unser Team zu wenden.`,
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="troubleshooting" description={c.description}>
+  <p set:html={c.intro} />
+
+  {c.groups.map((group) => (
+    <section>
+      <h2>{group.heading}</h2>
+      <div class="grid grid-cols-1 gap-4 not-prose">
+        {group.items.map((item) => (
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-4">
+              {item.q}
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
+            </summary>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8] mb-0">{item.a}</p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+      {group.media && <HelpMedia caption={group.media} />}
+    </section>
+  ))}
+
+  <h2>{c.moreTitle}</h2>
+  <p set:html={c.moreBody} />
+</HelpLayout>
+
+<script>
+  const faqItems = document.querySelectorAll('details');
+
+  function closeFaq(item: HTMLDetailsElement) {
+    item.classList.remove('expanded');
+    item.querySelector('.faq-content')?.addEventListener('transitionend', () => {
+      item.open = false;
+    }, { once: true });
+  }
+
+  faqItems.forEach(item => {
+    item.querySelector('summary')?.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (item.classList.contains('expanded')) {
+        closeFaq(item as HTMLDetailsElement);
+      } else {
+        faqItems.forEach(other => {
+          if (other !== item && other.classList.contains('expanded')) {
+            closeFaq(other as HTMLDetailsElement);
+          }
+        });
+        (item as HTMLDetailsElement).open = true;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            item.classList.add('expanded');
+          });
+        });
+      }
+    });
+  });
+</script>

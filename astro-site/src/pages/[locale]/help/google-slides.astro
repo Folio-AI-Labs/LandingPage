@@ -1,0 +1,91 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpBlocks from '../../../components/HelpBlocks.astro';
+import type { HelpPageContent } from '../../../components/helpBlocks';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+import { GOOGLE_SLIDES_INSTALL_URL } from '../../../consts';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+const content: Record<string, HelpPageContent> = {
+  fr: {
+    title: 'Utiliser Folio AI dans Google Slides',
+    description: "Installez le module Folio AI dans Google Slides, connectez-vous et générez votre première présentation.",
+    blocks: [
+      { type: 'p', html: `Folio AI s'exécute comme un module complémentaire Google Workspace dans Google Slides : il fonctionne juste à côté de vos slides, dans le navigateur, sans rien à installer sur votre ordinateur. Suivez les étapes ci-dessous pour vous lancer.` },
+      { type: 'h2', text: '1. Obtenir le module Folio AI' },
+      { type: 'p', html: `Installez Folio depuis Google Workspace Marketplace, puis accordez les autorisations demandées afin qu'il puisse travailler dans vos présentations. <a href="${GOOGLE_SLIDES_INSTALL_URL}" target="_blank" rel="noopener">Ouvrir la fiche Folio AI sur Google Workspace Marketplace →</a>` },
+      { type: 'media', caption: 'Capture : la fiche Folio AI sur Google Workspace Marketplace.' },
+      { type: 'h2', text: '2. Ouvrir Google Slides' },
+      { type: 'p', html: `Ouvrez une présentation existante ou créez-en une nouvelle sur <a href="https://slides.google.com" target="_blank" rel="noopener">slides.google.com</a>. Assurez-vous d'être connecté avec le compte Google sur lequel vous avez installé Folio.` },
+      { type: 'h2', text: '3. Lancer le module Folio AI' },
+      { type: 'p', html: `Dans Google Slides, ouvrez le menu <strong>Extensions</strong>, choisissez <strong>Folio AI</strong>, puis sélectionnez-le pour ouvrir le panneau Folio. Au premier lancement, connectez-vous à votre compte Folio. Votre compte Folio est indépendant de votre compte Google.` },
+      { type: 'media', caption: 'Capture : lancement de Folio AI depuis le menu Extensions dans Google Slides.' },
+      { type: 'h2', text: '4. Démarrer avec vos crédits gratuits' },
+      { type: 'p', html: `Chaque nouveau compte inclut <strong>500 crédits gratuits</strong>, <strong>sans carte bancaire</strong>. Quand vous en aurez besoin de plus, vous pourrez choisir un forfait à tout moment — voir <a href="/fr/help/plans-and-billing/">Forfaits et facturation</a>.` },
+      { type: 'h2', text: '5. Générer votre première présentation' },
+      { type: 'p', html: `Le panneau ouvert, décrivez le deck souhaité et Folio le construira — ou demandez à Folio de modifier la présentation déjà ouverte. Folio manipule des objets Google Slides natifs : chaque élément reste entièrement modifiable et vous pouvez affiner avec des prompts successifs.` },
+      { type: 'media', caption: 'Capture : saisie d\'un prompt dans le panneau Folio pour générer un deck dans Google Slides.' },
+      { type: 'h2', text: 'Dépannage' },
+      { type: 'p', html: `Le module ne se charge pas, mauvais compte Google ou plusieurs profils ? Consultez le guide <a href="/fr/help/troubleshooting/">Dépannage</a> ou <a href="/fr/help/get-support/">contactez notre équipe</a>.` },
+    ],
+  },
+  es: {
+    title: 'Usar Folio AI en Google Slides',
+    description: 'Instala el complemento de Folio AI en Google Slides, inicia sesión y genera tu primera presentación.',
+    blocks: [
+      { type: 'p', html: `Folio AI se ejecuta como un complemento de Google Workspace dentro de Google Slides, así que funciona justo al lado de tus diapositivas en el navegador, sin nada que instalar en tu ordenador. Sigue los pasos para empezar.` },
+      { type: 'h2', text: '1. Conseguir el complemento de Folio AI' },
+      { type: 'p', html: `Instala Folio desde Google Workspace Marketplace y concede los permisos que solicita para que pueda trabajar en tus presentaciones. <a href="${GOOGLE_SLIDES_INSTALL_URL}" target="_blank" rel="noopener">Abrir la ficha de Folio AI en Google Workspace Marketplace →</a>` },
+      { type: 'media', caption: 'Captura: la ficha de Folio AI en Google Workspace Marketplace.' },
+      { type: 'h2', text: '2. Abrir Google Slides' },
+      { type: 'p', html: `Abre una presentación existente o crea una nueva en <a href="https://slides.google.com" target="_blank" rel="noopener">slides.google.com</a>. Asegúrate de haber iniciado sesión con la cuenta de Google en la que instalaste Folio.` },
+      { type: 'h2', text: '3. Abrir el complemento de Folio AI' },
+      { type: 'p', html: `En Google Slides, abre el menú <strong>Extensiones</strong>, elige <strong>Folio AI</strong> y selecciónalo para abrir el panel de Folio. La primera vez que lo abras, inicia sesión en tu cuenta de Folio. Tu cuenta de Folio es independiente de tu cuenta de Google.` },
+      { type: 'media', caption: 'Captura: abrir Folio AI desde el menú Extensiones en Google Slides.' },
+      { type: 'h2', text: '4. Empieza con tus créditos gratis' },
+      { type: 'p', html: `Cada cuenta nueva incluye <strong>500 créditos gratis</strong>, <strong>sin tarjeta de crédito</strong>. Cuando necesites más, puedes elegir un plan en cualquier momento; consulta <a href="/es/help/plans-and-billing/">Planes y facturación</a>.` },
+      { type: 'h2', text: '5. Genera tu primera presentación' },
+      { type: 'p', html: `Con el panel abierto, describe el deck que quieres y Folio lo construirá, o pide a Folio que edite la presentación que ya tienes abierta. Folio trabaja con objetos nativos de Google Slides, así que cada elemento sigue siendo editable y puedes seguir refinando con prompts adicionales.` },
+      { type: 'media', caption: 'Captura: introducir un prompt en el panel de Folio para generar un deck en Google Slides.' },
+      { type: 'h2', text: 'Solución de problemas' },
+      { type: 'p', html: `¿El complemento no carga, has iniciado sesión con la cuenta de Google equivocada o trabajas con varios perfiles? Consulta la guía de <a href="/es/help/troubleshooting/">Solución de problemas</a> o <a href="/es/help/get-support/">contacta con nuestro equipo</a>.` },
+    ],
+  },
+  de: {
+    title: 'Folio AI in Google Slides verwenden',
+    description: 'Installiere das Folio-AI-Add-on in Google Slides, melde dich an und generiere deine erste Präsentation.',
+    blocks: [
+      { type: 'p', html: `Folio AI läuft als Google-Workspace-Add-on in Google Slides und arbeitet direkt neben deinen Folien im Browser – es ist nichts auf deinem Computer zu installieren. Folge den Schritten unten, um loszulegen.` },
+      { type: 'h2', text: '1. Das Folio-AI-Add-on holen' },
+      { type: 'p', html: `Installiere Folio aus dem Google Workspace Marketplace und erteile die angeforderten Berechtigungen, damit es in deinen Präsentationen arbeiten kann. <a href="${GOOGLE_SLIDES_INSTALL_URL}" target="_blank" rel="noopener">Folio-AI-Eintrag im Google Workspace Marketplace öffnen →</a>` },
+      { type: 'media', caption: 'Screenshot: der Folio-AI-Eintrag im Google Workspace Marketplace.' },
+      { type: 'h2', text: '2. Google Slides öffnen' },
+      { type: 'p', html: `Öffne eine bestehende Präsentation oder erstelle eine neue auf <a href="https://slides.google.com" target="_blank" rel="noopener">slides.google.com</a>. Stelle sicher, dass du mit dem Google-Konto angemeldet bist, mit dem du Folio installiert hast.` },
+      { type: 'h2', text: '3. Das Folio-AI-Add-on starten' },
+      { type: 'p', html: `Öffne in Google Slides das Menü <strong>Erweiterungen</strong>, wähle <strong>Folio AI</strong> und dann den Eintrag, um das Folio-Panel zu öffnen. Beim ersten Start meldest du dich bei deinem Folio-Konto an. Dein Folio-Konto ist unabhängig von deinem Google-Konto.` },
+      { type: 'media', caption: 'Screenshot: Folio AI über das Menü Erweiterungen in Google Slides starten.' },
+      { type: 'h2', text: '4. Mit deinen kostenlosen Credits starten' },
+      { type: 'p', html: `Jedes neue Konto enthält <strong>500 kostenlose Credits</strong> <strong>ohne Kreditkarte</strong>. Wenn du mehr brauchst, kannst du jederzeit einen Tarif wählen – siehe <a href="/de/help/plans-and-billing/">Tarife und Abrechnung</a>.` },
+      { type: 'h2', text: '5. Deine erste Präsentation generieren' },
+      { type: 'p', html: `Beschreibe bei geöffnetem Panel das gewünschte Deck, und Folio erstellt es – oder bitte Folio, die bereits geöffnete Präsentation zu bearbeiten. Folio arbeitet mit nativen Google-Slides-Objekten, sodass jedes Element bearbeitbar bleibt und du mit Folge-Prompts weiter verfeinern kannst.` },
+      { type: 'media', caption: 'Screenshot: Eingabe eines Prompts im Folio-Panel zum Generieren eines Decks in Google Slides.' },
+      { type: 'h2', text: 'Fehlerbehebung' },
+      { type: 'p', html: `Add-on lädt nicht, mit dem falschen Google-Konto angemeldet oder mehrere Profile im Einsatz? Siehe den Leitfaden <a href="/de/help/troubleshooting/">Fehlerbehebung</a> oder <a href="/de/help/get-support/">wende dich an unser Team</a>.` },
+    ],
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="google-slides" description={c.description}>
+  <HelpBlocks blocks={c.blocks} />
+</HelpLayout>

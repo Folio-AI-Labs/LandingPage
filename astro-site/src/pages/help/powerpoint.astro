@@ -1,0 +1,72 @@
+---
+import HelpLayout from '../../layouts/HelpLayout.astro';
+import HelpMedia from '../../components/HelpMedia.astro';
+import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL } from '../../consts';
+---
+
+<HelpLayout title="Use Folio AI in PowerPoint" active="powerpoint" description="Install the Folio AI add-in in PowerPoint, sign in, and generate your first presentation.">
+  <p>
+    Folio AI runs as an add-in inside PowerPoint, so it works right next to your slides with nothing
+    to download to your computer. It's supported on <strong>PowerPoint for Microsoft 365</strong>,
+    <strong>PowerPoint 2021 and 2019</strong>, and <strong>PowerPoint on the web</strong>, on both
+    Windows and Mac. Follow the steps below to get set up.
+  </p>
+
+  <h2>1. Get the Folio AI add-in</h2>
+  <p>There are two ways to install Folio in PowerPoint:</p>
+  <ul>
+    <li>
+      <strong>From PowerPoint (recommended).</strong> Open PowerPoint, go to the
+      <strong>Home</strong> or <strong>Insert</strong> tab, select <strong>Add-ins</strong> (or
+      <strong>Get Add-ins</strong>), search for <strong>Folio AI</strong>, and choose
+      <strong>Add</strong>.
+    </li>
+    <li>
+      <strong>From the Microsoft AppSource store.</strong> You can also install Folio directly from
+      Microsoft's store, then return to PowerPoint. <a href={WEB_INSTALL_URL} target="_blank" rel="noopener">Open the Folio AI listing on AppSource →</a>
+    </li>
+  </ul>
+  <p>
+    Already have PowerPoint installed? You can <a href={DESKTOP_INSTALL_URL}>open Folio in the
+    desktop app</a> directly.
+  </p>
+  <HelpMedia caption="Screenshot: searching for Folio AI under Home → Add-ins in PowerPoint." />
+
+  <h2>2. Launch Folio AI</h2>
+  <p>
+    After installing, the Folio AI button appears in your PowerPoint ribbon (usually on the
+    <strong>Home</strong> tab). Select it to open the Folio side panel next to your slides. If you
+    don't see it right away, restart PowerPoint and check again.
+  </p>
+  <HelpMedia caption="Screenshot: the Folio AI button in the ribbon and the side panel opening." />
+
+  <h2>3. Sign in to your Folio account</h2>
+  <p>
+    In the side panel, sign in to your Folio account. Your Folio account is separate from your
+    Microsoft account, so you can sign in with whichever method you prefer. If this is your first
+    time, you'll create an account in a few seconds.
+  </p>
+
+  <h2>4. Start with your free credits</h2>
+  <p>
+    Every new account includes <strong>500 free credits</strong> with <strong>no credit card
+    required</strong>, so you can try Folio right away. When you need more, you can choose a plan at
+    any time — see <a href="/help/plans-and-billing/">Plans and Billing</a> for details.
+  </p>
+
+  <h2>5. Generate your first presentation</h2>
+  <p>
+    With the panel open, describe the deck you want — or open an existing presentation and ask Folio
+    to edit it. Folio uses your current template's fonts, colors, and layouts so the result stays on
+    brand. You can keep refining with follow-up prompts, and make manual edits in PowerPoint at any
+    point since every shape stays fully editable.
+  </p>
+  <HelpMedia caption="Screenshot: entering a prompt in the Folio panel to generate a deck." />
+
+  <h2>Troubleshooting</h2>
+  <p>
+    Add-in not appearing, sign-in problems, or restrictions on a work account? See the
+    <a href="/help/troubleshooting/">Troubleshooting</a> guide, or
+    <a href="/help/get-support/">get in touch with our team</a>.
+  </p>
+</HelpLayout>

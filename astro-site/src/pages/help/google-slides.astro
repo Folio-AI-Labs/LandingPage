@@ -1,0 +1,57 @@
+---
+import HelpLayout from '../../layouts/HelpLayout.astro';
+import HelpMedia from '../../components/HelpMedia.astro';
+import { GOOGLE_SLIDES_INSTALL_URL } from '../../consts';
+---
+
+<HelpLayout title="Use Folio AI in Google Slides" active="google-slides" description="Install the Folio AI add-on in Google Slides, sign in, and generate your first presentation.">
+  <p>
+    Folio AI runs as a Google Workspace add-on inside Google Slides, so it works right next to your
+    slides in the browser — nothing to install on your computer. Follow the steps below to get set
+    up.
+  </p>
+
+  <h2>1. Get the Folio AI add-on</h2>
+  <p>
+    Install Folio from the Google Workspace Marketplace, then grant the permissions it requests so
+    it can work within your presentations.
+    <a href={GOOGLE_SLIDES_INSTALL_URL} target="_blank" rel="noopener">Open the Folio AI listing on the Google Workspace Marketplace →</a>
+  </p>
+  <HelpMedia caption="Screenshot: the Folio AI listing on the Google Workspace Marketplace." />
+
+  <h2>2. Open Google Slides</h2>
+  <p>
+    Open an existing presentation or create a new one at <a href="https://slides.google.com" target="_blank" rel="noopener">slides.google.com</a>.
+    Make sure you're signed in with the Google account you installed Folio on.
+  </p>
+
+  <h2>3. Launch the Folio AI add-on</h2>
+  <p>
+    In Google Slides, open the <strong>Extensions</strong> menu, choose <strong>Folio AI</strong>,
+    then select it to open the Folio side panel. The first time you launch it, sign in to your Folio
+    account. Your Folio account is separate from your Google account.
+  </p>
+  <HelpMedia caption="Screenshot: launching Folio AI from the Extensions menu in Google Slides." />
+
+  <h2>4. Start with your free credits</h2>
+  <p>
+    Every new account includes <strong>500 free credits</strong> with <strong>no credit card
+    required</strong>. When you need more, you can pick a plan at any time — see
+    <a href="/help/plans-and-billing/">Plans and Billing</a> for details.
+  </p>
+
+  <h2>5. Generate your first presentation</h2>
+  <p>
+    With the panel open, describe the deck you want and Folio will build it — or ask Folio to edit
+    the presentation you already have open. Folio works with native Google Slides objects, so every
+    element stays fully editable and you can keep refining with follow-up prompts.
+  </p>
+  <HelpMedia caption="Screenshot: entering a prompt in the Folio panel to generate a deck in Google Slides." />
+
+  <h2>Troubleshooting</h2>
+  <p>
+    Add-on not loading, signed in with the wrong Google account, or working across multiple
+    profiles? See the <a href="/help/troubleshooting/">Troubleshooting</a> guide, or
+    <a href="/help/get-support/">get in touch with our team</a>.
+  </p>
+</HelpLayout>

@@ -1,0 +1,18 @@
+---
+import HelpMedia from './HelpMedia.astro';
+import type { HelpBlock } from './helpBlocks';
+
+interface Props {
+  blocks: HelpBlock[];
+}
+
+const { blocks } = Astro.props;
+---
+
+{blocks.map((b) => {
+  if (b.type === 'h2') return <h2>{b.text}</h2>;
+  if (b.type === 'p') return <p set:html={b.html} />;
+  if (b.type === 'ul') return <ul>{b.items.map((it) => <li set:html={it} />)}</ul>;
+  if (b.type === 'media') return <HelpMedia caption={b.caption} type={b.kind ?? 'image'} />;
+  return null;
+})}

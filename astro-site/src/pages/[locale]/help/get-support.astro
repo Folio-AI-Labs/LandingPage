@@ -1,0 +1,105 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpBlocks from '../../../components/HelpBlocks.astro';
+import type { HelpPageContent } from '../../../components/helpBlocks';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+const content: Record<string, HelpPageContent> = {
+  fr: {
+    title: "Obtenir de l'aide",
+    description: "Contactez l'équipe Folio AI pour de l'aide, des questions ou des retours.",
+    blocks: [
+      { type: 'p', html: `Vous ne trouvez pas ce qu'il vous faut dans les guides ? Nous sommes là pour vous aider. Avant de nous écrire, le guide <a href="/fr/help/troubleshooting/">Dépannage</a> couvre les problèmes les plus courants et constitue souvent la solution la plus rapide.` },
+      { type: 'h2', text: 'Contacter notre équipe' },
+      { type: 'p', html: `Le meilleur moyen de nous joindre est notre page de support — remplissez le formulaire et nous vous répondrons rapidement.` },
+      { type: 'ul', items: [
+        `<a href="/fr/support/">Accéder à la page de support</a> pour nous envoyer un message.`,
+        `Vous préférez l'e-mail ? Écrivez-nous à <a href="mailto:contact@get-folio.ai">contact@get-folio.ai</a>.`,
+      ] },
+      { type: 'h2', text: 'Que faut-il inclure' },
+      { type: 'p', html: `Pour nous aider à résoudre votre problème rapidement, indiquez :` },
+      { type: 'ul', items: [
+        `Si vous utilisez Folio dans <strong>PowerPoint</strong> ou <strong>Google Slides</strong>, et sur Windows, Mac ou le web.`,
+        `L'adresse e-mail associée à votre compte Folio.`,
+        `Une brève description de ce que vous tentiez de faire et de ce qui s'est passé.`,
+        `Une capture d'écran du message d'erreur, si vous en avez une.`,
+      ] },
+      { type: 'h2', text: 'Autres ressources' },
+      { type: 'ul', items: [
+        `<a href="/fr/help/">Démarrer</a> — installer Folio et créer votre premier deck.`,
+        `<a href="/fr/help/plans-and-billing/">Forfaits et facturation</a> — crédits, forfaits et questions d'abonnement.`,
+        `<a href="/fr/pricing/">Tarifs</a> — comparer les forfaits et les fonctionnalités.`,
+      ] },
+    ],
+  },
+  es: {
+    title: 'Obtener soporte',
+    description: 'Contacta con el equipo de Folio AI para obtener ayuda, hacer preguntas o enviar comentarios.',
+    blocks: [
+      { type: 'p', html: `¿No encuentras lo que necesitas en las guías? Estamos aquí para ayudarte. Antes de escribirnos, la guía de <a href="/es/help/troubleshooting/">Solución de problemas</a> cubre los problemas más comunes y suele ser la forma más rápida de resolverlo.` },
+      { type: 'h2', text: 'Contacta con nuestro equipo' },
+      { type: 'p', html: `La mejor forma de contactarnos es a través de nuestra página de soporte: rellena el formulario y te responderemos en breve.` },
+      { type: 'ul', items: [
+        `<a href="/es/support/">Ir a la página de soporte</a> para enviarnos un mensaje.`,
+        `¿Prefieres el correo? Escríbenos a <a href="mailto:contact@get-folio.ai">contact@get-folio.ai</a>.`,
+      ] },
+      { type: 'h2', text: 'Qué incluir' },
+      { type: 'p', html: `Para ayudarnos a resolverlo rápido, cuéntanos:` },
+      { type: 'ul', items: [
+        `Si usas Folio en <strong>PowerPoint</strong> o <strong>Google Slides</strong>, y en Windows, Mac o la web.`,
+        `La dirección de correo de tu cuenta de Folio.`,
+        `Una breve descripción de lo que intentabas hacer y de lo que ocurrió.`,
+        `Una captura de cualquier mensaje de error, si la tienes.`,
+      ] },
+      { type: 'h2', text: 'Otros recursos' },
+      { type: 'ul', items: [
+        `<a href="/es/help/">Empezar</a>: instalar Folio y crear tu primer deck.`,
+        `<a href="/es/help/plans-and-billing/">Planes y facturación</a>: créditos, planes y dudas de suscripción.`,
+        `<a href="/es/pricing/">Precios</a>: comparar planes y funciones.`,
+      ] },
+    ],
+  },
+  de: {
+    title: 'Support erhalten',
+    description: 'Wende dich an das Folio-AI-Team für Hilfe, Fragen oder Feedback.',
+    blocks: [
+      { type: 'p', html: `Du findest in den Leitfäden nicht, was du brauchst? Wir helfen dir gern. Bevor du uns kontaktierst: Der Leitfaden <a href="/de/help/troubleshooting/">Fehlerbehebung</a> deckt die häufigsten Probleme ab und ist oft die schnellste Lösung.` },
+      { type: 'h2', text: 'Unser Team kontaktieren' },
+      { type: 'p', html: `Am besten erreichst du uns über unsere Support-Seite – fülle das Formular aus, und wir melden uns in Kürze.` },
+      { type: 'ul', items: [
+        `<a href="/de/support/">Zur Support-Seite</a>, um uns eine Nachricht zu senden.`,
+        `Lieber per E-Mail? Schreib uns an <a href="mailto:contact@get-folio.ai">contact@get-folio.ai</a>.`,
+      ] },
+      { type: 'h2', text: 'Was du angeben solltest' },
+      { type: 'p', html: `Damit wir dein Anliegen schnell lösen können, teile uns bitte mit:` },
+      { type: 'ul', items: [
+        `Ob du Folio in <strong>PowerPoint</strong> oder <strong>Google Slides</strong> nutzt, und ob unter Windows, Mac oder im Web.`,
+        `Die E-Mail-Adresse deines Folio-Kontos.`,
+        `Eine kurze Beschreibung dessen, was du tun wolltest und was passiert ist.`,
+        `Einen Screenshot einer etwaigen Fehlermeldung, falls vorhanden.`,
+      ] },
+      { type: 'h2', text: 'Weitere Ressourcen' },
+      { type: 'ul', items: [
+        `<a href="/de/help/">Erste Schritte</a> – Folio installieren und dein erstes Deck erstellen.`,
+        `<a href="/de/help/plans-and-billing/">Tarife und Abrechnung</a> – Credits, Tarife und Fragen zum Abo.`,
+        `<a href="/de/pricing/">Preise</a> – Tarife und Funktionen vergleichen.`,
+      ] },
+    ],
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="get-support" description={c.description}>
+  <HelpBlocks blocks={c.blocks} />
+</HelpLayout>

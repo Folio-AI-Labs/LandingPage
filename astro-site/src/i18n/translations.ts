@@ -7,9 +7,19 @@ export const translations = {
     'nav.pricing': 'Pricing',
     'nav.support': 'Support',
     'nav.articles': 'Articles',
+    'nav.help': 'Help',
     'nav.contact': 'Contact Us',
     'nav.getStarted': 'Get started',
     'nav.bookDemo': 'Book a demo',
+
+    // Help Center sidebar
+    'help.menuTitle': 'Help Center',
+    'help.getStarted': 'Get started',
+    'help.powerpoint': 'Use Folio AI in PowerPoint',
+    'help.googleSlides': 'Use Folio AI in Google Slides',
+    'help.plansBilling': 'Plans and Billing',
+    'help.troubleshooting': 'Troubleshooting',
+    'help.getSupport': 'Get Support',
 
     // Hero Section
     'hero.title': 'AI for decks where every slide counts',
@@ -352,9 +362,19 @@ export const translations = {
     'nav.pricing': 'Tarifs',
     'nav.support': 'Support',
     'nav.articles': 'Articles',
+    'nav.help': 'Aide',
     'nav.contact': 'Nous contacter',
     'nav.getStarted': 'Commencer',
     'nav.bookDemo': 'Réserver une démo',
+
+    // Help Center sidebar
+    'help.menuTitle': "Centre d'aide",
+    'help.getStarted': 'Démarrer',
+    'help.powerpoint': 'Utiliser Folio AI dans PowerPoint',
+    'help.googleSlides': 'Utiliser Folio AI dans Google Slides',
+    'help.plansBilling': 'Forfaits et facturation',
+    'help.troubleshooting': 'Dépannage',
+    'help.getSupport': "Obtenir de l'aide",
 
     // Hero Section
     'hero.title': 'L\'IA pour les decks où chaque slide compte',
@@ -697,9 +717,19 @@ export const translations = {
     'nav.pricing': 'Precios',
     'nav.support': 'Soporte',
     'nav.articles': 'Artículos',
+    'nav.help': 'Ayuda',
     'nav.contact': 'Contáctanos',
     'nav.getStarted': 'Empezar',
     'nav.bookDemo': 'Reservar una demo',
+
+    // Help Center sidebar
+    'help.menuTitle': 'Centro de ayuda',
+    'help.getStarted': 'Empezar',
+    'help.powerpoint': 'Usar Folio AI en PowerPoint',
+    'help.googleSlides': 'Usar Folio AI en Google Slides',
+    'help.plansBilling': 'Planes y facturación',
+    'help.troubleshooting': 'Solución de problemas',
+    'help.getSupport': 'Obtener soporte',
 
     // Hero Section
     'hero.title': 'IA para los decks donde cada slide cuenta',
@@ -1042,9 +1072,19 @@ export const translations = {
     'nav.pricing': 'Preise',
     'nav.support': 'Support',
     'nav.articles': 'Artikel',
+    'nav.help': 'Hilfe',
     'nav.contact': 'Kontakt',
     'nav.getStarted': 'Loslegen',
     'nav.bookDemo': 'Demo buchen',
+
+    // Help Center sidebar
+    'help.menuTitle': 'Hilfe-Center',
+    'help.getStarted': 'Erste Schritte',
+    'help.powerpoint': 'Folio AI in PowerPoint verwenden',
+    'help.googleSlides': 'Folio AI in Google Slides verwenden',
+    'help.plansBilling': 'Tarife und Abrechnung',
+    'help.troubleshooting': 'Fehlerbehebung',
+    'help.getSupport': 'Support erhalten',
 
     // Hero Section
     'hero.title': 'KI für Decks, wo jede Folie zählt',

@@ -1,0 +1,81 @@
+---
+import Layout from './Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description?: string;
+  active: string;
+}
+
+const { title, description = `${title} — Folio AI Help Center.`, active } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const helpPages = [
+  { slug: 'get-started', href: getLocalizedPath('/help/', lang), label: t('help.getStarted') },
+  { slug: 'powerpoint', href: getLocalizedPath('/help/powerpoint/', lang), label: t('help.powerpoint') },
+  { slug: 'google-slides', href: getLocalizedPath('/help/google-slides/', lang), label: t('help.googleSlides') },
+  { slug: 'plans-and-billing', href: getLocalizedPath('/help/plans-and-billing/', lang), label: t('help.plansBilling') },
+  { slug: 'troubleshooting', href: getLocalizedPath('/help/troubleshooting/', lang), label: t('help.troubleshooting') },
+  { slug: 'get-support', href: getLocalizedPath('/help/get-support/', lang), label: t('help.getSupport') },
+];
+---
+
+<Layout title={title} description={description}>
+  <Nav activePage={t('nav.help')} />
+
+  <main class="flex-1 w-full">
+    <div class="max-w-[1200px] mx-auto w-full px-[30px] nav:px-[60px] pt-[120px] pb-20">
+      <div class="grid grid-cols-1 nav:grid-cols-[260px_1fr] gap-12">
+        <!-- Left column: Help navigation -->
+        <aside class="nav:sticky nav:top-[100px] nav:self-start">
+          <p class="font-heading text-sm font-semibold uppercase tracking-wide text-brand-light mb-4">{t('help.menuTitle')}</p>
+          <nav>
+            <ul class="list-none flex flex-col gap-1 m-0 p-0">
+              {helpPages.map((page) => (
+                <li>
+                  <a
+                    href={page.href}
+                    class:list={[
+                      'block no-underline text-[15px] py-2 px-3 rounded-lg transition-colors duration-200',
+                      active === page.slug
+                        ? 'text-brand font-semibold bg-brand-bg'
+                        : 'text-brand-muted font-medium hover:text-brand hover:bg-brand-bg/60',
+                    ]}
+                  >
+                    {page.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Right column: page content -->
+        <article class="min-w-0">
+          <h1 class="font-heading text-3xl nav:text-4xl font-semibold text-brand mb-8">{title}</h1>
+          <div
+            class="font-body text-brand-muted text-base leading-[1.8]
+              [&_h2]:font-heading [&_h2]:text-2xl nav:[&_h2]:text-[28px] [&_h2]:font-semibold [&_h2]:text-brand [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:scroll-mt-28
+              [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-brand [&_h3]:mt-8 [&_h3]:mb-3
+              [&_p]:mb-4
+              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2
+              [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_ol]:space-y-3
+              [&_li]:leading-[1.7]
+              [&_a]:text-brand [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:opacity-70
+              [&_strong]:text-brand [&_strong]:font-semibold
+              [&_code]:font-mono [&_code]:text-[13px] [&_code]:bg-brand-bg [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded"
+          >
+            <slot />
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

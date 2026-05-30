@@ -1,0 +1,150 @@
+---
+import HelpLayout from '../../layouts/HelpLayout.astro';
+import HelpMedia from '../../components/HelpMedia.astro';
+
+const groups = [
+  {
+    heading: 'General',
+    items: [
+      {
+        q: "I upgraded my plan but still see my old limits",
+        a: "Plan changes take effect immediately, but the add-in may need a refresh to pick them up. Close and reopen the Folio side panel (or restart PowerPoint / reload Google Slides) and sign in again if prompted. If your new credits still don't appear, contact our team.",
+      },
+      {
+        q: "I'm signed in to the wrong account",
+        a: "Open the Folio side panel, go to your account menu, and sign out. Then sign back in with the correct account. Your Folio account is separate from your Microsoft or Google account, so double-check you're using the right credentials.",
+      },
+      {
+        q: "How do I check which account or plan I'm on?",
+        a: "Open the account menu in the Folio side panel. It shows the account you're signed in with, your current plan, and your remaining credits.",
+      },
+    ],
+  },
+  {
+    heading: 'Google Slides',
+    media: 'Screenshot: launching Folio from the Extensions menu in Google Slides.',
+    items: [
+      {
+        q: "The add-on isn't loading or shows limited options",
+        a: "Reload the Google Slides tab and reopen Folio from Extensions → Folio AI. If it still doesn't load, make sure the add-on finished installing and that you granted the requested permissions during setup.",
+      },
+      {
+        q: "I get an error when using multiple Google accounts",
+        a: "Folio works with the Google account it was installed on. If you're signed in to several Google accounts in the same browser, open Google Slides in a browser profile or window dedicated to the right account, then launch Folio again.",
+      },
+    ],
+  },
+  {
+    heading: 'PowerPoint',
+    media: "Screenshot: the Folio AI button under Home, and PowerPoint's Normal view requirement.",
+    items: [
+      {
+        q: "The add-in isn't showing up in PowerPoint",
+        a: "Restart PowerPoint completely, then check Home → Add-ins to confirm Folio AI is installed. Make sure you're signed in to your Microsoft account. The add-in button is available in Normal editing view.",
+      },
+      {
+        q: "I can't sign in with multiple Microsoft accounts",
+        a: "Folio's sign-in is independent of your Microsoft account. If you have several Microsoft accounts, sign in to Folio with the account tied to your Folio subscription. Signing out and back in usually resolves account mix-ups.",
+      },
+      {
+        q: "The Add-ins button is disabled or blocked on my work account",
+        a: "Some organizations restrict Office add-ins through IT policy. If the Add-ins button is greyed out or Folio is blocked, your administrator may need to allow it. Share the AppSource listing with your IT team, or contact us and we'll help.",
+      },
+    ],
+  },
+  {
+    heading: 'Generating presentations',
+    items: [
+      {
+        q: "Generation seems stuck or fails partway",
+        a: "Folio needs an internet connection to generate slides. If a generation stalls, reload the panel and try again. Very large or highly complex requests can take longer — breaking a big request into a few smaller prompts is often faster and more reliable.",
+      },
+      {
+        q: "Folio finished but I don't see the new slides",
+        a: "Check the slide thumbnails panel — new or edited slides may have been added at the end of the deck or to the specific slides you referenced. Scroll through your deck to locate them.",
+      },
+    ],
+  },
+  {
+    heading: 'Formatting and design',
+    items: [
+      {
+        q: "My brand fonts or colors aren't being applied",
+        a: "Folio applies the fonts, colors, and layouts from your existing template. If something looks off, make sure your presentation is using your intended template, then ask Folio to reapply your branding. On enterprise plans you can store brand instructions so they're applied automatically.",
+      },
+      {
+        q: "Can Folio reformat a deck I already have?",
+        a: "Yes. Open the existing presentation and ask Folio to restructure or restyle it. Because Folio edits native PowerPoint and Google Slides objects rather than flat images, every element stays fully editable afterwards.",
+      },
+    ],
+  },
+];
+---
+
+<HelpLayout title="Troubleshooting" active="troubleshooting" description="Fixes for common issues with Folio AI in PowerPoint and Google Slides.">
+  <p>
+    Most issues are quick to resolve. Find your situation below — if you're still stuck,
+    <a href="/help/get-support/">our team is happy to help</a>.
+  </p>
+
+  {groups.map((group) => (
+    <section>
+      <h2>{group.heading}</h2>
+      <div class="grid grid-cols-1 gap-4 not-prose">
+        {group.items.map((item) => (
+          <details class="group bg-white border-2 border-brand-border rounded-xl overflow-hidden transition duration-300 self-start hover:border-brand">
+            <summary class="py-4 px-6 cursor-pointer font-semibold text-base text-brand list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-4">
+              {item.q}
+              <span class="text-2xl font-light transition-transform duration-300 group-[.expanded]:rotate-45">+</span>
+            </summary>
+            <div class="faq-content grid grid-rows-[0fr] group-[.expanded]:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-in-out">
+              <div class="overflow-hidden opacity-0 group-[.expanded]:opacity-100 transition-opacity duration-150">
+                <p class="px-6 pb-4 text-brand-muted leading-[1.8] mb-0">{item.a}</p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+      {group.media && <HelpMedia caption={group.media} />}
+    </section>
+  ))}
+
+  <h2>Need more help?</h2>
+  <p>
+    If none of the above solves it, head to <a href="/help/get-support/">Get Support</a> to reach our
+    team directly.
+  </p>
+</HelpLayout>
+
+<script>
+  const faqItems = document.querySelectorAll('details');
+
+  function closeFaq(item: HTMLDetailsElement) {
+    item.classList.remove('expanded');
+    item.querySelector('.faq-content')?.addEventListener('transitionend', () => {
+      item.open = false;
+    }, { once: true });
+  }
+
+  faqItems.forEach(item => {
+    item.querySelector('summary')?.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (item.classList.contains('expanded')) {
+        closeFaq(item as HTMLDetailsElement);
+      } else {
+        faqItems.forEach(other => {
+          if (other !== item && other.classList.contains('expanded')) {
+            closeFaq(other as HTMLDetailsElement);
+          }
+        });
+        (item as HTMLDetailsElement).open = true;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            item.classList.add('expanded');
+          });
+        });
+      }
+    });
+  });
+</script>

@@ -1,0 +1,129 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpBlocks from '../../../components/HelpBlocks.astro';
+import type { HelpPageContent } from '../../../components/helpBlocks';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+const content: Record<string, HelpPageContent> = {
+  fr: {
+    title: 'Démarrer',
+    description: "Prenez Folio AI en main en quelques minutes : installez-le dans PowerPoint ou Google Slides et créez votre premier deck.",
+    blocks: [
+      { type: 'p', html: `Bienvenue sur Folio AI — l'agent IA conçu pour les decks où chaque slide compte. Folio fonctionne directement dans <strong>PowerPoint</strong> et <strong>Google Slides</strong> : il génère de nouvelles présentations à partir d'un prompt et modifie vos decks existants tout en préservant vos templates, polices et votre charte graphique. Cette page vous guide pas à pas pour bien démarrer.` },
+      { type: 'h2', text: 'Un aperçu rapide' },
+      { type: 'p', html: `Nouveau sur Folio ? Regardez cette courte vidéo pour voir comment installer Folio et créer votre premier deck en quelques minutes.` },
+      { type: 'media', kind: 'video', caption: "Vidéo d'aperçu : installer Folio AI et générer votre première présentation." },
+      { type: 'h2', text: 'Installer Folio AI' },
+      { type: 'p', html: `Folio s'exécute comme un add-in dans les outils de présentation que vous utilisez déjà. Choisissez votre plateforme :` },
+      { type: 'ul', items: [
+        `<a href="/fr/help/powerpoint/">Utiliser Folio AI dans PowerPoint</a> — installez l'add-in sur Windows, Mac ou PowerPoint sur le web.`,
+        `<a href="/fr/help/google-slides/">Utiliser Folio AI dans Google Slides</a> — installez le module depuis Google Workspace Marketplace.`,
+      ] },
+      { type: 'p', html: `Rien à télécharger sur votre ordinateur — Folio s'installe directement dans PowerPoint ou Google Slides et apparaît dans un panneau latéral à côté de vos slides.` },
+      { type: 'h2', text: "Qu'est-ce que Folio AI ?" },
+      { type: 'p', html: `Folio est un agent IA qui travaille <em>avec</em> vous sur vos slides, et non une application distincte depuis laquelle vous exportez. Une fois installé, vous pouvez :` },
+      { type: 'ul', items: [
+        `<strong>Générer un deck à partir d'un prompt</strong> — décrivez ce dont vous avez besoin et Folio génère une présentation complète, en appliquant automatiquement les polices, couleurs et mises en page de votre template.`,
+        `<strong>Modifier un deck existant</strong> — ouvrez n'importe quelle présentation et demandez à Folio de la restructurer, réécrire, reformater ou compléter. Folio manipule de vraies formes PowerPoint et Google Slides : chaque élément reste entièrement modifiable.`,
+        `<strong>Réécrire et restyler le contenu</strong> — ajustez le ton, la longueur ou l'audience, et laissez Folio retravailler le texte sur l'ensemble des slides.`,
+        `<strong>Importer vos propres fichiers</strong> — déposez un logo, une image, des données ou un deck d'inspiration, et Folio les utilisera comme contexte pour votre prompt.`,
+      ] },
+      { type: 'media', caption: 'Capture : le panneau Folio ouvert à côté d\'un slide dans PowerPoint.' },
+      { type: 'h2', text: 'Commencez gratuitement' },
+      { type: 'p', html: `Chaque nouveau compte démarre avec <strong>500 crédits gratuits</strong> et <strong>sans carte bancaire</strong>. Les crédits sont ce que vous dépensez quand Folio génère ou modifie des slides — un deck complet de 10 slides en consomme généralement 100 à 200. Quand vous en voudrez plus, consultez <a href="/fr/help/plans-and-billing/">Forfaits et facturation</a>.` },
+      { type: 'h2', text: 'Étapes suivantes' },
+      { type: 'ul', items: [
+        `<a href="/fr/help/powerpoint/">Installer Folio dans PowerPoint</a>`,
+        `<a href="/fr/help/google-slides/">Installer Folio dans Google Slides</a>`,
+        `<a href="/fr/help/troubleshooting/">Dépannage</a> — solutions aux problèmes courants`,
+        `<a href="/fr/help/get-support/">Obtenir de l'aide</a> — contactez notre équipe`,
+      ] },
+    ],
+  },
+  es: {
+    title: 'Empezar',
+    description: 'Empieza a usar Folio AI en unos minutos: instálalo en PowerPoint o Google Slides y crea tu primer deck.',
+    blocks: [
+      { type: 'p', html: `Te damos la bienvenida a Folio AI, el agente de IA creado para presentaciones donde cada diapositiva cuenta. Folio funciona directamente dentro de <strong>PowerPoint</strong> y <strong>Google Slides</strong>: genera presentaciones nuevas a partir de un prompt y edita tus decks existentes conservando tus plantillas, fuentes y marca. Esta página te explica todo lo necesario para empezar.` },
+      { type: 'h2', text: 'Una vista rápida' },
+      { type: 'p', html: `¿Nuevo en Folio? Mira este breve recorrido para ver cómo instalar Folio y crear tu primer deck en unos minutos.` },
+      { type: 'media', kind: 'video', caption: 'Vídeo de introducción: configurar Folio AI y generar tu primera presentación.' },
+      { type: 'h2', text: 'Instalar Folio AI' },
+      { type: 'p', html: `Folio se ejecuta como un complemento dentro de las herramientas de presentación que ya usas. Elige tu plataforma:` },
+      { type: 'ul', items: [
+        `<a href="/es/help/powerpoint/">Usar Folio AI en PowerPoint</a>: instala el complemento en Windows, Mac o PowerPoint en la web.`,
+        `<a href="/es/help/google-slides/">Usar Folio AI en Google Slides</a>: instala el complemento desde Google Workspace Marketplace.`,
+      ] },
+      { type: 'p', html: `No hay nada que descargar en tu ordenador: Folio se instala directamente en PowerPoint o Google Slides y aparece en un panel lateral junto a tus diapositivas.` },
+      { type: 'h2', text: '¿Qué es Folio AI?' },
+      { type: 'p', html: `Folio es un agente de IA que trabaja <em>contigo</em> en tus diapositivas, no una aplicación aparte desde la que exportas. Una vez instalado, puedes:` },
+      { type: 'ul', items: [
+        `<strong>Generar un deck desde un prompt</strong>: describe lo que necesitas y Folio crea una presentación completa, aplicando automáticamente las fuentes, los colores y los diseños de tu plantilla.`,
+        `<strong>Editar un deck existente</strong>: abre cualquier presentación y pide a Folio que la reestructure, reescriba, reformatee o amplíe. Folio trabaja con formas reales de PowerPoint y Google Slides, así que cada elemento sigue siendo totalmente editable.`,
+        `<strong>Reescribir y dar nuevo estilo al contenido</strong>: ajusta el tono, la longitud o la audiencia y deja que Folio reelabore el texto en todas las diapositivas.`,
+        `<strong>Subir tus propios archivos</strong>: añade un logotipo, una imagen, datos o un deck de inspiración, y Folio lo usará como contexto para tu prompt.`,
+      ] },
+      { type: 'media', caption: 'Captura: el panel de Folio abierto junto a una diapositiva en PowerPoint.' },
+      { type: 'h2', text: 'Empieza gratis' },
+      { type: 'p', html: `Cada cuenta nueva empieza con <strong>500 créditos gratis</strong> y <strong>sin tarjeta de crédito</strong>. Los créditos son lo que gastas cuando Folio genera o edita diapositivas: un deck completo de 10 diapositivas suele usar entre 100 y 200. Cuando quieras más, consulta <a href="/es/help/plans-and-billing/">Planes y facturación</a>.` },
+      { type: 'h2', text: 'Siguientes pasos' },
+      { type: 'ul', items: [
+        `<a href="/es/help/powerpoint/">Instalar Folio en PowerPoint</a>`,
+        `<a href="/es/help/google-slides/">Instalar Folio en Google Slides</a>`,
+        `<a href="/es/help/troubleshooting/">Solución de problemas</a>: arregla los problemas más comunes`,
+        `<a href="/es/help/get-support/">Obtener soporte</a>: contacta con nuestro equipo`,
+      ] },
+    ],
+  },
+  de: {
+    title: 'Erste Schritte',
+    description: 'Lege in wenigen Minuten mit Folio AI los: Installiere es in PowerPoint oder Google Slides und erstelle dein erstes Deck.',
+    blocks: [
+      { type: 'p', html: `Willkommen bei Folio AI – dem KI-Agenten für Decks, bei denen jede Folie zählt. Folio arbeitet direkt in <strong>PowerPoint</strong> und <strong>Google Slides</strong>: Es generiert neue Präsentationen aus einem Prompt und bearbeitet deine bestehenden Decks, während es deine Vorlagen, Schriften und dein Branding bewahrt. Diese Seite führt dich durch alles, was du zum Loslegen brauchst.` },
+      { type: 'h2', text: 'Ein kurzer Überblick' },
+      { type: 'p', html: `Neu bei Folio? Sieh dir diese kurze Einführung an, um zu sehen, wie du Folio installierst und in wenigen Minuten dein erstes Deck erstellst.` },
+      { type: 'media', kind: 'video', caption: 'Überblicksvideo: Folio AI einrichten und die erste Präsentation generieren.' },
+      { type: 'h2', text: 'Folio AI installieren' },
+      { type: 'p', html: `Folio läuft als Add-in in den Präsentationstools, die du bereits nutzt. Wähle deine Plattform:` },
+      { type: 'ul', items: [
+        `<a href="/de/help/powerpoint/">Folio AI in PowerPoint verwenden</a> – installiere das Add-in unter Windows, Mac oder in PowerPoint im Web.`,
+        `<a href="/de/help/google-slides/">Folio AI in Google Slides verwenden</a> – installiere das Add-on aus dem Google Workspace Marketplace.`,
+      ] },
+      { type: 'p', html: `Es gibt nichts auf deinen Computer herunterzuladen – Folio installiert sich direkt in PowerPoint oder Google Slides und erscheint in einem Seitenpanel neben deinen Folien.` },
+      { type: 'h2', text: 'Was ist Folio AI?' },
+      { type: 'p', html: `Folio ist ein KI-Agent, der <em>mit</em> dir an deinen Folien arbeitet – keine separate App, aus der du exportierst. Nach der Installation kannst du:` },
+      { type: 'ul', items: [
+        `<strong>Aus einem Prompt ein Deck generieren</strong> – beschreibe, was du brauchst, und Folio erstellt eine vollständige Präsentation und wendet dabei automatisch die Schriften, Farben und Layouts deiner Vorlage an.`,
+        `<strong>Ein bestehendes Deck bearbeiten</strong> – öffne eine beliebige Präsentation und bitte Folio, sie umzustrukturieren, neu zu schreiben, neu zu formatieren oder zu erweitern. Folio arbeitet mit echten PowerPoint- und Google-Slides-Objekten, sodass jedes Element vollständig bearbeitbar bleibt.`,
+        `<strong>Inhalte neu schreiben und umgestalten</strong> – passe Ton, Länge oder Zielgruppe an und lass Folio den Text über alle Folien hinweg überarbeiten.`,
+        `<strong>Eigene Dateien hochladen</strong> – füge ein Logo, ein Bild, Daten oder ein Inspirations-Deck hinzu, und Folio nutzt es als Kontext für deinen Prompt.`,
+      ] },
+      { type: 'media', caption: 'Screenshot: das Folio-Panel neben einer Folie in PowerPoint.' },
+      { type: 'h2', text: 'Kostenlos starten' },
+      { type: 'p', html: `Jedes neue Konto startet mit <strong>500 kostenlosen Credits</strong> und <strong>ohne Kreditkarte</strong>. Credits sind das, was du ausgibst, wenn Folio Folien generiert oder bearbeitet – ein vollständiges 10-Folien-Deck verbraucht in der Regel 100–200. Wenn du mehr brauchst, siehe <a href="/de/help/plans-and-billing/">Tarife und Abrechnung</a>.` },
+      { type: 'h2', text: 'Nächste Schritte' },
+      { type: 'ul', items: [
+        `<a href="/de/help/powerpoint/">Folio in PowerPoint installieren</a>`,
+        `<a href="/de/help/google-slides/">Folio in Google Slides installieren</a>`,
+        `<a href="/de/help/troubleshooting/">Fehlerbehebung</a> – Lösungen für häufige Probleme`,
+        `<a href="/de/help/get-support/">Support erhalten</a> – wende dich an unser Team`,
+      ] },
+    ],
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="get-started" description={c.description}>
+  <HelpBlocks blocks={c.blocks} />
+</HelpLayout>

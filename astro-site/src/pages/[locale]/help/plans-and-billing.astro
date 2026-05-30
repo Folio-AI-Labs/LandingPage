@@ -1,0 +1,150 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpBlocks from '../../../components/HelpBlocks.astro';
+import type { HelpPageContent } from '../../../components/helpBlocks';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+const content: Record<string, HelpPageContent> = {
+  fr: {
+    title: 'Forfaits et facturation',
+    description: 'Comprenez les crédits, les forfaits, la facturation, les changements de plan et la résiliation de Folio AI.',
+    blocks: [
+      { type: 'p', html: `Folio AI utilise un <strong>modèle basé sur les crédits</strong>, simple. Vous dépensez des crédits lorsque Folio génère ou modifie des slides, et vous choisissez un forfait selon le nombre de crédits dont vous avez besoin chaque mois. Cette page explique le fonctionnement des crédits et de la facturation.` },
+      { type: 'h2', text: 'Commencez gratuitement' },
+      { type: 'p', html: `Chaque nouveau compte démarre avec <strong>500 crédits gratuits</strong> et <strong>sans carte bancaire</strong>. De quoi générer plusieurs présentations et essayer toutes les fonctionnalités avant de choisir un forfait.` },
+      { type: 'h2', text: 'Comment fonctionnent les crédits' },
+      { type: 'ul', items: [
+        `Les crédits sont la monnaie que vous dépensez chaque fois que Folio génère ou modifie des slides.`,
+        `En moyenne, générer un deck complet de 10 slides consomme environ <strong>100 à 200 crédits</strong>, selon la complexité et la longueur du contenu.`,
+        `Les crédits de votre forfait sont renouvelés à votre date de facturation.`,
+        `Les crédits n'expirent pas — les crédits non utilisés sont reportés à la période suivante (report plafonné selon notre politique d'utilisation équitable).`,
+        `Si vous arrivez à court, vous pouvez acheter des crédits supplémentaires ou passer à un forfait supérieur. Nous vous prévenons quand vous approchez de votre limite.`,
+      ] },
+      { type: 'h2', text: 'Forfaits' },
+      { type: 'p', html: `Folio propose une gamme de forfaits, du palier gratuit aux forfaits à fort volume et illimités pour les équipes. Les paliers supérieurs incluent une allocation mensuelle de crédits plus élevée, un tarif au crédit plus bas au-delà de l'allocation, et débloquent des modèles Folio plus puissants (Fast, Medium et Max).` },
+      { type: 'ul', items: [
+        `<strong>Starter — 0 $/mois.</strong> 500 crédits pour commencer. Idéal pour les premiers pas et un usage ponctuel. Inclut l'édition de slides par IA, l'add-in PowerPoint, le module Google Slides et les exports multi-formats.`,
+        `<strong>Plus — 10 $/mois.</strong> 2 000 crédits par mois. Tout Starter, plus le modèle Folio Medium et un accès au support dédié.`,
+        `<strong>Pro — 49 $/mois.</strong> 5 000 crédits par mois. Tout Plus, plus le modèle Folio Max.`,
+        `<strong>Enterprise — 199 $/mois.</strong> 20 000 crédits par mois. Tout Pro, plus les instructions enregistrées et la recherche externe par l'agent.`,
+        `<strong>Ultimate — 499 $/mois.</strong> 50 000 crédits par mois. Tout Enterprise, plus la connexion SSO &amp; MFA et un gestionnaire de compte dédié.`,
+        `<strong>Unlimited — sur mesure.</strong> Usage illimité pour les équipes qui ne veulent aucune limite. <a href="/fr/quote/">Demander un devis</a>.`,
+      ] },
+      { type: 'p', html: `Pour le détail complet des fonctionnalités et les tarifs en vigueur, consultez la <a href="/fr/pricing/">page Tarifs</a>.` },
+      { type: 'h2', text: 'Gérer votre abonnement' },
+      { type: 'p', html: `Vous pouvez gérer votre forfait depuis le panneau Folio dans PowerPoint ou Google Slides, ou depuis votre compte dans le navigateur. Vous pouvez y monter ou descendre de gamme, basculer entre facturation mensuelle et annuelle, ou mettre à jour vos informations de paiement.` },
+      { type: 'ul', items: [
+        `Les <strong>montées et descentes de gamme</strong> prennent effet immédiatement, et nous calculons l'ajustement au prorata.`,
+        `Le <strong>changement de fréquence de facturation</strong> (mensuelle ↔ annuelle) est possible à tout moment.`,
+      ] },
+      { type: 'h2', text: 'Équipes' },
+      { type: 'p', html: `Sur les forfaits équipe, chaque membre dispose de sa propre allocation de crédits, et les propriétaires d'équipe gèrent les accès. Ajouter ou retirer des membres ajuste votre facture au prorata. Les paliers supérieurs débloquent aussi des fonctionnalités partagées, comme les instructions de marque enregistrées pour toute l'équipe.` },
+      { type: 'h2', text: 'Résiliation et remboursements' },
+      { type: 'ul', items: [
+        `Vous pouvez résilier à tout moment. Votre accès se poursuit jusqu'à la fin de la période de facturation en cours, et vous ne serez plus facturé.`,
+        `Désinstaller l'add-in PowerPoint ou le module Google Slides n'annule pas automatiquement votre abonnement — résiliez depuis les paramètres de votre compte.`,
+      ] },
+      { type: 'p', html: `Une question de facturation non couverte ici ? <a href="/fr/help/get-support/">Contactez notre équipe</a>.` },
+    ],
+  },
+  es: {
+    title: 'Planes y facturación',
+    description: 'Entiende los créditos, los planes, la facturación, los cambios de plan y la cancelación de Folio AI.',
+    blocks: [
+      { type: 'p', html: `Folio AI usa un <strong>modelo basado en créditos</strong> sencillo. Gastas créditos cuando Folio genera o edita diapositivas, y eliges un plan según cuántos créditos necesites cada mes. Esta página explica cómo funcionan los créditos y la facturación.` },
+      { type: 'h2', text: 'Empieza gratis' },
+      { type: 'p', html: `Cada cuenta nueva empieza con <strong>500 créditos gratis</strong> y <strong>sin tarjeta de crédito</strong>. Suficiente para generar varias presentaciones y probar todas las funciones antes de decidir un plan.` },
+      { type: 'h2', text: 'Cómo funcionan los créditos' },
+      { type: 'ul', items: [
+        `Los créditos son la moneda que gastas cada vez que Folio genera o edita diapositivas.`,
+        `De media, generar un deck completo de 10 diapositivas usa unos <strong>100–200 créditos</strong>, según la complejidad y la longitud del contenido.`,
+        `Los créditos de tu plan se renuevan en tu fecha de facturación.`,
+        `Los créditos no caducan: los créditos no usados se trasladan al siguiente ciclo de facturación (el traslado tiene un límite según nuestra política de uso justo).`,
+        `Si te quedas sin créditos, puedes comprar más o subir a un plan superior. Te avisaremos cuando te acerques a tu límite.`,
+      ] },
+      { type: 'h2', text: 'Planes' },
+      { type: 'p', html: `Folio ofrece una gama de planes, desde un nivel gratuito hasta planes de gran volumen e ilimitados para equipos. Los niveles superiores incluyen una asignación mensual de créditos mayor, una tarifa por crédito más baja por encima de tu asignación, y desbloquean modelos de Folio más potentes (Fast, Medium y Max).` },
+      { type: 'ul', items: [
+        `<strong>Starter — 0 $/mes.</strong> 500 créditos para empezar. Ideal para primeros usuarios y trabajo ocasional. Incluye edición de diapositivas con IA, el complemento de PowerPoint, el complemento de Google Slides y exportaciones multiformato.`,
+        `<strong>Plus — 10 $/mes.</strong> 2.000 créditos al mes. Todo lo de Starter, más el modelo Folio Medium y acceso a soporte dedicado.`,
+        `<strong>Pro — 49 $/mes.</strong> 5.000 créditos al mes. Todo lo de Plus, más el modelo Folio Max.`,
+        `<strong>Enterprise — 199 $/mes.</strong> 20.000 créditos al mes. Todo lo de Pro, más instrucciones guardadas e investigación externa del agente.`,
+        `<strong>Ultimate — 499 $/mes.</strong> 50.000 créditos al mes. Todo lo de Enterprise, más inicio de sesión con SSO y MFA y un gestor de cuenta dedicado.`,
+        `<strong>Unlimited — a medida.</strong> Uso ilimitado para equipos que no quieren límites. <a href="/es/quote/">Solicita un presupuesto</a>.`,
+      ] },
+      { type: 'p', html: `Para el desglose completo de funciones y los precios actuales, consulta la <a href="/es/pricing/">página de Precios</a>.` },
+      { type: 'h2', text: 'Gestionar tu suscripción' },
+      { type: 'p', html: `Puedes gestionar tu plan desde el panel de Folio en PowerPoint o Google Slides, o desde tu cuenta en el navegador. Desde ahí puedes subir o bajar de plan, cambiar entre facturación mensual y anual, o actualizar tus datos de pago.` },
+      { type: 'ul', items: [
+        `Las <strong>subidas y bajadas de plan</strong> surten efecto de inmediato y prorrateamos cualquier ajuste de facturación.`,
+        `<strong>Cambiar la frecuencia de facturación</strong> (mensual ↔ anual) está disponible en cualquier momento.`,
+      ] },
+      { type: 'h2', text: 'Equipos' },
+      { type: 'p', html: `En los planes de equipo, cada miembro tiene su propia asignación de créditos, y los propietarios del equipo gestionan quién tiene acceso. Añadir o quitar miembros ajusta tu factura de forma prorrateada. Los niveles superiores también desbloquean funciones compartidas, como instrucciones de marca guardadas para todo el equipo.` },
+      { type: 'h2', text: 'Cancelación y reembolsos' },
+      { type: 'ul', items: [
+        `Puedes cancelar en cualquier momento. Tu acceso continúa hasta el final del periodo de facturación actual y no se te volverá a cobrar.`,
+        `Desinstalar el complemento de PowerPoint o de Google Slides no cancela automáticamente tu suscripción: cancela desde los ajustes de tu cuenta.`,
+      ] },
+      { type: 'p', html: `¿Tienes una duda de facturación que no cubrimos aquí? <a href="/es/help/get-support/">Contacta con nuestro equipo</a>.` },
+    ],
+  },
+  de: {
+    title: 'Tarife und Abrechnung',
+    description: 'Verstehe Credits, Tarife, Abrechnung, Tarifwechsel und Kündigung bei Folio AI.',
+    blocks: [
+      { type: 'p', html: `Folio AI nutzt ein einfaches <strong>Credit-basiertes Modell</strong>. Du gibst Credits aus, wenn Folio Folien generiert oder bearbeitet, und du wählst einen Tarif danach, wie viele Credits du pro Monat brauchst. Diese Seite erklärt, wie Credits und Abrechnung funktionieren.` },
+      { type: 'h2', text: 'Kostenlos starten' },
+      { type: 'p', html: `Jedes neue Konto startet mit <strong>500 kostenlosen Credits</strong> und <strong>ohne Kreditkarte</strong>. Das reicht, um mehrere Präsentationen zu generieren und jede Funktion auszuprobieren, bevor du dich für einen Tarif entscheidest.` },
+      { type: 'h2', text: 'Wie Credits funktionieren' },
+      { type: 'ul', items: [
+        `Credits sind die Währung, die du jedes Mal ausgibst, wenn Folio Folien generiert oder bearbeitet.`,
+        `Im Durchschnitt verbraucht das Generieren eines vollständigen 10-Folien-Decks etwa <strong>100–200 Credits</strong>, je nach Komplexität und Länge des Inhalts.`,
+        `Die Credits deines Tarifs werden an deinem Abrechnungsdatum aufgefrischt.`,
+        `Credits verfallen nicht – ungenutzte Credits werden in den nächsten Abrechnungszeitraum übertragen (der Übertrag ist gemäß unserer Fair-Use-Richtlinie begrenzt).`,
+        `Wenn deine Credits aufgebraucht sind, kannst du zusätzliche Credits kaufen oder zu einem höheren Tarif wechseln. Wir informieren dich, wenn du dich deinem Limit näherst.`,
+      ] },
+      { type: 'h2', text: 'Tarife' },
+      { type: 'p', html: `Folio bietet eine Reihe von Tarifen, vom kostenlosen Einstieg bis zu Tarifen mit hohem Volumen und unbegrenzten Tarifen für Teams. Höhere Stufen enthalten ein größeres monatliches Credit-Kontingent, einen niedrigeren Preis pro Credit über dein Kontingent hinaus und schalten leistungsfähigere Folio-Modelle frei (Fast, Medium und Max).` },
+      { type: 'ul', items: [
+        `<strong>Starter — 0 $/Monat.</strong> 500 Credits zum Start. Ideal für Einsteiger und gelegentliche Folienarbeit. Enthält KI-Folienbearbeitung, das PowerPoint-Add-in, das Google-Slides-Add-on und Exporte in mehreren Formaten.`,
+        `<strong>Plus — 10 $/Monat.</strong> 2.000 Credits pro Monat. Alles aus Starter, plus das Folio-Medium-Modell und Zugang zu dediziertem Support.`,
+        `<strong>Pro — 49 $/Monat.</strong> 5.000 Credits pro Monat. Alles aus Plus, plus das Folio-Max-Modell.`,
+        `<strong>Enterprise — 199 $/Monat.</strong> 20.000 Credits pro Monat. Alles aus Pro, plus gespeicherte Anweisungen und externe Recherche durch den Agenten.`,
+        `<strong>Ultimate — 499 $/Monat.</strong> 50.000 Credits pro Monat. Alles aus Enterprise, plus SSO- &amp; MFA-Anmeldung und einen dedizierten Account-Manager.`,
+        `<strong>Unlimited — individuell.</strong> Unbegrenzte Nutzung für Teams, die keine Limits wollen. <a href="/de/quote/">Angebot anfordern</a>.`,
+      ] },
+      { type: 'p', html: `Die vollständige Funktionsübersicht und aktuelle Preise findest du auf der <a href="/de/pricing/">Preisseite</a>.` },
+      { type: 'h2', text: 'Dein Abo verwalten' },
+      { type: 'p', html: `Du kannst deinen Tarif über das Folio-Panel in PowerPoint oder Google Slides oder über dein Konto im Browser verwalten. Dort kannst du up- oder downgraden, zwischen monatlicher und jährlicher Abrechnung wechseln oder deine Zahlungsdaten aktualisieren.` },
+      { type: 'ul', items: [
+        `<strong>Up- und Downgrades</strong> werden sofort wirksam, und wir rechnen jede Anpassung anteilig ab.`,
+        `<strong>Das Ändern des Abrechnungsintervalls</strong> (monatlich ↔ jährlich) ist jederzeit möglich.`,
+      ] },
+      { type: 'h2', text: 'Teams' },
+      { type: 'p', html: `Bei Team-Tarifen erhält jedes Mitglied ein eigenes Credit-Kontingent, und Team-Eigentümer verwalten den Zugang. Das Hinzufügen oder Entfernen von Mitgliedern passt deine Rechnung anteilig an. Höhere Stufen schalten außerdem geteilte Funktionen frei, etwa teamweit gespeicherte Marken-Anweisungen.` },
+      { type: 'h2', text: 'Kündigung und Rückerstattungen' },
+      { type: 'ul', items: [
+        `Du kannst jederzeit kündigen. Dein Zugang läuft bis zum Ende des aktuellen Abrechnungszeitraums weiter, und es wird dir nichts mehr berechnet.`,
+        `Das Deinstallieren des PowerPoint-Add-ins oder des Google-Slides-Add-ons kündigt dein Abo nicht automatisch – kündige in den Einstellungen deines Kontos.`,
+      ] },
+      { type: 'p', html: `Eine Abrechnungsfrage, die hier nicht beantwortet wird? <a href="/de/help/get-support/">Wende dich an unser Team</a>.` },
+    ],
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="plans-and-billing" description={c.description}>
+  <HelpBlocks blocks={c.blocks} />
+</HelpLayout>

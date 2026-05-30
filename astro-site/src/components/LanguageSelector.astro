@@ -12,6 +12,7 @@ const localizedRoute = [
   /^\/$/,
   /^\/(pricing|demo|privacy|quote|support|blog)\/$/,
   /^\/blog\/[^/]+\/$/,
+  /^\/help(\/[^/]+)?\/$/,
 ].some((re) => re.test(currentPath));
 
 const languages = [

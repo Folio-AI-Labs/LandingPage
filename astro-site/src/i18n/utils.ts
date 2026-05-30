@@ -14,11 +14,19 @@ export function useTranslations(lang: LanguageCode) {
 }
 
 export function getLocalizedPath(path: string, lang: LanguageCode): string {
-  const localized = lang === defaultLang ? path : `/${lang}${path}`;
+  // Separate any #fragment so the trailing-slash logic only applies to the
+  // pathname. Without this, '/#features' becomes '/#features/' and the in-page
+  // anchor scroll breaks.
+  const hashIndex = path.indexOf('#');
+  const hash = hashIndex === -1 ? '' : path.slice(hashIndex);
+  const pathname = hashIndex === -1 ? path : path.slice(0, hashIndex);
+
+  const localized = lang === defaultLang ? pathname : `/${lang}${pathname}`;
   // GitHub Pages serves directory-style URLs and 301-redirects the slashless
   // form (/privacy -> /privacy/). Emit the trailing slash so internal links
   // match the canonical URL and Google does not flag "Page with redirect".
-  return localized.endsWith('/') ? localized : `${localized}/`;
+  const withSlash = localized.endsWith('/') ? localized : `${localized}/`;
+  return `${withSlash}${hash}`;
 }
 
 export function getCurrentPath(url: URL): string {
