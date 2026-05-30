@@ -13,6 +13,6 @@ const { blocks } = Astro.props;
   if (b.type === 'h2') return <h2>{b.text}</h2>;
   if (b.type === 'p') return <p set:html={b.html} />;
   if (b.type === 'ul') return <ul>{b.items.map((it) => <li set:html={it} />)}</ul>;
-  if (b.type === 'media') return <HelpMedia caption={b.caption} type={b.kind ?? 'image'} />;
+  if (b.type === 'media') return <HelpMedia caption={b.caption} type={b.kind ?? 'image'} src={b.src} alt={b.alt} />;
   return null;
 })}

@@ -18,7 +18,8 @@ const t = useTranslations(lang);
 const helpPages = [
   { slug: 'get-started', href: getLocalizedPath('/help/', lang), label: t('help.getStarted') },
   { slug: 'powerpoint', href: getLocalizedPath('/help/powerpoint/', lang), label: t('help.powerpoint') },
-  { slug: 'google-slides', href: getLocalizedPath('/help/google-slides/', lang), label: t('help.googleSlides') },
+  { slug: 'google-slides', href: getLocalizedPath('/help/google-slides/', lang), label: t('help.googleSlides'), locked: true },
+  { slug: 'get-the-most', href: getLocalizedPath('/help/get-the-most/', lang), label: t('help.getTheMost') },
   { slug: 'plans-and-billing', href: getLocalizedPath('/help/plans-and-billing/', lang), label: t('help.plansBilling') },
   { slug: 'troubleshooting', href: getLocalizedPath('/help/troubleshooting/', lang), label: t('help.troubleshooting') },
   { slug: 'get-support', href: getLocalizedPath('/help/get-support/', lang), label: t('help.getSupport') },
@@ -38,17 +39,34 @@ const helpPages = [
             <ul class="list-none flex flex-col gap-1 m-0 p-0">
               {helpPages.map((page) => (
                 <li>
-                  <a
-                    href={page.href}
-                    class:list={[
-                      'block no-underline text-[15px] py-2 px-3 rounded-lg transition-colors duration-200',
-                      active === page.slug
-                        ? 'text-brand font-semibold bg-brand-bg'
-                        : 'text-brand-muted font-medium hover:text-brand hover:bg-brand-bg/60',
-                    ]}
-                  >
-                    {page.label}
-                  </a>
+                  {page.locked ? (
+                    <div class="group/lock relative">
+                      <span
+                        aria-disabled="true"
+                        class="block text-[15px] py-2 px-3 rounded-lg font-medium text-brand-light/70 cursor-not-allowed select-none"
+                      >
+                        {page.label}
+                      </span>
+                      <span
+                        role="tooltip"
+                        class="pointer-events-none absolute left-3 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/lock:opacity-100"
+                      >
+                        {t('help.comingSoon')}
+                      </span>
+                    </div>
+                  ) : (
+                    <a
+                      href={page.href}
+                      class:list={[
+                        'block no-underline text-[15px] py-2 px-3 rounded-lg transition-colors duration-200',
+                        active === page.slug
+                          ? 'text-brand font-semibold bg-brand-bg'
+                          : 'text-brand-muted font-medium hover:text-brand hover:bg-brand-bg/60',
+                      ]}
+                    >
+                      {page.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

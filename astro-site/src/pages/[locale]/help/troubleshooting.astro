@@ -1,6 +1,5 @@
 ---
 import HelpLayout from '../../../layouts/HelpLayout.astro';
-import HelpMedia from '../../../components/HelpMedia.astro';
 import { languages, defaultLang } from '../../../i18n/languages';
 import { getLangFromUrl } from '../../../i18n/utils';
 
@@ -14,7 +13,6 @@ const lang = getLangFromUrl(Astro.url);
 
 interface Group {
   heading: string;
-  media?: string;
   items: { q: string; a: string }[];
 }
 
@@ -43,7 +41,6 @@ const content: Record<string, TPage> = {
       },
       {
         heading: 'Google Slides',
-        media: 'Capture : lancement de Folio depuis le menu Extensions dans Google Slides.',
         items: [
           { q: 'Le module ne se charge pas ou affiche des options limitées', a: "Rechargez l'onglet Google Slides et rouvrez Folio via Extensions → Folio AI. S'il ne se charge toujours pas, vérifiez que le module a bien fini de s'installer et que vous avez accordé les autorisations demandées lors de l'installation." },
           { q: "J'obtiens une erreur avec plusieurs comptes Google", a: "Folio fonctionne avec le compte Google sur lequel il a été installé. Si vous êtes connecté à plusieurs comptes Google dans le même navigateur, ouvrez Google Slides dans un profil ou une fenêtre dédiée au bon compte, puis relancez Folio." },
@@ -51,7 +48,6 @@ const content: Record<string, TPage> = {
       },
       {
         heading: 'PowerPoint',
-        media: "Capture : le bouton Folio AI dans Accueil et l'exigence du mode Normal de PowerPoint.",
         items: [
           { q: "L'add-in n'apparaît pas dans PowerPoint", a: "Redémarrez complètement PowerPoint, puis vérifiez dans Accueil → Compléments que Folio AI est installé. Assurez-vous d'être connecté à votre compte Microsoft. Le bouton de l'add-in est disponible en mode d'édition Normal." },
           { q: 'Je ne peux pas me connecter avec plusieurs comptes Microsoft', a: "La connexion à Folio est indépendante de votre compte Microsoft. Si vous avez plusieurs comptes Microsoft, connectez-vous à Folio avec le compte lié à votre abonnement Folio. Se déconnecter puis se reconnecter résout généralement les confusions de compte." },
@@ -91,7 +87,6 @@ const content: Record<string, TPage> = {
       },
       {
         heading: 'Google Slides',
-        media: 'Captura: abrir Folio desde el menú Extensiones en Google Slides.',
         items: [
           { q: 'El complemento no carga o muestra opciones limitadas', a: "Recarga la pestaña de Google Slides y vuelve a abrir Folio desde Extensiones → Folio AI. Si sigue sin cargar, asegúrate de que el complemento terminó de instalarse y de que concediste los permisos solicitados durante la configuración." },
           { q: 'Recibo un error al usar varias cuentas de Google', a: "Folio funciona con la cuenta de Google en la que se instaló. Si tienes varias cuentas de Google en el mismo navegador, abre Google Slides en un perfil o ventana dedicados a la cuenta correcta y vuelve a abrir Folio." },
@@ -99,7 +94,6 @@ const content: Record<string, TPage> = {
       },
       {
         heading: 'PowerPoint',
-        media: 'Captura: el botón de Folio AI en Inicio y el requisito de la vista Normal de PowerPoint.',
         items: [
           { q: 'El complemento no aparece en PowerPoint', a: "Reinicia PowerPoint por completo y luego comprueba en Inicio → Complementos que Folio AI está instalado. Asegúrate de haber iniciado sesión en tu cuenta de Microsoft. El botón del complemento está disponible en la vista de edición Normal." },
           { q: 'No puedo iniciar sesión con varias cuentas de Microsoft', a: "El inicio de sesión de Folio es independiente de tu cuenta de Microsoft. Si tienes varias cuentas de Microsoft, inicia sesión en Folio con la cuenta asociada a tu suscripción de Folio. Cerrar sesión y volver a iniciarla suele resolver las confusiones de cuenta." },
@@ -139,7 +133,6 @@ const content: Record<string, TPage> = {
       },
       {
         heading: 'Google Slides',
-        media: 'Screenshot: Folio über das Menü Erweiterungen in Google Slides starten.',
         items: [
           { q: 'Das Add-on lädt nicht oder zeigt eingeschränkte Optionen', a: "Lade den Google-Slides-Tab neu und öffne Folio erneut über Erweiterungen → Folio AI. Wenn es weiterhin nicht lädt, stelle sicher, dass das Add-on vollständig installiert wurde und du die bei der Einrichtung angeforderten Berechtigungen erteilt hast." },
           { q: 'Ich erhalte einen Fehler bei mehreren Google-Konten', a: "Folio arbeitet mit dem Google-Konto, mit dem es installiert wurde. Wenn du im selben Browser bei mehreren Google-Konten angemeldet bist, öffne Google Slides in einem Profil oder Fenster, das dem richtigen Konto gewidmet ist, und starte Folio erneut." },
@@ -147,7 +140,6 @@ const content: Record<string, TPage> = {
       },
       {
         heading: 'PowerPoint',
-        media: 'Screenshot: die Folio-AI-Schaltfläche unter Start und die Anforderung der Normalansicht in PowerPoint.',
         items: [
           { q: 'Das Add-in erscheint nicht in PowerPoint', a: "Starte PowerPoint vollständig neu und prüfe dann unter Start → Add-Ins, ob Folio AI installiert ist. Stelle sicher, dass du bei deinem Microsoft-Konto angemeldet bist. Die Add-in-Schaltfläche ist in der normalen Bearbeitungsansicht verfügbar." },
           { q: 'Ich kann mich nicht mit mehreren Microsoft-Konten anmelden', a: "Die Folio-Anmeldung ist unabhängig von deinem Microsoft-Konto. Wenn du mehrere Microsoft-Konten hast, melde dich bei Folio mit dem Konto an, das mit deinem Folio-Abo verknüpft ist. Ab- und erneutes Anmelden behebt Kontoverwechslungen meist." },
@@ -198,7 +190,6 @@ const c = content[lang] ?? content.fr;
           </details>
         ))}
       </div>
-      {group.media && <HelpMedia caption={group.media} />}
     </section>
   ))}
 

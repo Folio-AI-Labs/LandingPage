@@ -1,0 +1,165 @@
+---
+import HelpLayout from '../../../layouts/HelpLayout.astro';
+import HelpBlocks from '../../../components/HelpBlocks.astro';
+import type { HelpPageContent } from '../../../components/helpBlocks';
+import { languages, defaultLang } from '../../../i18n/languages';
+import { getLangFromUrl } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+const content: Record<string, HelpPageContent> = {
+  fr: {
+    title: 'Tirer le meilleur de Folio AI',
+    description: "Allez plus loin que les bases : utilisez les Instructions, l'import de documents, la recherche web et le choix du modèle pour obtenir des résultats plus précis et fidèles à votre marque.",
+    blocks: [
+      { type: 'p', html: `Une fois à l'aise pour générer et modifier des decks, quelques fonctionnalités aident Folio à produire des résultats plus précis, plus pertinents et plus fidèles à votre marque. Cette page présente les quatre qui font la plus grande différence : les <strong>Instructions</strong>, l'<strong>import de documents</strong>, la <strong>recherche web</strong> et le <strong>choix du modèle</strong>.` },
+      { type: 'h2', text: 'Instructions' },
+      { type: 'p', html: `Les Instructions vous permettent de donner à Folio des consignes permanentes qui s'appliquent à <em>chaque</em> deck sur lequel vous travaillez — vous n'avez donc pas à vous répéter dans chaque prompt. Voyez-les comme un prompt système pour votre compte : des règles de ton, de mise en forme, de terminologie et de marque que Folio suit automatiquement.` },
+      { type: 'ul', items: [
+        `<strong>Définissez votre ton et votre style</strong> — par exemple « écris toujours d'une voix concise et exécutive » ou « évite le jargon ».`,
+        `<strong>Fixez vos règles de marque et de mise en forme</strong> — polices préférées, usage des couleurs, façon de titrer les slides ou de formater les nombres et les dates.`,
+        `<strong>Ajoutez du contexte métier</strong> — décrivez votre entreprise, votre produit ou votre audience une fois, et Folio le garde en tête partout.`,
+      ] },
+      { type: 'p', html: `Ouvrez les <strong>Instructions</strong> depuis le panneau Folio, rédigez vos consignes en langage clair, puis enregistrez. Elles s'appliquent ensuite à chaque génération et modification jusqu'à ce que vous les changiez.` },
+      { type: 'media', src: '/help/get-the-most-1.png', caption: "Capture : le panneau Instructions où vous ajoutez des consignes permanentes appliquées à chaque deck." },
+      { type: 'h2', text: 'Importer des documents' },
+      { type: 'p', html: `Donnez à Folio la matière première dont il a besoin en important vos propres documents. Folio les lit et utilise leur contenu comme contexte pour les slides qu'il génère ou modifie — vos decks s'appuient ainsi sur vos vraies données plutôt que sur du contenu générique.` },
+      { type: 'ul', items: [
+        `<strong>Depuis votre ordinateur</strong> — glissez-déposez des rapports, des tableurs, des PDF, des images ou un deck existant directement depuis votre machine.`,
+        `<strong>Depuis un SharePoint sécurisé</strong> — connectez-vous au SharePoint de votre organisation et importez des documents directement, sans les télécharger au préalable.`,
+      ] },
+      { type: 'p', html: `Folio n'utilise les fichiers importés que comme contexte pour votre prompt. Importez un rapport de recherche et demandez à Folio d'en faire un deck de synthèse, ou déposez un fichier de données et laissez Folio construire les graphiques correspondants.` },
+      { type: 'media', src: '/help/get-the-most-2.png', caption: "Capture : import de documents depuis un ordinateur ou un SharePoint connecté." },
+      { type: 'h2', text: 'Recherche web' },
+      { type: 'p', html: `Quand votre prompt nécessite des informations que Folio n'a pas déjà, activez la <strong>recherche web</strong> et l'agent ira chercher des informations supplémentaires et à jour sur le web pour nourrir son travail.` },
+      { type: 'ul', items: [
+        `<strong>Récupérez des faits et chiffres actuels</strong> — données de marché récentes, statistiques ou actualités absentes de vos fichiers importés.`,
+        `<strong>Faites des recherches à la volée</strong> — demandez à Folio de construire un deck sur un sujet et laissez-le rassembler le contexte nécessaire.`,
+      ] },
+      { type: 'p', html: `Activez la recherche web pour les prompts qui profitent d'un contexte externe. Pour un travail sensible ou totalement autonome, laissez-la désactivée afin que Folio s'appuie uniquement sur votre deck et vos documents importés.` },
+      { type: 'media', src: '/help/get-the-most-3.png', caption: "Capture : activation de la recherche web pour que l'agent récupère des informations sur le web." },
+      { type: 'h2', text: 'Choix du modèle' },
+      { type: 'p', html: `Folio vous laisse choisir le modèle derrière l'agent afin d'arbitrer entre profondeur et rapidité selon la tâche.` },
+      { type: 'ul', items: [
+        `<strong>Plus de puissance de raisonnement</strong> — choisissez le modèle le plus puissant pour les decks complexes, les restructurations nuancées ou les travaux nécessitant une réflexion soignée en plusieurs étapes.`,
+        `<strong>Plus rapide et plus léger</strong> — choisissez le modèle plus léger pour les modifications rapides, les générations simples et les itérations rapides quand la vitesse prime sur la profondeur.`,
+      ] },
+      { type: 'p', html: `Changez de modèle depuis le panneau quand vous le souhaitez — il n'y a pas de mauvais choix, juste le bon compromis pour ce que vous faites à l'instant.` },
+      { type: 'media', src: '/help/get-the-most-4.png', caption: "Capture : choix entre un modèle plus puissant en raisonnement et un modèle plus rapide et léger." },
+      { type: 'h2', text: 'Étapes suivantes' },
+      { type: 'ul', items: [
+        `<a href="/fr/help/">Retour à Démarrer</a>`,
+        `<a href="/fr/help/plans-and-billing/">Forfaits et facturation</a> — découvrez ce qui est inclus dans chaque forfait`,
+        `<a href="/fr/help/troubleshooting/">Dépannage</a> — solutions aux problèmes courants`,
+        `<a href="/fr/help/get-support/">Obtenir de l'aide</a> — contactez notre équipe`,
+      ] },
+    ],
+  },
+  es: {
+    title: 'Saca el máximo partido a Folio AI',
+    description: 'Ve más allá de lo básico: usa las Instrucciones, la subida de documentos, la búsqueda web y la selección de modelo para obtener resultados más precisos y fieles a tu marca.',
+    blocks: [
+      { type: 'p', html: `Cuando ya domines generar y editar decks, un puñado de funciones ayudan a Folio a producir resultados más precisos, relevantes y fieles a tu marca. Esta página repasa las cuatro que marcan la mayor diferencia: las <strong>Instrucciones</strong>, la <strong>subida de documentos</strong>, la <strong>búsqueda web</strong> y la <strong>selección de modelo</strong>.` },
+      { type: 'h2', text: 'Instrucciones' },
+      { type: 'p', html: `Las Instrucciones te permiten darle a Folio directrices permanentes que se aplican a <em>cada</em> deck en el que trabajas, así no tienes que repetirte en cada prompt. Piénsalas como un prompt de sistema para tu cuenta: reglas de tono, formato, terminología y marca que Folio sigue automáticamente.` },
+      { type: 'ul', items: [
+        `<strong>Define tu tono y estilo</strong>: por ejemplo, «escribe siempre con una voz concisa y ejecutiva» o «evita la jerga».`,
+        `<strong>Fija tus reglas de marca y formato</strong>: fuentes preferidas, uso del color, cómo titular las diapositivas o cómo formatear números y fechas.`,
+        `<strong>Añade contexto de tu sector</strong>: describe tu empresa, producto o audiencia una vez y Folio lo tendrá presente en todo momento.`,
+      ] },
+      { type: 'p', html: `Abre las <strong>Instrucciones</strong> desde el panel de Folio, escribe tus directrices en lenguaje claro y guarda. A partir de entonces se aplican a cada generación y edición hasta que las cambies.` },
+      { type: 'media', src: '/help/get-the-most-1.png', caption: 'Captura: el panel de Instrucciones donde añades directrices permanentes aplicadas a cada deck.' },
+      { type: 'h2', text: 'Subir documentos' },
+      { type: 'p', html: `Dale a Folio el material de origen que necesita subiendo tus propios documentos. Folio los lee y usa su contenido como contexto para las diapositivas que genera o edita, de modo que tus decks se basan en tus datos reales y no en relleno genérico.` },
+      { type: 'ul', items: [
+        `<strong>Desde tu ordenador</strong>: arrastra informes, hojas de cálculo, PDF, imágenes o un deck existente directamente desde tu equipo.`,
+        `<strong>Desde un SharePoint seguro</strong>: conéctate al SharePoint de tu organización e incorpora documentos directamente, sin descargarlos antes.`,
+      ] },
+      { type: 'p', html: `Folio usa los archivos subidos solo como contexto para tu prompt. Sube un informe de investigación y pide a Folio que lo convierta en un deck resumen, o suelta un archivo de datos y deja que Folio cree los gráficos de apoyo.` },
+      { type: 'media', src: '/help/get-the-most-2.png', caption: 'Captura: subir documentos desde un ordenador o un SharePoint conectado.' },
+      { type: 'h2', text: 'Búsqueda web' },
+      { type: 'p', html: `Cuando tu prompt necesite información que Folio aún no tiene, activa la <strong>búsqueda web</strong> y el agente buscará información adicional y actualizada en la web para fundamentar su trabajo.` },
+      { type: 'ul', items: [
+        `<strong>Incorpora datos y cifras actuales</strong>: datos de mercado recientes, estadísticas o noticias que no están en tus archivos subidos.`,
+        `<strong>Investiga un tema sobre la marcha</strong>: pide a Folio que cree un deck sobre un asunto y deja que reúna el contexto que necesita.`,
+      ] },
+      { type: 'p', html: `Activa la búsqueda web para los prompts que se benefician de contexto externo. Para trabajo sensible o totalmente autónomo, déjala desactivada para que Folio se base solo en tu deck y en los documentos subidos.` },
+      { type: 'media', src: '/help/get-the-most-3.png', caption: 'Captura: activar la búsqueda web para que el agente obtenga información de la web.' },
+      { type: 'h2', text: 'Selección de modelo' },
+      { type: 'p', html: `Folio te deja elegir el modelo que hay detrás del agente para equilibrar profundidad y velocidad según la tarea.` },
+      { type: 'ul', items: [
+        `<strong>Más capacidad de razonamiento</strong>: elige el modelo más potente para decks complejos, reestructuraciones matizadas o trabajo que requiere un razonamiento cuidadoso de varios pasos.`,
+        `<strong>Más rápido y ligero</strong>: elige el modelo más ligero para ediciones rápidas, generaciones simples e iterar con agilidad cuando la velocidad importa más que la profundidad.`,
+      ] },
+      { type: 'p', html: `Cambia de modelo desde el panel cuando quieras: no hay una opción equivocada, solo el equilibrio adecuado para lo que estás haciendo ahora mismo.` },
+      { type: 'media', src: '/help/get-the-most-4.png', caption: 'Captura: elegir entre un modelo con más razonamiento y otro más rápido y ligero.' },
+      { type: 'h2', text: 'Siguientes pasos' },
+      { type: 'ul', items: [
+        `<a href="/es/help/">Volver a Empezar</a>`,
+        `<a href="/es/help/plans-and-billing/">Planes y facturación</a>: consulta qué incluye cada plan`,
+        `<a href="/es/help/troubleshooting/">Solución de problemas</a>: arregla los problemas más comunes`,
+        `<a href="/es/help/get-support/">Obtener soporte</a>: contacta con nuestro equipo`,
+      ] },
+    ],
+  },
+  de: {
+    title: 'Das Beste aus Folio AI herausholen',
+    description: 'Geh über die Grundlagen hinaus: Nutze Anweisungen, Dokument-Uploads, Websuche und Modellauswahl für schärfere, markengerechtere Ergebnisse von Folio AI.',
+    blocks: [
+      { type: 'p', html: `Sobald du sicher Decks generierst und bearbeitest, helfen einige Funktionen Folio, schärfere, relevantere und markengerechtere Ergebnisse zu liefern. Diese Seite zeigt die vier mit dem größten Effekt: <strong>Anweisungen</strong>, <strong>Dokument-Uploads</strong>, <strong>Websuche</strong> und <strong>Modellauswahl</strong>.` },
+      { type: 'h2', text: 'Anweisungen' },
+      { type: 'p', html: `Mit Anweisungen gibst du Folio dauerhafte Vorgaben, die für <em>jedes</em> Deck gelten, an dem du arbeitest – du musst dich also nicht in jedem Prompt wiederholen. Betrachte sie als System-Prompt für dein Konto: Regeln zu Ton, Formatierung, Terminologie und Marke, die Folio automatisch befolgt.` },
+      { type: 'ul', items: [
+        `<strong>Lege Ton und Stil fest</strong> – zum Beispiel „schreibe immer in einer prägnanten, exekutiven Stimme“ oder „vermeide Fachjargon“.`,
+        `<strong>Verankere Marken- und Formatierungsregeln</strong> – bevorzugte Schriften, Farbnutzung, wie Folien betitelt werden oder wie Zahlen und Daten formatiert werden.`,
+        `<strong>Füge Fachkontext hinzu</strong> – beschreibe dein Unternehmen, Produkt oder Publikum einmal, und Folio behält es überall im Blick.`,
+      ] },
+      { type: 'p', html: `Öffne die <strong>Anweisungen</strong> im Folio-Panel, formuliere deine Vorgaben in klarer Sprache und speichere sie. Ab dann werden sie auf jede Generierung und Bearbeitung angewendet, bis du sie änderst.` },
+      { type: 'media', src: '/help/get-the-most-1.png', caption: 'Screenshot: das Anweisungen-Panel, in dem du dauerhafte Vorgaben für jedes Deck hinzufügst.' },
+      { type: 'h2', text: 'Dokumente hochladen' },
+      { type: 'p', html: `Gib Folio das nötige Ausgangsmaterial, indem du eigene Dokumente hochlädst. Folio liest sie und nutzt ihren Inhalt als Kontext für die Folien, die es generiert oder bearbeitet – so beruhen deine Decks auf deinen echten Daten statt auf generischem Füllmaterial.` },
+      { type: 'ul', items: [
+        `<strong>Von deinem Computer</strong> – zieh Berichte, Tabellen, PDFs, Bilder oder ein bestehendes Deck direkt von deinem Rechner herein.`,
+        `<strong>Aus einem gesicherten SharePoint</strong> – verbinde dich mit dem SharePoint deiner Organisation und hole Dokumente direkt, ohne sie vorher herunterzuladen.`,
+      ] },
+      { type: 'p', html: `Folio nutzt hochgeladene Dateien nur als Kontext für deinen Prompt. Lade einen Forschungsbericht hoch und bitte Folio, daraus ein Zusammenfassungs-Deck zu machen, oder füge eine Datendatei hinzu und lass Folio die passenden Diagramme erstellen.` },
+      { type: 'media', src: '/help/get-the-most-2.png', caption: 'Screenshot: Dokumente von einem Computer oder einem verbundenen SharePoint hochladen.' },
+      { type: 'h2', text: 'Websuche' },
+      { type: 'p', html: `Wenn dein Prompt Informationen braucht, die Folio noch nicht hat, aktiviere die <strong>Websuche</strong>, und der Agent holt zusätzliche, aktuelle Informationen aus dem Web, um seine Arbeit zu untermauern.` },
+      { type: 'ul', items: [
+        `<strong>Hol dir aktuelle Fakten und Zahlen</strong> – jüngste Marktdaten, Statistiken oder Nachrichten, die nicht in deinen hochgeladenen Dateien stehen.`,
+        `<strong>Recherchiere ein Thema spontan</strong> – bitte Folio, ein Deck zu einem Thema zu erstellen, und lass es den nötigen Hintergrund zusammentragen.`,
+      ] },
+      { type: 'p', html: `Aktiviere die Websuche für Prompts, die von externem Kontext profitieren. Bei sensibler oder vollständig in sich geschlossener Arbeit lass sie aus, damit sich Folio nur auf dein Deck und deine hochgeladenen Dokumente stützt.` },
+      { type: 'media', src: '/help/get-the-most-3.png', caption: 'Screenshot: die Websuche aktivieren, damit der Agent Informationen aus dem Web holen kann.' },
+      { type: 'h2', text: 'Modellauswahl' },
+      { type: 'p', html: `Folio lässt dich das Modell hinter dem Agenten wählen, sodass du je nach Aufgabe zwischen Tiefe und Geschwindigkeit abwägen kannst.` },
+      { type: 'ul', items: [
+        `<strong>Mehr Denkleistung</strong> – wähle das stärkere Modell für komplexe Decks, nuancierte Umstrukturierungen oder Arbeit, die sorgfältiges, mehrstufiges Denken erfordert.`,
+        `<strong>Schneller und schlanker</strong> – wähle das leichtere Modell für schnelle Bearbeitungen, einfache Generierungen und zügiges Iterieren, wenn Tempo wichtiger ist als Tiefe.`,
+      ] },
+      { type: 'p', html: `Wechsle das Modell im Panel, wann immer du willst – es gibt keine falsche Wahl, nur den richtigen Kompromiss für das, was du gerade tust.` },
+      { type: 'media', src: '/help/get-the-most-4.png', caption: 'Screenshot: Wahl zwischen einem Modell mit mehr Denkleistung und einem schnelleren, schlankeren.' },
+      { type: 'h2', text: 'Nächste Schritte' },
+      { type: 'ul', items: [
+        `<a href="/de/help/">Zurück zu Erste Schritte</a>`,
+        `<a href="/de/help/plans-and-billing/">Tarife und Abrechnung</a> – sieh, was in jedem Tarif enthalten ist`,
+        `<a href="/de/help/troubleshooting/">Fehlerbehebung</a> – Lösungen für häufige Probleme`,
+        `<a href="/de/help/get-support/">Support erhalten</a> – wende dich an unser Team`,
+      ] },
+    ],
+  },
+};
+
+const c = content[lang] ?? content.fr;
+---
+
+<HelpLayout title={c.title} active="get-the-most" description={c.description}>
+  <HelpBlocks blocks={c.blocks} />
+</HelpLayout>

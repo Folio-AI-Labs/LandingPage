@@ -1,6 +1,5 @@
 ---
 import HelpLayout from '../../layouts/HelpLayout.astro';
-import HelpMedia from '../../components/HelpMedia.astro';
 
 const groups = [
   {
@@ -22,7 +21,6 @@ const groups = [
   },
   {
     heading: 'Google Slides',
-    media: 'Screenshot: launching Folio from the Extensions menu in Google Slides.',
     items: [
       {
         q: "The add-on isn't loading or shows limited options",
@@ -36,7 +34,6 @@ const groups = [
   },
   {
     heading: 'PowerPoint',
-    media: "Screenshot: the Folio AI button under Home, and PowerPoint's Normal view requirement.",
     items: [
       {
         q: "The add-in isn't showing up in PowerPoint",
@@ -105,7 +102,6 @@ const groups = [
           </details>
         ))}
       </div>
-      {group.media && <HelpMedia caption={group.media} />}
     </section>
   ))}
 

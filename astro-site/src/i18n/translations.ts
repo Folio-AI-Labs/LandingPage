@@ -20,6 +20,8 @@ export const translations = {
     'help.plansBilling': 'Plans and Billing',
     'help.troubleshooting': 'Troubleshooting',
     'help.getSupport': 'Get Support',
+    'help.getTheMost': 'Get the most out of Folio AI',
+    'help.comingSoon': 'Coming soon!',
 
     // Hero Section
     'hero.title': 'AI for decks where every slide counts',
@@ -375,6 +377,8 @@ export const translations = {
     'help.plansBilling': 'Forfaits et facturation',
     'help.troubleshooting': 'Dépannage',
     'help.getSupport': "Obtenir de l'aide",
+    'help.getTheMost': 'Tirer le meilleur de Folio AI',
+    'help.comingSoon': 'Bientôt disponible !',
 
     // Hero Section
     'hero.title': 'L\'IA pour les decks où chaque slide compte',
@@ -730,6 +734,8 @@ export const translations = {
     'help.plansBilling': 'Planes y facturación',
     'help.troubleshooting': 'Solución de problemas',
     'help.getSupport': 'Obtener soporte',
+    'help.getTheMost': 'Saca el máximo partido a Folio AI',
+    'help.comingSoon': 'Próximamente',
 
     // Hero Section
     'hero.title': 'IA para los decks donde cada slide cuenta',
@@ -1085,6 +1091,8 @@ export const translations = {
     'help.plansBilling': 'Tarife und Abrechnung',
     'help.troubleshooting': 'Fehlerbehebung',
     'help.getSupport': 'Support erhalten',
+    'help.getTheMost': 'Das Beste aus Folio AI herausholen',
+    'help.comingSoon': 'Demnächst verfügbar!',
 
     // Hero Section
     'hero.title': 'KI für Decks, wo jede Folie zählt',
