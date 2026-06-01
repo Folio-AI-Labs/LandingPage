@@ -6,5 +6,14 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://get-folio.ai',
-  integrations: [tailwindcss(), react(), sitemap()],
+  integrations: [
+    tailwindcss(),
+    react(),
+    // Keep noindex redirect stubs (wiki -> /support/, localized terms -> /terms/)
+    // out of the sitemap so it only lists indexable pages.
+    sitemap({
+      filter: (page) =>
+        !/\/wiki\/$/.test(page) && !/\/(de|fr|es)\/terms\/$/.test(page),
+    }),
+  ],
 });

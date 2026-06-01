@@ -1,0 +1,26 @@
+---
+// The Terms of Use are English-only. Localized /de/terms/, /fr/terms/ and
+// /es/terms/ URLs were linked by an older footer and got indexed by Google,
+// where they now 404. Serve a redirect stub to the canonical /terms/ so those
+// stale URLs consolidate instead of returning "Not found (404)".
+import { languages, defaultLang } from '../../i18n/languages';
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang)
+    .map((lang) => ({ params: { locale: lang } }));
+}
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;url=/terms/" />
+    <link rel="canonical" href="/terms/" />
+    <meta name="robots" content="noindex" />
+    <title>Folio - Terms of Use</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/terms/">Terms of Use</a>...</p>
+  </body>
+</html>
