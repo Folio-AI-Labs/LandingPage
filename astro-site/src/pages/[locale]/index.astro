@@ -13,7 +13,7 @@ import UploadFilesDemo from '../../components/demo/UploadFilesDemo';
 import SSODemo from '../../components/demo/SSODemo';
 import EnterpriseDemo from '../../components/demo/EnterpriseDemo';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { DESKTOP_INSTALL_URL, GOOGLE_SLIDES_INSTALL_URL } from '../../consts';
+import { DESKTOP_INSTALL_URL } from '../../consts';
 import { languages, defaultLang } from '../../i18n/languages';
 export function getStaticPaths() {
   return Object.keys(languages)
@@ -42,10 +42,14 @@ const showTrustedBy = false;
       <p class="relative z-10 font-display text-[18px] nav:text-[20px] leading-relaxed text-brand-dark mb-6">{t('hero.subtitle2')}</p>
       <!-- CTA buttons on Monet background -->
       <div class="relative z-10 flex flex-col nav:flex-row gap-3 nav:gap-4 justify-center items-center mb-0">
-        <a href={GOOGLE_SLIDES_INSTALL_URL} target="_blank" rel="noopener" class="w-full max-w-[260px] nav:w-auto inline-flex items-center justify-center gap-3 bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium cursor-pointer transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">
-          <img src="/google-slides-logo.png" alt="" aria-hidden="true" width="16" height="22" class="shrink-0 h-[22px] w-auto" />
-          <span>{t('hero.signupGoogle')}</span>
-        </a>
+        <!-- Google Slides add-on not live yet: disabled with a "coming soon" badge (provisional) -->
+        <div class="relative w-full max-w-[260px] nav:w-auto">
+          <span aria-disabled="true" class="w-full nav:w-auto inline-flex items-center justify-center gap-3 bg-brand/60 text-white py-4 px-10 rounded-pill text-sm font-medium cursor-not-allowed select-none text-center">
+            <img src="/google-slides-logo.png" alt="" aria-hidden="true" width="16" height="22" class="shrink-0 h-[22px] w-auto opacity-90" />
+            <span>{t('hero.signupGoogle')}</span>
+          </span>
+          <span class="pointer-events-none absolute -top-2.5 right-3 rounded-full bg-white text-brand text-[11px] font-semibold px-2 py-0.5 shadow-sm border border-brand-border whitespace-nowrap">{t('help.comingSoon')}</span>
+        </div>
         <a href={DESKTOP_INSTALL_URL} class="w-full max-w-[260px] nav:w-auto inline-flex items-center justify-center gap-3 bg-brand text-white py-4 px-10 rounded-pill no-underline text-sm font-medium cursor-pointer transition duration-300 hover:-translate-y-0.5 hover:shadow-lg text-center">
           <img src="/powerpoint-logo.png" alt="" aria-hidden="true" width="22" height="22" class="shrink-0 h-[22px] w-auto" />
           <span>{t('hero.signupMicrosoft')}</span>

@@ -1,5 +1,5 @@
 ---
-import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL, GOOGLE_SLIDES_INSTALL_URL } from '../consts';
+import { DESKTOP_INSTALL_URL, WEB_INSTALL_URL } from '../consts';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -23,16 +23,17 @@ const t = useTranslations(lang);
       <span>{t('install.powerpoint')}</span>
     </a>
 
-    <a
-      href={GOOGLE_SLIDES_INSTALL_URL}
-      target="_blank"
-      rel="noopener"
-      class="flex items-center justify-center gap-3 w-full bg-brand text-white py-4 px-6 rounded-xl no-underline text-base font-semibold transition duration-300 hover:-translate-y-0.5 hover:shadow-lg mb-4"
-      data-install-choice="google-slides"
-    >
-      <img src="/google-slides-logo.png" alt="Google Slides" class="h-8 w-auto" />
-      <span>{t('install.googleSlides')}</span>
-    </a>
+    <!-- Google Slides add-on not live yet: disabled with a "coming soon" badge (provisional) -->
+    <div class="relative mb-4">
+      <span
+        aria-disabled="true"
+        class="flex items-center justify-center gap-3 w-full bg-brand/60 text-white py-4 px-6 rounded-xl text-base font-semibold cursor-not-allowed select-none"
+      >
+        <img src="/google-slides-logo.png" alt="Google Slides" class="h-8 w-auto opacity-90" />
+        <span>{t('install.googleSlides')}</span>
+      </span>
+      <span class="pointer-events-none absolute -top-2 right-3 rounded-full bg-white text-brand text-[11px] font-semibold px-2 py-0.5 shadow-sm border border-brand-border whitespace-nowrap">{t('help.comingSoon')}</span>
+    </div>
 
     <a
       href={WEB_INSTALL_URL}
