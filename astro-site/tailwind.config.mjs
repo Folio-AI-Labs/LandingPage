@@ -10,6 +10,8 @@ export default {
         'brand-light': '#999999',
         'brand-border': '#e0e0e0',
         'brand-dark': '#2a2a2a',
+        'ph-orange': '#da552f',
+        'ph-orange-dark': '#c2461f',
       },
       fontFamily: {
         'display': ['"Spectral"', 'serif'],

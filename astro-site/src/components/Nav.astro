@@ -41,6 +41,7 @@ const navLinks = [
   </ul>
   <div class="hidden nav:flex items-center gap-4 justify-end">
     <LanguageSelector />
+    <a href="/product-hunt-launch/" class="bg-ph-orange text-white no-underline py-2.5 px-4 text-sm font-semibold cursor-pointer rounded-pill transition duration-300 hover:-translate-y-px hover:shadow-md font-heading whitespace-nowrap">{t('nav.productHunt')}</a>
     <button data-open-install-modal class="bg-brand text-white border-none py-2.5 px-4 text-sm font-medium cursor-pointer rounded-pill transition duration-300 hover:-translate-y-px hover:shadow-md font-body">{t('nav.getStarted')}</button>
   </div>
   <button class="burger-menu group flex nav:hidden flex-col justify-center items-center bg-transparent border-none cursor-pointer p-2.5 z-[1001] w-10 h-10 relative justify-self-end" aria-label="Toggle menu">
@@ -69,6 +70,7 @@ const navLinks = [
     <li class="flex justify-center pt-2">
       <LanguageSelector />
     </li>
+    <li><a href="/product-hunt-launch/" class="bg-ph-orange text-white no-underline py-3 px-5 text-sm font-semibold rounded-pill text-center transition duration-300 block w-full cursor-pointer font-heading hover:-translate-y-px hover:shadow-md">{t('nav.productHunt')}</a></li>
     <li><button data-open-install-modal class="bg-brand text-white border-none py-3 px-5 text-sm font-medium rounded-pill text-center transition duration-300 block w-full cursor-pointer hover:-translate-y-px hover:shadow-md">{t('nav.getStarted')}</button></li>
   </ul>
 </div>

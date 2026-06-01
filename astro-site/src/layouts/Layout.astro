@@ -1,5 +1,6 @@
 ---
 import InstallModal from '../components/InstallModal.astro';
+import LaunchModal from '../components/LaunchModal.astro';
 import { getLangFromUrl } from '../i18n/utils';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
@@ -17,6 +18,8 @@ interface Props {
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Suppress the launch promo modal on the launch page itself (it already has the countdown).
+const showLaunchModal = !Astro.url.pathname.includes('product-hunt-launch');
 ---
 
 <!doctype html>
@@ -40,5 +43,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <body class="font-body text-brand bg-white overflow-x-hidden min-h-screen flex flex-col">
   <slot />
   <InstallModal />
+  {showLaunchModal && <LaunchModal />}
 </body>
 </html>

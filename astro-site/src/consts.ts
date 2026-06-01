@@ -4,3 +4,6 @@ export const GOOGLE_SLIDES_INSTALL_URL = 'https://workspace.google.com/marketpla
 export const DEMO_BOOKING_URL = 'https://calendar.app.google/pbZWKDF4iqUQBiL98';
 export const QUOTE_FORM_URL = 'https://formspree.io/f/mojbwyrn';
 export const SUPPORT_FORM_URL = 'https://formspree.io/f/xbdbyqqv';
+// Product Hunt — update with the live listing URL on launch day (Sun 7 June 2026, 09:01 CET).
+// Until the listing is live, this points to our Product Hunt profile.
+export const PRODUCT_HUNT_URL = 'https://www.producthunt.com/products/folio-ai';
