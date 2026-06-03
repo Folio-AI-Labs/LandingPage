@@ -12,14 +12,6 @@ export const translations = {
     'nav.getStarted': 'Get started',
     'nav.productHunt': 'Product Hunt Launch',
     'nav.bookDemo': 'Book a demo',
-    'nav.playground': 'Try it',
-
-    // Playground (embedded widget)
-    'playground.metaTitle': 'Try Folio AI',
-    'playground.metaDescription': 'Try Folio AI in your browser: upload a deck or start from scratch and edit slides with AI.',
-    'playground.title': 'Try Folio AI',
-    'playground.subtitle': 'Upload a deck or start from scratch, then edit it with AI. No install needed.',
-    'playground.openNewTab': 'Open in a new tab',
 
     // Help Center sidebar
     'help.menuTitle': 'Help Center',
