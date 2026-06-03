@@ -1,5 +1,5 @@
 ---
-title: "PrezEval: Benchmarking AI Agents on Professional Slides"
+title: "PrezEval: Benchmarking AI agents on professional slides"
 date: 2026-04-06
 description: "How well can an AI agent reproduce a professional consulting slide from just a screenshot? We built a benchmark to find out."
 lang: en

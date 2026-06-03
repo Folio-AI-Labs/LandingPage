@@ -1,5 +1,5 @@
 ---
-title: "The Best AI Tools for PowerPoint in 2026: An Honest Comparison"
+title: "The best AI tools for PowerPoint in 2026: An honest comparison"
 date: 2026-04-24
 description: "We compared the leading AI slide tools on the metrics that actually matter for professionals. Here's what we found."
 lang: en

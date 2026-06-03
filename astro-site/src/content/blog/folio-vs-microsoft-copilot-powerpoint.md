@@ -1,5 +1,5 @@
 ---
-title: "Folio vs. Microsoft Copilot for PowerPoint: A Real Comparison"
+title: "Folio vs. Microsoft Copilot for PowerPoint: A real comparison"
 date: 2026-05-02
 description: "We put Folio and Microsoft Copilot for PowerPoint through the same tests. Here's an honest look at what each does well, and where each falls short."
 lang: en

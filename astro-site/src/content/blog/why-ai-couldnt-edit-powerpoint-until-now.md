@@ -1,5 +1,5 @@
 ---
-title: "Why AI Couldn't Edit PowerPoint Until Now"
+title: "Why AI couldn't edit PowerPoint until now"
 date: 2026-04-12
 description: "Every AI tool generates new slides instead of editing existing ones. Here's the technical reason why, and how we solved it."
 lang: en

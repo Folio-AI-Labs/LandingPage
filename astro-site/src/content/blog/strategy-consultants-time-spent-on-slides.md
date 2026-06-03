@@ -1,5 +1,5 @@
 ---
-title: "Why Strategy Consultants Waste 40% of Their Time on Slides"
+title: "Why strategy consultants waste 40% of their time on slides"
 date: 2026-04-18
 description: "Strategy consultants spend 15-20 hours a week on slide production. Here's what that actually costs, and what's changing."
 lang: en

@@ -1,5 +1,5 @@
 ---
-title: "How to Update Recurring Business Decks 10x Faster with AI"
+title: "How to update recurring business decks 10x faster with AI"
 date: 2026-04-09
 description: "Board decks, quarterly reviews, and investor updates get rebuilt from scratch every cycle. Here's how to automate the update process with AI and cut production time by 80%."
 lang: en

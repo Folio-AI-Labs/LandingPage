@@ -1,5 +1,5 @@
 ---
-title: "The Future of Slides: Where We Think This Is Going"
+title: "The future of slides: Where we think this is going"
 date: 2026-03-29
 description: "AI won't kill the slide deck. But it will fundamentally change how strategy teams produce them. Here's how we think that transition unfolds."
 lang: en
