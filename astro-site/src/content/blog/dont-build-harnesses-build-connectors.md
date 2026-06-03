@@ -1,30 +1,28 @@
 ---
-title: "Don't build good harnesses: Build good connectors"
+title: "How to train your agents: don't improve the harness, improve the connectors!"
 date: 2026-06-03
-description: "A good harness gets out of the way. What is paramount is the connectors: the tools that let the model act on its environment."
+description: "Harnesses are overrated. We improved our slide agent on the PrezEval benchmark not by tweaking the harness, but by building better connectors: the tools the model uses to act on its environment."
 lang: en
 ---
 
-Harnesses are overrated. Or at least, they're not the ones who should provide intelligence: anything they do on top of allowing the model to properly use tools in a loop is overkill, any extra scaffolding will be a hindrance when the models become smarter[^scaffold].
+Harnesses are overrated. Or at least, they're not the ones who should provide intelligence: anything they do on top of allowing the model to properly use tools in a loop is overkill, any extra scaffolding will be a hindrance when the models become smarter (Noam Brown from OpenAI put it better: "Your fancy AI scaffolds will be washed away by scale"[^scaffold]).
 
-Yet here is the curve of progress of our AI agent on the PrezEval benchmark[^prezeval] through time:
-
-![Folio's score on the PrezEval benchmark over time, annotated with what drove each step up.](/blog/prezeval-hillclimb.png)
-
-## A good harness should get out of the way
-
-Ours has only:
+And on our agent, we did only a minimal harness. The boxes that I think any harness should tick are:
 
 - planning
 - proper tool calling
 - proper image handling
-- good caching (the KV cache is king for cost reductions[^kvcache])
+- good caching (KV cache optimization is king for cost reductions[^kvcache])
 
-And that's it!
+And that's it! And actually, most existing agent harnesses already tick these features.
 
-## What is paramount is the connectors
+Yet the chart below shows that the curve of progress of our AI agent on the PrezEval benchmark[^prezeval] went up:
 
-How will the harness be enabled to take action effectively on its environment? That's where you need good tools.
+![Folio's performance on the PrezEval benchmark over time, annotated with what drove each step up.](/blog/prezeval-hillclimb.png)
+
+How did we improve performance, if not the harness?
+
+Well, in what remains: the tools (aka the connectors that the LLM uses to interact with its environment). We made great slide-editing tools.
 
 A good tool is a good API (given the basic assumption that it works), so it needs:
 
@@ -33,11 +31,11 @@ A good tool is a good API (given the basic assumption that it works), so it need
    - clear outputs: the text returned to our model, for instance clear error logs (and in our case, images too: slide screenshots)
 2. **A good mental model of what happens:** the documentation.
 
-That's why for most agents, MCP has fallen out of favor, replaced by CLI + skills[^skills]: a good CLI already ticks (1), and a clear skill ticks (2).
+That's why, by the way, MCP has somewhat fallen out of favor, replaced by CLI (command-line interface) + skills[^skills]: a good CLI already ticks point (1), and a clear skill ticks point (2). The combination of a good CLI + a good skill makes MCP overkill.
 
-In our case, we reduced the harness to a minimum as said above, and what we needed was good connectors to modify slides. That's our secret recipe: we have perfected over time a proprietary representation of slides in a simpler language. That means we have a SOTA CLI for slides, and our system-prompt additions do the rest.
+For Folio, good tools are our secret recipe: we have perfected over time a proprietary representation of slides in a simpler language (some call it a Domain Specific Representation, or DSR). That means we have a SOTA CLI for slides, and our system-prompt additions do the rest.
 
-[^scaffold]: Noam Brown, ["Your fancy AI scaffolds will be washed away by scale"](https://x.com/latentspacepod/status/1944507223574544619).
+[^scaffold]: Noam Brown, [on X](https://x.com/latentspacepod/status/1944507223574544619).
 
 [^prezeval]: We released PrezEval earlier this year: [github.com/Folio-AI-Labs/PrezEvalPublic](https://github.com/Folio-AI-Labs/PrezEvalPublic).
 
