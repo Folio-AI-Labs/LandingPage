@@ -6,6 +6,14 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://get-folio.ai',
+  markdown: {
+    // Rename the auto-generated footnotes section to "References" and make it
+    // visible (the default label is "Footnotes" and screen-reader-only).
+    remarkRehype: {
+      footnoteLabel: 'References',
+      footnoteLabelProperties: { className: [] },
+    },
+  },
   integrations: [
     tailwindcss(),
     react(),
