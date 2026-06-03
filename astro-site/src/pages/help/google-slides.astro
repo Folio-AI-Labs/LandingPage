@@ -1,7 +1,7 @@
 ---
 import HelpLayout from '../../layouts/HelpLayout.astro';
 import HelpMedia from '../../components/HelpMedia.astro';
-import { GOOGLE_SLIDES_INSTALL_URL } from '../../consts';
+// import { GOOGLE_SLIDES_INSTALL_URL } from '../../consts'; // re-enable when Marketplace listing is approved
 ---
 
 <HelpLayout title="Use Folio AI in Google Slides" active="google-slides" description="Install the Folio AI add-on in Google Slides, sign in, and generate your first presentation.">
@@ -15,7 +15,9 @@ import { GOOGLE_SLIDES_INSTALL_URL } from '../../consts';
   <p>
     Install Folio from the Google Workspace Marketplace, then grant the permissions it requests so
     it can work within your presentations.
+    {/* Marketplace link commented out until the listing is approved (Google OAuth review: no Marketplace links/CTAs on the site until live).
     <a href={GOOGLE_SLIDES_INSTALL_URL} target="_blank" rel="noopener">Open the Folio AI listing on the Google Workspace Marketplace →</a>
+    */}
   </p>
   <HelpMedia caption="Screenshot: the Folio AI listing on the Google Workspace Marketplace." />
 

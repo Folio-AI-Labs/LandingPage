@@ -18,7 +18,8 @@ const t = useTranslations(lang);
 const helpPages = [
   { slug: 'get-started', href: getLocalizedPath('/help/', lang), label: t('help.getStarted') },
   { slug: 'powerpoint', href: getLocalizedPath('/help/powerpoint/', lang), label: t('help.powerpoint') },
-  { slug: 'google-slides', href: getLocalizedPath('/help/google-slides/', lang), label: t('help.googleSlides'), locked: true },
+  // Google Slides help nav entry hidden until the Marketplace listing is approved (Google OAuth review: no Marketplace/"coming soon" references on the site until live):
+  // { slug: 'google-slides', href: getLocalizedPath('/help/google-slides/', lang), label: t('help.googleSlides'), locked: true },
   { slug: 'get-the-most', href: getLocalizedPath('/help/get-the-most/', lang), label: t('help.getTheMost') },
   { slug: 'plans-and-billing', href: getLocalizedPath('/help/plans-and-billing/', lang), label: t('help.plansBilling') },
   { slug: 'troubleshooting', href: getLocalizedPath('/help/troubleshooting/', lang), label: t('help.troubleshooting') },

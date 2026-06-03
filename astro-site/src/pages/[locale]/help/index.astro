@@ -26,7 +26,8 @@ const content: Record<string, HelpPageContent> = {
       { type: 'p', html: `Folio s'exécute comme un add-in dans les outils de présentation que vous utilisez déjà. Choisissez votre plateforme :` },
       { type: 'ul', items: [
         `<a href="/fr/help/powerpoint/">Utiliser Folio AI dans PowerPoint</a> — installez l'add-in sur Windows, Mac ou PowerPoint sur le web.`,
-        `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Utiliser Folio AI dans Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Bientôt disponible !</span></span> — installez le module depuis Google Workspace Marketplace.`,
+        // Google Slides "coming soon" + Marketplace mention hidden until the listing is approved (Google OAuth review delay risk):
+        // `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Utiliser Folio AI dans Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Bientôt disponible !</span></span> — installez le module depuis Google Workspace Marketplace.`,
       ] },
       { type: 'p', html: `Rien à télécharger sur votre ordinateur — Folio s'installe directement dans PowerPoint ou Google Slides et apparaît dans un panneau latéral à côté de vos slides.` },
       { type: 'h2', text: "Qu'est-ce que Folio AI ?" },
@@ -43,7 +44,8 @@ const content: Record<string, HelpPageContent> = {
       { type: 'h2', text: 'Étapes suivantes' },
       { type: 'ul', items: [
         `<a href="/fr/help/powerpoint/">Installer Folio dans PowerPoint</a>`,
-        `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Installer Folio dans Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Bientôt disponible !</span></span>`,
+        // Google Slides "coming soon" hidden until the Marketplace listing is approved (Google OAuth review delay risk):
+        // `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Installer Folio dans Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Bientôt disponible !</span></span>`,
         `<a href="/fr/help/troubleshooting/">Dépannage</a> — solutions aux problèmes courants`,
         `<a href="/fr/help/get-support/">Obtenir de l'aide</a> — contactez notre équipe`,
       ] },
@@ -61,7 +63,8 @@ const content: Record<string, HelpPageContent> = {
       { type: 'p', html: `Folio se ejecuta como un complemento dentro de las herramientas de presentación que ya usas. Elige tu plataforma:` },
       { type: 'ul', items: [
         `<a href="/es/help/powerpoint/">Usar Folio AI en PowerPoint</a>: instala el complemento en Windows, Mac o PowerPoint en la web.`,
-        `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Usar Folio AI en Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Próximamente</span></span>: instala el complemento desde Google Workspace Marketplace.`,
+        // Google Slides "coming soon" hidden until the Marketplace listing is approved (Google OAuth review delay risk):
+        // `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Usar Folio AI en Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Próximamente</span></span>: instala el complemento desde Google Workspace Marketplace.`,
       ] },
       { type: 'p', html: `No hay nada que descargar en tu ordenador: Folio se instala directamente en PowerPoint o Google Slides y aparece en un panel lateral junto a tus diapositivas.` },
       { type: 'h2', text: '¿Qué es Folio AI?' },
@@ -78,7 +81,8 @@ const content: Record<string, HelpPageContent> = {
       { type: 'h2', text: 'Siguientes pasos' },
       { type: 'ul', items: [
         `<a href="/es/help/powerpoint/">Instalar Folio en PowerPoint</a>`,
-        `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Instalar Folio en Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Próximamente</span></span>`,
+        // Google Slides "coming soon" hidden until the Marketplace listing is approved (Google OAuth review delay risk):
+        // `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Instalar Folio en Google Slides</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Próximamente</span></span>`,
         `<a href="/es/help/troubleshooting/">Solución de problemas</a>: arregla los problemas más comunes`,
         `<a href="/es/help/get-support/">Obtener soporte</a>: contacta con nuestro equipo`,
       ] },
@@ -96,7 +100,8 @@ const content: Record<string, HelpPageContent> = {
       { type: 'p', html: `Folio läuft als Add-in in den Präsentationstools, die du bereits nutzt. Wähle deine Plattform:` },
       { type: 'ul', items: [
         `<a href="/de/help/powerpoint/">Folio AI in PowerPoint verwenden</a> – installiere das Add-in unter Windows, Mac oder in PowerPoint im Web.`,
-        `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Folio AI in Google Slides verwenden</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Demnächst verfügbar!</span></span> – installiere das Add-on aus dem Google Workspace Marketplace.`,
+        // Google Slides "coming soon" + Marketplace mention hidden until the listing is approved (Google OAuth review delay risk):
+        // `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Folio AI in Google Slides verwenden</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Demnächst verfügbar!</span></span> – installiere das Add-on aus dem Google Workspace Marketplace.`,
       ] },
       { type: 'p', html: `Es gibt nichts auf deinen Computer herunterzuladen – Folio installiert sich direkt in PowerPoint oder Google Slides und erscheint in einem Seitenpanel neben deinen Folien.` },
       { type: 'h2', text: 'Was ist Folio AI?' },
@@ -113,7 +118,8 @@ const content: Record<string, HelpPageContent> = {
       { type: 'h2', text: 'Nächste Schritte' },
       { type: 'ul', items: [
         `<a href="/de/help/powerpoint/">Folio in PowerPoint installieren</a>`,
-        `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Folio in Google Slides installieren</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Demnächst verfügbar!</span></span>`,
+        // Google Slides "coming soon" hidden until the Marketplace listing is approved (Google OAuth review delay risk):
+        // `<span class="relative inline-block group/cs"><span class="text-brand-light cursor-not-allowed">Folio in Google Slides installieren</span><span class="pointer-events-none absolute left-0 top-full z-10 mt-1 whitespace-nowrap rounded-md bg-brand px-2.5 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-200 group-hover/cs:opacity-100">Demnächst verfügbar!</span></span>`,
         `<a href="/de/help/troubleshooting/">Fehlerbehebung</a> – Lösungen für häufige Probleme`,
         `<a href="/de/help/get-support/">Support erhalten</a> – wende dich an unser Team`,
       ] },

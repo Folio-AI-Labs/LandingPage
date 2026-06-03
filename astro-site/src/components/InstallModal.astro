@@ -23,7 +23,8 @@ const t = useTranslations(lang);
       <span>{t('install.powerpoint')}</span>
     </a>
 
-    <!-- Google Slides add-on not live yet: disabled with a "coming soon" badge (provisional) -->
+    {/* Google Slides add-on "coming soon" badge commented out until the Marketplace listing is approved
+        (Google OAuth review: no Marketplace links/CTAs or "coming soon" texts on the site until live).
     <div class="relative mb-4">
       <span
         aria-disabled="true"
@@ -34,6 +35,7 @@ const t = useTranslations(lang);
       </span>
       <span class="pointer-events-none absolute -top-2 right-3 rounded-full bg-white text-brand text-[11px] font-semibold px-2 py-0.5 shadow-sm border border-brand-border whitespace-nowrap">{t('help.comingSoon')}</span>
     </div>
+    */}
 
     <a
       href={WEB_INSTALL_URL}
