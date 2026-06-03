@@ -24,6 +24,8 @@ const helpPages = [
   { slug: 'plans-and-billing', href: getLocalizedPath('/help/plans-and-billing/', lang), label: t('help.plansBilling') },
   { slug: 'troubleshooting', href: getLocalizedPath('/help/troubleshooting/', lang), label: t('help.troubleshooting') },
   { slug: 'get-support', href: getLocalizedPath('/help/get-support/', lang), label: t('help.getSupport') },
+  // English-only canonical page (like /terms/): always link /help/delete-data/ so localized nav doesn't 404.
+  { slug: 'delete-data', href: '/help/delete-data/', label: t('help.deleteData') },
 ];
 ---
 

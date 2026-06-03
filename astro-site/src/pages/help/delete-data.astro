@@ -1,0 +1,50 @@
+---
+import HelpLayout from '../../layouts/HelpLayout.astro';
+---
+
+<HelpLayout title="Manage and delete your data" active="delete-data" description="How to view, manage, export, and permanently delete the data Folio AI holds about you, including data from the Google Slides add-on.">
+  <p>
+    You are in control of your data. This page explains what Folio AI stores, how to delete it, and
+    how to revoke the Google Slides add-on's access to your Google account. For the full details of
+    what we collect and why, see our <a href="/privacy/">Privacy Policy</a>.
+  </p>
+
+  <h2>What Folio stores</h2>
+  <ul>
+    <li><strong>Account data</strong> — your email address and a Folio (Supabase) user id.</li>
+    <li><strong>Conversations and usage</strong> — your prompts, generated results, and credit balance.</li>
+    <li><strong>Presentation content</strong> — processed transiently to fulfil your request and <strong>not retained</strong> as a stored document after your session.</li>
+  </ul>
+
+  <h2>Delete your account and data</h2>
+  <p>
+    To permanently delete your Folio account and the data associated with it:
+  </p>
+  <ul>
+    <li>Email us at <a href="mailto:contact@get-folio.ai">contact@get-folio.ai</a> from your account
+      email, or use the <a href="/support/">support page</a>, with the request "Delete my account and data."</li>
+    <li>We delete your account, conversations, and usage data within <strong>30 days</strong> of the request,
+      except where we must retain limited records to comply with the law.</li>
+  </ul>
+
+  <h2>Revoke the Google Slides add-on's access</h2>
+  <p>
+    The add-on only ever accesses the presentation you open it in and files you pick. You can remove
+    its access to your Google account at any time:
+  </p>
+  <ul>
+    <li>Uninstall the add-on from <a href="https://workspace.google.com/marketplace" target="_blank" rel="noopener">Google Workspace Marketplace</a> (Manage apps), or from <strong>Extensions → Add-ons → Manage add-ons</strong> in Google Slides.</li>
+    <li>Revoke Folio AI's access entirely at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
+  </ul>
+  <p>
+    Revoking access stops all future data access immediately. To also delete the data we already
+    hold, send the deletion request above.
+  </p>
+
+  <h2>Questions</h2>
+  <p>
+    If you have any question about your data, contact us at
+    <a href="mailto:contact@get-folio.ai">contact@get-folio.ai</a> or via the
+    <a href="/support/">support page</a>.
+  </p>
+</HelpLayout>
