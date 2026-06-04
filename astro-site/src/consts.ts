@@ -7,3 +7,5 @@ export const SUPPORT_FORM_URL = 'https://formspree.io/f/xbdbyqqv';
 // Product Hunt — update with the live listing URL on launch day (Sun 7 June 2026, 09:01 CET).
 // Until the listing is live, this points to our Product Hunt profile.
 export const PRODUCT_HUNT_URL = 'https://www.producthunt.com/products/folio-ai';
+// Embeddable widget (dedicated Fly app, FOLIO_APP=widget). Embedded as the hero iframe on the homepage.
+export const WIDGET_URL = 'https://folio-widget.fly.dev';

@@ -13,7 +13,7 @@ import UploadFilesDemo from '../components/demo/UploadFilesDemo';
 import SSODemo from '../components/demo/SSODemo';
 import EnterpriseDemo from '../components/demo/EnterpriseDemo';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { DESKTOP_INSTALL_URL } from '../consts';
+import { DESKTOP_INSTALL_URL, WIDGET_URL } from '../consts';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -53,9 +53,34 @@ const showTrustedBy = false;
       <div class="relative z-10" style="height: 300px;"></div>
     </div>
 
-    <!-- Demo Animation — overlaps bottom half of hero card -->
+    <!-- Demo Animation (oil-market scripted walkthrough) — replaced by the live widget window below.
     <div class="relative z-10" id="demo-animation" style="max-width: 1200px; margin: -312px auto 0;">
       <AddinDemo lang={lang} client:visible />
+    </div>
+    -->
+
+    <!-- Live interactive widget, framed as a desktop window — overlaps bottom half of hero card -->
+    <div class="relative z-10 px-3 nav:px-0" id="demo-animation" style="max-width: 1200px; margin: -312px auto 0;">
+      <div class="rounded-2xl border border-black/10 shadow-2xl overflow-hidden bg-white">
+        <!-- Window title bar -->
+        <div class="flex items-center gap-2 px-4 py-2.5 bg-black">
+          <span class="flex gap-1.5 shrink-0">
+            <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+          </span>
+          <span class="flex-1 text-center font-body text-xs nav:text-sm text-white font-medium select-none">InteractiveDemo.pptx</span>
+          <span class="w-[54px] shrink-0"></span>
+        </div>
+        <!-- Live widget -->
+        <iframe
+          src={WIDGET_URL}
+          title="Folio interactive demo"
+          class="w-full h-[68vh] min-h-[520px] border-0 block bg-white"
+          allow="clipboard-write; clipboard-read"
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
   </section>
 
