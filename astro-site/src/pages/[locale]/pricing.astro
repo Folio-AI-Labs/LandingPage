@@ -29,153 +29,151 @@ const t = useTranslations(lang);
     <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
       <!-- Starter Plan -->
-      <div class="bg-white rounded-2xl px-6 py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-3 min-h-[90px]">
+      <div class="bg-white rounded-2xl px-6 py-4 md:py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.starter.name')}</h3>
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.starter.description')}</p>
         </div>
 
-        <div class="mb-3 min-h-[56px]">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
             <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">€0</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+        <div class="bg-brand-bg rounded-xl px-3 py-2.5 md:py-3 mb-3 md:mb-4">
           <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.starter.credits')}</span> {t('pricing.starter.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.starter.creditPrice')}</span> {t('pricing.starter.creditPriceDesc')}</p>
         </div>
 
-        <ul class="list-none mb-5 flex-grow">
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature1')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature2')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature3')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature4')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature5')}</li>
+        <ul class="list-none mb-4 md:mb-5 flex-grow">
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature1')}</li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature2')}</li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature3')}</li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature4')}</li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.starter.feature5')}</li>
         </ul>
 
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</button>
       </div>
 
       <!-- Plus Plan -->
-      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-3 min-h-[90px]">
+      <div class="bg-white rounded-2xl px-4 py-4 md:py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.plus.name')}</h3>
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.plus.description')}</p>
         </div>
 
-        <div class="mb-3 min-h-[56px]">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
             <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$10</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+        <div class="bg-brand-bg rounded-xl px-3 py-2.5 md:py-3 mb-3 md:mb-4">
           <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.plus.credits')}</span> {t('pricing.plus.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.plus.creditPrice')}</span> {t('pricing.plus.creditPriceDesc')}</p>
         </div>
 
-        <ul class="list-none mb-5 flex-grow">
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.plus.feature1')}</strong></li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.plus.feature2')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.plus.feature3')}</li>
+        <ul class="list-none mb-4 md:mb-5 flex-grow">
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.plus.feature1')}</strong></li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.plus.feature2')}</li>
         </ul>
 
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</button>
       </div>
 
       <!-- Pro Plan -->
-      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-3 min-h-[90px]">
+      <div class="bg-white rounded-2xl px-4 py-4 md:py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.pro.name')}</h3>
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.pro.description')}</p>
         </div>
 
-        <div class="mb-3 min-h-[56px]">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
             <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$49</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+        <div class="bg-brand-bg rounded-xl px-3 py-2.5 md:py-3 mb-3 md:mb-4">
           <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.pro.credits')}</span> {t('pricing.pro.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.pro.creditPrice')}</span> {t('pricing.pro.creditPriceDesc')}</p>
         </div>
 
-        <ul class="list-none mb-5 flex-grow">
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.pro.feature1')}</strong></li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature2')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature3')}</li>
+        <ul class="list-none mb-4 md:mb-5 flex-grow">
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.pro.feature1')}</strong></li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.pro.feature2')}</li>
         </ul>
 
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</button>
       </div>
 
       <!-- Pro Plan -->
-      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand transition duration-300 flex flex-col relative hover:-translate-y-2 hover:shadow-xl">
+      <div class="bg-white rounded-2xl px-4 py-4 md:py-5 border-2 border-brand transition duration-300 flex flex-col relative hover:-translate-y-2 hover:shadow-xl">
         <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white py-1.5 px-4 rounded-[20px] text-[10px] font-bold tracking-[0.5px] uppercase whitespace-nowrap">{t('pricing.mostPopular')}</span>
-        <div class="mb-3 min-h-[90px]">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.enterprise.name')}</h3>
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.enterprise.description')}</p>
         </div>
 
-        <div class="mb-3 min-h-[56px]">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
             <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$199</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+        <div class="bg-brand-bg rounded-xl px-3 py-2.5 md:py-3 mb-3 md:mb-4">
           <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.enterprise.credits')}</span> {t('pricing.enterprise.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.enterprise.creditPrice')}</span> {t('pricing.enterprise.creditPriceDesc')}</p>
         </div>
 
-        <ul class="list-none mb-5 flex-grow">
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.enterprise.feature1')}</strong></li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.enterprise.feature2')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.enterprise.feature3')}</li>
+        <ul class="list-none mb-4 md:mb-5 flex-grow">
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.enterprise.feature1')}</strong></li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.enterprise.feature2')}</li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.enterprise.feature3')}</li>
         </ul>
 
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer bg-brand text-white border-none hover:bg-opacity-90">{t('pricing.getStarted')}</button>
       </div>
 
       <!-- Ultimate Plan -->
-      <div class="bg-white rounded-2xl px-4 py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
-        <div class="mb-3 min-h-[90px]">
+      <div class="bg-white rounded-2xl px-4 py-4 md:py-5 border-2 border-brand-border transition duration-300 flex flex-col hover:-translate-y-2 hover:shadow-xl hover:border-brand">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[90px]">
           <div class="flex items-center gap-3 mb-1">
             <h3 class="font-display text-[28px] font-semibold text-brand">{t('pricing.ultimate.name')}</h3>
           </div>
           <p class="text-sm text-brand-muted leading-normal">{t('pricing.ultimate.description')}</p>
         </div>
 
-        <div class="mb-3 min-h-[56px]">
+        <div class="mb-2 md:mb-3 min-h-0 md:min-h-[56px]">
           <div class="flex items-baseline gap-1 flex-wrap">
             <span class="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-brand font-display">$499</span>
             <span class="text-sm text-brand-muted">{t('pricing.perMonth')}</span>
           </div>
         </div>
 
-        <div class="bg-brand-bg rounded-xl px-3 py-3 mb-4">
+        <div class="bg-brand-bg rounded-xl px-3 py-2.5 md:py-3 mb-3 md:mb-4">
           <p class="text-sm leading-tight text-brand-dark"><span class="font-semibold text-brand">{t('pricing.ultimate.credits')}</span> {t('pricing.ultimate.creditsDesc')}</p>
           <p class="text-sm leading-relaxed text-brand-dark"><span class="font-semibold text-brand">{t('pricing.ultimate.creditPrice')}</span> {t('pricing.ultimate.creditPriceDesc')}</p>
         </div>
 
-        <ul class="list-none mb-5 flex-grow">
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.ultimate.feature1')}</strong></li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.ultimate.feature2')}</li>
-          <li class="flex items-start gap-2 mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.ultimate.feature3')}</li>
+        <ul class="list-none mb-4 md:mb-5 flex-grow">
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span><strong>{t('pricing.ultimate.feature1')}</strong></li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.ultimate.feature2')}</li>
+          <li class="flex items-start gap-2 mb-1.5 md:mb-2 text-sm leading-relaxed text-brand-dark"><span class="text-brand font-bold text-base shrink-0">✓</span>{t('pricing.ultimate.feature3')}</li>
         </ul>
 
         <button data-open-install-modal class="block w-full py-3 rounded-pill text-center text-[14px] font-semibold transition duration-300 cursor-pointer border-2 border-brand bg-transparent text-brand hover:bg-brand hover:text-white">{t('pricing.getStarted')}</button>

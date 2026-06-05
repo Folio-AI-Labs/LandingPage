@@ -34,7 +34,7 @@ export const translations = {
     'hero.trustedBy': 'Trusted by',
     'hero.widgetMobileNotice': 'Open this page on a tablet or computer to view the interactive widget',
     'examples.subtitle': 'Some decks made in one-shot with Folio (click to open):',
-    'examples.draghi': 'Draghi Report Summary on European Competitiveness',
+    'examples.draghi': 'Draghi Report Summary',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group FY2025 Financials',
 
@@ -115,7 +115,6 @@ export const translations = {
     'pricing.plus.creditPriceDesc': '/credit afterwards',
     'pricing.plus.feature1': 'Everything in Starter',
     'pricing.plus.feature2': 'Unlocks Folio Medium',
-    'pricing.plus.feature3': 'Dedicated Support access',
 
     'pricing.pro.name': 'Pro',
     'pricing.pro.description': 'For professionals who need scalable speed and efficiency',
@@ -125,7 +124,6 @@ export const translations = {
     'pricing.pro.creditPriceDesc': '/credit afterwards',
     'pricing.pro.feature1': 'Everything in Plus',
     'pricing.pro.feature2': 'Unlocks Folio Max',
-    'pricing.pro.feature3': 'Dedicated Support access',
 
     'pricing.enterprise.name': 'Enterprise',
     'pricing.enterprise.description': 'For ambitious teams who need peak performance',
@@ -395,7 +393,7 @@ export const translations = {
     'hero.trustedBy': 'Ils nous font confiance',
     'hero.widgetMobileNotice': 'Ouvrez cette page sur une tablette ou un ordinateur pour voir le widget interactif',
     'examples.subtitle': 'Quelques decks faits en one-shot avec Folio (cliquez pour ouvrir) :',
-    'examples.draghi': 'Synthèse du rapport Draghi sur la compétitivité européenne',
+    'examples.draghi': 'Synthèse du rapport Draghi',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group — Comptes financiers FY2025',
 
@@ -476,7 +474,6 @@ export const translations = {
     'pricing.plus.creditPriceDesc': '/crédit ensuite',
     'pricing.plus.feature1': 'Tout le plan Starter',
     'pricing.plus.feature2': 'Débloque Folio Medium',
-    'pricing.plus.feature3': 'Accès au Support dédié',
 
     'pricing.pro.name': 'Pro',
     'pricing.pro.description': 'Pour les professionnels qui ont besoin de rapidité et d\'efficacité',
@@ -486,7 +483,6 @@ export const translations = {
     'pricing.pro.creditPriceDesc': '/crédit ensuite',
     'pricing.pro.feature1': 'Tout le plan Plus',
     'pricing.pro.feature2': 'Débloque Folio Max',
-    'pricing.pro.feature3': 'Accès au Support dédié',
 
     'pricing.enterprise.name': 'Enterprise',
     'pricing.enterprise.description': 'Pour les équipes ambitieuses qui veulent le maximum',
@@ -756,7 +752,7 @@ export const translations = {
     'hero.trustedBy': 'Confían en nosotros',
     'hero.widgetMobileNotice': 'Abre esta página en una tableta o un ordenador para ver el widget interactivo',
     'examples.subtitle': 'Algunos decks hechos en one-shot con Folio (haz clic para abrir):',
-    'examples.draghi': 'Resumen del informe Draghi sobre la competitividad europea',
+    'examples.draghi': 'Resumen del informe Draghi',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group — Estados financieros FY2025',
 
@@ -837,7 +833,6 @@ export const translations = {
     'pricing.plus.creditPriceDesc': '/crédito después',
     'pricing.plus.feature1': 'Todo el plan Starter',
     'pricing.plus.feature2': 'Desbloquea Folio Medium',
-    'pricing.plus.feature3': 'Acceso a Soporte dedicado',
 
     'pricing.pro.name': 'Pro',
     'pricing.pro.description': 'Para profesionales que necesitan velocidad y eficiencia a gran escala',
@@ -847,7 +842,6 @@ export const translations = {
     'pricing.pro.creditPriceDesc': '/crédito después',
     'pricing.pro.feature1': 'Todo el plan Plus',
     'pricing.pro.feature2': 'Desbloquea Folio Max',
-    'pricing.pro.feature3': 'Acceso a Soporte dedicado',
 
     'pricing.enterprise.name': 'Enterprise',
     'pricing.enterprise.description': 'Para equipos ambiciosos que buscan el máximo rendimiento',
@@ -1117,7 +1111,7 @@ export const translations = {
     'hero.trustedBy': 'Sie vertrauen auf uns',
     'hero.widgetMobileNotice': 'Öffnen Sie diese Seite auf einem Tablet oder Computer, um das interaktive Widget anzuzeigen',
     'examples.subtitle': 'Einige Decks, in einem Schuss mit Folio erstellt (zum Öffnen klicken):',
-    'examples.draghi': 'Zusammenfassung des Draghi-Berichts zur europäischen Wettbewerbsfähigkeit',
+    'examples.draghi': 'Zusammenfassung des Draghi-Berichts',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group — Finanzbericht FY2025',
 
@@ -1198,7 +1192,6 @@ export const translations = {
     'pricing.plus.creditPriceDesc': '/Credit danach',
     'pricing.plus.feature1': 'Alles aus Starter',
     'pricing.plus.feature2': 'Schaltet Folio Medium frei',
-    'pricing.plus.feature3': 'Persönlicher Support',
 
     'pricing.pro.name': 'Pro',
     'pricing.pro.description': 'Für Profis, die Geschwindigkeit und Effizienz im großen Maßstab brauchen',
@@ -1208,7 +1201,6 @@ export const translations = {
     'pricing.pro.creditPriceDesc': '/Credit danach',
     'pricing.pro.feature1': 'Alles aus Plus',
     'pricing.pro.feature2': 'Schaltet Folio Max frei',
-    'pricing.pro.feature3': 'Persönlicher Support',
 
     'pricing.enterprise.name': 'Enterprise',
     'pricing.enterprise.description': 'Für ambitionierte Teams mit höchsten Ansprüchen',
