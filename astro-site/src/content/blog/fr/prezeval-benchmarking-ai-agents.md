@@ -56,23 +56,22 @@ L'agent modifie ensuite la slide via des appels d'outils, et le résultat final 
 
 ## Résultats
 
-Nous avons comparé cinq configurations :
+Nous avons comparé quatre configurations :
 
-| Configuration                    | Score   | Temps   | Étapes | Tâches  |
-|----------------------------------|---------|---------|--------|---------|
-| **Folio Max**                    | 70,8 %  | 293,4 s | 6,3    | 60/61   |
-| **Folio Medium**                 | 49,6 %  | 207,7 s | 8,8    | 61/61   |
-| **Folio Fast**                   | 38,9 %  | 157,5 s | 9,5    | 61/61   |
-| Claude for Powerpoint (Opus)     | 36,5 %  | 176,5 s | 11,6   | 61/61   |
-| Claude for Powerpoint (Sonnet)   | 32,4 %  | 154,4 s | 9,2    | 61/61   |
+| Configuration                    | Score   | Temps | Étapes |
+|----------------------------------|---------|-------|--------|
+| **Folio Max**                    | 70,0 %  | 2:19  | 5,5    |
+| **Folio Medium**                 | 66,8 %  | 2:44  | 5,2    |
+| **Folio Fast**                   | 43,0 %  | 1:32  | 13,7   |
+| Claude for PowerPoint (Sonnet 4.6) | 46,9 % | 16:03 | 25,5  |
 
-**Folio Max** se détache largement avec 70,8 %, soit près du double du meilleur agent non-Folio. Il y parvient en moyenne avec le moins d'étapes (6,3), signe d'une approche plus efficace, même s'il prend plus de temps par tâche (293,4 s) en raison d'un raisonnement plus poussé.
+**Folio Max** se détache avec 70,0 %, devançant le meilleur agent non-Folio de 23 points (49 % d'avance relative). Il atteint ce score en 138,9 s par tâche, soit environ 7 fois plus vite que Claude for PowerPoint (962,8 s, près de 16 minutes), et avec bien moins d'étapes (5,5 contre 25,5). Folio Max et Folio Fast tracent ensemble la frontière de Pareto - l'un tient le bout de la précision maximale, l'autre celui de la latence minimale - tandis que Claude for PowerPoint est dominé : à la fois plus lent et moins précis que Folio Max.
 
-**Folio Medium** atteint 49,6 % : la plupart des reproductions capturent la bonne structure et le bon contenu, mais présentent des écarts notables sur le style ou le positionnement.
+**Folio Medium** atteint 66,8 %, à portée de Max, pour un coût légèrement inférieur. Il raisonne moins mais réussit proprement presque autant de reproductions.
 
-**Folio Fast** sacrifie la précision à la vitesse, en achevant les tâches 24 % plus vite que Folio Medium pour un score de 38,9 %. Curieusement, il fait davantage d'étapes en moyenne (9,5 contre 8,8), ce qui suggère que le modèle plus léger explore davantage avant de trouver la bonne action.
+**Folio Fast** est le niveau économique à faible latence : à 0,21 $ par tâche, il coûte environ 5 fois moins que Folio Max et 9 fois moins que Claude for PowerPoint, et avec environ 1,5 minute par slide, c'est la configuration la plus rapide du lot. Le compromis porte sur la fidélité (43,0 %) et un plus grand nombre d'actions exploratoires (13,7 étapes), car il tourne sur un modèle plus léger et moins cher.
 
-**Claude for Powerpoint (Opus)** obtient 36,5 % malgré le plus grand nombre d'étapes (11,6) et beaucoup plus de calcul. **Claude for Powerpoint (Sonnet)** ferme la marche à 32,4 %, le score le plus bas de la comparaison, tout en étant le plus rapide à 154,4 s par tâche.
+**Claude for PowerPoint (Sonnet 4.6)** obtient 46,9 %, mais le paie cher : 962,8 s par tâche (environ 7 fois plus lent que Folio Max), 25,5 étapes, 1,80 $, et 5 tâches sur 61 laissées inachevées. Il édite directement le OOXML brut, ce qui est lent et source d'erreurs face à l'approche structurée de Folio.
 
 <div id="prezeval-chart"></div>
 
@@ -82,32 +81,23 @@ Décomposer les scores selon ce que contient la slide fait apparaître des tenda
 
 | Type de contenu        | Folio Medium | Claude for PPT |
 |------------------------|--------------|----------------|
-| Texte dense            | 66,8 %       | 48,3 %         |
-| Slides sans graphique  | 63,5 %       | 44,8 %         |
-| Tableaux               | 48,3 %       | 38,3 %         |
-| Diagrammes             | 47,3 %       | 25,0 %         |
-| Graphiques             | 38,0 %       | 29,5 %         |
-| Cartes                 | 12,5 %       | 12,5 %         |
-| **Global**             | **49,5 %**   | **36,5 %**     |
+| Graphiques             | 68,5 %       | 42,3 %         |
+| Texte dense            | 66,7 %       | 50,0 %         |
+| Diagrammes             | 66,1 %       | 43,8 %         |
+| Tableaux               | 65,9 %       | 47,7 %         |
+| Cartes                 | 43,8 %       | 41,7 %         |
+| **Global**             | **66,8 %**   | **46,9 %**     |
 
-Les slides à forte densité textuelle constituent la catégorie la plus facile, tandis que les cartes sont les plus difficiles (et les deux agents s'y cassent les dents à part égale). Les graphiques, qui représentent 54 % du benchmark, tirent fortement le score global vers le bas.
+Ce qui frappe, c'est à quel point Folio Medium est devenu régulier : il se tient dans une bande étroite de 65 à 69 % sur les graphiques, le texte dense, les diagrammes et les tableaux. Les graphiques, qui représentent plus de la moitié du benchmark et qui tiraient autrefois les scores vers le bas, sont désormais la catégorie la plus forte de Folio. Les cartes sont le seul point faible qui subsiste, et elles sont difficiles pour tout le monde (les deux agents s'y cassent les dents à part égale). Claude for PowerPoint reste derrière dans chacune des catégories, avec les écarts les plus marqués sur les graphiques (+26 points) et les diagrammes (+22 points).
 
 ### Là où Folio excelle
 
-Folio obtient systématiquement de bons scores sur les slides à texte structuré : texte juridique mis en forme, mises en page multi-sections avec encadrés colorés, pages de type sommaire et mises en page multi-colonnes avec icônes. Sur ces tâches, Folio Max décroche régulièrement des scores quasi parfaits, et même Folio Medium et Folio Fast atteignent 75 à 100 %, alors que les deux variantes Claude for Powerpoint restent généralement loin derrière.
-
-### Ce qui reste difficile
-
-Environ 20 % du benchmark est en pratique non résolu : sur les tâches les plus dures, les cinq agents plafonnent à 25 % ou moins. Les modes d'échec récurrents :
-
-- **Cartes géographiques.** Les agents peinent à produire des cartes précises. Ils peuvent remplacer la carte par une forme sans rapport, la rendre à la mauvaise échelle ou perdre le code couleur par État. Folio essaie bien de produire des cartes, mais les résultats sont systématiquement médiocres : une carte des États-Unis peut apparaître réduite avec des détails manquants, ou une carte du monde être remplacée par un diagramme circulaire.
-- **Graphiques complexes à données denses.** Les graphiques combinés (barres + courbes sur double axe), les tableaux de bord multi-panneaux et les heatmaps mettent systématiquement tous les agents en échec. Erreurs fréquentes : graphiques entièrement manquants, intitulés d'axes oubliés, valeurs absentes.
-- **Formes composites personnalisées.** Les entonnoirs construits à partir de trapèzes, les graphiques en quadrants avec séparateurs courbes et les constructions du même genre exigent un empilage et un alignement précis que les agents ne maîtrisent pas encore de manière fiable.
+Folio gère toute la palette des éléments d'une slide de conseil : texte juridique mis en forme, mises en page multi-sections avec encadrés colorés, pages de type sommaire, mises en page multi-colonnes avec icônes, graphiques de données et tableaux. Folio Max obtient 75 % ou plus sur 47 des 61 slides (et un 100 % parfait sur quelques-unes), tandis que Claude for PowerPoint reste généralement loin derrière. L'écart est le plus visible sur les slides riches en graphiques et en diagrammes, précisément le contenu dense et structuré qui remplit les vrais decks.
 
 ### Là où Folio peut encore progresser
 
-Même Folio Max, malgré sa moyenne de 70,8 %, peine encore sur certaines tâches (score de 25 % ou moins). Ce sont généralement des slides avec de grandes grilles structurées, des logos de marque intégrés dans des graphiques ou des éléments décoratifs. Autant de pistes d'amélioration concrètes pour Folio sur ces types de contenu.
+Les cartes restent l'opportunité la plus claire : combler ce seul écart relèverait sensiblement le score global. Au-delà, les tâches restantes notées à 50 % sont surtout des quasi-réussites sur des graphiques denses et des formes composites, où la structure est bonne mais le style ou l'alignement légèrement décalés.
 
-La vitesse aussi reste un chantier. Folio Max prend près de 5 minutes par tâche, et même Folio Fast dépasse 2,5 minutes en moyenne. Un bon assistant IA devrait ressembler davantage à un prolongement fluide de votre travail qu'à une partie de tennis où l'on attend que la balle revienne. Nous travaillerons à réduire cette latence de manière significative dans les semaines qui viennent.
+La vitesse, autrefois un sujet d'inquiétude, est désormais un atout : Folio Max produit une slide en environ 2,3 minutes et Folio Fast en 1,5, contre près de 16 minutes pour Claude for PowerPoint. Nous continuerons à réduire la latence pour que travailler avec Folio ressemble à un prolongement fluide de votre travail plutôt qu'à une partie de tennis où l'on attend que la balle revienne.
 
 L'intégralité des résultats (images générées, références par tâche et critiques de l'évaluateur) est disponible dans [le repo PrezEval](https://github.com/FolioLabs/PrezEvalPublic).

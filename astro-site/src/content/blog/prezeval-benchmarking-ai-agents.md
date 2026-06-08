@@ -56,23 +56,22 @@ The agent then edits the slide through tool calls, and the final result is rende
 
 ## Results
 
-We compared five configurations:
+We compared four configurations:
 
-| Config                          | Score | Time   | Steps | Tasks |
-|---------------------------------|-------|--------|-------|-------|
-| **Folio Max**                   | 70.8% | 293.4s | 6.3   | 60/61 |
-| **Folio Medium**                | 49.6% | 207.7s | 8.8   | 61/61 |
-| **Folio Fast**                  | 38.9% | 157.5s | 9.5   | 61/61 |
-| Claude for Powerpoint (Opus)    | 36.5% | 176.5s | 11.6  | 61/61 |
-| Claude for Powerpoint (Sonnet)  | 32.4% | 154.4s | 9.2   | 61/61 |
+| Config                          | Score | Time  | Steps |
+|---------------------------------|-------|-------|-------|
+| **Folio Max**                   | 70.0% | 2:19  | 5.5   |
+| **Folio Medium**                | 66.8% | 2:44  | 5.2   |
+| **Folio Fast**                  | 43.0% | 1:32  | 13.7  |
+| Claude for PowerPoint (Sonnet 4.6) | 46.9% | 16:03 | 25.5  |
 
-**Folio Max** leads by a wide margin at 70.8%, nearly doubling the score of the next-best non-Folio agent. It achieves this with the fewest steps on average (6.3), suggesting a more efficient approach to slide reproduction, though it takes longer per task (293.4s) due to deeper reasoning.
+**Folio Max** leads at 70.0%, outscoring the next-best non-Folio agent by 23 points (a 49% relative lead). It reaches that score in 138.9s per task, roughly 7x faster than Claude for PowerPoint (962.8s, nearly 16 minutes), and in far fewer steps (5.5 vs 25.5). Folio Max and Folio Fast together trace the Pareto frontier - one anchors the high-accuracy end, the other the low-latency end - while Claude for PowerPoint is dominated, landing both slower and less accurate than Folio Max.
 
-**Folio Medium** scores 49.6%: most reproductions capture the right structure and content but have noticeable differences in styling or positioning.
+**Folio Medium** scores 66.8%, within striking distance of Max, at a slightly lower cost. It reasons less but lands almost as many reproductions cleanly.
 
-**Folio Fast** trades accuracy for speed, completing tasks 24% faster than Folio Medium while scoring 38.9%. Interestingly, it uses more steps on average (9.5 vs 8.8), suggesting the smaller model takes more exploratory actions.
+**Folio Fast** is the budget, low-latency tier: at $0.21 per task it costs roughly 5x less than Folio Max and 9x less than Claude for PowerPoint, and at about 1.5 minutes per slide it is the fastest config in the field. The trade-off is fidelity (43.0%) and more exploratory actions (13.7 steps), since it runs on a smaller, cheaper model.
 
-**Claude for Powerpoint (Opus)** scores 36.5% despite using the most steps (11.6) and significantly more compute. **Claude for Powerpoint (Sonnet)** scores 32.4%, the lowest of all configurations, while being the fastest at 154.4s per task.
+**Claude for PowerPoint (Sonnet 4.6)** scores 46.9%, but pays heavily for it: 962.8s per task (roughly 7x slower than Folio Max), 25.5 steps, $1.80, and 5 of 61 tasks left incomplete. It edits raw OOXML directly, which is both slow and error-prone compared to Folio's structured approach.
 
 <div id="prezeval-chart"></div>
 
@@ -82,32 +81,23 @@ Breaking down scores by what the slide contains reveals clear patterns:
 
 | Content type       | Folio Medium | Claude for PPT |
 |--------------------|--------------|----------------|
-| Dense text         | 66.8%        | 48.3%          |
-| Non-chart slides   | 63.5%        | 44.8%          |
-| Tables             | 48.3%        | 38.3%          |
-| Diagrams           | 47.3%        | 25.0%          |
-| Charts             | 38.0%        | 29.5%          |
-| Maps               | 12.5%        | 12.5%          |
-| **Overall**        | **49.5%**    | **36.5%**      |
+| Charts             | 68.5%        | 42.3%          |
+| Dense text         | 66.7%        | 50.0%          |
+| Diagrams           | 66.1%        | 43.8%          |
+| Tables             | 65.9%        | 47.7%          |
+| Maps               | 43.8%        | 41.7%          |
+| **Overall**        | **66.8%**    | **46.9%**      |
 
-Text-heavy slides are the easiest category, while maps are the hardest (equally bad for both agents). Charts, which make up 54% of the benchmark, pull the overall score down significantly.
+The striking thing is how consistent Folio Medium has become: it sits in a tight 65-69% band across charts, dense text, diagrams, and tables. Charts, which make up over half the benchmark and used to be the category that dragged scores down, are now Folio's strongest category. Maps are the one remaining weak spot, and they are hard for everyone (equally bad for both agents). Claude for PowerPoint trails in every single category, with the widest gaps on charts (+26 points) and diagrams (+22 points).
 
 ### Where Folio excels
 
-Folio consistently scores well on structured text slides: formatted legal text, multi-section layouts with colored boxes, table-of-contents style pages, and multi-column icon layouts. On these, Folio Max routinely achieves near-perfect scores, and even Folio Medium and Folio Fast reach 75-100%, while both Claude for Powerpoint variants typically lag significantly behind.
-
-### What remains hard
-
-About 20% of the benchmark is essentially unsolved: all five agents score 25% or below on the hardest tasks. The common failure modes:
-
-- **Geographic maps.** Agents struggle to produce accurate map visualizations. They may substitute the map with an unrelated shape, render it at the wrong scale, or lose state-level color coding. Folio does attempt maps but the results are consistently poor: a US map might appear shrunken with missing detail, or a world map might be replaced by a circular diagram.
-- **Complex charts with dense data.** Combo charts (bars + lines on dual axes), multi-panel dashboards, and heatmap matrices consistently break all agents. Common failures include entire charts missing, axis labels dropped, and data values absent.
-- **Custom composite shapes.** Funnels built from trapezoids, quadrant charts with curved dividers, and similar constructions require precise layering and alignment that agents can't yet achieve reliably.
+Folio handles the full range of consulting-slide elements: formatted legal text, multi-section layouts with colored boxes, table-of-contents pages, multi-column icon layouts, data charts, and tables. Folio Max scores 75% or higher on 47 of the 61 slides (and a perfect 100% on a couple), while Claude for PowerPoint typically lags well behind. The gap is most visible on chart-heavy and diagram-heavy slides, exactly the dense, structured content that fills real decks.
 
 ### Where Folio still has room to grow
 
-Even Folio Max, despite its 70.8% average, still struggles on some tasks (scoring 25% or below). These tend to be slides with large structured grids, brand logos embedded in charts, or decorative elements. This suggests specific opportunities to improve Folio's handling of these patterns.
+Maps remain the clearest opportunity: closing that gap alone would lift the overall score meaningfully. Beyond that, the residual 50%-scoring tasks are mostly near-misses on dense charts and composite shapes, where the structure is right but styling or alignment is slightly off.
 
-Speed is also an area of focus. Folio Max takes nearly 5 minutes per task, and even Folio Fast averages over 2.5 minutes. A good AI assistant should feel more like a streaming continuation of your work rather than a tennis game where you wait for the ball to come back. We will be working on reducing latency significantly in the coming weeks.
+Speed, which used to be a concern, is now a strength: Folio Max completes a slide in about 2.3 minutes and Folio Fast in 1.5, against nearly 16 minutes for Claude for PowerPoint. We will keep pushing latency down so that working with Folio feels like a streaming continuation of your work rather than a tennis game where you wait for the ball to come back.
 
 All results, including per-task generated vs. reference images and evaluator critiques, are available in [the PrezEval repository](https://github.com/FolioLabs/PrezEvalPublic).
