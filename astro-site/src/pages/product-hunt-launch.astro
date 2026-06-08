@@ -4,7 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { PRODUCT_HUNT_URL } from '../consts';
 
-// Launch goes live Sunday 7 June 2026 at 00:01 PST = 09:01 CET.
+// Launch goes live Sunday 14 June 2026 at 00:01 PST = 09:01 CET.
 const steps = [
   {
     n: '1',
@@ -24,7 +24,7 @@ const steps = [
     n: '3',
     title: 'Support us at 9am sharp, Sunday morning',
     body:
-      'This is the one that matters. On Sunday 7 June, at 9:00am CET sharp, open our Product Hunt page and upvote + drop a comment. The first hour decides the day — being there right at 9am is the single biggest thing you can do for us.',
+      'This is the one that matters. On Sunday 14 June, at 9:00am CET sharp, open our Product Hunt page and upvote + drop a comment. The first hour decides the day — being there right at 9am is the single biggest thing you can do for us.',
     cta: { label: 'Our Product Hunt page', href: PRODUCT_HUNT_URL },
   },
 ];
@@ -32,7 +32,7 @@ const steps = [
 
 <Layout
   title="Support our Product Hunt Launch"
-  description="Folio AI launches on Product Hunt on Sunday 7 June at 9am CET. Here's how you can help us reach Product of the Day."
+  description="Folio AI launches on Product Hunt on Sunday 14 June at 9am CET. Here's how you can help us reach Product of the Day."
 >
   <Nav />
 
@@ -41,13 +41,13 @@ const steps = [
     <section class="bg-ph-orange text-white px-[30px] nav:px-[60px] py-12 nav:py-16">
       <div class="max-w-[860px] mx-auto text-center">
         <span class="inline-block font-heading text-sm font-semibold tracking-wide uppercase bg-white/15 rounded-pill py-1.5 px-4 mb-6">
-          Sunday 7 June · 9:00am CET
+          Sunday 14 June · 9:00am CET
         </span>
 
         <!-- Live countdown to launch (9:00 CEST = UTC+2 in June) -->
         <div
           id="ph-countdown"
-          data-launch="2026-06-07T09:00:00+02:00"
+          data-launch="2026-06-14T09:00:00+02:00"
           aria-live="polite"
           class="flex justify-center gap-3 nav:gap-4 mb-8"
         >
