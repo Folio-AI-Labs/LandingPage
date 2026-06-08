@@ -27,50 +27,61 @@ const evaluationDateIso = evaluationDateValue.toISOString().slice(0, 10);
     <line x1="30" y1="40" x2="40.75" y2="40" stroke="#666666" stroke-width="1.5"/>
     <text x="26" y="44" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#999999">100%</text>
 
-    <!-- Bars: baseline=280, chart height=240 (100% = y:40) -->
+    <!-- Bars: baseline=280, chart height=240 (100% = y:40). 5 bars, width 70, step 86 from x=52 -->
     <!-- Flat bottom via clipPath, rounded top via rect with rx/ry -->
     <defs>
       <clipPath id="clip-bottom">
         <rect x="0" y="0" width="500" height="280"/>
       </clipPath>
-      <pattern id="folio-medium-fill" patternUnits="userSpaceOnUse" x="65" y="124" width="70" height="162">
-        <image href="/bar_texture_medium.webp" x="0" y="0" width="70" height="162" preserveAspectRatio="xMidYMid slice"/>
+      <pattern id="folio-max-fill" patternUnits="userSpaceOnUse" x="52" y="112" width="70" height="174">
+        <image href="/bar_texture_medium.webp" x="0" y="0" width="70" height="174" preserveAspectRatio="xMidYMid slice"/>
       </pattern>
-      <pattern id="folio-fast-fill" patternUnits="userSpaceOnUse" x="165" y="152.8" width="70" height="133.2">
-        <image href="/bar_texture_fast.webp" x="0" y="0" width="70" height="133.2" preserveAspectRatio="xMidYMid slice"/>
+      <pattern id="folio-medium-fill" patternUnits="userSpaceOnUse" x="138" y="119.2" width="70" height="166.8">
+        <image href="/bar_texture_medium.webp" x="0" y="0" width="70" height="166.8" preserveAspectRatio="xMidYMid slice"/>
+      </pattern>
+      <pattern id="folio-fast-fill" patternUnits="userSpaceOnUse" x="224" y="176.8" width="70" height="109.2">
+        <image href="/bar_texture_fast.webp" x="0" y="0" width="70" height="109.2" preserveAspectRatio="xMidYMid slice"/>
       </pattern>
     </defs>
 
-    <!-- Folio AI Pro: 65% => height=156, y=124 -->
-    <rect x="65" y="124" width="70" height="162" rx="6" ry="6" fill="url(#folio-medium-fill)" clip-path="url(#clip-bottom)"/>
-    <text x="100" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">65%</text>
-    <text x="100" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
-      <tspan x="100" dy="0">Folio</tspan>
-      <tspan x="100" dy="15">Medium</tspan>
+    <!-- Folio Max: 70% => height=168, y=112 -->
+    <rect x="52" y="112" width="70" height="174" rx="6" ry="6" fill="url(#folio-max-fill)" clip-path="url(#clip-bottom)"/>
+    <text x="87" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">70%</text>
+    <text x="87" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
+      <tspan x="87" dy="0">Folio</tspan>
+      <tspan x="87" dy="15">Max</tspan>
     </text>
 
-    <!-- Folio AI Starter: 53% => height=127.2, y=152.8 -->
-    <rect x="165" y="152.8" width="70" height="133.2" rx="6" ry="6" fill="url(#folio-fast-fill)" clip-path="url(#clip-bottom)"/>
-    <text x="200" y="142.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">53%</text>
-    <text x="200" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
-      <tspan x="200" dy="0">Folio</tspan>
-      <tspan x="200" dy="15">Fast</tspan>
+    <!-- Folio Medium: 67% => height=160.8, y=119.2 -->
+    <rect x="138" y="119.2" width="70" height="166.8" rx="6" ry="6" fill="url(#folio-medium-fill)" clip-path="url(#clip-bottom)"/>
+    <text x="173" y="109.2" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">67%</text>
+    <text x="173" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
+      <tspan x="173" dy="0">Folio</tspan>
+      <tspan x="173" dy="15">Medium</tspan>
     </text>
 
-    <!-- Claude for PowerPoint: 41% => height=98.4, y=181.6 -->
-    <rect x="265" y="181.6" width="70" height="104.4" rx="6" ry="6" fill="#c8c8c8" clip-path="url(#clip-bottom)"/>
-    <text x="300" y="171.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#999999">41%</text>
-    <text x="300" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#999999">
-      <tspan x="300" dy="0">Claude for</tspan>
-      <tspan x="300" dy="15">PowerPoint</tspan>
+    <!-- Folio Fast: 43% => height=103.2, y=176.8 -->
+    <rect x="224" y="176.8" width="70" height="109.2" rx="6" ry="6" fill="url(#folio-fast-fill)" clip-path="url(#clip-bottom)"/>
+    <text x="259" y="166.8" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">43%</text>
+    <text x="259" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a">
+      <tspan x="259" dy="0">Folio</tspan>
+      <tspan x="259" dy="15">Fast</tspan>
+    </text>
+
+    <!-- Claude for PowerPoint: 47% => height=112.8, y=167.2 -->
+    <rect x="310" y="167.2" width="70" height="118.8" rx="6" ry="6" fill="#c8c8c8" clip-path="url(#clip-bottom)"/>
+    <text x="345" y="157.2" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#999999">47%</text>
+    <text x="345" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#999999">
+      <tspan x="345" dy="0">Claude for</tspan>
+      <tspan x="345" dy="15">PowerPoint</tspan>
     </text>
 
     <!-- GenSpark: 16% => height=38.4, y=241.6 -->
-    <rect x="365" y="241.6" width="70" height="44.4" rx="6" ry="6" fill="#c8c8c8" clip-path="url(#clip-bottom)"/>
-    <text x="400" y="231.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#999999">16%</text>
-    <text x="400" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#999999">
-      <tspan x="400" dy="0">GenSpark</tspan>
-      <tspan x="400" dy="15">&nbsp;</tspan>
+    <rect x="396" y="241.6" width="70" height="44.4" rx="6" ry="6" fill="#c8c8c8" clip-path="url(#clip-bottom)"/>
+    <text x="431" y="231.6" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#999999">16%</text>
+    <text x="431" y="302" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#999999">
+      <tspan x="431" dy="0">GenSpark</tspan>
+      <tspan x="431" dy="15">&nbsp;</tspan>
     </text>
 
     <!-- X axis (drawn after bars so it renders on top; extended left by 0.75 to align with Y axis left edge) -->
