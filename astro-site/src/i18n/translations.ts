@@ -52,7 +52,7 @@ export const translations = {
     'features.enterprise.desc': 'Bring your own API keys with enterprise plans. Folio is GDPR compliant, and provides SSO and MFA login. Your data stays yours.',
 
     // Models Section
-    'models.title': 'Unmatched performance',
+    'models.title': 'Unmatched performance and speed',
     'models.desc': 'Our harness uses a proprietary simplification converting the complexity of PowerPoint and Google Slides into a clearer language that AI can edit naturally, while keeping full expressivity. This unlocks vastly better performance and faster execution.',
     'models.evaluation': 'Success rate on reproducing professional slides: PrezEval© benchmark',
 
