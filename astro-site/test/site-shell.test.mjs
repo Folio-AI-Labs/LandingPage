@@ -11,15 +11,16 @@ async function read(relativePath) {
   return readFile(path.join(rootDir, relativePath), 'utf8');
 }
 
-test('layout and tailwind keep a reduced font stack centered on Spectral', async () => {
+test('layout and tailwind keep a reduced font stack centered on Arizona Flare', async () => {
   const layout = await read('src/layouts/Layout.astro');
   const tailwind = await read('tailwind.config.mjs');
 
   assert.match(layout, /@fontsource\/inter/);
-  assert.match(layout, /@fontsource\/spectral/);
+  assert.match(layout, /arizona-flare\.css/);
+  assert.doesNotMatch(layout, /@fontsource\/spectral/);
   assert.doesNotMatch(layout, /fonts\.googleapis\.com/);
-  assert.match(tailwind, /'display': \['"Spectral"', 'serif'\]/);
-  assert.match(tailwind, /'heading': \['"Spectral"', 'serif'\]/);
+  assert.match(tailwind, /'display': \['"ABC Arizona Flare"', 'serif'\]/);
+  assert.match(tailwind, /'heading': \['"ABC Arizona Flare"', 'serif'\]/);
 });
 
 test('navbar keeps a smaller information architecture with a single get started CTA', async () => {

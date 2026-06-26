@@ -14,8 +14,8 @@ export default {
         'ph-orange-dark': '#c2461f',
       },
       fontFamily: {
-        'display': ['"Spectral"', 'serif'],
-        'heading': ['"Spectral"', 'serif'],
+        'display': ['"ABC Arizona Flare"', 'serif'],
+        'heading': ['"ABC Arizona Flare"', 'serif'],
         'body': ['"Inter"', 'sans-serif'],
       },
       fontSize: {
