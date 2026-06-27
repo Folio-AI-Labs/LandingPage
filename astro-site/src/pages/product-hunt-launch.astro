@@ -7,17 +7,13 @@ import { PRODUCT_HUNT_URL } from '../consts';
 const steps = [
   {
     n: '1',
-    title: 'Create a Product Hunt account',
-    body:
-      "It takes a minute. Sign up at producthunt.com with Google, X, or email, that's all you need to be able to upvote and comment.",
-    cta: { label: 'Sign up on Product Hunt', href: 'https://www.producthunt.com/' },
+    title: 'Upvote',
+    body: "It's the triangle pointing up, you'll find it, don't worry.",
   },
   {
     n: '2',
-    title: 'Upvote and comment right now',
-    body:
-      "This is the one that matters. Open our Product Hunt page, hit upvote, and drop a comment. Every vote and comment compounds, doing it now is the single biggest thing you can do for us.",
-    cta: { label: 'Our Product Hunt page', href: PRODUCT_HUNT_URL },
+    title: 'Leave a comment',
+    body: 'A question is best, like "Would Folio be able to use my slide template?"',
   },
 ];
 ---
@@ -33,11 +29,11 @@ const steps = [
     <section class="bg-ph-orange text-white px-[30px] nav:px-[60px] py-12 nav:py-16">
       <div class="max-w-[860px] mx-auto text-center">
         <span class="inline-block font-heading text-sm font-semibold tracking-wide uppercase bg-white/15 rounded-pill py-1.5 px-4 mb-6">
-          Live now
+          Live now, Saturday 27th
         </span>
 
         <h1 class="font-display text-[42px] nav:text-[58px] font-normal leading-[1.1] mb-6">
-          We're live on Product Hunt, and we need you
+          We're live on Product Hunt, and we need you!
         </h1>
         <p class="text-white/90 text-lg nav:text-xl max-w-[560px] mx-auto">
           None of this takes long, and it makes an outsized difference.
@@ -48,31 +44,30 @@ const steps = [
     <!-- Steps -->
     <section id="how-to-help" class="px-[30px] nav:px-[60px] pt-12 nav:pt-14 pb-20 nav:pb-24">
       <div class="max-w-[1100px] mx-auto">
-        <div class="text-center mb-14">
-          <h2 class="font-display text-[32px] nav:text-[42px] font-normal text-brand mb-4">
-            Two steps to support us
-          </h2>
-        </div>
-
         <div class="grid grid-cols-1 nav:grid-cols-2 gap-6 items-stretch max-w-[760px] mx-auto">
           {steps.map(step => (
             <div class="flex flex-col bg-white border border-brand-border rounded-2xl p-7 nav:p-8 transition duration-300 hover:border-ph-orange hover:shadow-md">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-ph-orange/10 text-ph-orange font-display text-2xl font-semibold mb-5">
-                {step.n}
-              </span>
-              <h3 class="font-display text-2xl nav:text-[26px] font-normal text-brand mb-2">{step.title}</h3>
-              <p class="text-brand-muted leading-[1.8] mb-5">{step.body}</p>
-              <a
-                href={step.cta.href}
-                target="_blank"
-                rel="noopener"
-                class="mt-auto inline-flex items-center gap-1.5 text-ph-orange font-semibold no-underline text-sm hover:underline"
-              >
-                {step.cta.label}
-                <span aria-hidden="true">→</span>
-              </a>
+              <div class="flex items-center gap-4 mb-2">
+                <span class="flex items-center justify-center w-12 h-12 shrink-0 rounded-full bg-ph-orange/10 text-ph-orange font-display text-2xl font-semibold">
+                  {step.n}
+                </span>
+                <h3 class="font-display text-2xl nav:text-[26px] font-normal text-brand">{step.title}</h3>
+              </div>
+              <p class="text-brand-muted leading-[1.8]">{step.body}</p>
             </div>
           ))}
+        </div>
+
+        <div class="text-center mt-12 nav:mt-14">
+          <a
+            href={PRODUCT_HUNT_URL}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3 bg-ph-orange text-white no-underline font-heading font-semibold text-xl nav:text-2xl py-4 nav:py-5 px-10 nav:px-14 rounded-pill transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+          >
+            Let's go
+            <span aria-hidden="true" class="text-2xl nav:text-3xl">→</span>
+          </a>
         </div>
       </div>
     </section>
