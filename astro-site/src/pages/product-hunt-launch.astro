@@ -4,35 +4,27 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { PRODUCT_HUNT_URL } from '../consts';
 
-// Launch goes live Saturday 27 June 2026 at 00:01 PST = 09:01 CET.
 const steps = [
   {
     n: '1',
     title: 'Create a Product Hunt account',
     body:
-      "It takes a minute. Sign up at producthunt.com with Google, X, or email — that's all you need to be able to upvote and comment on launch day.",
+      "It takes a minute. Sign up at producthunt.com with Google, X, or email, that's all you need to be able to upvote and comment.",
     cta: { label: 'Sign up on Product Hunt', href: 'https://www.producthunt.com/' },
   },
   {
     n: '2',
-    title: 'Warm up your account this week',
+    title: 'Upvote and comment right now',
     body:
-      'Brand-new accounts carry less weight. Over the next few days, browse Product Hunt and upvote a handful of products you genuinely like. A little activity now makes your launch-day vote count for more.',
-    cta: { label: 'Explore products to upvote', href: 'https://www.producthunt.com/' },
-  },
-  {
-    n: '3',
-    title: 'Support us at 9am sharp, Saturday morning',
-    body:
-      'This is the one that matters. On Saturday 27 June, at 9:00am CET sharp, open our Product Hunt page and upvote + drop a comment. The first hour decides the day — being there right at 9am is the single biggest thing you can do for us.',
+      "This is the one that matters. Open our Product Hunt page, hit upvote, and drop a comment. Every vote and comment compounds, doing it now is the single biggest thing you can do for us.",
     cta: { label: 'Our Product Hunt page', href: PRODUCT_HUNT_URL },
   },
 ];
 ---
 
 <Layout
-  title="Support our Product Hunt Launch"
-  description="Folio AI launches on Product Hunt on Saturday 27 June at 9am CET. Here's how you can help us reach Product of the Day."
+  title="We're launching on Product Hunt today"
+  description="Folio AI is live on Product Hunt. Here's how you can help us reach Product of the Day."
 >
   <Nav />
 
@@ -41,43 +33,15 @@ const steps = [
     <section class="bg-ph-orange text-white px-[30px] nav:px-[60px] py-12 nav:py-16">
       <div class="max-w-[860px] mx-auto text-center">
         <span class="inline-block font-heading text-sm font-semibold tracking-wide uppercase bg-white/15 rounded-pill py-1.5 px-4 mb-6">
-          Saturday 27 June · 9:00am CET
+          Live now
         </span>
 
-        <!-- Live countdown to launch (9:00 CEST = UTC+2 in June) -->
-        <div
-          id="ph-countdown"
-          data-launch="2026-06-27T09:00:00+02:00"
-          aria-live="polite"
-          class="flex justify-center gap-3 nav:gap-4 mb-8"
-        >
-          {['days', 'hours', 'minutes', 'seconds'].map(unit => (
-            <div class="flex flex-col items-center bg-white/15 rounded-2xl px-4 nav:px-6 py-3 min-w-[68px] nav:min-w-[88px]">
-              <span data-unit={unit} class="font-display text-3xl nav:text-5xl font-semibold leading-none tabular-nums">--</span>
-              <span class="text-[11px] nav:text-xs uppercase tracking-wide text-white/80 mt-1.5 font-heading">{unit}</span>
-            </div>
-          ))}
-        </div>
-
         <h1 class="font-display text-[42px] nav:text-[58px] font-normal leading-[1.1] mb-6">
-          We're launching on Product Hunt — and we need you
+          We're live on Product Hunt, and we need you
         </h1>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={PRODUCT_HUNT_URL}
-            target="_blank"
-            rel="noopener"
-            class="bg-white text-ph-orange no-underline font-heading font-semibold py-3.5 px-7 rounded-pill transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-          >
-            Visit our Product Hunt page
-          </a>
-          <a
-            href="#how-to-help"
-            class="border border-white/60 text-white no-underline font-heading font-semibold py-3.5 px-7 rounded-pill transition duration-300 hover:bg-white/10"
-          >
-            How to help ↓
-          </a>
-        </div>
+        <p class="text-white/90 text-lg nav:text-xl max-w-[560px] mx-auto">
+          None of this takes long, and it makes an outsized difference.
+        </p>
       </div>
     </section>
 
@@ -86,14 +50,11 @@ const steps = [
       <div class="max-w-[1100px] mx-auto">
         <div class="text-center mb-14">
           <h2 class="font-display text-[32px] nav:text-[42px] font-normal text-brand mb-4">
-            Three steps to support us
+            Two steps to support us
           </h2>
-          <p class="text-brand-muted text-lg max-w-[560px] mx-auto">
-            None of this takes long — and it makes an outsized difference to a small team launching against the world.
-          </p>
         </div>
 
-        <div class="grid grid-cols-1 nav:grid-cols-3 gap-6 items-stretch">
+        <div class="grid grid-cols-1 nav:grid-cols-2 gap-6 items-stretch max-w-[760px] mx-auto">
           {steps.map(step => (
             <div class="flex flex-col bg-white border border-brand-border rounded-2xl p-7 nav:p-8 transition duration-300 hover:border-ph-orange hover:shadow-md">
               <span class="flex items-center justify-center w-12 h-12 rounded-full bg-ph-orange/10 text-ph-orange font-display text-2xl font-semibold mb-5">
@@ -115,61 +76,7 @@ const steps = [
         </div>
       </div>
     </section>
-
-    <!-- Closing CTA -->
-    <section class="px-[30px] nav:px-[60px] pb-24">
-      <div class="max-w-[860px] mx-auto bg-brand text-white rounded-3xl p-10 nav:p-14 text-center">
-        <h2 class="font-display text-[28px] nav:text-[38px] font-normal mb-4">
-          See you Saturday at 9am sharp
-        </h2>
-        <p class="text-white/80 text-lg leading-relaxed max-w-[560px] mx-auto mb-8">
-          Set an alarm, bookmark our page, and be there the moment we go live. Every early upvote
-          and comment compounds. Thank you for backing us. 🙏
-        </p>
-        <a
-          href={PRODUCT_HUNT_URL}
-          target="_blank"
-          rel="noopener"
-          class="inline-block bg-ph-orange text-white no-underline font-heading font-semibold py-3.5 px-8 rounded-pill transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-        >
-          Support Folio AI on Product Hunt
-        </a>
-      </div>
-    </section>
   </main>
 
   <Footer />
 </Layout>
-
-<script>
-  const el = document.getElementById('ph-countdown');
-  if (el) {
-    const target = new Date(el.dataset.launch!).getTime();
-    const out = {
-      days: el.querySelector('[data-unit="days"]')!,
-      hours: el.querySelector('[data-unit="hours"]')!,
-      minutes: el.querySelector('[data-unit="minutes"]')!,
-      seconds: el.querySelector('[data-unit="seconds"]')!,
-    };
-    const pad = (n: number) => String(n).padStart(2, '0');
-    let timer: ReturnType<typeof setInterval>;
-
-    function tick() {
-      const diff = target - Date.now();
-      if (diff <= 0) {
-        out.days.textContent = '0';
-        out.hours.textContent = out.minutes.textContent = out.seconds.textContent = '00';
-        clearInterval(timer);
-        return;
-      }
-      const s = Math.floor(diff / 1000);
-      out.days.textContent = String(Math.floor(s / 86400));
-      out.hours.textContent = pad(Math.floor((s % 86400) / 3600));
-      out.minutes.textContent = pad(Math.floor((s % 3600) / 60));
-      out.seconds.textContent = pad(s % 60);
-    }
-
-    tick();
-    timer = setInterval(tick, 1000);
-  }
-</script>
