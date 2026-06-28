@@ -10,7 +10,6 @@ export const translations = {
     'nav.help': 'Help',
     'nav.contact': 'Contact Us',
     'nav.getStarted': 'Get started',
-    'nav.productHunt': "We're launching on Product Hunt today",
     'nav.bookDemo': 'Book a demo',
 
     // Help Center sidebar
@@ -369,7 +368,6 @@ export const translations = {
     'nav.help': 'Aide',
     'nav.contact': 'Nous contacter',
     'nav.getStarted': 'Commencer',
-    'nav.productHunt': "We're launching on Product Hunt today",
     'nav.bookDemo': 'Réserver une démo',
 
     // Help Center sidebar
@@ -728,7 +726,6 @@ export const translations = {
     'nav.help': 'Ayuda',
     'nav.contact': 'Contáctanos',
     'nav.getStarted': 'Empezar',
-    'nav.productHunt': "We're launching on Product Hunt today",
     'nav.bookDemo': 'Reservar una demo',
 
     // Help Center sidebar
@@ -1087,7 +1084,6 @@ export const translations = {
     'nav.help': 'Hilfe',
     'nav.contact': 'Kontakt',
     'nav.getStarted': 'Loslegen',
-    'nav.productHunt': "We're launching on Product Hunt today",
     'nav.bookDemo': 'Demo buchen',
 
     // Help Center sidebar
