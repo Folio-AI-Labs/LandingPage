@@ -8,73 +8,73 @@ const demoText: Record<string, {
   w2Prompt: string; w2Ai: string; w2Tools: string[]
 }> = {
   en: {
-    w1Prompt: 'Rework slide 3 to break the productivity gap into its three root-cause shocks.',
-    w1Ai: "I'll restructure slide 3 around the three shocks behind the gap.",
+    w1Prompt: 'Rework slide 3 to show how companies structure AI governance: centralized versus hybrid.',
+    w1Ai: "I'll rebuild slide 3 around the governance centralization pattern.",
     w1Tools: [
       'Analyzing current slide 3 structure',
-      'Rebuilding slide 3 around the three growth shocks',
+      'Rebuilding slide 3 around the governance model',
     ],
-    w2Prompt: 'Now refocus slide 3 on the innovation gap, where Europe loses most.',
-    w2Ai: "I'll refocus slide 3 on the innovation and scale-up gap.",
+    w2Prompt: 'Now refocus slide 3 on the value question: business-unit gains versus enterprise EBIT.',
+    w2Ai: "I'll refocus slide 3 on where gains appear and why EBIT lags.",
     w2Tools: [
       'Reviewing the slide content',
-      'Rebuilding slide 3 around the innovation gap',
+      'Rebuilding slide 3 around the EBIT value story',
     ],
   },
   fr: {
-    w1Prompt: 'Retravaille la slide 3 pour décomposer l\'écart de productivité en ses trois chocs d\'origine.',
-    w1Ai: 'Je vais restructurer la slide 3 autour des trois chocs à l\'origine de l\'écart.',
+    w1Prompt: 'Retravaille la slide 3 pour montrer comment les entreprises structurent la gouvernance de l\'IA : centralisée ou hybride.',
+    w1Ai: 'Je vais reconstruire la slide 3 autour du modèle de gouvernance.',
     w1Tools: [
       'Analyse de la structure actuelle de la slide 3',
-      'Reconstruction de la slide 3 autour des trois chocs de croissance',
+      'Reconstruction de la slide 3 autour du modèle de gouvernance',
     ],
-    w2Prompt: 'Maintenant recentre la slide 3 sur l\'écart d\'innovation, là où l\'Europe perd le plus.',
-    w2Ai: 'Je vais recentrer la slide 3 sur l\'écart d\'innovation et de passage à l\'échelle.',
+    w2Prompt: 'Maintenant recentre la slide 3 sur la valeur : gains des unités contre EBIT de l\'entreprise.',
+    w2Ai: 'Je vais recentrer la slide 3 sur les gains locaux et le retard de l\'EBIT.',
     w2Tools: [
       'Revue du contenu de la slide',
-      'Reconstruction de la slide 3 autour de l\'écart d\'innovation',
+      'Reconstruction de la slide 3 autour de la création de valeur',
     ],
   },
   es: {
-    w1Prompt: 'Reelabora la diapositiva 3 para desglosar la brecha de productividad en sus tres choques de origen.',
-    w1Ai: 'Voy a reestructurar la diapositiva 3 en torno a los tres choques detrás de la brecha.',
+    w1Prompt: 'Reelabora la diapositiva 3 para mostrar cómo las empresas estructuran la gobernanza de la IA: centralizada o híbrida.',
+    w1Ai: 'Voy a reconstruir la diapositiva 3 en torno al modelo de gobernanza.',
     w1Tools: [
       'Analizando estructura actual de diapositiva 3',
-      'Reconstruyendo la diapositiva 3 en torno a los tres choques de crecimiento',
+      'Reconstruyendo la diapositiva 3 en torno al modelo de gobernanza',
     ],
-    w2Prompt: 'Ahora reenfoca la diapositiva 3 en la brecha de innovación, donde Europa pierde más.',
-    w2Ai: 'Voy a reenfocar la diapositiva 3 en la brecha de innovación y escalado.',
+    w2Prompt: 'Ahora reenfoca la diapositiva 3 en el valor: ganancias de las unidades frente al EBIT de la empresa.',
+    w2Ai: 'Voy a reenfocar la diapositiva 3 en las ganancias locales y el rezago del EBIT.',
     w2Tools: [
       'Revisando el contenido de la diapositiva',
-      'Reconstruyendo la diapositiva 3 en torno a la brecha de innovación',
+      'Reconstruyendo la diapositiva 3 en torno a la historia de valor',
     ],
   },
   de: {
-    w1Prompt: 'Überarbeite Folie 3, um die Produktivitätslücke in ihre drei Ursachen-Schocks aufzuschlüsseln.',
-    w1Ai: 'Ich strukturiere Folie 3 um die drei Schocks hinter der Lücke neu.',
+    w1Prompt: 'Überarbeite Folie 3, um zu zeigen, wie Unternehmen ihre KI-Governance strukturieren: zentralisiert oder hybrid.',
+    w1Ai: 'Ich baue Folie 3 rund um das Governance-Modell neu auf.',
     w1Tools: [
       'Analyse der aktuellen Struktur von Folie 3',
-      'Neuaufbau von Folie 3 rund um die drei Wachstumsschocks',
+      'Neuaufbau von Folie 3 rund um das Governance-Modell',
     ],
-    w2Prompt: 'Richte Folie 3 nun auf die Innovationslücke aus, wo Europa am meisten verliert.',
-    w2Ai: 'Ich richte Folie 3 auf die Innovations- und Scale-up-Lücke aus.',
+    w2Prompt: 'Richte Folie 3 nun auf die Wertfrage aus: Gewinne der Einheiten gegenüber dem EBIT des Unternehmens.',
+    w2Ai: 'Ich richte Folie 3 auf lokale Gewinne und den EBIT-Rückstand aus.',
     w2Tools: [
       'Überprüfung des Folieninhalts',
-      'Neuaufbau von Folie 3 rund um die Innovationslücke',
+      'Neuaufbau von Folie 3 rund um die Wertstory',
     ],
   },
 }
 
 const fileTitles: Record<string, string> = {
-  en: 'European Competitiveness — Draghi.pptx',
-  fr: 'Compétitivité européenne — Draghi.pptx',
-  es: 'Competitividad europea — Draghi.pptx',
-  de: 'Europäische Wettbewerbsfähigkeit — Draghi.pptx',
+  en: 'State of AI - McKinsey.pptx',
+  fr: 'État de l\'IA - McKinsey.pptx',
+  es: 'Estado de la IA - McKinsey.pptx',
+  de: 'Stand der KI - McKinsey.pptx',
 }
 
-// Rail of 8 slides. Pages 4 & 5 (indices 3, 4) are held back so the edited
+// Rail of 6 slides. Pages 4 & 5 (indices 3, 4) are held back so the edited
 // "slide 3" can morph into them without any thumbnail appearing twice.
-const initialRail = [0, 1, 2, 5, 6, 7, 8, 9]
+const initialRail = [0, 1, 2, 5, 6, 7]
 
 export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
   const config = useMemo((): DemoWorkflowConfig => {
@@ -104,7 +104,7 @@ export default function EditDeckDemo({ lang = 'en' }: { lang?: string }) {
         },
       ],
       ui: getPptUI(lang, fileTitles[lang] || fileTitles.en),
-      totalSlideCount: 8,
+      totalSlideCount: 6,
       loopDelay: 2000,
     }
   }, [lang])

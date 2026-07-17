@@ -52,19 +52,17 @@ export function makeBlankSlide(titlePlaceholder = 'Click to add title', subtitle
   }
 }
 
-// Real slides exported from the Draghi report deck (1:1 with deck pages).
-// Index 0..9 == deck pages 1..10. The edit demo morphs the active slide
+// Real slides exported from the McKinsey State of AI deck (1:1 with deck pages).
+// Index 0..7 == deck pages 1..8. The edit demo morphs the active slide
 // (index 2 = page 3) into index 3 (page 4) then index 4 (page 5); those two
 // are kept out of the initial rail so no thumbnail is ever shown twice.
 export const editSlides: SlideContent[] = [
-  imageSlide('/decks/draghi/slide-01.png', 'The Future of European Competitiveness'),
-  imageSlide('/decks/draghi/slide-02.png', 'Executive Takeaway: An Existential Productivity Challenge'),
-  imageSlide('/decks/draghi/slide-03.png', 'The Growth Gap: Productivity Is the Central Weakness'),
-  imageSlide('/decks/draghi/slide-04.png', 'Three Shocks to the Old European Growth Model'),
-  imageSlide('/decks/draghi/slide-05.png', 'Innovation Gap: Europe Is Strong in Science, Weak at Scale-Up'),
-  imageSlide('/decks/draghi/slide-06.png', 'Decarbonisation: Opportunity, If Energy Costs Fall'),
-  imageSlide('/decks/draghi/slide-07.png', 'Security & Dependencies: Exposure Is Now a Competitiveness Risk'),
-  imageSlide('/decks/draghi/slide-08.png', 'What Blocks Europe: Focus, Resources and Coordination'),
-  imageSlide('/decks/draghi/slide-09.png', 'Financing the Transformation: Mobilise Capital at Scale'),
-  imageSlide('/decks/draghi/slide-10.png', 'Strategic Agenda: One Coordinated EU Response'),
+  imageSlide('/decks/stateofai/slide-01.webp', 'The State of AI: How Organizations Are Rewiring to Capture Value'),
+  imageSlide('/decks/stateofai/slide-02.webp', 'AI Adoption Has Accelerated Markedly'),
+  imageSlide('/decks/stateofai/slide-03.webp', 'Value Starts with Rewiring How the Company Runs'),
+  imageSlide('/decks/stateofai/slide-04.webp', 'Governance Centralizes; Talent and Adoption Stay Hybrid'),
+  imageSlide('/decks/stateofai/slide-05.webp', 'Business-Unit Gains Are Rising, but Enterprise EBIT Lags'),
+  imageSlide('/decks/stateofai/slide-06.webp', 'Risk Mitigation Is Expanding, but Oversight Is Uneven'),
+  imageSlide('/decks/stateofai/slide-07.webp', 'AI Is Reshaping Skills Faster Than Head Count'),
+  imageSlide('/decks/stateofai/slide-08.webp', 'What Leaders Should Do Next'),
 ]
