@@ -33,7 +33,6 @@ export const translations = {
     'hero.trustedBy': 'Trusted by',
     'hero.widgetMobileNotice': 'Open this page on a tablet or computer to view the interactive widget',
     'examples.subtitle': 'Some decks made in one-shot with Folio (click to open):',
-    'examples.draghi': 'Draghi Report Summary',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group FY2025 Financials',
 
@@ -391,7 +390,6 @@ export const translations = {
     'hero.trustedBy': 'Ils nous font confiance',
     'hero.widgetMobileNotice': 'Ouvrez cette page sur une tablette ou un ordinateur pour voir le widget interactif',
     'examples.subtitle': 'Quelques decks faits en one-shot avec Folio (cliquez pour ouvrir) :',
-    'examples.draghi': 'Synthèse du rapport Draghi',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group — Comptes financiers FY2025',
 
@@ -749,7 +747,6 @@ export const translations = {
     'hero.trustedBy': 'Confían en nosotros',
     'hero.widgetMobileNotice': 'Abre esta página en una tableta o un ordenador para ver el widget interactivo',
     'examples.subtitle': 'Algunos decks hechos en one-shot con Folio (haz clic para abrir):',
-    'examples.draghi': 'Resumen del informe Draghi',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group — Estados financieros FY2025',
 
@@ -1107,7 +1104,6 @@ export const translations = {
     'hero.trustedBy': 'Sie vertrauen auf uns',
     'hero.widgetMobileNotice': 'Öffnen Sie diese Seite auf einem Tablet oder Computer, um das interaktive Widget anzuzeigen',
     'examples.subtitle': 'Einige Decks, in einem Schuss mit Folio erstellt (zum Öffnen klicken):',
-    'examples.draghi': 'Zusammenfassung des Draghi-Berichts',
     'examples.stateofai': 'McKinsey & Company State of AI 2025',
     'examples.airfrance': 'Air France-KLM Group — Finanzbericht FY2025',
 
